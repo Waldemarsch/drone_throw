@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1webjb67vrxm"
-path="res://.godot/imported/plane_1lvl.png-f89a596b5ec6f8bd344c906a090329db.ctex"
+uid="uid://ge3ae23qbn75"
+path="res://.godot/imported/amoeba.png-3633e65f8e3a5037d41b4f9a84ee672a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/player/plane_1lvl.png"
-dest_files=["res://.godot/imported/plane_1lvl.png-f89a596b5ec6f8bd344c906a090329db.ctex"]
+source_file="res://assets/objects/player/amoeba.png"
+dest_files=["res://.godot/imported/amoeba.png-3633e65f8e3a5037d41b4f9a84ee672a.ctex"]
 
 [params]
 
