@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ge3ae23qbn75" path="res://assets/objects/player/amoeba.png" id="1_u6v8l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8ej7"]
-radius = 162.049
+radius = 49.0
 
 [sub_resource type="Animation" id="Animation_531dl"]
 resource_name = "pulse"
@@ -41,9 +41,8 @@ libraries = {
 autoplay = "pulse"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-14, -4)
+position = Vector2(-4, -1)
 scale = Vector2(0.489397, 0.489397)
 texture = ExtResource("1_u6v8l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
