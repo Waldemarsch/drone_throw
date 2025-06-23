@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
+class_name Player
+
 const SPEED = 100.0
 
 @onready var anim_player = $AnimatedSprite2D
+
+@onready var evolution_progress : int = 5
+
 
 func _process(delta):
 	move_player()
