@@ -9,6 +9,10 @@ const SPEED = 100.0
 @onready var evolution_progress : int = 5
 
 
+func _ready() -> void:
+	GameManager.set_player(self)
+
+
 func _process(delta):
 	move_player()
 	

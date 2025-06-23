@@ -1,28 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbq7ek6t4sv1f"]
 
-[ext_resource type="Texture2D" uid="uid://y0xqi8c00ymr" path="res://HyperCasual Game UI/slider1.png" id="1_m6e0p"]
+[ext_resource type="Texture2D" uid="uid://b18jdgi17r7ab" path="res://CasualGameButtonsVol02/CasualGameButtonsVol02/PNG/CGB02-grey_L_btn.png" id="1_27fn8"]
 [ext_resource type="Script" uid="uid://bjalfieabhwlx" path="res://texture_progress_bar.gd" id="2_27fn8"]
-[ext_resource type="Script" uid="uid://cf3h58nbnof7h" path="res://progress_bar.gd" id="3_27fn8"]
+[ext_resource type="Texture2D" uid="uid://du4766dceqo4y" path="res://CasualGameButtonsVol02/CasualGameButtonsVol02/PNG/CGB02-green_L_btn.png" id="2_nltto"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 top_level = true
 offset_left = 55.0
 offset_top = 14.0
-offset_right = 861.0
-offset_bottom = 68.0
+offset_right = 844.0
+offset_bottom = 85.0
+value = 50.0
 nine_patch_stretch = true
 stretch_margin_left = 8
 stretch_margin_top = 8
 stretch_margin_right = 8
 stretch_margin_bottom = 8
-texture_under = ExtResource("1_m6e0p")
+texture_under = ExtResource("1_27fn8")
+texture_progress = ExtResource("2_nltto")
 script = ExtResource("2_27fn8")
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 75.0
-offset_top = 77.0
-offset_right = 293.0
-offset_bottom = 108.0
-script = ExtResource("3_27fn8")
