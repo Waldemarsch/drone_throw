@@ -1,15 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1qe0riyw0wkg"]
+[gd_scene load_steps=3 format=3 uid="uid://b1qe0riyw0wkg"]
 
 [sub_resource type="DragonBonesFactory" id="DragonBonesFactory_hu767"]
 dragon_bones_ske_file_list = PackedStringArray("res://assets/npc/stage 1/herbivores/vodorosl/vod_ske.json")
 texture_atlas_json_file_list = PackedStringArray("res://assets/npc/stage 1/herbivores/vodorosl/vod_tex.json")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hu767"]
+radius = 39.8664
+height = 130.629
+
 [node name="Vodorosl" type="CharacterBody2D"]
+scale = Vector2(1.495, 1.495)
 
 [node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]
 factory = SubResource("DragonBonesFactory_hu767")
 debug = true
+instantiate_dragon_bones_data_name = "vod"
+instantiate_armature_name = "Armature"
+instantiate_skin_name = "default"
 armature_settings = {
-&"current_animation": "animtion0",
+&"current_animation": "[none]",
 "sub_armatures": {}
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12.0401, 0.668896)
+rotation = -0.598648
+shape = SubResource("CapsuleShape2D_hu767")
