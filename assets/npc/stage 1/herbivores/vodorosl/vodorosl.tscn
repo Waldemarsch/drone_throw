@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1qe0riyw0wkg"]
+
+[sub_resource type="DragonBonesFactory" id="DragonBonesFactory_hu767"]
+dragon_bones_ske_file_list = PackedStringArray("res://assets/npc/stage 1/herbivores/vodorosl/vod_ske.json")
+texture_atlas_json_file_list = PackedStringArray("res://assets/npc/stage 1/herbivores/vodorosl/vod_tex.json")
+
+[node name="Vodorosl" type="CharacterBody2D"]
+
+[node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]
+factory = SubResource("DragonBonesFactory_hu767")
+debug = true
+armature_settings = {
+&"current_animation": "animtion0",
+"sub_armatures": {}
+}

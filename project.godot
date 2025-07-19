@@ -13,11 +13,10 @@ config_version=5
 config/name="flash_drone_throw"
 run/main_scene="uid://bd4lkuv2vfomd"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://game_manager.gd"
+GameManager="*res://singletons/game_manager.gd"
 
 [editor]
 

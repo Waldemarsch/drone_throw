@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cotajfrb08clg"]
+
+[ext_resource type="PackedScene" uid="uid://bm1kgsufmlg14" path="res://scenes/Scene.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bd4lkuv2vfomd" path="res://scenes/player.tscn" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://dxk288dq4ljf5" path="res://singletons/game_manager.gd" id="4_1bvp3"]
+
+[node name="Main" type="Node"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Scene" parent="Background" instance=ExtResource("2_1bvp3")]
+
+[node name="Gameplay" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Player" parent="Gameplay" instance=ExtResource("3_lquwl")]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("4_1bvp3")
