@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2tryjl2wt0fa"]
+
+[ext_resource type="Script" uid="uid://c3sa275qnsm4t" path="res://components/movement/movement_component.gd" id="1_8pemp"]
+[ext_resource type="Script" uid="uid://dqit105lreg3s" path="res://components/movement/strategies/wandering_strategy.gd" id="2_a0ks4"]
+
+[node name="MovementComponent" type="Node"]
+script = ExtResource("1_8pemp")
+initial_movement_strategy = ExtResource("2_a0ks4")
+
+[node name="WanderingStrategy" type="Node" parent="."]
+
+[node name="FleeStrategy" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
