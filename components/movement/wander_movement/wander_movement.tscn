@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://daigwvskdj7gj"]
+
+[ext_resource type="Script" uid="uid://djljvtfl1ls1k" path="res://components/movement/wander_movement/wander_movement.gd" id="1_umasn"]
+
+[node name="WanderMovement" type="Node"]
+script = ExtResource("1_umasn")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

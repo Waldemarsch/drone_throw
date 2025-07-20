@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://umlqalse2iac"]
+
+[node name="Entity" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="DragonBonesArmatureView" type="DragonBonesArmatureView" parent="."]

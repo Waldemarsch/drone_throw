@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh0tu2jjbk5po"]
+
+[ext_resource type="PackedScene" uid="uid://umlqalse2iac" path="res://entities/entity.tscn" id="1_symyc"]
+
+[sub_resource type="DragonBonesFactory" id="DragonBonesFactory_symyc"]
+dragon_bones_ske_file_list = PackedStringArray("res://entities/player/assets/amoeba_ske.json")
+texture_atlas_json_file_list = PackedStringArray("res://entities/player/assets/amoeba_tex.json")
+
+[node name="Player" instance=ExtResource("1_symyc")]
+
+[node name="DragonBonesArmatureView" parent="." index="1"]
+factory = SubResource("DragonBonesFactory_symyc")
+armature_settings = {
+&"current_animation": "[none]",
+"sub_armatures": {}
+}
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]

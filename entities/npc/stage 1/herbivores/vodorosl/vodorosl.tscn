@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://2xvkc7vp3t40"]
+
+[ext_resource type="PackedScene" uid="uid://bkvu3stsnbiad" path="res://entities/npc/npc.tscn" id="1_b1r56"]
+[ext_resource type="Script" uid="uid://bkaasbkdesy8k" path="res://entities/npc/stage 1/herbivores/vodorosl/vodorosl.gd" id="2_njdel"]
+
+[sub_resource type="DragonBonesFactory" id="DragonBonesFactory_njdel"]
+dragon_bones_ske_file_list = PackedStringArray("res://entities/npc/stage 1/herbivores/vodorosl/assets/vod_ske.json")
+texture_atlas_json_file_list = PackedStringArray("res://entities/npc/stage 1/herbivores/vodorosl/assets/vod_tex.json")
+
+[node name="vodorosl" instance=ExtResource("1_b1r56")]
+script = ExtResource("2_njdel")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(9, 7)
+
+[node name="DragonBonesArmatureView" parent="." index="1"]
+factory = SubResource("DragonBonesFactory_njdel")
+active = false
+debug = true
+rotation = 0.593412
