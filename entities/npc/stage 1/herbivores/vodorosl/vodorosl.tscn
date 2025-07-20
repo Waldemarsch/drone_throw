@@ -17,4 +17,11 @@ position = Vector2(9, 7)
 factory = SubResource("DragonBonesFactory_njdel")
 active = false
 debug = true
+armature_settings = {
+&"current_animation": "[none]",
+"sub_armatures": {}
+}
 rotation = 0.593412
+
+[node name="WanderMovement" parent="." index="2"]
+script = null

@@ -11,7 +11,7 @@ texture_atlas_json_file_list = PackedStringArray("res://entities/player/assets/a
 [node name="DragonBonesArmatureView" parent="." index="1"]
 factory = SubResource("DragonBonesFactory_symyc")
 armature_settings = {
-&"current_animation": "[none]",
+&"current_animation": "animtion0",
 "sub_armatures": {}
 }
 

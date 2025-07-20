@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtpkpsjfnmxnk"]
+
+[ext_resource type="PackedScene" uid="uid://d2tryjl2wt0fa" path="res://components/movement/movement_component.tscn" id="1_hwcwi"]
+
+[node name="MovementComponent" instance=ExtResource("1_hwcwi")]
