@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://2xvkc7vp3t40"]
+[gd_scene load_steps=5 format=3 uid="uid://2xvkc7vp3t40"]
 
 [ext_resource type="PackedScene" uid="uid://bkvu3stsnbiad" path="res://entities/npc/npc.tscn" id="1_b1r56"]
 [ext_resource type="Script" uid="uid://bkaasbkdesy8k" path="res://entities/npc/stage 1/herbivores/vodorosl/vodorosl.gd" id="2_njdel"]
+[ext_resource type="PackedScene" uid="uid://cdtlffbq1h1hp" path="res://components/ai/carnivores/carnivores_ai.tscn" id="3_s42vu"]
 
 [sub_resource type="DragonBonesFactory" id="DragonBonesFactory_njdel"]
 dragon_bones_ske_file_list = PackedStringArray("res://entities/npc/stage 1/herbivores/vodorosl/assets/vod_ske.json")
@@ -25,3 +26,5 @@ rotation = 0.593412
 
 [node name="WanderMovement" parent="." index="2"]
 script = null
+
+[node name="CarnivoresAi" parent="." index="3" instance=ExtResource("3_s42vu")]

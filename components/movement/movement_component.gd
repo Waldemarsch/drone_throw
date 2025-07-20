@@ -2,17 +2,19 @@ extends Node
 
 class_name MovementComponent
 
-@export var initial_movement_strategy : Script
+
+@export var ai_controller : AiComponent
 
 var curr_strategy : MovementStrategy
 
 
 func _ready() -> void:
-	if initial_movement_strategy:
-		var new_strategy_instance = initial_movement_strategy.new()
-		set_strategy(new_strategy_instance)
-	else:
-		push_warning("MovementComponent has no initial strategy assigned.")
+	pass
+	#if initial_movement_strategy:
+		#var new_strategy_instance = initial_movement_strategy.new()
+		#set_strategy(new_strategy_instance)
+	#else:
+		#push_warning("MovementComponent has no initial strategy assigned.")
 		
 func _physics_process(delta: float) -> void:
 	if curr_strategy:

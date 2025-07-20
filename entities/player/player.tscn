@@ -6,7 +6,7 @@
 dragon_bones_ske_file_list = PackedStringArray("res://entities/player/assets/amoeba_ske.json")
 texture_atlas_json_file_list = PackedStringArray("res://entities/player/assets/amoeba_tex.json")
 
-[node name="Player" instance=ExtResource("1_symyc")]
+[node name="Player" groups=["carnivore", "herbivore"] instance=ExtResource("1_symyc")]
 
 [node name="DragonBonesArmatureView" parent="." index="1"]
 factory = SubResource("DragonBonesFactory_symyc")
