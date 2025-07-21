@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://nbyvv1lejh8y"]
+
+[ext_resource type="Script" uid="uid://cqp3ahgc35n6e" path="res://components/ai/states/wander/wander_state.gd" id="1_ooh83"]
+
+[node name="WanderState" type="Node"]
+script = ExtResource("1_ooh83")

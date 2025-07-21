@@ -1,30 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://2xvkc7vp3t40"]
+[gd_scene load_steps=4 format=3 uid="uid://2xvkc7vp3t40"]
 
-[ext_resource type="PackedScene" uid="uid://bkvu3stsnbiad" path="res://entities/npc/npc.tscn" id="1_b1r56"]
-[ext_resource type="Script" uid="uid://bkaasbkdesy8k" path="res://entities/npc/stage 1/herbivores/vodorosl/vodorosl.gd" id="2_njdel"]
-[ext_resource type="PackedScene" uid="uid://cdtlffbq1h1hp" path="res://components/ai/carnivores/carnivores_ai.tscn" id="3_s42vu"]
+[ext_resource type="PackedScene" uid="uid://dlfnrccs7r8oh" path="res://components/entities/npc/carnivores/carnivore_npc.tscn" id="1_obqth"]
 
-[sub_resource type="DragonBonesFactory" id="DragonBonesFactory_njdel"]
+[sub_resource type="DragonBonesFactory" id="DragonBonesFactory_vtael"]
 dragon_bones_ske_file_list = PackedStringArray("res://entities/npc/stage 1/herbivores/vodorosl/assets/vod_ske.json")
 texture_atlas_json_file_list = PackedStringArray("res://entities/npc/stage 1/herbivores/vodorosl/assets/vod_tex.json")
 
-[node name="vodorosl" instance=ExtResource("1_b1r56")]
-script = ExtResource("2_njdel")
+[sub_resource type="CircleShape2D" id="CircleShape2D_obqth"]
+radius = 393.154
 
-[node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(9, 7)
+[node name="vodorosl" instance=ExtResource("1_obqth")]
 
 [node name="DragonBonesArmatureView" parent="." index="1"]
-factory = SubResource("DragonBonesFactory_njdel")
-active = false
-debug = true
+factory = SubResource("DragonBonesFactory_vtael")
 armature_settings = {
 &"current_animation": "[none]",
 "sub_armatures": {}
 }
-rotation = 0.593412
 
-[node name="WanderMovement" parent="." index="2"]
-script = null
-
-[node name="CarnivoresAi" parent="." index="3" instance=ExtResource("3_s42vu")]
+[node name="SensorArea" type="CollisionShape2D" parent="Sensor" index="1"]
+shape = SubResource("CircleShape2D_obqth")
