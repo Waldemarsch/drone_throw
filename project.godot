@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="flash_drone_throw"
+run/main_scene="uid://cotajfrb08clg"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]

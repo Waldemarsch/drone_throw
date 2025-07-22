@@ -16,7 +16,7 @@ var evolution_stage_sizes_minmax : Dictionary = {
 
 
 func _ready() -> void:
-	#GameManager.set_player(self)
+	GameManager.set_player(self)
 	pass
 
 
@@ -26,12 +26,6 @@ func _process(delta):
 	
 func _physics_process(delta: float) -> void:
 	move_player()
-
-func evolution_progress_update(nutrition_value) -> void:
-	evolution_progress = evolution_progress + nutrition_value
-
-func evolution_scale_size(evol_stage) -> void:
-	self.scale = evolution_stage_sizes_minmax[evol_stage]["min"] + (evolution_stage_sizes_minmax[evol_stage]["max"] - evolution_stage_sizes_minmax[evol_stage]["min"]) * evolution_progress / 100 * evolution_size_growth_factor
 	
 	
 func move_player():
