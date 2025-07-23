@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bduntg4cn6iuc"
-path="res://.godot/imported/vod.png-149ceed263834ec8c86a5385e8e49297.ctex"
+path="res://.godot/imported/algae.png-f47c96857a1cdb404f61e9f437d4c8de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/npc/stage 1/herbivores/vodorosl/assets/vod.png"
-dest_files=["res://.godot/imported/vod.png-149ceed263834ec8c86a5385e8e49297.ctex"]
+source_file="res://entities/npc/stage 1/herbivores/algae/assets/algae.png"
+dest_files=["res://.godot/imported/algae.png-f47c96857a1cdb404f61e9f437d4c8de.ctex"]
 
 [params]
 

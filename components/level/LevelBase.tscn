@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://1cio6qeqkwy0"]
+[gd_scene load_steps=2 format=3 uid="uid://1cio6qeqkwy0"]
+
+[ext_resource type="PackedScene" uid="uid://bugxij1bdvprd" path="res://components/spawner/spawner.tscn" id="1_7ii8b"]
 
 [node name="LevelBase" type="Node2D"]
+
+[node name="Spawner" parent="." instance=ExtResource("1_7ii8b")]
 
 [node name="Background" type="ParallaxBackground" parent="."]
 
@@ -8,4 +12,5 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer"]
 
-[node name="EContainer" type="Node" parent="."]
+[node name="EContainer" type="Node2D" parent="."]
+y_sort_enabled = true

@@ -4,7 +4,9 @@ class_name AIController
 
 @export var initial_state : State
 @export var sensor : Area2D
-@export var timer_time : float = 0.3
+@export var movement_component : MovementComponent
+
+@export var timer_time : float = 0.1
 
 var _timer : Timer
 

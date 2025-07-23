@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx5hw5nohj3xf"]
+
+[ext_resource type="PackedScene" uid="uid://dlfnrccs7r8oh" path="res://classes/entities/npc/carnivores/carnivore_npc.tscn" id="1_oj33g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oj33g"]
+radius = 96.0
+height = 192.0
+
+[sub_resource type="DragonBonesFactory" id="DragonBonesFactory_oj33g"]
+dragon_bones_ske_file_list = PackedStringArray("res://entities/npc/stage 1/carnivores/amoeba/assets/amoeba_ske.json")
+texture_atlas_json_file_list = PackedStringArray("res://entities/npc/stage 1/carnivores/amoeba/assets/amoeba_tex.json")
+
+[node name="amoeba" instance=ExtResource("1_oj33g")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(10, 2)
+scale = Vector2(1.04681, 0.964948)
+shape = SubResource("CapsuleShape2D_oj33g")
+
+[node name="DragonBonesArmatureView" parent="." index="1"]
+factory = SubResource("DragonBonesFactory_oj33g")
+armature_settings = {
+&"current_animation": "[none]",
+"sub_armatures": {}
+}

@@ -3,7 +3,7 @@ extends State
 class_name WanderState
 
 @onready var _timer : Timer = Timer.new()
-@export var _timer_time : float = 0.2
+@export var _timer_time : float = 1
 
 var _direction : Vector2 = Vector2.ZERO
 
@@ -20,6 +20,8 @@ func _on_timer_timeout():
 	
 func process_physics(delta: float):
 	var owner : CharacterBody2D = manager.get_parent()
-	owner.velocity = _direction * owner.speed
-	owner.move_and_slide()
+	var direction_angle = _direction.angle()
+	manager.movement_component.update_rotation(direction_angle, delta)
+	if owner.rotation == direction_angle:
+		manager.movement_component.move(_direction)
 	

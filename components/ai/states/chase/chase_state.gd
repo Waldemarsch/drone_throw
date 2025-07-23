@@ -16,6 +16,8 @@ func exit():
 func physics_process(delta: float):
 	var owner : CharacterBody2D = manager.get_parent()
 	var direction_to_target = owner.global_position.direction_to(_target.global_position)
-	owner.velocity = direction_to_target * owner.speed
-	owner.move_and_slide()
+	var direction_angle = direction_to_target.angle()
+	manager.movement_component.update_rotation(direction_angle, delta)
+	if owner.rotation == direction_angle:
+		manager.movement_component.move(direction_to_target)
 	

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8kknicw86amt"]
+
+[ext_resource type="PackedScene" uid="uid://cdny3crq4n3st" path="res://classes/entities/npc/herbivores/herbivore_npc.tscn" id="1_wu4c7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wu4c7"]
+radius = 40.9545
+height = 145.589
+
+[sub_resource type="DragonBonesFactory" id="DragonBonesFactory_wu4c7"]
+dragon_bones_ske_file_list = PackedStringArray("res://entities/npc/stage 1/herbivores/algae/assets/algae_ske.json")
+texture_atlas_json_file_list = PackedStringArray("res://entities/npc/stage 1/herbivores/algae/assets/algae_tex.json")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wu4c7"]
+radius = 413.044
+
+[node name="algae" instance=ExtResource("1_wu4c7")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(9, 5)
+rotation = -0.662545
+shape = SubResource("CapsuleShape2D_wu4c7")
+
+[node name="DragonBonesArmatureView" parent="." index="1"]
+factory = SubResource("DragonBonesFactory_wu4c7")
+armature_settings = {
+&"current_animation": "[none]",
+"sub_armatures": {}
+}
+
+[node name="CollisionShape2D" parent="Sensor" index="0"]
+shape = SubResource("CircleShape2D_wu4c7")

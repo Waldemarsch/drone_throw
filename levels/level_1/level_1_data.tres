@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://bbkeynb7cjduu"]
+
+[ext_resource type="Script" uid="uid://cedj8equq1t18" path="res://components/level/level_data.gd" id="1_drdge"]
+
+[resource]
+script = ExtResource("1_drdge")
+herbivores = Array[PackedScene]([])
+carnivores = Array[PackedScene]([])
+max_population = 0
+metadata/_custom_type_script = "uid://cedj8equq1t18"
