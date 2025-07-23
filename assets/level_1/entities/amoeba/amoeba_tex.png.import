@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4hg6ohmmba32"
-path="res://.godot/imported/seabed.png-3cf284e265bf9f8a45719e99dfce44b8.ctex"
+uid="uid://b8wbux6opjb00"
+path="res://.godot/imported/amoeba_tex.png-81f6e665d16feb87a1edacf67020ea60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/seabed.png"
-dest_files=["res://.godot/imported/seabed.png-3cf284e265bf9f8a45719e99dfce44b8.ctex"]
+source_file="res://assets/level_1/entities/amoeba/amoeba_tex.png"
+dest_files=["res://.godot/imported/amoeba_tex.png-81f6e665d16feb87a1edacf67020ea60.ctex"]
 
 [params]
 

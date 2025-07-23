@@ -3,18 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://dlfnrccs7r8oh" path="res://classes/entities/npc/carnivores/carnivore_npc.tscn" id="1_oj33g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oj33g"]
-radius = 96.0
-height = 192.0
+radius = 79.4199
+height = 158.84
 
 [sub_resource type="DragonBonesFactory" id="DragonBonesFactory_oj33g"]
-dragon_bones_ske_file_list = PackedStringArray("res://entities/npc/stage 1/carnivores/amoeba/assets/amoeba_ske.json")
-texture_atlas_json_file_list = PackedStringArray("res://entities/npc/stage 1/carnivores/amoeba/assets/amoeba_tex.json")
+dragon_bones_ske_file_list = PackedStringArray("res://assets/level_1/entities/amoeba/amoeba_ske.json")
+texture_atlas_json_file_list = PackedStringArray("res://assets/level_1/entities/amoeba/amoeba_tex.json")
 
 [node name="amoeba" instance=ExtResource("1_oj33g")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(10, 2)
-scale = Vector2(1.04681, 0.964948)
+position = Vector2(8, 7)
+scale = Vector2(1.02263, 0.949556)
 shape = SubResource("CapsuleShape2D_oj33g")
 
 [node name="DragonBonesArmatureView" parent="." index="1"]

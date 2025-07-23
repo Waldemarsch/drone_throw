@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ge3ae23qbn75"
-path="res://.godot/imported/amoeba.png-313d1660fb3983d86d100256fda42070.ctex"
+path="res://.godot/imported/amoeba.png-a5d97e7cd55961c2f0bc995acb843551.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/npc/stage 1/carnivores/amoeba/assets/amoeba.png"
-dest_files=["res://.godot/imported/amoeba.png-313d1660fb3983d86d100256fda42070.ctex"]
+source_file="res://assets/level_1/entities/amoeba/amoeba.png"
+dest_files=["res://.godot/imported/amoeba.png-a5d97e7cd55961c2f0bc995acb843551.ctex"]
 
 [params]
 
