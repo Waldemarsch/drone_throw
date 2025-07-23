@@ -5,8 +5,8 @@ class_name FleeState
 var _target : Node2D
 
 func enter(info: Dictionary = {}):
-	if info.has("prey"):
-		_target = info["prey"]
+	if info.has("body"):
+		_target = info["body"]
 	else:
 		manager.set_state(manager.initial_state.name)
 	
@@ -16,5 +16,6 @@ func exit():
 func physics_process(delta: float):
 	var owner : CharacterBody2D = manager.get_parent()
 	var direction_to_target = owner.global_position.direction_to(_target.global_position)
-	owner.velocity = direction_to_target * owner.speed
-	owner.move_and_slide()
+	var direction_angle = direction_to_target.angle()
+	manager.movement_component.update_rotation(-direction_angle, delta)
+	manager.movement_component.move(Vector2(0, owner.rotation))

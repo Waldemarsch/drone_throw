@@ -22,6 +22,5 @@ func process_physics(delta: float):
 	var owner : CharacterBody2D = manager.get_parent()
 	var direction_angle = _direction.angle()
 	manager.movement_component.update_rotation(direction_angle, delta)
-	if owner.rotation == direction_angle:
-		manager.movement_component.move(_direction)
+	manager.movement_component.move(Vector2(0, owner.rotation))
 	

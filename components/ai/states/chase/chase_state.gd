@@ -18,6 +18,5 @@ func physics_process(delta: float):
 	var direction_to_target = owner.global_position.direction_to(_target.global_position)
 	var direction_angle = direction_to_target.angle()
 	manager.movement_component.update_rotation(direction_angle, delta)
-	if owner.rotation == direction_angle:
-		manager.movement_component.move(direction_to_target)
+	manager.movement_component.move(Vector2(0, owner.rotation))
 	

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c20xqwt86rqa3"]
+
+[ext_resource type="Script" uid="uid://vewm0lxe5b5s" path="res://components/ai/states/flee/flee_state.gd" id="1_koxdk"]
+
+[node name="FleeState" type="Node"]
+script = ExtResource("1_koxdk")

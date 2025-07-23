@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlfnrccs7r8oh"]
+[gd_scene load_steps=6 format=3 uid="uid://dlfnrccs7r8oh"]
 
 [ext_resource type="PackedScene" uid="uid://bs15s2yl26yh3" path="res://classes/entities/npc/npc.tscn" id="1_d5t6p"]
 [ext_resource type="PackedScene" uid="uid://ubqrwttiat2p" path="res://components/ai/ai_controllers/carnivore/carn_ai_controller.tscn" id="2_wwhdm"]
 [ext_resource type="PackedScene" uid="uid://bvlh2mhk7441e" path="res://components/ai/states/chase/chase_state.tscn" id="3_104m8"]
 [ext_resource type="PackedScene" uid="uid://nbyvv1lejh8y" path="res://components/ai/states/wander/wander_state.tscn" id="4_2hpqh"]
+[ext_resource type="PackedScene" uid="uid://c20xqwt86rqa3" path="res://components/ai/states/flee/flee_state.tscn" id="5_p6s6o"]
 
 [node name="carnivore_npc" instance=ExtResource("1_d5t6p")]
 script = null
@@ -16,3 +17,5 @@ movement_component = NodePath("../MovementComponent")
 [node name="ChaseState" parent="CarnAiController" index="0" instance=ExtResource("3_104m8")]
 
 [node name="WanderState" parent="CarnAiController" index="1" instance=ExtResource("4_2hpqh")]
+
+[node name="FleeState" parent="CarnAiController" index="2" instance=ExtResource("5_p6s6o")]
