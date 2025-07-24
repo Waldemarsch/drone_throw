@@ -3,7 +3,7 @@ extends Node
 @export var level_data : LevelData
 @export var entities_container_path : NodePath
 
-@export var spawn_time : float = 10.0
+@export var spawn_time : float = 3.0
 @export var spawn_count : int = 5
 
 @export var min_spawn_radius : float = 600.0
@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 	_timer = Timer.new()
 	add_child(_timer)
-	_timer.timeout.connect(_on_timer_timeout())
+	_timer.timeout.connect(_on_timer_timeout)
 	_timer.start(spawn_time)
 	
 func _on_timer_timeout():

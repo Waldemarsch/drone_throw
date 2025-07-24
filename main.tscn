@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cotajfrb08clg"]
+[gd_scene load_steps=4 format=3 uid="uid://brtujsi2wd3se"]
 
+[ext_resource type="PackedScene" uid="uid://xh8oet0a302e" path="res://levels/level_1/level_1.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dh0tu2jjbk5po" path="res://entities/player/player.tscn" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://dxk288dq4ljf5" path="res://singletons/game_manager.gd" id="4_1bvp3"]
 
@@ -15,3 +16,5 @@ layer = 0
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("4_1bvp3")
+
+[node name="Level1" parent="." instance=ExtResource("3_h2yge")]

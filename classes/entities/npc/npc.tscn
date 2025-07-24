@@ -12,4 +12,5 @@
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor" index="0"]
 shape = SubResource("CircleShape2D_jhqj4")
 
-[node name="MovementComponent" parent="." index="3" instance=ExtResource("2_w3gky")]
+[node name="MovementComponent" parent="." index="3" node_paths=PackedStringArray("owner_anim_node") instance=ExtResource("2_w3gky")]
+owner_anim_node = NodePath("../DragonBonesArmatureView")

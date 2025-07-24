@@ -28,7 +28,7 @@ func _ready() -> void:
 	
 	_timer = Timer.new()
 	add_child(_timer)
-	_timer.timeout.connect(update_brain())
+	_timer.timeout.connect(update_brain)
 	_timer.start(timer_time)
 	
 func update_brain():
@@ -36,9 +36,9 @@ func update_brain():
 	targets = find_targets_in_sensor()
 	if len(targets):
 		targets = sort_bodies_by_distance(targets, get_parent())
-	var _new_state := select_state(targets)
-	if _new_state[0] != _curr_state:
-		set_state(_new_state[0].name)
+	var _new_state = select_state(targets)
+	if _new_state[0] != _curr_state.name:
+		set_state(_new_state[0])
 	
 	
 func _physics_process(delta: float) -> void:

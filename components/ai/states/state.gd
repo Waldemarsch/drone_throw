@@ -12,3 +12,5 @@ func exit() -> void:
 	
 func process_physics(delta: float):
 	pass
+	
+func get_state_name() -> String: return ""

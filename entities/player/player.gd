@@ -31,9 +31,10 @@ func _physics_process(delta: float) -> void:
 func move_player():
 	velocity = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized() * SPEED
 	if velocity.length() != 0:
-		anim_player.play("moving")
+		#anim_player.play("moving")
 		move_and_slide()
 	else:
-		anim_player.play("idle")
+		#anim_player.play("idle")
+		pass
 		
 	

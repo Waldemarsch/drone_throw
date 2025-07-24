@@ -19,4 +19,3 @@ func physics_process(delta: float):
 	var direction_angle = direction_to_target.angle()
 	manager.movement_component.update_rotation(direction_angle, delta)
 	manager.movement_component.move(Vector2(0, owner.rotation))
-	

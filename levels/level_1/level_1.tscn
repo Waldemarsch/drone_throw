@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://xh8oet0a302e"]
+[gd_scene load_steps=4 format=3 uid="uid://xh8oet0a302e"]
 
 [ext_resource type="PackedScene" uid="uid://1cio6qeqkwy0" path="res://components/level/LevelBase.tscn" id="1_vn7o3"]
+[ext_resource type="Resource" uid="uid://bbkeynb7cjduu" path="res://levels/level_1/level_1_data.tres" id="2_epb64"]
 [ext_resource type="Texture2D" uid="uid://b4hg6ohmmba32" path="res://assets/level_1/tiles/seabed.png" id="2_jirdo"]
 
-[node name="LevelBase" instance=ExtResource("1_vn7o3")]
+[node name="Level1" instance=ExtResource("1_vn7o3")]
+
+[node name="Spawner" parent="." index="0"]
+level_data = ExtResource("2_epb64")
+entities_container_path = NodePath("../EContainer")
 
 [node name="ParallaxLayer" parent="Background" index="0"]
 motion_mirroring = Vector2(1216, 832)
