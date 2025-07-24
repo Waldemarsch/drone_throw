@@ -2,7 +2,7 @@ extends State
 
 class_name WanderState
 
-@export var _timer_time : float = 3
+@export var _timer_time : float = 1.5
 
 
 var _direction : Vector2 = Vector2.ZERO
