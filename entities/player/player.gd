@@ -17,7 +17,6 @@ var evolution_stage_sizes_minmax : Dictionary = {
 
 func _ready() -> void:
 	GameManager.set_player(self)
-	pass
 
 
 func _process(delta):

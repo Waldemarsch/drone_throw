@@ -10,7 +10,7 @@ height = 158.84
 dragon_bones_ske_file_list = PackedStringArray("res://assets/level_1/entities/amoeba/amoeba_ske.json")
 texture_atlas_json_file_list = PackedStringArray("res://assets/level_1/entities/amoeba/amoeba_tex.json")
 
-[node name="amoeba" instance=ExtResource("1_oj33g")]
+[node name="amoeba" groups=["carnivores"] instance=ExtResource("1_oj33g")]
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(8, 7)

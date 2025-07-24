@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://duycyjrip5cha" path="res://components/movement/movement_component.tscn" id="2_w3gky"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jhqj4"]
+radius = 596.272
 
 [node name="npc" instance=ExtResource("1_tr4yl")]
 

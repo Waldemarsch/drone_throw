@@ -38,7 +38,7 @@ func update_brain():
 		targets = sort_bodies_by_distance(targets, get_parent())
 	var _new_state = select_state(targets)
 	if _new_state[0] != _curr_state.name:
-		set_state(_new_state[0])
+		set_state(_new_state[0], _new_state[1])
 	
 	
 func _physics_process(delta: float) -> void:
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		_curr_state.process_physics(delta)
 	
 	
-func set_state(new_state_name: String) -> void:
+func set_state(new_state_name: String, info: Dictionary = {}) -> void:
 	if not _states.has(new_state_name):
 		push_warning("Attempted to switch to an unknown state: '%s'" % new_state_name)
 		return
@@ -58,10 +58,12 @@ func set_state(new_state_name: String) -> void:
 	_curr_state = _states[new_state_name]
 	
 	_curr_state.set_physics_process(true)
-	_curr_state.enter()
+	_curr_state.enter(info)
 	
 func find_targets_in_sensor() -> Array[Node2D]:
-	return sensor.get_overlapping_bodies()
+	var bodies := sensor.get_overlapping_bodies()
+	bodies.erase(owner)
+	return bodies
 
 func sort_bodies_by_distance(bodies: Array, reference_node: Node2D) -> Array:
 	bodies.sort_custom(

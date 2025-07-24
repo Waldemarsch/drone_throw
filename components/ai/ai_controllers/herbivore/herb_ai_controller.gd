@@ -8,4 +8,6 @@ func select_state(bodies: Array[Node2D]) -> Array:
 		for body in bodies:
 			if body.is_in_group("carnivores"):
 				return ["FleeState", {"body": body}]
-	return ["WanderState", null]
+	return ["WanderState", {}]
+
+# TODO ФИЗИЧЕСКИЕ СЛОИ НАСТРОИТЬ ВМЕСТО ЭТОЙ ХУЙНИ

@@ -3,7 +3,7 @@ extends Node
 @export var level_data : LevelData
 @export var entities_container_path : NodePath
 
-@export var spawn_time : float = 3.0
+@export var spawn_time : float = 1
 @export var spawn_count : int = 5
 
 @export var min_spawn_radius : float = 600.0

@@ -29,8 +29,8 @@ enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
 [global_group]
 
-carnivore=""
-herbivore=""
+carnivores=""
+herbivores=""
 
 [input]
 

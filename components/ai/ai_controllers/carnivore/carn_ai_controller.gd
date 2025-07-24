@@ -13,4 +13,6 @@ func select_state(bodies: Array[Node2D]) -> Array:
 				return ["FleeState", {"body": body}]
 		if prey:
 			return ["ChaseState", {"prey": prey}]
-	return ["WanderState", null]
+	return ["WanderState", {}]
+
+# TODO ФИЗИЧЕСКИЕ СЛОИ НАСТРОИТЬ ВМЕСТО ЭТОЙ ХУЙНИ
