@@ -6,8 +6,8 @@ extends Node
 @export var spawn_time : float = 10.0
 @export var spawn_count : int = 5
 
-@export var min_spawn_radius : float = 300.0
-@export var max_spawn_radius : float = 600.0
+@export var min_spawn_radius : float = 600.0
+@export var max_spawn_radius : float = 1200.0
 
 var _timer : Timer
 

@@ -6,5 +6,5 @@
 script = ExtResource("1_drdge")
 herbivores = Array[PackedScene]([])
 carnivores = Array[PackedScene]([])
-max_population = 0
+max_population = 20
 metadata/_custom_type_script = "uid://cedj8equq1t18"
