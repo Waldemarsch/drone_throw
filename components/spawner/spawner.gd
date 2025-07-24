@@ -6,6 +6,9 @@ extends Node
 @export var spawn_time : float = 10.0
 @export var spawn_count : int = 5
 
+@export var min_spawn_radius : float = 300.0
+@export var max_spawn_radius : float = 600.0
+
 var _timer : Timer
 
 var _entities_container : Node2D
@@ -26,6 +29,15 @@ func _on_timer_timeout():
 	var ent_count = _entities_container.get_child_count()
 	if ent_count >= level_data.max_population:
 		return
+	var player = GameManager.get_player()
 	for i in range(spawn_count):
+		var ent_to_spawn : Node2D
 		if randf() <= 0.7:
-			pass
+			ent_to_spawn = level_data.herbivores.pick_random().instantiate()
+		else:
+			ent_to_spawn = level_data.carnivores.pick_random().instantiate()
+		var ent_spawn_angle = randf_range(0, TAU)
+		var ent_spawn_radius = randf_range(min_spawn_radius, max_spawn_radius)
+		ent_to_spawn.global_position = player.global_position + Vector2.from_angle(ent_spawn_angle) * ent_spawn_radius
+		
+		_entities_container.add_child(ent_to_spawn)

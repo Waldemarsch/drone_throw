@@ -1,6 +1,6 @@
 extends Node
 
-@onready var player = null
+@onready var player : Player = null
 
 signal player_changed()
 
