@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqmi0c45gtg0r"]
+
+[ext_resource type="PackedScene" uid="uid://cdny3crq4n3st" path="res://classes/entities/npc/herbivores/herbivore_npc.tscn" id="1_xubly"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xubly"]
+radius = 80.3017
+height = 356.911
+
+[sub_resource type="DragonBonesFactory" id="DragonBonesFactory_xubly"]
+dragon_bones_ske_file_list = PackedStringArray("res://assets/level_1/entities/euglena viridis/Euglenaviridis_ske.json")
+texture_atlas_json_file_list = PackedStringArray("res://assets/level_1/entities/euglena viridis/Euglenaviridis_tex.json")
+
+[node name="euglena viridis" instance=ExtResource("1_xubly")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+visible = false
+position = Vector2(29, -63)
+rotation = 0.710557
+scale = Vector2(0.721357, 0.697735)
+shape = SubResource("CapsuleShape2D_xubly")
+
+[node name="DragonBonesArmatureView" parent="." index="1"]
+factory = SubResource("DragonBonesFactory_xubly")
+armature_settings = {
+&"current_animation": "[none]",
+"sub_armatures": {}
+}
