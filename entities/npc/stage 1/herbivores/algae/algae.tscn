@@ -11,7 +11,7 @@ dragon_bones_ske_file_list = PackedStringArray("res://assets/level_1/entities/al
 texture_atlas_json_file_list = PackedStringArray("res://assets/level_1/entities/algae/algae_tex.json")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wu4c7"]
-radius = 413.044
+radius = 521.004
 
 [node name="algae" groups=["herbivores"] instance=ExtResource("1_wu4c7")]
 

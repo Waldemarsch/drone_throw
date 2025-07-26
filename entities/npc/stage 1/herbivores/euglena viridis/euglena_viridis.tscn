@@ -10,12 +10,11 @@ height = 356.911
 dragon_bones_ske_file_list = PackedStringArray("res://assets/level_1/entities/euglena viridis/Euglenaviridis_ske.json")
 texture_atlas_json_file_list = PackedStringArray("res://assets/level_1/entities/euglena viridis/Euglenaviridis_tex.json")
 
-[node name="euglena viridis" instance=ExtResource("1_xubly")]
+[node name="euglena viridis" groups=["herbivores"] instance=ExtResource("1_xubly")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-visible = false
-position = Vector2(29, -63)
-rotation = 0.710557
+position = Vector2(66, -19)
+rotation = 1.57326
 scale = Vector2(0.721357, 0.697735)
 shape = SubResource("CapsuleShape2D_xubly")
 
@@ -25,3 +24,7 @@ armature_settings = {
 &"current_animation": "[none]",
 "sub_armatures": {}
 }
+rotation = 0.862703
+
+[node name="CollisionShape2D" parent="Sensor" index="0"]
+visible = false

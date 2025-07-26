@@ -23,3 +23,6 @@ armature_settings = {
 &"current_animation": "[none]",
 "sub_armatures": {}
 }
+
+[node name="MovementComponent" parent="." index="4"]
+speed = 80.0

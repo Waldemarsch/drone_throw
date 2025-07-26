@@ -4,3 +4,4 @@
 
 [node name="WanderState" type="Node"]
 script = ExtResource("1_ooh83")
+_timer_time = 3.0
