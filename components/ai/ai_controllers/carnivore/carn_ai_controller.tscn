@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ubqrwttiat2p"]
-
-[ext_resource type="Script" uid="uid://c7likjaasg6nm" path="res://components/ai/ai_controllers/carnivore/carn_ai_controller.gd" id="1_vele2"]
-
-[node name="CarnAiController" type="Node"]
-script = ExtResource("1_vele2")

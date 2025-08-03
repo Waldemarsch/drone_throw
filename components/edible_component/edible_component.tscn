@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct5ogrxa55jby"]
-
-[ext_resource type="Script" uid="uid://c88l07likud81" path="res://components/edible_component/edible_component.gd" id="1_45xxg"]
-
-[node name="EdibleComponent" type="Node"]
-script = ExtResource("1_45xxg")
