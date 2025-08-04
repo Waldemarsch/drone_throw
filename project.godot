@@ -12,11 +12,15 @@ config_version=5
 
 config/name="flash_drone_throw"
 run/main_scene="uid://brtujsi2wd3se"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 
 [autoload]
 
 GameManager="*res://singletons/game_manager.gd"
+
+[dotnet]
+
+project/assembly_name="flash_drone_throw"
 
 [editor]
 
