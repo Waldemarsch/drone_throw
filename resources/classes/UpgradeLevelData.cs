@@ -8,16 +8,16 @@ namespace DroneThrow
     {
         [Export] public int UpgradeLevel;
         [Export] public SpriteFrames AnimatedSpriteFrames;
-        [Export] public AudioEffect UpgradeLevelAudioEffects;
+        [Export] public AudioStream UpgradeLevelAudioStream;
         [Export] public PackedScene UpgradeLevelParticles;
     
         public UpgradeLevelData() : this(0, null, null, null) { }
     
-        public UpgradeLevelData(int upgradeLevel, SpriteFrames animatedSpriteFrames, AudioEffect upgradeLevelAudioEffects, PackedScene upgradeLevelParticles)
+        public UpgradeLevelData(int upgradeLevel, SpriteFrames animatedSpriteFrames, AudioStream upgradeLevelAudioStream, PackedScene upgradeLevelParticles)
         {
             UpgradeLevel = upgradeLevel;
             AnimatedSpriteFrames = animatedSpriteFrames;
-            UpgradeLevelAudioEffects = upgradeLevelAudioEffects;
+            UpgradeLevelAudioStream = upgradeLevelAudioStream;
             UpgradeLevelParticles = upgradeLevelParticles;
         }
     }
