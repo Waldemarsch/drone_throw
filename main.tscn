@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://brtujsi2wd3se"]
 
-[ext_resource type="Script" uid="uid://c4t3qjq840lg2" path="res://components/DestructibleComponent.cs" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://c4t3qjq840lg2" path="res://components/destructible/DestructibleComponent.cs" id="1_ig7tw"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ig7tw")

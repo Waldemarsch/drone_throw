@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://n463ijcn0spm"]
+
+[ext_resource type="Script" uid="uid://c6oxbegoqh8nq" path="res://objects/upgrades/engine/EngineUpgradeLevel.cs" id="1_wvhyf"]
+
+[node name="EngineUpgradeLevel" type="StaticBody2D"]
+script = ExtResource("1_wvhyf")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

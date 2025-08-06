@@ -6,19 +6,13 @@ namespace DroneThrow
     [GlobalClass]
     public partial class UpgradeData : Resource
     {
-        [Export] int UpgradeLevel;
-        [Export] Array<Texture2D> UpgradeLevelTextures;
-        [Export] Array<AudioEffect> UpgradeLevelAudioEffects;
-        [Export] Array<PackedScene> UpgradeLevelParticles;
+        [Export] Array<UpgradeLevelData> UpgradeLevelsData;
     
-        public UpgradeData() : this(0, null, null, null) { }
+        public UpgradeData() : this(null) { }
     
-        public UpgradeData(int upgradeLevel, Array<Texture2D> upgradeLevelTextures, Array<AudioEffect> upgradeLevelAudioEffects, Array<PackedScene> upgradeLevelParticles)
+        public UpgradeData(Array<UpgradeLevelData> upgradeLevelsData)
         {
-            UpgradeLevel = upgradeLevel;
-            UpgradeLevelTextures = upgradeLevelTextures;
-            UpgradeLevelAudioEffects = upgradeLevelAudioEffects;
-            UpgradeLevelParticles = upgradeLevelParticles;
+            UpgradeLevelsData = upgradeLevelsData;
         }
     }
 }
