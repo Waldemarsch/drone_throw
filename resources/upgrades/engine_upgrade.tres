@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=2 format=3 uid="uid://dcab7gx8vhjdj"]
+
+[ext_resource type="Script" uid="uid://bnp0mj8c8k85a" path="res://resources/classes/UpgradeData.cs" id="1_l4vsy"]
+
+[resource]
+script = ExtResource("1_l4vsy")
+UpgradeLevel = 0
+UpgradeLevelTextures = null
+UpgradeLevelAudioEffects = null
+UpgradeLevelParticles = null
+metadata/_custom_type_script = "uid://bnp0mj8c8k85a"
