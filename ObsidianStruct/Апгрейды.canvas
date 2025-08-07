@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"79adbbb3f5da9843","type":"text","text":"Двигатель","x":-720,"y":182,"width":139,"height":60},
+		{"id":"ce27cce821d31fed","type":"text","text":"Оружие для защиты","x":-496,"y":182,"width":213,"height":60},
+		{"id":"776ef843836ff4fd","type":"text","text":"Щит впереди","x":-243,"y":182,"width":162,"height":60},
+		{"id":"9deb74bd9c516eb2","type":"text","text":"Передвижение на земле (когда топливо кончилось)","x":-11,"y":182,"width":280,"height":58},
+		{"id":"41286ae59094feec","type":"text","text":"Общий апгрейд","x":349,"y":180,"width":250,"height":60},
+		{"id":"c8a48ede1057c0ee","type":"text","text":"Апгрейды\n- 4 уровня\n- Ограничения от общего апгрейда","x":-162,"y":-320,"width":262,"height":160},
+		{"id":"eb3c8838055f4685","x":100,"y":-305,"width":300,"height":131,"type":"file","file":"ObsidianStruct/Апгрейд.canvas"}
+	],
+	"edges":[
+		{"id":"ea9a1b2b5900248a","fromNode":"c8a48ede1057c0ee","fromSide":"bottom","toNode":"79adbbb3f5da9843","toSide":"top"},
+		{"id":"0608b87adcad42c8","fromNode":"c8a48ede1057c0ee","fromSide":"bottom","toNode":"ce27cce821d31fed","toSide":"top"},
+		{"id":"53537793e123eb70","fromNode":"c8a48ede1057c0ee","fromSide":"bottom","toNode":"776ef843836ff4fd","toSide":"top"},
+		{"id":"69b793f7aba014c9","fromNode":"c8a48ede1057c0ee","fromSide":"bottom","toNode":"9deb74bd9c516eb2","toSide":"top"},
+		{"id":"02900fa4e1d1383c","fromNode":"c8a48ede1057c0ee","fromSide":"bottom","toNode":"41286ae59094feec","toSide":"top"}
+	]
+}

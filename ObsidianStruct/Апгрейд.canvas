@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"843253f9609ec182","type":"text","text":"Апгрейд (StaticBody2D)","x":-24,"y":-320,"width":234,"height":60},
+		{"id":"930d09eb7e6b8183","type":"text","text":"UpgradeDataLevel.tres\n- Свой для каждого уровня\n- При смене уровня просто меняется ресурс","x":-55,"y":-260,"width":297,"height":144},
+		{"id":"00e064bd28e0aa0d","type":"text","text":"Эффект разрушения","x":-27,"y":140,"width":240,"height":60},
+		{"id":"e613a0e071cb824a","type":"text","text":"Компонент разрушения (DestructibleComponent)","x":-597,"y":140,"width":440,"height":60},
+		{"id":"d2d2869759f6c99f","type":"text","text":"Звук разрушения (AudioStreamPlayer2D)","x":-377,"y":400,"width":360,"height":60},
+		{"id":"4be3c53b2a58f6df","type":"text","text":"Частицы разрушения (CPUParticles2D)","x":98,"y":400,"width":345,"height":60},
+		{"id":"d146e30cd6f4174c","type":"text","text":"Текстура (Sprite2D)","x":383,"y":140,"width":220,"height":60}
+	],
+	"edges":[
+		{"id":"a7a63561f1d9eb33","fromNode":"930d09eb7e6b8183","fromSide":"bottom","toNode":"e613a0e071cb824a","toSide":"top"},
+		{"id":"9bbdafa21980db35","fromNode":"930d09eb7e6b8183","fromSide":"bottom","toNode":"00e064bd28e0aa0d","toSide":"top"},
+		{"id":"e5bc0e09512c91cc","fromNode":"930d09eb7e6b8183","fromSide":"bottom","toNode":"d146e30cd6f4174c","toSide":"top"},
+		{"id":"366f5cb5fb287e60","fromNode":"00e064bd28e0aa0d","fromSide":"bottom","toNode":"d2d2869759f6c99f","toSide":"top"},
+		{"id":"492609936039a834","fromNode":"00e064bd28e0aa0d","fromSide":"bottom","toNode":"4be3c53b2a58f6df","toSide":"top"}
+	]
+}

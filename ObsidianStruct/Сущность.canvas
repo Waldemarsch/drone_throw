@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"e4771c00a02e28c8","x":-120,"y":-180,"width":260,"height":60,"type":"text","text":"Сущность (StaticBody2D)"},
+		{"id":"9db00dde95b03a6b","x":-77,"y":-120,"width":175,"height":60,"type":"text","text":"EntityData.tres"},
+		{"id":"492f253fe1fe5bb0","type":"text","text":"Эффект разрушения","x":-110,"y":140,"width":240,"height":60},
+		{"id":"6a7c9ac404a57e4f","type":"text","text":"Компонент разрушения (DestructibleComponent)","x":-680,"y":140,"width":440,"height":60},
+		{"id":"d4b20e2b6115314d","type":"text","text":"Звук разрушения (AudioStreamPlayer2D)","x":-460,"y":400,"width":360,"height":60},
+		{"id":"ed34debbabb5dd97","type":"text","text":"Частицы разрушения (CPUParticles2D)","x":15,"y":400,"width":345,"height":60},
+		{"id":"f680e66ad185db16","type":"text","text":"Текстура (Sprite2D)","x":300,"y":140,"width":220,"height":60}
+	],
+	"edges":[
+		{"id":"4afcb08308b0b278","fromNode":"492f253fe1fe5bb0","fromSide":"bottom","toNode":"d4b20e2b6115314d","toSide":"top"},
+		{"id":"c584a3acb0e19f3e","fromNode":"492f253fe1fe5bb0","fromSide":"bottom","toNode":"ed34debbabb5dd97","toSide":"top"},
+		{"id":"9841b9aa555a8254","fromNode":"9db00dde95b03a6b","fromSide":"bottom","toNode":"6a7c9ac404a57e4f","toSide":"top"},
+		{"id":"15a2193232281c04","fromNode":"9db00dde95b03a6b","fromSide":"bottom","toNode":"492f253fe1fe5bb0","toSide":"top"},
+		{"id":"aec1fe5444295bf8","fromNode":"9db00dde95b03a6b","fromSide":"bottom","toNode":"f680e66ad185db16","toSide":"top"}
+	]
+}
