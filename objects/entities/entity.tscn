@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://mys18xi7v4ts"]
+
+[node name="Entity" type="StaticBody2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
