@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://mys18xi7v4ts"]
+[gd_scene load_steps=2 format=3 uid="uid://mys18xi7v4ts"]
+
+[ext_resource type="Script" uid="uid://06dw7rgoj2k8" path="res://objects/entities/Entity.cs" id="1_irabn"]
 
 [node name="Entity" type="StaticBody2D"]
+script = ExtResource("1_irabn")
 
 [node name="Area2D" type="Area2D" parent="."]
 
