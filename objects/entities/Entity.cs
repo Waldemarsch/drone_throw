@@ -7,16 +7,19 @@ namespace DroneThrow
     {
         [Export] public EntityData EntityDataResource;
 
-        private Sprite2D EntitySprite;
         private AudioStreamPlayer2D AudioStreamNode;
         private CpuParticles2D CpuParticles2DNode;
 
         public override void _Ready()
         {
-            EntitySprite.Texture = EntityDataResource.EntityTexture;
+            AudioStreamNode = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+
             AudioStreamNode.Stream = EntityDataResource.EntityDeathSound;
-            CpuParticles2DNode = (CpuParticles2D)EntityDataResource.EntityDeathParticles.Instantiate();
-            AddChild(CpuParticles2DNode);
+            if (EntityDataResource.EntityDeathParticles != null)
+            {
+                CpuParticles2DNode = (CpuParticles2D)EntityDataResource.EntityDeathParticles.Instantiate();
+                AddChild(CpuParticles2DNode);
+            }
         }
 
     }       
