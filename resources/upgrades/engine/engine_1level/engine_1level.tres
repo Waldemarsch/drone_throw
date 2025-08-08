@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="UpgradeLevelData" load_steps=7 format=3 uid="uid://dryjt4uy2huqm"]
+[gd_resource type="Resource" script_class="UpgradeLevelData" load_steps=6 format=3 uid="uid://dryjt4uy2huqm"]
 
-[ext_resource type="Texture2D" uid="uid://cmri0ujwuued1" path="res://assets/upgrades/engine/engine_1level/idle.png" id="1_vbm1x"]
-[ext_resource type="Texture2D" uid="uid://dgs84nrjlfk7x" path="res://assets/upgrades/engine/engine_1level/moving.png" id="2_bilv2"]
+[ext_resource type="Texture2D" uid="uid://bxjnmkhapufsk" path="res://assets/upgrades/engine/engine_1level/idle.png" id="1_vbm1x"]
+[ext_resource type="Texture2D" uid="uid://b1qjlqv6t2d33" path="res://assets/upgrades/engine/engine_1level/moving.png" id="2_bilv2"]
 [ext_resource type="PackedScene" uid="uid://caah2u6rfi4e4" path="res://resources/upgrades/engine/engine_1level/engine_1level_particles.tscn" id="3_bilv2"]
-[ext_resource type="AudioStream" uid="uid://dv4xxvr52byy5" path="res://assets/upgrades/engine/engine_1level/fan_sound.mp3" id="3_kxml1"]
 [ext_resource type="Script" uid="uid://byp66mjst3yq" path="res://resources/classes/UpgradeLevelData.cs" id="3_wfeow"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vbm1x"]
@@ -29,6 +28,5 @@ animations = [{
 script = ExtResource("3_wfeow")
 UpgradeLevel = 1
 AnimatedSpriteFrames = SubResource("SpriteFrames_vbm1x")
-UpgradeLevelAudioStream = ExtResource("3_kxml1")
 UpgradeLevelParticles = ExtResource("3_bilv2")
 metadata/_custom_type_script = "uid://byp66mjst3yq"
