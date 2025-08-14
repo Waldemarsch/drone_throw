@@ -1,17 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://0e04pyfuto4l"]
+[gd_scene load_steps=4 format=3 uid="uid://0e04pyfuto4l"]
 
-[ext_resource type="Texture2D" uid="uid://utqul74vtgno" path="res://assets/background/plains/Gemini_Generated_Image_dvykrgdvykrgdvyk.png" id="1_5gm1o"]
+[ext_resource type="Texture2D" uid="uid://sf8fh0lc7lya" path="res://assets/background/plains/plains_resized.png" id="1_5gm1o"]
+[ext_resource type="Script" uid="uid://qr3r22fsjc3h" path="res://levels/plains/Parallax2d.cs" id="1_w48jo"]
 [ext_resource type="Texture2D" uid="uid://bdf10djvwel25" path="res://assets/background/city/city_sky.png" id="2_w48jo"]
 
 [node name="PlainsParallax" type="Parallax2D"]
+repeat_size = Vector2(3840, 0)
+script = ExtResource("1_w48jo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5gm1o")
 centered = false
-offset = Vector2(0, 1536)
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_w48jo")
 centered = false
 metadata/_edit_lock_ = true
@@ -19,11 +21,11 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 texture = ExtResource("1_5gm1o")
 centered = false
-offset = Vector2(2793, 1536)
+offset = Vector2(1920, 0)
 flip_h = true
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_w48jo")
 centered = false
 offset = Vector2(2793, 0)

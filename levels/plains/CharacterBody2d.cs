@@ -12,6 +12,13 @@ public partial class CharacterBody2d : CharacterBody2D
     private Vector2 _maxZoom = new Vector2(2.0f, 2.0f);
 	public const float Speed = 3000.0f;
 
+	public override void _Ready()
+	{
+		base._Ready();
+		Camera.Zoom = new Vector2(0.1f, 0.1f);
+    }
+
+
 	public override void _PhysicsProcess(double delta)
 	{
 		Velocity = Input.GetVector("left", "right", "up", "down") * Speed;
@@ -20,12 +27,12 @@ public partial class CharacterBody2d : CharacterBody2D
 
 		if (Input.IsActionPressed("up_arrow"))
 		{
-			Camera.Zoom += Vector2.One * 0.05f;
+			Camera.Zoom += Vector2.One * 0.01f;
 		}
 
 		if (Input.IsActionPressed("down_arrow"))
 		{
-			Camera.Zoom -= Vector2.One * 0.05f;
+			Camera.Zoom -= Vector2.One * 0.01f;
 		}
 
 		Camera.Zoom = Camera.Zoom.Clamp(_minZoom, _maxZoom);

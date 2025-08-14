@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Numerics;
 
 public partial class Parallax2d : Parallax2D
 {
@@ -20,7 +21,7 @@ public partial class Parallax2d : Parallax2D
         {
             // Это главная строка. Мы говорим фону:
             // "Твой масштаб всегда должен быть таким же, как зум камеры".
-            this.ScrollScale = _camera.Zoom;
+            this.Scale = Godot.Vector2.One / _camera.Zoom;
         }
     }
 }
