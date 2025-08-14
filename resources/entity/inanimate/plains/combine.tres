@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=6 format=3 uid="uid://gjrqv0eso5wy"]
+
+[ext_resource type="Script" uid="uid://dbj8qxchljl3q" path="res://resources/classes/EntityData.cs" id="1_g03fu"]
+[ext_resource type="AudioStream" uid="uid://coy0v3q51web4" path="res://assets/entities/plains/Combine/Sounds/CombineDeath1.mp3" id="1_tl0rw"]
+[ext_resource type="AudioStream" uid="uid://c1sfk5tkfonxe" path="res://assets/entities/plains/Combine/Sounds/CombineDeath2.mp3" id="2_bf5ic"]
+[ext_resource type="AudioStream" uid="uid://b2svp66mt14hl" path="res://assets/entities/plains/Combine/Sounds/CombineDeath3.mp3" id="3_cvtk6"]
+[ext_resource type="Texture2D" uid="uid://f5k4w6325b03" path="res://assets/entities/plains/Combine/Combine_trim.png" id="4_t42tu"]
+
+[resource]
+script = ExtResource("1_g03fu")
+EntityTexture = ExtResource("4_t42tu")
+EntityDeathSound = Array[AudioStream]([ExtResource("1_tl0rw"), ExtResource("2_bf5ic"), ExtResource("3_cvtk6")])
+metadata/_custom_type_script = "uid://dbj8qxchljl3q"

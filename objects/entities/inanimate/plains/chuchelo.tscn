@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://chknl80767g0d"]
+
+[ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_6y66s"]
+[ext_resource type="Resource" uid="uid://o8veeqboift7" path="res://resources/entity/inanimate/plains/chuchelo.tres" id="2_3htct"]
+[ext_resource type="Texture2D" uid="uid://7rw2hek8n2nm" path="res://assets/entities/plains/Chuchelo/chuchelo_trim.png" id="3_1y3e8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1y3e8"]
+radius = 145.0
+height = 648.0
+
+[node name="Chuchelo" instance=ExtResource("1_6y66s")]
+EntityDataResource = ExtResource("2_3htct")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-5, 10)
+scale = Vector2(0.918138, 1.2726)
+shape = SubResource("CapsuleShape2D_1y3e8")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_1y3e8")
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+
+[node name="CPUParticles2D" parent="." index="5"]
+amount = 1000
+speed_scale = 1.65
+lifetime_randomness = 0.57
+initial_velocity_min = 300.0
+initial_velocity_max = 600.0
+damping_min = 100.0
+damping_max = 200.0
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+color = Color(0.688218, 0.513169, 0.348691, 1)

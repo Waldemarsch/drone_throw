@@ -14,11 +14,10 @@ namespace DroneThrow
         {
             AudioStreamNode = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 
-            AudioStreamNode.Stream = EntityDataResource.EntityDeathSound;
-            if (EntityDataResource.EntityDeathParticles != null)
+            if (EntityDataResource.EntityDeathSound != null && EntityDataResource.EntityDeathSound.Count != 0)
             {
-                CpuParticles2DNode = (CpuParticles2D)EntityDataResource.EntityDeathParticles.Instantiate();
-                AddChild(CpuParticles2DNode);
+                Random rng = new();
+                AudioStreamNode.Stream = EntityDataResource.EntityDeathSound[rng.Next(0, EntityDataResource.EntityDeathSound.Count - 1)];
             }
         }
 

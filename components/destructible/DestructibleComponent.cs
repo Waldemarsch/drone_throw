@@ -37,7 +37,7 @@ public partial class DestructibleComponent : Node, IDestructible
             deathAudioPlayer.Stream = DeathSound;
             GetTree().Root.AddChild(deathAudioPlayer);
             deathAudioPlayer.Play();
-            deathAudioPlayer.Finished += () => deathAudioPlayer.QueueFree();
+            deathAudioPlayer.Finished += deathAudioPlayer.QueueFree;
         }
 
         GetParent().QueueFree();

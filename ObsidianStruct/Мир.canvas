@@ -2,7 +2,7 @@
 	"nodes":[
 		{"id":"9c0c8cd2b0600e01","type":"text","text":"Мир","x":-80,"y":-140,"width":100,"height":50},
 		{"id":"79e97763001f4b97","type":"text","text":"Биомы","x":-90,"y":40,"width":120,"height":50},
-		{"id":"49c6541d8b8e29b7","type":"text","text":"- Земля\n- Земля с травой\n- Высушенная трава","x":-1260,"y":895,"width":250,"height":100,"color":"4"},
+		{"id":"49c6541d8b8e29b7","type":"text","text":"- Земля\n- Земля с травой","x":-1260,"y":895,"width":250,"height":100,"color":"4"},
 		{"id":"d44fcba9f61f40d8","type":"text","text":"Блоки","x":-1195,"y":845,"width":120,"height":50,"color":"4"},
 		{"id":"8dd8c0fdc3745d82","type":"text","text":"Городской параллакс","x":-905,"y":895,"width":250,"height":60,"color":"5"},
 		{"id":"a676b8b8ad000050","type":"text","text":"Фон","x":-830,"y":845,"width":100,"height":50,"color":"5"},
@@ -24,7 +24,7 @@
 		{"id":"233aa9df69250c3c","type":"text","text":"Город\n","x":-530,"y":575,"width":110,"height":50,"color":"5"},
 		{"id":"aee498019d7e224c","type":"text","text":"Сущности","x":-482,"y":845,"width":140,"height":50,"color":"5"},
 		{"id":"720f6f5ad7070ec4","type":"text","text":"Блоки","x":-140,"y":845,"width":120,"height":50,"color":"5"},
-		{"id":"626ede6adc22dd92","type":"text","text":"- Асфальт\n- Тротуар (???)","x":-205,"y":895,"width":250,"height":100,"color":"5"},
+		{"id":"626ede6adc22dd92","type":"text","text":"- Асфальт","x":-205,"y":895,"width":250,"height":100,"color":"5"},
 		{"id":"c34eb686fa91423c","type":"text","text":"Сельский параллакс","x":-1960,"y":895,"width":250,"height":60,"color":"4"},
 		{"id":"8e1c8cc75544ed6d","type":"text","text":"- Снопы сена\n- Комбайны\n- Чучела","x":-1600,"y":895,"width":250,"height":100,"color":"4"},
 		{"id":"e0a7025d19cc940d","type":"text","text":"Сельская местность\n","x":-1585,"y":575,"width":235,"height":50,"color":"4"},
