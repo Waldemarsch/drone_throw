@@ -32,10 +32,9 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray()
 
-[global_group]
+[gui]
 
-carnivores=""
-herbivores=""
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 
