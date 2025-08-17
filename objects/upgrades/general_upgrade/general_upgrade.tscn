@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dpond713qrg3r"]
+
+[node name="GeneralUpgrade" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="EngineSocket" type="Node2D" parent="."]
+
+[node name="GunSocket" type="Node2D" parent="."]
+
+[node name="GearSocket" type="Node2D" parent="."]
+
+[node name="ShieldSocket" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgm4tfrmnr6oy"]
+
+[ext_resource type="PackedScene" uid="uid://dc6yh3ixkm84f" path="res://levels/level.tscn" id="1_0j7q5"]
+[ext_resource type="Texture2D" uid="uid://drgkc4a4yyyst" path="res://assets/background/skies/sky_upper.png" id="2_taxvm"]
+
+[node name="Skies" instance=ExtResource("1_0j7q5")]
+
+[node name="1" type="Node2D" parent="Background" index="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/1" index="0"]
+texture = ExtResource("2_taxvm")
+centered = false
+
+[node name="Sprite2D1" type="Sprite2D" parent="Background/1" index="1"]
+texture = ExtResource("2_taxvm")
+centered = false
+offset = Vector2(1920, 0)
+flip_h = true
+
+[node name="2" type="Node2D" parent="Background" index="1"]
+position = Vector2(3840, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/2" index="0"]
+texture = ExtResource("2_taxvm")
+centered = false
+
+[node name="Sprite2D1" type="Sprite2D" parent="Background/2" index="1"]
+texture = ExtResource("2_taxvm")
+centered = false
+offset = Vector2(1920, 0)
+flip_h = true
+
+[node name="3" type="Node2D" parent="Background" index="2"]
+position = Vector2(7680, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/3" index="0"]
+texture = ExtResource("2_taxvm")
+centered = false
+
+[node name="Sprite2D1" type="Sprite2D" parent="Background/3" index="1"]
+texture = ExtResource("2_taxvm")
+centered = false
+offset = Vector2(1920, 0)
+flip_h = true
+
+[node name="4" type="Node2D" parent="Background" index="3"]
+position = Vector2(11520, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/4" index="0"]
+texture = ExtResource("2_taxvm")
+centered = false
+
+[node name="Sprite2D1" type="Sprite2D" parent="Background/4" index="1"]
+texture = ExtResource("2_taxvm")
+centered = false
+offset = Vector2(1920, 0)
+flip_h = true
+
+[node name="5" type="Node2D" parent="Background" index="4"]
+position = Vector2(15360, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/5" index="0"]
+texture = ExtResource("2_taxvm")
+centered = false
+
+[node name="Sprite2D1" type="Sprite2D" parent="Background/5" index="1"]
+texture = ExtResource("2_taxvm")
+centered = false
+offset = Vector2(1920, 0)
+flip_h = true
+
+[node name="6" type="Node2D" parent="Background" index="5"]
+position = Vector2(19200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/6" index="0"]
+texture = ExtResource("2_taxvm")
+centered = false
+
+[node name="Sprite2D1" type="Sprite2D" parent="Background/6" index="1"]
+texture = ExtResource("2_taxvm")
+centered = false
+offset = Vector2(1920, 0)
+flip_h = true
+
+[node name="7" type="Node2D" parent="Background" index="6"]
+position = Vector2(23040, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/7" index="0"]
+texture = ExtResource("2_taxvm")
+centered = false
+
+[node name="Sprite2D1" type="Sprite2D" parent="Background/7" index="1"]
+texture = ExtResource("2_taxvm")
+centered = false
+offset = Vector2(1920, 0)
+flip_h = true

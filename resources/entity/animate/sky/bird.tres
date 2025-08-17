@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EntityData" load_steps=9 format=3 uid="uid://bfn5m74kbqgu1"]
 
-[ext_resource type="Texture2D" uid="uid://bb0srexyvcxbt" path="res://assets/entities/sky/bird/00000001.png" id="1_shfnb"]
+[ext_resource type="Texture2D" uid="uid://rydxtd34taer" path="res://assets/entities/sky/bird/00000001.png" id="1_shfnb"]
 [ext_resource type="Script" uid="uid://dbj8qxchljl3q" path="res://resources/classes/EntityData.cs" id="1_x72d0"]
-[ext_resource type="Texture2D" uid="uid://ckqldgm5wjn1b" path="res://assets/entities/sky/bird/00000002.png" id="2_hcs4i"]
-[ext_resource type="Texture2D" uid="uid://cb04ngdmrvmbo" path="res://assets/entities/sky/bird/00000003.png" id="3_nittr"]
-[ext_resource type="Texture2D" uid="uid://dupx3ygs8ceru" path="res://assets/entities/sky/bird/00000004.png" id="4_htotc"]
-[ext_resource type="Texture2D" uid="uid://domleefvyudgr" path="res://assets/entities/sky/bird/00000005.png" id="5_bhifn"]
-[ext_resource type="Texture2D" uid="uid://cpsy1tre7iur6" path="res://assets/entities/sky/bird/00000006.png" id="6_dflk5"]
+[ext_resource type="Texture2D" uid="uid://i2r3io70575k" path="res://assets/entities/sky/bird/00000002.png" id="2_hcs4i"]
+[ext_resource type="Texture2D" uid="uid://c040ix4xh34ym" path="res://assets/entities/sky/bird/00000003.png" id="3_nittr"]
+[ext_resource type="Texture2D" uid="uid://bisjotgskhpmd" path="res://assets/entities/sky/bird/00000004.png" id="4_htotc"]
+[ext_resource type="Texture2D" uid="uid://bvnks82hwd53" path="res://assets/entities/sky/bird/00000005.png" id="5_bhifn"]
+[ext_resource type="Texture2D" uid="uid://d328tnfd4klcs" path="res://assets/entities/sky/bird/00000006.png" id="6_dflk5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0yuxb"]
 animations = [{

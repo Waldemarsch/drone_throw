@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc3a0hs8abo2q"]
+
+[ext_resource type="PackedScene" uid="uid://bvbryk7puwaso" path="res://levels/plains/plains.tscn" id="1_xdam7"]
+[ext_resource type="PackedScene" uid="uid://cq26l5wytxtfu" path="res://levels/city/city.tscn" id="2_cd8fj"]
+[ext_resource type="PackedScene" uid="uid://dgm4tfrmnr6oy" path="res://levels/skies/skies.tscn" id="3_telu3"]
+[ext_resource type="PackedScene" uid="uid://b5u01rscgws08" path="res://levels/space/space.tscn" id="4_2afqd"]
+
+[sub_resource type="Environment" id="Environment_telu3"]
+
+[node name="MainWorld" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_telu3")
+
+[node name="Plains" parent="." instance=ExtResource("1_xdam7")]
+
+[node name="City" parent="." instance=ExtResource("2_cd8fj")]
+position = Vector2(268800, 0)
+
+[node name="Skies" parent="." instance=ExtResource("3_telu3")]
+position = Vector2(0, -21600)
+
+[node name="Space" parent="." instance=ExtResource("4_2afqd")]
+position = Vector2(0, -43200)
+
+[node name="Border" parent="." instance=ExtResource("4_2afqd")]
+position = Vector2(0, -86400)
