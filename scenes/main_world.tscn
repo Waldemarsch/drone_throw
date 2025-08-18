@@ -25,3 +25,11 @@ position = Vector2(0, -43200)
 
 [node name="Border" parent="." instance=ExtResource("4_2afqd")]
 position = Vector2(0, -86400)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
