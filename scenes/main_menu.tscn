@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1arak7bysa4s"]
 
-[ext_resource type="Texture2D" uid="uid://b5c0a8y1xtff0" path="res://assets/background/plains/plains_resized_blur.png" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://clleelktqupb6" path="res://assets/background/plains/plains_resized_blur.png" id="1_bqqt6"]
 [ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="2_8ln24"]
-[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="2_wu84c"]
-[ext_resource type="Texture2D" uid="uid://cdynrm6ivhp5v" path="res://assets/ui/buttons/Hover@2x-1.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://4pyimks07yyf" path="res://assets/ui/buttons/Default@2x-1.png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://b2cxw6xoayqn1" path="res://assets/ui/buttons/Hover@2x-1.png" id="3_8ln24"]
 
 [node name="MainMenu" type="Node2D"]
 
