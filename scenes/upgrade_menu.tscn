@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdg357jtk1u38"]
+
+[ext_resource type="Texture2D" uid="uid://diii7lkjhrjgh" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_e3qxy"]
+[ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="2_0e30j"]
+[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="3_0e30j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vqdt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e30j"]
+bg_color = Color(0.0980392, 0.207843, 0.133333, 0.392157)
+border_width_left = 30
+
+[node name="UpgradeMenu" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -379.0
+offset_top = -177.0
+offset_right = -379.0
+offset_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.35, 1.35)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_e3qxy")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.0
+offset_right = 144.0
+offset_bottom = 120.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_0e30j")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6vqdt")
+
+[node name="TextureRect" type="TextureRect" parent="UI/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_0e30j")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -84.0
+offset_right = 185.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 32
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/PanelContainer/TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/CenterContainer"]
+layout_mode = 2
+text = "Upgrade"
+
+[node name="GridContainer" type="GridContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0e30j")
