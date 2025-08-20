@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://bdg357jtk1u38"]
 
-[ext_resource type="Texture2D" uid="uid://dp7aag5010f8w" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_e3qxy"]
+[ext_resource type="Texture2D" uid="uid://diii7lkjhrjgh" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_e3qxy"]
 [ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="2_0e30j"]
-[ext_resource type="Texture2D" uid="uid://4pyimks07yyf" path="res://assets/ui/buttons/Default@2x-1.png" id="3_0e30j"]
+[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="3_0e30j"]
 [ext_resource type="StyleBox" uid="uid://dl26yqfg3yrea" path="res://ui/indicators/bought.tres" id="4_6vqdt"]
 [ext_resource type="StyleBox" uid="uid://us8p0rofx1v6" path="res://ui/indicators/not_bought.tres" id="5_ixicc"]
-[ext_resource type="Texture2D" uid="uid://b73d3pl5g61cp" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Default.png" id="6_chbti"]
-[ext_resource type="Texture2D" uid="uid://ctmycrijw7o0l" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Hover.png" id="7_ethjp"]
-[ext_resource type="Texture2D" uid="uid://mehlpybqsrd3" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default@2x-1.png" id="8_0isde"]
-[ext_resource type="Texture2D" uid="uid://b45rppkwpdjvy" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Hover@2x-1.png" id="9_he6dt"]
+[ext_resource type="Texture2D" uid="uid://cyd21fttxnk1k" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Default.png" id="6_chbti"]
+[ext_resource type="Texture2D" uid="uid://da8fwf1a3856c" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Hover.png" id="7_ethjp"]
+[ext_resource type="Texture2D" uid="uid://bchenmjnc1yn0" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default@2x-1.png" id="8_0isde"]
+[ext_resource type="Texture2D" uid="uid://c4rp20oqhi100" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Hover@2x-1.png" id="9_he6dt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chbti"]
 content_margin_top = 123.0

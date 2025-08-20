@@ -1,9 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1arak7bysa4s"]
+[gd_scene load_steps=19 format=3 uid="uid://d1arak7bysa4s"]
 
-[ext_resource type="Texture2D" uid="uid://clleelktqupb6" path="res://assets/background/plains/plains_resized_blur.png" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://b5c0a8y1xtff0" path="res://assets/background/plains/plains_resized_blur.png" id="1_bqqt6"]
 [ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="2_8ln24"]
-[ext_resource type="Texture2D" uid="uid://4pyimks07yyf" path="res://assets/ui/buttons/Default@2x-1.png" id="2_wu84c"]
-[ext_resource type="Texture2D" uid="uid://b2cxw6xoayqn1" path="res://assets/ui/buttons/Hover@2x-1.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://cdynrm6ivhp5v" path="res://assets/ui/buttons/Hover@2x-1.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://epjh0e6evco8" path="res://assets/ui/buttons/Home/Default.png" id="5_1ajci"]
+[ext_resource type="Texture2D" uid="uid://bcbwwhtte2d17" path="res://assets/ui/buttons/SoundOff/Default.png" id="5_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://ctfunufxrkxjs" path="res://assets/ui/buttons/Home/Hover.png" id="6_7b55j"]
+[ext_resource type="Texture2D" uid="uid://c1flk8p2ui10q" path="res://assets/ui/buttons/SoundOff/Hover.png" id="6_flqon"]
+[ext_resource type="Texture2D" uid="uid://d3x3sxlui3tg4" path="res://assets/BlueStyle_gui UPDATE/settings/el_5.png" id="6_oa1go"]
+[ext_resource type="Texture2D" uid="uid://7e5gur436fsp" path="res://assets/BlueStyle_gui UPDATE/settings/el_6.png" id="7_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://ehnbdqitu7qs" path="res://assets/ui/buttons/SoundOn/Default.png" id="9_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://d3047jd5f7hw0" path="res://assets/BlueStyle_gui UPDATE/settings/el_3.png" id="9_flqon"]
+[ext_resource type="Texture2D" uid="uid://damxnwykt36vh" path="res://assets/BlueStyle_gui UPDATE/settings/el_4.png" id="9_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://y76bowv6m3g7" path="res://assets/ui/buttons/SoundOn/Hover.png" id="12_rcqid"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ajci"]
+texture = ExtResource("2_wu84c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcqid"]
+content_margin_top = 10.0
+content_margin_right = 0.0
+content_margin_bottom = 10.0
+texture = ExtResource("9_flqon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7b55j"]
+texture = ExtResource("9_lgwnu")
+texture_margin_left = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flqon"]
+texture = ExtResource("9_lgwnu")
+texture_margin_left = 20.0
 
 [node name="MainMenu" type="Node2D"]
 
@@ -88,3 +115,76 @@ layout_mode = 2
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="OptionsMenu" type="PanelContainer" parent="UI/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/OptionsMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 60
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/PanelContainer/OptionsMenu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_8ln24")
+theme_override_styles/panel = SubResource("StyleBoxTexture_1ajci")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/OptionsMenu/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/PanelContainer/OptionsMenu/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="UI/PanelContainer/OptionsMenu/MarginContainer/PanelContainer/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Options"
+
+[node name="TextureRect2" type="TextureButton" parent="UI/PanelContainer/OptionsMenu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("5_1ajci")
+texture_hover = ExtResource("6_7b55j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/OptionsMenu/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureButton" parent="UI/PanelContainer/OptionsMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("5_jk1qb")
+texture_hover = ExtResource("6_flqon")
+
+[node name="HSlider" type="HSlider" parent="UI/PanelContainer/OptionsMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("6_oa1go")
+theme_override_icons/grabber_highlight = ExtResource("7_jk1qb")
+theme_override_icons/grabber_disabled = ExtResource("6_oa1go")
+theme_override_styles/slider = SubResource("StyleBoxTexture_rcqid")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_7b55j")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_flqon")
+scrollable = false
+
+[node name="TextureRect2" type="TextureButton" parent="UI/PanelContainer/OptionsMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("9_5dd4i")
+texture_hover = ExtResource("12_rcqid")
