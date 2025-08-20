@@ -1,22 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://cc3a0hs8abo2q"]
+[gd_scene load_steps=7 format=3 uid="uid://cc3a0hs8abo2q"]
 
 [ext_resource type="PackedScene" uid="uid://bvbryk7puwaso" path="res://levels/plains/plains.tscn" id="1_xdam7"]
 [ext_resource type="PackedScene" uid="uid://cq26l5wytxtfu" path="res://levels/city/city.tscn" id="2_cd8fj"]
 [ext_resource type="PackedScene" uid="uid://dgm4tfrmnr6oy" path="res://levels/skies/skies.tscn" id="3_telu3"]
 [ext_resource type="PackedScene" uid="uid://b5u01rscgws08" path="res://levels/space/space.tscn" id="4_2afqd"]
-[ext_resource type="Texture2D" uid="uid://d3s2dokibs8l7" path="res://assets/ui/Bar/Background@2x.png" id="5_bokwj"]
-[ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="5_emumq"]
-[ext_resource type="Texture2D" uid="uid://bs50fe66tlvyi" path="res://assets/ui/counter/Dummy@2x.png" id="6_5irk3"]
-[ext_resource type="Texture2D" uid="uid://c5e38jjo80j68" path="res://assets/ui/Bar/Line@2x.png" id="6_avgj4"]
-[ext_resource type="Texture2D" uid="uid://doew64rj3j2fq" path="res://assets/ui/buttons/Pause/Default@2x.png" id="7_sr1c3"]
-[ext_resource type="Texture2D" uid="uid://cke7xr2ht7i38" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@2x/Counter/Icon/Money@2x.png" id="7_wj2hs"]
-[ext_resource type="Texture2D" uid="uid://dwcnchfn5ot2q" path="res://assets/ui/buttons/Pause/Hover@2x.png" id="8_urbfd"]
-[ext_resource type="Texture2D" uid="uid://o6ionpi10g5i" path="res://assets/ui/buttons/Repeat/Default@2x.png" id="12_sr1c3"]
-[ext_resource type="Texture2D" uid="uid://q3xy4as3wqfk" path="res://assets/ui/buttons/Repeat/Hover@2x.png" id="13_urbfd"]
+[ext_resource type="PackedScene" uid="uid://d3egdh0mhfikh" path="res://ui/ui_scenes/main_world_ui/main_world_ui.tscn" id="5_jj0au"]
 
 [sub_resource type="Environment" id="Environment_telu3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdq54"]
 
 [node name="MainWorld" type="Node2D"]
 
@@ -24,7 +14,6 @@
 environment = SubResource("Environment_telu3")
 
 [node name="Enviroment" type="Node2D" parent="."]
-visible = false
 
 [node name="Plains" parent="Enviroment" instance=ExtResource("1_xdam7")]
 
@@ -40,95 +29,4 @@ position = Vector2(0, -43200)
 [node name="Border" parent="Enviroment" instance=ExtResource("4_2afqd")]
 position = Vector2(0, -86400)
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="EngineFuelBar" type="TextureProgressBar" parent="UI"]
-offset_left = 464.0
-offset_top = 857.0
-offset_right = 1456.0
-offset_bottom = 961.0
-texture_under = ExtResource("5_bokwj")
-texture_progress = ExtResource("6_avgj4")
-texture_progress_offset = Vector2(16.7, 16.445)
-
-[node name="Toolbar" type="PanelContainer" parent="UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -470.5
-offset_right = 470.5
-offset_bottom = 206.0
-grow_horizontal = 2
-theme = ExtResource("5_emumq")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/Toolbar"]
-layout_mode = 2
-theme_override_constants/margin_top = 14
-
-[node name="CenterContainer" type="CenterContainer" parent="UI/Toolbar/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Toolbar/MarginContainer/CenterContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("5_emumq")
-theme_override_constants/separation = 70
-
-[node name="PauseButton" type="TextureButton" parent="UI/Toolbar/MarginContainer/CenterContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("7_sr1c3")
-texture_hover = ExtResource("8_urbfd")
-
-[node name="PanelContainer" type="PanelContainer" parent="UI/Toolbar/MarginContainer/CenterContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxEmpty_kdq54")
-
-[node name="TextureRect" type="TextureRect" parent="UI/Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("6_5irk3")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -84.0
-offset_right = 185.0
-offset_bottom = 84.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 32
-
-[node name="CenterContainer" type="CenterContainer" parent="UI/Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect/MarginContainer/CenterContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="TextureRect" type="TextureRect" parent="UI/Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect/MarginContainer/CenterContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_wj2hs")
-
-[node name="Label" type="Label" parent="UI/Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect/MarginContainer/CenterContainer/HBoxContainer"]
-layout_mode = 2
-text = "0"
-
-[node name="ReplayButton" type="TextureButton" parent="UI/Toolbar/MarginContainer/CenterContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("12_sr1c3")
-texture_hover = ExtResource("13_urbfd")
+[node name="UI" parent="." instance=ExtResource("5_jj0au")]

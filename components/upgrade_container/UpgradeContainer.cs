@@ -8,4 +8,12 @@ public partial class UpgradeContainer : Node
     [Export] UpgradeData GunUpgradesResource;
     [Export] UpgradeData GearUpgradesResource;
     [Export] UpgradeData ShieldUpgradesResource;
+
+    public override void _Ready()
+    {
+
+    }
+    
+    
+
 }

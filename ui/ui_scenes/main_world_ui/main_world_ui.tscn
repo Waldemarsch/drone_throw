@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3egdh0mhfikh"]
+
+[ext_resource type="Texture2D" uid="uid://d3s2dokibs8l7" path="res://assets/ui/Bar/Background@2x.png" id="1_5351s"]
+[ext_resource type="Texture2D" uid="uid://c5e38jjo80j68" path="res://assets/ui/Bar/Line@2x.png" id="2_cvnj7"]
+[ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="3_ig24y"]
+[ext_resource type="Texture2D" uid="uid://doew64rj3j2fq" path="res://assets/ui/buttons/Pause/Default@2x.png" id="4_6tvex"]
+[ext_resource type="Texture2D" uid="uid://dwcnchfn5ot2q" path="res://assets/ui/buttons/Pause/Hover@2x.png" id="5_5lxx5"]
+[ext_resource type="Texture2D" uid="uid://bs50fe66tlvyi" path="res://assets/ui/counter/Dummy@2x.png" id="6_ecvns"]
+[ext_resource type="Texture2D" uid="uid://cke7xr2ht7i38" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@2x/Counter/Icon/Money@2x.png" id="7_kg8kl"]
+[ext_resource type="Texture2D" uid="uid://o6ionpi10g5i" path="res://assets/ui/buttons/Repeat/Default@2x.png" id="8_a5io8"]
+[ext_resource type="Texture2D" uid="uid://q3xy4as3wqfk" path="res://assets/ui/buttons/Repeat/Hover@2x.png" id="9_2mnyc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdq54"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="EngineFuelBar" type="TextureProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -496.0
+offset_top = -247.0
+offset_right = 496.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+texture_under = ExtResource("1_5351s")
+texture_progress = ExtResource("2_cvnj7")
+texture_progress_offset = Vector2(16.7, 16.445)
+
+[node name="Toolbar" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -470.5
+offset_right = 470.5
+offset_bottom = 206.0
+grow_horizontal = 2
+theme = ExtResource("3_ig24y")
+
+[node name="MarginContainer" type="MarginContainer" parent="Toolbar"]
+layout_mode = 2
+theme_override_constants/margin_top = 14
+
+[node name="CenterContainer" type="CenterContainer" parent="Toolbar/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Toolbar/MarginContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ig24y")
+theme_override_constants/separation = 70
+
+[node name="PauseButton" type="TextureButton" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_6tvex")
+texture_hover = ExtResource("5_5lxx5")
+
+[node name="PanelContainer" type="PanelContainer" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kdq54")
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_ecvns")
+
+[node name="MarginContainer" type="MarginContainer" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -84.0
+offset_right = 185.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 32
+
+[node name="CenterContainer" type="CenterContainer" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect/MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_kg8kl")
+
+[node name="Label" type="Label" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer/PanelContainer/TextureRect/MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="ReplayButton" type="TextureButton" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_a5io8")
+texture_hover = ExtResource("9_2mnyc")
