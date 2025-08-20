@@ -1,21 +1,21 @@
 using Godot;
+using Godot.Collections;
 
-public partial class Main : Node // Убедись, что имя класса совпадает с именем твоего узла
+public partial class Main : Node2D
 {
-    private int _health = 100;
-    private string _characterName = "Player";
-    private bool _isReady = false;
-
+    bool is_changing = false;
     public override void _Ready()
     {
-        GD.Print($"'{_characterName}' is getting ready...");
-        _isReady = true;
-        TakeDamage(25);
+
     }
 
-    private void TakeDamage(int amount)
+    public override void _Process(double delta)
     {
-        _health -= amount; // <--- Сюда мы поставим точку останова
-        GD.Print($"'{_characterName}' took {amount} damage. Health is now {_health}.");
+        if (!is_changing)
+        {
+            is_changing = true;
+            GameManager.Instance.ChangeSceneTo("res://scenes/main_menu.tscn");   
+        }
     }
+
 }

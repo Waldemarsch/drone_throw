@@ -17,7 +17,7 @@ public partial class GameManager : Node
     {
         SceneChange SceneChangeScene = SceneChangerPackedScene.Instantiate<SceneChange>();
         GetTree().Root.AddChild(SceneChangeScene);
-        SceneChangeScene.ChangeScene(TargetScenePath);
+        _ = SceneChangeScene.LoadScene(TargetScenePath);
     }
 
 }

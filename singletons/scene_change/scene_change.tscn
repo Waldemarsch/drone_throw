@@ -1,22 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxsyrci3laajo"]
+[gd_scene load_steps=8 format=3 uid="uid://dxsyrci3laajo"]
 
 [ext_resource type="Script" uid="uid://bynvmrddq8j23" path="res://singletons/scene_change/SceneChange.cs" id="1_tan62"]
-
-[sub_resource type="Animation" id="Animation_ipsfe"]
-resource_name = "RESET"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.372549, 0.266667, 0.235294, 0), Color(0.372549, 0.266667, 0.235294, 1)]
-}
+[ext_resource type="FontFile" uid="uid://bqrnv55sg7p4" path="res://assets/ui/fonts/Bungee-Regular.ttf" id="2_gpxky"]
+[ext_resource type="Texture2D" uid="uid://dwl7qh765ydvo" path="res://assets/ui/Bar/Background@2x.png" id="3_1tbfy"]
+[ext_resource type="Texture2D" uid="uid://cieaog15kqvvn" path="res://assets/ui/Bar/Line@2x.png" id="4_ajwu2"]
 
 [sub_resource type="Animation" id="Animation_tan62"]
 resource_name = "Dissolve"
@@ -24,14 +11,30 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.372549, 0.266667, 0.235294, 0), Color(0.372549, 0.266667, 0.235294, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ipsfe"]
+resource_name = "RESET"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oggrk"]
@@ -41,18 +44,45 @@ _data = {
 }
 
 [node name="SceneChange" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_tan62")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 top_level = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.372549, 0.266667, 0.235294, 0)
+color = Color(0.37, 0.265043, 0.2331, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_gpxky")
+theme_override_font_sizes/font_size = 136
+text = "LOADING"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_under = ExtResource("3_1tbfy")
+texture_progress = ExtResource("4_ajwu2")
+texture_progress_offset = Vector2(16, 15)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
 libraries = {
 &"": SubResource("AnimationLibrary_oggrk")
 }
