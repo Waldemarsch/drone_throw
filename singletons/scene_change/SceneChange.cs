@@ -55,10 +55,11 @@ public partial class SceneChange : CanvasLayer
 
         var nextScene = ResourceLoader.LoadThreadedGet(TargetScene);
 
+        GetTree().ChangeSceneToPacked((PackedScene)nextScene);
+
         AnimationPlayerNode.PlayBackwards("Dissolve");
         await ToSignal(AnimationPlayerNode, AnimationPlayer.SignalName.AnimationFinished);
-
-        GetTree().ChangeSceneToPacked((PackedScene)nextScene);
+        
         QueueFree();
     }
     
