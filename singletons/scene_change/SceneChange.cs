@@ -23,8 +23,9 @@ public partial class SceneChange : CanvasLayer
     }
     public override void _Process(double delta)
     {
-        if (!is_loaded)
-        {Godot.Collections.Array progress = [];
+        if (is_loaded) return;
+
+        Godot.Collections.Array progress = [];
         
         var status = ResourceLoader.LoadThreadedGetStatus(TargetScene, progress);
         
@@ -38,17 +39,17 @@ public partial class SceneChange : CanvasLayer
                 ProgressBarNode.Value = 100;
                 EmitSignal(SignalName.LoadingFinished);
                 break;
-        }}
+        }
     }
     public async Task LoadScene(string scenePath)
     {
-        ProcessMode = ProcessModeEnum.Always;
         TargetScene = scenePath;
+        ProcessMode = ProcessModeEnum.Always;
         AnimationPlayerNode.Active = true;
+        GD.Print(AnimationPlayerNode.Active);
         AnimationPlayerNode.Play("Dissolve");
         await ToSignal(AnimationPlayerNode, AnimationPlayer.SignalName.AnimationFinished);
         ResourceLoader.LoadThreadedRequest(TargetScene);
-        ProcessMode = ProcessModeEnum.Always;
 
         await ToSignal(this, SignalName.LoadingFinished);
 

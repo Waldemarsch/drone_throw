@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxsyrci3laajo"]
 
 [ext_resource type="Script" uid="uid://bynvmrddq8j23" path="res://singletons/scene_change/SceneChange.cs" id="1_tan62"]
-[ext_resource type="FontFile" uid="uid://bqrnv55sg7p4" path="res://assets/ui/fonts/Bungee-Regular.ttf" id="2_gpxky"]
-[ext_resource type="Texture2D" uid="uid://dwl7qh765ydvo" path="res://assets/ui/Bar/Background@2x.png" id="3_1tbfy"]
-[ext_resource type="Texture2D" uid="uid://cieaog15kqvvn" path="res://assets/ui/Bar/Line@2x.png" id="4_ajwu2"]
+[ext_resource type="FontFile" uid="uid://dho1w062gjen0" path="res://assets/ui/fonts/Bungee-Regular.ttf" id="2_gpxky"]
+[ext_resource type="Texture2D" uid="uid://d3s2dokibs8l7" path="res://assets/ui/Bar/Background@2x.png" id="3_1tbfy"]
+[ext_resource type="Texture2D" uid="uid://c5e38jjo80j68" path="res://assets/ui/Bar/Line@2x.png" id="4_ajwu2"]
 
 [sub_resource type="Animation" id="Animation_tan62"]
 resource_name = "Dissolve"
