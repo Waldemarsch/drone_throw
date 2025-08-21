@@ -11,7 +11,6 @@ public partial class GameManager : Node
     public override void _Ready()
     {
         Instance = this;
-        CallDeferred(nameof(ChangeSceneTo), "res://scenes/main_menu.tscn");
     }
 
     public void ChangeSceneTo(string TargetScenePath)

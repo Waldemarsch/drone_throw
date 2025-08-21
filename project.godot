@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="flash_drone_throw"
-run/main_scene="uid://csvi7ve4em1it"
+run/main_scene="uid://ci7folotwya00"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 
 [autoload]
