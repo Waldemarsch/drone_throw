@@ -11,10 +11,9 @@ public partial class SceneManager : Node
 
     [Signal] public delegate void LoadEventHandler(Array<string> targetScenesPaths);
     [Signal] public delegate void LoadingStartedEventHandler(Array<string> targetScenesPaths);
-    [Signal] public delegate void LoadingFinishedEventHandler(Array<PackedScene> loadedScenes);
     [Signal] public delegate void LoadingCompletedEventHandler();
 
-    private Node LevelContainer;
+    public Node LevelContainer;
 
     public override void _Ready()
     {
@@ -23,7 +22,6 @@ public partial class SceneManager : Node
         Instance = this;
 
         Load += OnLoad;
-        LoadingFinished += OnLoadingFinished;
 
         LevelContainer = GetTree().Root.GetNode<Node>("LevelContainer");
     }
@@ -36,27 +34,8 @@ public partial class SceneManager : Node
         {
             OnLoadScene onChangeSceneInstance = onLoadScene.Instantiate<OnLoadScene>();
             GetTree().Root.AddChild(onChangeSceneInstance);
+
             EmitSignal(SignalName.LoadingStarted, targetScenesPaths);
         }
-
-    }
-
-    private void OnLoadingFinished(Array<PackedScene> loadedScenes)
-    {
-        foreach (var loadedScene in loadedScenes)
-        {
-            var loadedSceneInstance = loadedScene.Instantiate();
-
-            if (loadedSceneInstance is Control)
-            {
-                UIManager.Instance.EmitSignal(UIManager.SignalName.AddUIElement, loadedSceneInstance);
-            }
-
-            else if (loadedSceneInstance is Node2D)
-            {
-                LevelContainer.AddChild(loadedSceneInstance);
-            }
-        }
-        EmitSignal(SignalName.LoadingCompleted);
     }
 }
