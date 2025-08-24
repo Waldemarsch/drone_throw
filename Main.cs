@@ -4,14 +4,17 @@ using System;
 public partial class Main : Node
 {
 
+    [Export] public StartGameResource startGameResource;
+
     public override void _Ready()
     {
         CallDeferred(nameof(LoadGame));
     }
     private void LoadGame()
     {
-        GameManager.Instance.ChangeSceneTo("res://scenes/main_menu.tscn");
-        QueueFree();
+        SceneManager.Instance.EmitSignal(SceneManager.SignalName.Load, startGameResource.StartScenesArray);
+
+        SceneManager.Instance.LoadingFinished += _ => { GetTree().Root.GetNode<Control>("Ui/MainMenuUI").Show(); QueueFree();};   
     }
 
 }

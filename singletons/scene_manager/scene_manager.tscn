@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d16ofar1x7dmd"]
+
+[ext_resource type="Script" uid="uid://dytwo14887mu6" path="res://singletons/scene_manager/SceneManager.cs" id="1_s2joc"]
+[ext_resource type="PackedScene" uid="uid://dxsyrci3laajo" path="res://singletons/scene_manager/OnChangeScene/on_load_scene.tscn" id="2_xpcmb"]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_s2joc")
+_handlerScenes = {
+"OnLoad Scene": ExtResource("2_xpcmb")
+}

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxsyrci3laajo"]
 
-[ext_resource type="Script" uid="uid://bynvmrddq8j23" path="res://singletons/scene_change/SceneChange.cs" id="1_tan62"]
-[ext_resource type="FontFile" uid="uid://dho1w062gjen0" path="res://assets/ui/fonts/Bungee-Regular.ttf" id="2_gpxky"]
-[ext_resource type="Texture2D" uid="uid://d3s2dokibs8l7" path="res://assets/ui/Bar/Background@2x.png" id="3_1tbfy"]
-[ext_resource type="Texture2D" uid="uid://c5e38jjo80j68" path="res://assets/ui/Bar/Line@2x.png" id="4_ajwu2"]
+[ext_resource type="Script" uid="uid://bynvmrddq8j23" path="res://singletons/scene_manager/OnChangeScene/OnLoadScene.cs" id="1_ue0cp"]
+[ext_resource type="FontFile" uid="uid://dho1w062gjen0" path="res://assets/ui/fonts/Bungee-Regular.ttf" id="2_wmh8v"]
+[ext_resource type="Texture2D" uid="uid://d3s2dokibs8l7" path="res://assets/ui/Bar/Background@2x.png" id="3_5fowg"]
+[ext_resource type="Texture2D" uid="uid://c5e38jjo80j68" path="res://assets/ui/Bar/Line@2x.png" id="4_20w2l"]
 
 [sub_resource type="Animation" id="Animation_tan62"]
 resource_name = "Dissolve"
@@ -43,9 +43,9 @@ _data = {
 &"RESET": SubResource("Animation_ipsfe")
 }
 
-[node name="SceneChange" type="CanvasLayer"]
+[node name="OnLoadScene" type="CanvasLayer"]
 layer = 10
-script = ExtResource("1_tan62")
+script = ExtResource("1_ue0cp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -71,14 +71,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_gpxky")
+theme_override_fonts/font = ExtResource("2_wmh8v")
 theme_override_font_sizes/font_size = 136
 text = "LOADING"
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="ColorRect/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_under = ExtResource("3_1tbfy")
-texture_progress = ExtResource("4_ajwu2")
+texture_under = ExtResource("3_5fowg")
+texture_progress = ExtResource("4_20w2l")
 texture_progress_offset = Vector2(16, 15)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

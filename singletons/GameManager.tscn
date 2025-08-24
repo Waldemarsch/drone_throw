@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://csvi7ve4em1it"]
-
-[ext_resource type="Script" uid="uid://51hvsuqqijuw" path="res://singletons/GameManager.cs" id="1_wxs2x"]
-[ext_resource type="PackedScene" uid="uid://dxsyrci3laajo" path="res://singletons/scene_change/scene_change.tscn" id="2_421ev"]
-
-[node name="GameManager" type="Node"]
-script = ExtResource("1_wxs2x")
-SceneChangerPackedScene = ExtResource("2_421ev")

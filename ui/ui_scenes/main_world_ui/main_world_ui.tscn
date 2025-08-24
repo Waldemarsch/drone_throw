@@ -12,9 +12,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdq54"]
 
-[node name="UI" type="CanvasLayer"]
+[node name="MainWorldUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="EngineFuelBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -32,6 +39,7 @@ texture_progress = ExtResource("2_cvnj7")
 texture_progress_offset = Vector2(16.7, 16.445)
 
 [node name="Toolbar" type="PanelContainer" parent="."]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

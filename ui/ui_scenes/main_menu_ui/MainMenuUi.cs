@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class MainMenuUi : CanvasLayer
+public partial class MainMenuUi : Control
 {
     private TextureButton _startGameButton;
     private TextureButton _settingsButton;
@@ -9,7 +9,12 @@ public partial class MainMenuUi : CanvasLayer
     public override void _Ready()
     {
         _startGameButton = GetNode<TextureButton>("MainPanel/MainMenu/StartGameButton");
-        _startGameButton.Pressed += () => GameManager.Instance.ChangeSceneTo("res://scenes/main_world.tscn");
+        _startGameButton.Pressed += OnStartGameButtonPressed;
+    }
+
+    private void OnStartGameButtonPressed()
+    {
+        // EmitSignal(SceneManager.SignalName.Change, "Main World");
     }
 
 }

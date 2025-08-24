@@ -16,7 +16,11 @@ config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 
 [autoload]
 
-GameManager="*res://singletons/GameManager.tscn"
+GameManager="*res://singletons/game_manager/GameManager.tscn"
+SceneManager="*res://singletons/scene_manager/scene_manager.tscn"
+LevelContainer="*res://levels/level_container.tscn"
+Ui="*res://ui/UI.tscn"
+UiManager="*res://singletons/UI_manager/UI_manager.tscn"
 
 [display]
 
