@@ -17,7 +17,7 @@ public partial class OnLoadScene : CanvasLayer
     public override void _Ready()
     {
         base._Ready();
-        SceneManager.Instance.LoadingStarted += StartLoadingScenes;
+        SceneManager.Instance.LoadingStarted += OnLoadingStarted;
         AllScenesLoaded += OnAllScenesLoaded;
         ProcessMode = ProcessModeEnum.Disabled;
 
@@ -26,7 +26,7 @@ public partial class OnLoadScene : CanvasLayer
 
     }
 
-    public async void StartLoadingScenes(Array<string> scenePaths)
+    public async void OnLoadingStarted(Array<string> scenePaths)
     {
         _scenesToLoadPaths = scenePaths;
 
@@ -69,7 +69,7 @@ public partial class OnLoadScene : CanvasLayer
 
             else if (loadedSceneInstance is Node2D)
             {
-                SceneManager.Instance.LevelContainer.AddChild(loadedSceneInstance);
+                LevelManager.Instance.EmitSignal(LevelManager.SignalName.AddLevel, loadedSceneInstance);
             }
         }
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.LoadingCompleted);

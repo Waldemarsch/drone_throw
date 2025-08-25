@@ -14,7 +14,10 @@ public partial class Main : Node
     {
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.Load, startGameResource.StartScenesArray);
 
-        SceneManager.Instance.LoadingCompleted += () => { GetTree().Root.GetNode<Control>("Ui/MainMenuUI").Show(); QueueFree();};   
+        SceneManager.Instance.LoadingCompleted += () =>
+        {
+            UIManager.Instance.EmitSignal(UIManager.SignalName.ShowUIElement, "MainMenu");
+        };   
     }
 
 }

@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_avrng")
-StartScenesArray = Array[String](["res://scenes/main_world.tscn", "res://ui/ui_scenes/main_menu_ui/main_menu_ui.tscn", "res://ui/ui_scenes/main_world_ui/main_world_ui.tscn", "res://ui/ui_scenes/upgrade_menu_ui/upgrade_menu_ui.tscn"])
+StartScenesArray = Array[String](["res://ui/ui_scenes/main_menu_ui/main_menu.tscn", "res://ui/ui_scenes/main_world_ui/game_interface.tscn", "res://ui/ui_scenes/upgrade_menu_ui/upgrade_menu.tscn", "res://scenes/main_world.tscn"])
 metadata/_custom_type_script = "uid://kt7ca7t2tjfy"

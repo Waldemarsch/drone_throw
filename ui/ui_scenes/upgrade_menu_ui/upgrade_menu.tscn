@@ -1,24 +1,24 @@
 [gd_scene load_steps=12 format=3 uid="uid://nvk0chf58tth"]
 
-[ext_resource type="Texture2D" uid="uid://diii7lkjhrjgh" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_ql1fn"]
-[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="2_5p2o4"]
-[ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="3_jq0gi"]
-[ext_resource type="StyleBox" uid="uid://dl26yqfg3yrea" path="res://ui/indicators/bought.tres" id="4_n340c"]
-[ext_resource type="StyleBox" uid="uid://us8p0rofx1v6" path="res://ui/indicators/not_bought.tres" id="5_vc55b"]
-[ext_resource type="Texture2D" uid="uid://cyd21fttxnk1k" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Default.png" id="6_4nre6"]
-[ext_resource type="Texture2D" uid="uid://da8fwf1a3856c" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Hover.png" id="7_en5l8"]
-[ext_resource type="Texture2D" uid="uid://bchenmjnc1yn0" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default@2x-1.png" id="8_dlnay"]
-[ext_resource type="Texture2D" uid="uid://c4rp20oqhi100" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Hover@2x-1.png" id="9_qygkp"]
+[ext_resource type="Texture2D" uid="uid://diii7lkjhrjgh" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_0n1vf"]
+[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="2_42pmj"]
+[ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="3_44ofp"]
+[ext_resource type="StyleBox" uid="uid://dl26yqfg3yrea" path="res://ui/indicators/bought.tres" id="4_04bh7"]
+[ext_resource type="StyleBox" uid="uid://us8p0rofx1v6" path="res://ui/indicators/not_bought.tres" id="5_c76jk"]
+[ext_resource type="Texture2D" uid="uid://cyd21fttxnk1k" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Default.png" id="6_venpw"]
+[ext_resource type="Texture2D" uid="uid://da8fwf1a3856c" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Hover.png" id="7_j1t6r"]
+[ext_resource type="Texture2D" uid="uid://bchenmjnc1yn0" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default@2x-1.png" id="8_j4n0e"]
+[ext_resource type="Texture2D" uid="uid://c4rp20oqhi100" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Hover@2x-1.png" id="9_4yvok"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chbti"]
 content_margin_top = 123.0
 content_margin_right = 98.0
 content_margin_bottom = 98.0
-texture = ExtResource("2_5p2o4")
+texture = ExtResource("2_42pmj")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vqdt"]
 
-[node name="UpgradeMenuUI" type="Control"]
+[node name="UpgradeMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +40,7 @@ grow_vertical = 2
 scale = Vector2(1.35, 1.35)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_ql1fn")
+texture = ExtResource("1_0n1vf")
 metadata/_edit_lock_ = true
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
@@ -66,14 +66,14 @@ theme_override_constants/margin_left = 115
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme = ExtResource("3_jq0gi")
+theme = ExtResource("3_44ofp")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6vqdt")
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer2/MarginContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_5p2o4")
+texture = ExtResource("2_42pmj")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/MarginContainer/PanelContainer/TextureRect"]
 layout_mode = 1
@@ -110,7 +110,7 @@ size_flags_vertical = 4
 [node name="GridContainer" type="GridContainer" parent="PanelContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("3_jq0gi")
+theme = ExtResource("3_44ofp")
 theme_override_constants/v_separation = -19
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer"]
@@ -146,7 +146,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_n340c")
+theme_override_styles/panel = ExtResource("4_04bh7")
 
 [node name="Control2" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -160,7 +160,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="Control3" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -174,7 +174,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="Control4" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -188,14 +188,14 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("6_4nre6")
-texture_hover = ExtResource("7_en5l8")
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -229,7 +229,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_n340c")
+theme_override_styles/panel = ExtResource("4_04bh7")
 
 [node name="Control2" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -243,7 +243,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="Control3" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -257,7 +257,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="Control4" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -271,14 +271,14 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("6_4nre6")
-texture_hover = ExtResource("7_en5l8")
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -312,7 +312,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_n340c")
+theme_override_styles/panel = ExtResource("4_04bh7")
 
 [node name="Control2" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -326,7 +326,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="Control3" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -340,7 +340,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="Control4" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -354,14 +354,14 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("6_4nre6")
-texture_hover = ExtResource("7_en5l8")
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -395,7 +395,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_n340c")
+theme_override_styles/panel = ExtResource("4_04bh7")
 
 [node name="Control2" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -409,7 +409,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="Control3" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -423,7 +423,7 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="Control4" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2"]
 layout_mode = 2
@@ -437,18 +437,18 @@ offset_top = -20.0
 offset_right = 100.0
 offset_bottom = 20.0
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_vc55b")
+theme_override_styles/panel = ExtResource("5_c76jk")
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("6_4nre6")
-texture_hover = ExtResource("7_en5l8")
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-texture_normal = ExtResource("8_dlnay")
-texture_hover = ExtResource("9_qygkp")
+texture_normal = ExtResource("8_j4n0e")
+texture_hover = ExtResource("9_4yvok")

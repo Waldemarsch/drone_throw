@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://crclebm2xcle4"]
 
 [ext_resource type="Texture2D" uid="uid://b5c0a8y1xtff0" path="res://assets/background/plains/plains_resized_blur.png" id="1_2ejwm"]
-[ext_resource type="Script" uid="uid://c8wcch15rq6p0" path="res://ui/ui_scenes/main_menu_ui/MainMenuUi.cs" id="1_mdqja"]
+[ext_resource type="Script" uid="uid://c8wcch15rq6p0" path="res://ui/ui_scenes/main_menu_ui/MainMenu.cs" id="1_mdqja"]
 [ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="2_1uu46"]
 [ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="3_e3jx4"]
 [ext_resource type="Texture2D" uid="uid://cdynrm6ivhp5v" path="res://assets/ui/buttons/Hover@2x-1.png" id="4_73rcl"]
@@ -33,7 +33,7 @@ texture_margin_left = 20.0
 texture = ExtResource("12_v8fw4")
 texture_margin_left = 20.0
 
-[node name="MainMenuUI" type="Control"]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -124,24 +124,24 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OptionsMenu" type="PanelContainer" parent="MainPanel"]
+[node name="SettingsMenu" type="PanelContainer" parent="MainPanel"]
 visible = false
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MainPanel/OptionsMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel/SettingsMenu"]
 layout_mode = 2
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 35
 theme_override_constants/margin_right = 60
 
-[node name="PanelContainer" type="PanelContainer" parent="MainPanel/OptionsMenu/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MainPanel/SettingsMenu/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("2_1uu46")
 theme_override_styles/panel = SubResource("StyleBoxTexture_1ajci")
 
-[node name="MarginContainer" type="MarginContainer" parent="MainPanel/OptionsMenu/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel/SettingsMenu/MarginContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -150,35 +150,36 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="CenterContainer" type="CenterContainer" parent="MainPanel/OptionsMenu/MarginContainer/PanelContainer/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/SettingsMenu/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MainPanel/OptionsMenu/MarginContainer/PanelContainer/MarginContainer/CenterContainer"]
+[node name="Label" type="Label" parent="MainPanel/SettingsMenu/MarginContainer/PanelContainer/MarginContainer/CenterContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
-text = "Options"
+text = "Settings"
 
-[node name="TextureRect2" type="TextureButton" parent="MainPanel/OptionsMenu/MarginContainer"]
+[node name="SettingsExitButton" type="TextureButton" parent="MainPanel/SettingsMenu/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 texture_normal = ExtResource("5_k5ity")
 texture_hover = ExtResource("6_tld52")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/OptionsMenu/MarginContainer"]
+[node name="VolumeSetting" type="HBoxContainer" parent="MainPanel/SettingsMenu/MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="TextureRect" type="TextureButton" parent="MainPanel/OptionsMenu/MarginContainer/HBoxContainer"]
+[node name="MinVolume" type="TextureButton" parent="MainPanel/SettingsMenu/MarginContainer/VolumeSetting"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture_normal = ExtResource("7_tblq6")
 texture_hover = ExtResource("8_3im22")
 
-[node name="HSlider" type="HSlider" parent="MainPanel/OptionsMenu/MarginContainer/HBoxContainer"]
+[node name="VolumeSlider" type="HSlider" parent="MainPanel/SettingsMenu/MarginContainer/VolumeSetting"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -191,7 +192,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxTexture_7b55j")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_flqon")
 scrollable = false
 
-[node name="TextureRect2" type="TextureButton" parent="MainPanel/OptionsMenu/MarginContainer/HBoxContainer"]
+[node name="MaxVolume" type="TextureButton" parent="MainPanel/SettingsMenu/MarginContainer/VolumeSetting"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4

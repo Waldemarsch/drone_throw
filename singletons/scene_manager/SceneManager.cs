@@ -13,7 +13,9 @@ public partial class SceneManager : Node
     [Signal] public delegate void LoadingStartedEventHandler(Array<string> targetScenesPaths);
     [Signal] public delegate void LoadingCompletedEventHandler();
 
-    public Node LevelContainer;
+    [Signal] public delegate void ChangeEventHandler();
+    [Signal] public delegate void ChangeStartedEventHandler();
+    [Signal] public delegate void ChangeAllowedEventHandler();
 
     public override void _Ready()
     {
@@ -23,7 +25,7 @@ public partial class SceneManager : Node
 
         Load += OnLoad;
 
-        LevelContainer = GetTree().Root.GetNode<Node>("LevelContainer");
+        Change += OnChange;
     }
 
 
@@ -36,6 +38,16 @@ public partial class SceneManager : Node
             GetTree().Root.AddChild(onChangeSceneInstance);
 
             EmitSignal(SignalName.LoadingStarted, targetScenesPaths);
+        }
+    }
+
+    private void OnChange()
+    {
+        if ((PackedScene)_handlerScenes["OnChange Scene"] is PackedScene onChangeScene)
+        {
+            OnChangeScene onChangeSceneInstance = onChangeScene.Instantiate<OnChangeScene>();
+            GetTree().Root.AddChild(onChangeSceneInstance);
+            EmitSignal(SignalName.ChangeStarted);
         }
     }
 }

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://i67sfukcji05"]
+
+[ext_resource type="Script" uid="uid://dwc341256st4u" path="res://singletons/level_manager/LevelManager.cs" id="1_52ieu"]
+
+[node name="LevelManager" type="Node"]
+script = ExtResource("1_52ieu")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdg357jtk1u38"]
+[gd_scene load_steps=2 format=3 uid="uid://dko121jil4aiq"]
 
-[ext_resource type="PackedScene" uid="uid://nvk0chf58tth" path="res://ui/ui_scenes/upgrade_menu_ui/upgrade_menu_ui.tscn" id="1_e3qxy"]
+[ext_resource type="PackedScene" uid="uid://nvk0chf58tth" path="res://ui/ui_scenes/upgrade_menu_ui/upgrade_menu.tscn" id="1_e3qxy"]
 
 [node name="UpgradeMenu" type="Node2D"]
 
