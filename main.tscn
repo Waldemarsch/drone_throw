@@ -7,6 +7,8 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_ig7tw")
 
-[node name="LevelContainer" parent="." instance=ExtResource("4_lquwl")]
-
 [node name="UIContainer" parent="." instance=ExtResource("3_1bvp3")]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="LevelContainer" parent="World" instance=ExtResource("4_lquwl")]

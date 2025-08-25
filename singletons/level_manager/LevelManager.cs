@@ -26,7 +26,7 @@ public partial class LevelManager : Node
 
         Instance = this;
 
-        _levelContainer = GetTree().Root.GetNode<LevelContainer>("Main/LevelContainer");
+        _levelContainer = GetTree().Root.GetNode<LevelContainer>("Main/World/LevelContainer");
 
         LoadLevel += OnLoadLevel;
         AddLevel += OnAddLevel;

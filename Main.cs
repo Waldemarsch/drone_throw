@@ -8,7 +8,7 @@ public partial class Main : Node
 
     public override void _Ready()
     {
-        _levelContainer = GetNode<LevelContainer>("LevelContainer");
+        _levelContainer = GetNode<LevelContainer>("World/LevelContainer");
         _UIContainer = GetNode<UIContainer>("UIContainer");
 
         CallDeferred(nameof(PreloadGame));
