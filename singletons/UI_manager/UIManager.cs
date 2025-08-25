@@ -7,9 +7,10 @@ public partial class UIManager : Node
 
     public static UIManager Instance;
 
-    private CanvasLayer UICanvasLayer;
+    private UIContainer _UIContainer;
 
-    [Signal] public delegate void AddUIElementEventHandler(Control uiElement);
+    [Signal] public delegate void LoadUIElementEventHandler(Control uiElement);
+    [Signal] public delegate void AddUIElementEventHandler(string uiElementName);
     [Signal] public delegate void ShowUIElementEventHandler(string uiElementName);
     [Signal] public delegate void HideUIElementEventHandler(string uiElementName);
 
@@ -21,25 +22,40 @@ public partial class UIManager : Node
 
         Instance = this;
 
-        UICanvasLayer = GetTree().Root.GetNode<CanvasLayer>("Ui");
+        _UIContainer = GetTree().Root.GetNode<UIContainer>("Main/UIContainer");
 
+        LoadUIElement += OnLoadUIElement;
         AddUIElement += OnAddUIElement;
         ShowUIElement += OnShowUIElement;
         HideUIElement += OnHideUIElement;
     }
 
-
-    private void OnAddUIElement(Control uiElement)
+    private void OnLoadUIElement(Control uiElement)
     {
-        _UiElementsList[uiElement.Name] = uiElement;
+        _UIContainer.loadedUIScenes.Add(uiElement);
+    }
+
+    private void OnAddUIElement(string uiElementName)
+    {
+        Control uiElement = null;
+        foreach (Control loadedUIScene in _UIContainer.loadedUIScenes)
+        {
+            if (loadedUIScene.Name == uiElementName)
+            {
+                uiElement = loadedUIScene;
+                break;
+            }
+        }
+        if (uiElement == null) return;
+        
+        _UiElementsList[uiElementName] = uiElement;
         uiElement.Hide();
         uiElement.ProcessMode = ProcessModeEnum.Disabled;
-        UICanvasLayer.AddChild(uiElement);
+        _UIContainer.AddChild(uiElement);
     }
 
     private void OnShowUIElement(string uiElementName)
     {
-        GD.Print(_UiElementsList);
         var uiElement = (Control)_UiElementsList[uiElementName];
         uiElement.Show();
         uiElement.ProcessMode = ProcessModeEnum.Pausable;

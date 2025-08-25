@@ -64,12 +64,12 @@ public partial class OnLoadScene : CanvasLayer
 
             if (loadedSceneInstance is Control)
             {
-                UIManager.Instance.EmitSignal(UIManager.SignalName.AddUIElement, loadedSceneInstance);
+                UIManager.Instance.EmitSignal(UIManager.SignalName.LoadUIElement, loadedSceneInstance);
             }
 
             else if (loadedSceneInstance is Node2D)
             {
-                LevelManager.Instance.EmitSignal(LevelManager.SignalName.AddLevel, loadedSceneInstance);
+                LevelManager.Instance.EmitSignal(LevelManager.SignalName.LoadLevel, loadedSceneInstance);
             }
         }
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.LoadingCompleted);

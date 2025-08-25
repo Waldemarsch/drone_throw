@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://m68o0e8slh6j"]
+
+[ext_resource type="Script" uid="uid://b5666mtoikoh3" path="res://containers/UI_container/UIContainer.cs" id="1_ejwet"]
+[ext_resource type="Resource" uid="uid://er7nxoru1scg" path="res://containers/UI_container/UiContainerResource.tres" id="2_4ccwl"]
+
+[node name="UIContainer" type="CanvasLayer"]
+script = ExtResource("1_ejwet")
+UIContainerResource = ExtResource("2_4ccwl")

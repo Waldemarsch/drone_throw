@@ -3,21 +3,32 @@ using System;
 
 public partial class Main : Node
 {
-
-    [Export] public StartGameResource startGameResource;
+    private LevelContainer _levelContainer;
+    private UIContainer _UIContainer;
 
     public override void _Ready()
     {
-        CallDeferred(nameof(LoadGame));
+        _levelContainer = GetNode<LevelContainer>("LevelContainer");
+        _UIContainer = GetNode<UIContainer>("UIContainer");
+
+        CallDeferred(nameof(PreloadGame));
     }
-    private void LoadGame()
+    
+    private void PreloadGame()
     {
-        SceneManager.Instance.EmitSignal(SceneManager.SignalName.Load, startGameResource.StartScenesArray);
+        Godot.Collections.Array scenesOnPreload = [];
+        scenesOnPreload.Add(_levelContainer.levelContainerResource.Paths["MainWorld"]);
+        scenesOnPreload.Add(_UIContainer.UIContainerResource.Paths["MainMenu"]);
+        scenesOnPreload.Add(_UIContainer.UIContainerResource.Paths["GameInterface"]);
+        scenesOnPreload.Add(_UIContainer.UIContainerResource.Paths["UpgradeMenu"]);
+
+        SceneManager.Instance.EmitSignal(SceneManager.SignalName.Load, scenesOnPreload);
 
         SceneManager.Instance.LoadingCompleted += () =>
         {
+            UIManager.Instance.EmitSignal(UIManager.SignalName.AddUIElement, "MainMenu");
             UIManager.Instance.EmitSignal(UIManager.SignalName.ShowUIElement, "MainMenu");
-        };   
+        };
     }
 
 }

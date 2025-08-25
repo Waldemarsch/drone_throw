@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dko121jil4aiq"]
-
-[ext_resource type="PackedScene" uid="uid://nvk0chf58tth" path="res://ui/ui_scenes/upgrade_menu_ui/upgrade_menu.tscn" id="1_e3qxy"]
-
-[node name="UpgradeMenu" type="Node2D"]
-
-[node name="UI" parent="." instance=ExtResource("1_e3qxy")]

@@ -3,20 +3,19 @@ using System;
 
 public partial class LevelManager : Node
 {
-    [Signal] public delegate void AddLevelEventHandler(Node2D level);
+    [Signal] public delegate void LoadLevelEventHandler(Node2D level);
+    [Signal] public delegate void AddLevelEventHandler(string levelName);
 
     [Signal] public delegate void ActivateAllLevelsEventHandler();
     [Signal] public delegate void PauseAllLevelsEventHandler();
     [Signal] public delegate void UnpauseAllLevelsEventHandler();
-
-    [Signal] public delegate void SetCurrentLevelEventHandler(string levelName);
+    [Signal] public delegate void ResetAllLevelsEventHandler();
 
     [Signal] public delegate void LevelActivateEventHandler(string levelName);
-    [Signal] public delegate void LevelResetEventHandler();
     [Signal] public delegate void LevelPauseEventHandler();
     [Signal] public delegate void LevelUnpauseEventHandler();
 
-    private Node _levelContainer;
+    private LevelContainer _levelContainer;
     private Node _currLevel;
 
     public static LevelManager Instance;
@@ -27,21 +26,35 @@ public partial class LevelManager : Node
 
         Instance = this;
 
-        _levelContainer = GetTree().Root.GetNode<Node>("LevelContainer");
+        _levelContainer = GetTree().Root.GetNode<LevelContainer>("Main/LevelContainer");
 
+        LoadLevel += OnLoadLevel;
         AddLevel += OnAddLevel;
 
         ActivateAllLevels += OnActivateAllLevels;
         PauseAllLevels += OnPauseAllLevels;
         UnpauseAllLevels += OnUnpauseAllLevels;
 
-        SetCurrentLevel += OnSetCurrentLevel;
-
         LevelActivate += OnLevelActivate;
     }
 
-    private void OnAddLevel(Node2D level)
+    private void OnLoadLevel(Node2D level)
     {
+        _levelContainer.loadedLevelScenes.Add(level);
+    }
+
+    private void OnAddLevel(string levelName)
+    {
+        Node2D level = null;
+        foreach (Node2D loadedLevelScene in _levelContainer.loadedLevelScenes)
+        {
+            if (loadedLevelScene.Name == levelName)
+            {
+                level = loadedLevelScene;
+                break;
+            }
+        }
+        if (level == null) return;
         level.Hide();
         level.ProcessMode = ProcessModeEnum.Disabled;
         _levelContainer.AddChild(level);
@@ -69,13 +82,6 @@ public partial class LevelManager : Node
         {
             level.ProcessMode = ProcessModeEnum.Always;
         }
-    }
-
-
-    private void OnSetCurrentLevel(string levelName)
-    {
-        _currLevel = _levelContainer.GetNode<Node2D>(levelName);
-        GetTree().ChangeSceneToFile(_levelContainer.GetNode<Node2D>(levelName).GetPath());
     }
 
 

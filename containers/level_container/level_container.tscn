@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7fyf787mj2gc"]
+
+[ext_resource type="Script" uid="uid://cdvhnncrnyd1d" path="res://containers/level_container/LevelContainer.cs" id="1_tqf88"]
+[ext_resource type="Resource" uid="uid://du63t738a3cql" path="res://containers/level_container/LevelContainerResource.tres" id="2_svgmk"]
+
+[node name="LevelContainer" type="Node"]
+script = ExtResource("1_tqf88")
+levelContainerResource = ExtResource("2_svgmk")
