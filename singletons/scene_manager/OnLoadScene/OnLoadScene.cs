@@ -34,6 +34,7 @@ public partial class OnLoadScene : CanvasLayer
         
         _animationPlayer.Play("Dissolve");
         await ToSignal(_animationPlayer, AnimationPlayer.SignalName.AnimationFinished);
+        SceneManager.Instance.EmitSignal(SceneManager.SignalName.AllowSceneTransition);
 
         foreach (var path in _scenesToLoadPaths)
         {

@@ -5,6 +5,6 @@ public partial class LevelContainer : Node2D
 {
     [Export] public ContainerResource levelContainerResource;
 
-    [Export] public Godot.Collections.Array<Node2D> loadedLevelScenes = [];
+    public Node2D loadedLevel;
 
 }

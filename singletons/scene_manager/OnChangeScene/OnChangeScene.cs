@@ -25,7 +25,7 @@ public partial class OnChangeScene : CanvasLayer
         _animationPlayer.Play("Dissolve");
         await ToSignal(_animationPlayer, AnimationPlayer.SignalName.AnimationFinished);
 
-        SceneManager.Instance.EmitSignal(SceneManager.SignalName.ChangeAllowed);
+        SceneManager.Instance.EmitSignal(SceneManager.SignalName.AllowSceneTransition);
 
         _animationPlayer.PlayBackwards("Dissolve");
         await ToSignal(_animationPlayer, AnimationPlayer.SignalName.AnimationFinished);

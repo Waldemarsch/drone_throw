@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://csvi7ve4em1it"]
 
 [ext_resource type="Script" uid="uid://51hvsuqqijuw" path="res://singletons/game_manager/GameManager.cs" id="1_wxs2x"]
-[ext_resource type="PackedScene" uid="uid://dxsyrci3laajo" path="res://singletons/scene_manager/OnLoadScene/on_load_scene.tscn" id="2_421ev"]
+[ext_resource type="PackedScene" uid="uid://cahgylft6tc4w" path="res://player/body/player.tscn" id="2_1tl61"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_wxs2x")
-SceneChangerPackedScene = ExtResource("2_421ev")
+PlayerBodyScene = ExtResource("2_1tl61")

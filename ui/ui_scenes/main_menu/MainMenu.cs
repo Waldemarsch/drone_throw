@@ -27,16 +27,17 @@ public partial class MainMenu : Control
 
     private async void OnStartGameButtonPressed()
     {
+        GameManager.Instance.EmitSignal(GameManager.SignalName.CreatePlayerData);
+
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.Change);
 
-        await ToSignal(SceneManager.Instance, SceneManager.SignalName.ChangeAllowed);
+        await ToSignal(SceneManager.Instance, SceneManager.SignalName.AllowSceneTransition);
 
         UIManager.Instance.EmitSignal(UIManager.SignalName.HideUIElement, "MainMenu");
         UIManager.Instance.EmitSignal(UIManager.SignalName.AddUIElement, "GameInterface");
         UIManager.Instance.EmitSignal(UIManager.SignalName.ShowUIElement, "GameInterface");
 
-        LevelManager.Instance.EmitSignal(LevelManager.SignalName.AddLevel, "MainWorld");
-        LevelManager.Instance.EmitSignal(LevelManager.SignalName.LevelActivate, "MainWorld");
+        LevelManager.Instance.EmitSignal(LevelManager.SignalName.ChangeLevel, "MainWorld", "DefaultSpawn");
 
         QueueFree();
     }

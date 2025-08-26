@@ -6,10 +6,12 @@ using System;
 public partial class PlayerData : Resource
 {
     [ExportGroup("Upgrades")]
-    [Export] Array<PackedScene> GeneralUpgrades;
+    [Export] public PackedScene GeneralUpgrade;
+    [Export] public PackedScene EngineUpgrade;
+    [Export] public PackedScene GunUpgrade;
+    [Export] public PackedScene GearUpgrade;
+    [Export] public PackedScene ShieldUpgrade;
 
-    [Export] Array<PackedScene> EngineUpgrades;
-    [Export] Array<PackedScene> GunUpgrades;
-    [Export] Array<PackedScene> GearUpgrades;
-    [Export] Array<PackedScene> ShieldUpgrades;
+    [ExportGroup("")]
+    [Export] public int Score = 0;
 }

@@ -13,9 +13,10 @@ public partial class SceneManager : Node
     [Signal] public delegate void LoadingStartedEventHandler(Array<string> targetScenesPaths);
     [Signal] public delegate void LoadingCompletedEventHandler();
 
+    [Signal] public delegate void AllowSceneTransitionEventHandler();
+
     [Signal] public delegate void ChangeEventHandler();
     [Signal] public delegate void ChangeStartedEventHandler();
-    [Signal] public delegate void ChangeAllowedEventHandler();
 
     public override void _Ready()
     {

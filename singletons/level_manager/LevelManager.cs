@@ -4,19 +4,16 @@ using System;
 public partial class LevelManager : Node
 {
     [Signal] public delegate void LoadLevelEventHandler(Node2D level);
-    [Signal] public delegate void AddLevelEventHandler(string levelName);
+    [Signal] private delegate void LoadLevelFinishedEventHandler();
 
-    [Signal] public delegate void ActivateAllLevelsEventHandler();
-    [Signal] public delegate void PauseAllLevelsEventHandler();
-    [Signal] public delegate void UnpauseAllLevelsEventHandler();
-    [Signal] public delegate void ResetAllLevelsEventHandler();
-
-    [Signal] public delegate void LevelActivateEventHandler(string levelName);
-    [Signal] public delegate void LevelPauseEventHandler();
-    [Signal] public delegate void LevelUnpauseEventHandler();
+    [Signal] public delegate void ChangeLevelEventHandler(string levelName, string spawnPointName);
+    [Signal] public delegate void ActivateLevelEventHandler();
+    [Signal] public delegate void PauseLevelEventHandler();
+    [Signal] public delegate void UnpauseLevelEventHandler();
+    [Signal] public delegate void ResetLevelEventHandler();
 
     private LevelContainer _levelContainer;
-    private Node _currLevel;
+    private Node2D _currLevel;
 
     public static LevelManager Instance;
 
@@ -29,67 +26,73 @@ public partial class LevelManager : Node
         _levelContainer = GetTree().Root.GetNode<LevelContainer>("Main/World/LevelContainer");
 
         LoadLevel += OnLoadLevel;
-        AddLevel += OnAddLevel;
 
-        ActivateAllLevels += OnActivateAllLevels;
-        PauseAllLevels += OnPauseAllLevels;
-        UnpauseAllLevels += OnUnpauseAllLevels;
-
-        LevelActivate += OnLevelActivate;
+        ChangeLevel += OnChangeLevel;
+        ActivateLevel += OnActivateLevel;
+        PauseLevel += OnPauseLevel;
+        UnpauseLevel += OnUnpauseLevel;
+        ResetLevel += OnResetLevel;
     }
 
     private void OnLoadLevel(Node2D level)
     {
-        _levelContainer.loadedLevelScenes.Add(level);
-    }
-
-    private void OnAddLevel(string levelName)
-    {
-        Node2D level = null;
-        foreach (Node2D loadedLevelScene in _levelContainer.loadedLevelScenes)
-        {
-            if (loadedLevelScene.Name == levelName)
-            {
-                level = loadedLevelScene;
-                break;
-            }
-        }
         if (level == null) return;
+
+        _levelContainer.loadedLevel = (Node2D)level.Duplicate();
+
         level.Hide();
         level.ProcessMode = ProcessModeEnum.Disabled;
         _levelContainer.AddChild(level);
+
+        _currLevel = level;
+
+        EmitSignal(SignalName.LoadLevelFinished);
     }
 
 
-    private void OnActivateAllLevels()
+    private async void OnChangeLevel(string levelName, string spawnPointName)
     {
-        foreach (Node2D level in _levelContainer.GetChildren())
+        if (_currLevel.Name == levelName)
         {
-            level.Show();
-            level.ProcessMode = ProcessModeEnum.Always;
+            EmitSignal(SignalName.ActivateLevel);
         }
-    }
-    private void OnPauseAllLevels()
-    {
-        foreach (Node2D level in _levelContainer.GetChildren())
+
+        else
         {
-            level.ProcessMode = ProcessModeEnum.Disabled;
+            SceneManager.Instance.EmitSignal(SceneManager.SignalName.Load, _levelContainer.levelContainerResource.Paths[levelName]);
+            SceneManager.Instance.AllowSceneTransition += () => _currLevel.QueueFree();
+
+            await ToSignal(this, SignalName.LoadLevelFinished);
+
+            _currLevel = _levelContainer.GetNode<Node2D>(levelName);
+            EmitSignal(SignalName.ActivateLevel);
         }
+
+        GameManager.Instance.EmitSignal(GameManager.SignalName.TransitPlayerBody, _currLevel, spawnPointName);
     }
-    private void OnUnpauseAllLevels()
+
+    private void OnActivateLevel()
     {
-        foreach (Node2D level in _levelContainer.GetChildren())
-        {
-            level.ProcessMode = ProcessModeEnum.Always;
-        }
+        _currLevel.ProcessMode = ProcessModeEnum.Always;
+        _currLevel.Show();
     }
 
-
-    private void OnLevelActivate(string levelName)
+    private void OnPauseLevel()
     {
-        Node2D level = _levelContainer.GetNode<Node2D>(levelName);
-        level.ProcessMode = ProcessModeEnum.Always;
-        level.Show();
+        _currLevel.ProcessMode = ProcessModeEnum.Disabled;
     }
 
+    private void OnUnpauseLevel()
+    {
+        _currLevel.ProcessMode = ProcessModeEnum.Always;
+    }
+
+    private void OnResetLevel()
+    {
+        _currLevel.QueueFree();
+        _currLevel = _levelContainer.loadedLevel;
+        _levelContainer.AddChild(_currLevel);
+
+        GameManager.Instance.EmitSignal(GameManager.SignalName.TransitPlayerBody, _currLevel, "DefaultSpawn");
+    }
 }

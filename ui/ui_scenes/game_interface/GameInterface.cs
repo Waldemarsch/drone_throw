@@ -14,19 +14,19 @@ public partial class GameInterface : Control
         _Toolbar = GetNode<PanelContainer>("Toolbar");
         _Toolbar.GetNode<TextureButton>("MarginContainer/CenterContainer/HBoxContainer/PauseButton").Pressed += () =>
         {
-            LevelManager.Instance.EmitSignal(LevelManager.SignalName.PauseAllLevels);
+            LevelManager.Instance.EmitSignal(LevelManager.SignalName.PauseLevel);
             _PausedBackground.Show();
             _PauseMenu.Show();
         };
         _Toolbar.GetNode<TextureButton>("MarginContainer/CenterContainer/HBoxContainer/ReplayButton").Pressed += () =>
         {
-            LevelManager.Instance.EmitSignal(LevelManager.SignalName.ResetAllLevels);
+            LevelManager.Instance.EmitSignal(LevelManager.SignalName.ResetLevel);
         };
 
         _PauseMenu = GetNode<PanelContainer>("PauseMenu");
         _PauseMenu.GetNode<TextureButton>("MarginContainer/PauseExitButton").Pressed += () =>
         {
-            LevelManager.Instance.EmitSignal(LevelManager.SignalName.UnpauseAllLevels);
+            LevelManager.Instance.EmitSignal(LevelManager.SignalName.UnpauseLevel);
             _PausedBackground.Hide();
             _PauseMenu.Hide();
         };
