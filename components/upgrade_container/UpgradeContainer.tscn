@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6gpxb3gjsip1"]
-
-[ext_resource type="Script" uid="uid://2slxfxxogka2" path="res://components/upgrade_container/UpgradeContainer.cs" id="1_qtn6s"]
-
-[node name="UpgradeContainer" type="Node"]
-script = ExtResource("1_qtn6s")

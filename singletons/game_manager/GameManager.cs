@@ -32,6 +32,7 @@ public partial class GameManager : Node
     private void OnCreatePlayerData()
     {
         _playerData = new PlayerData();
+        _playerData.GeneralUpgradeLevel = 1;
     }
 
     private void OnTransitPlayerBody(Node2D level, string spawnPointName)
@@ -42,6 +43,8 @@ public partial class GameManager : Node
         _playerBody = (Player)PlayerBodyScene.Instantiate();
         _playerBody.Position = level.GetNode<Marker2D>(spawnPointName).Position;
         GetTree().Root.GetNode<Node2D>("Main/World").AddChild(_playerBody);
+
+        _playerBody.Initialize(_playerData);
 
         EmitSignal(SignalName.TransitPlayerBodyFinished, _playerBody);
     }

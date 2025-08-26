@@ -1,49 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://cahgylft6tc4w"]
+[gd_scene load_steps=7 format=3 uid="uid://cahgylft6tc4w"]
 
 [ext_resource type="Script" uid="uid://cxjmhrs5d0htq" path="res://player/body/Player.cs" id="1_oul6g"]
-[ext_resource type="Resource" uid="uid://ctq1c4x4hw527" path="res://resources/player/player_data.tres" id="2_qjkh3"]
 [ext_resource type="Script" uid="uid://cjplutt3i8g5e" path="res://player/body/states/IdleState.cs" id="3_g6k8r"]
 [ext_resource type="Script" uid="uid://cj2c1sy3oc7x" path="res://player/body/states/BeginState.cs" id="4_boad6"]
 [ext_resource type="Script" uid="uid://diw6lkxcf1pjg" path="res://player/body/states/FlightState.cs" id="5_rgyib"]
-[ext_resource type="PackedScene" uid="uid://c6gpxb3gjsip1" path="res://components/upgrade_container/UpgradeContainer.tscn" id="6_boad6"]
-[ext_resource type="Script" uid="uid://cgdxfymyf4a3o" path="res://resources/upgrades/UpgradeData.cs" id="7_boad6"]
+[ext_resource type="PackedScene" uid="uid://c6gpxb3gjsip1" path="res://player/upgrade/upgrade_manager/UpgradeManager.tscn" id="6_boad6"]
 [ext_resource type="PackedScene" uid="uid://bwllov2fjfhog" path="res://objects/upgrades/general_upgrade/bomzh_first/bomzh_first.tscn" id="7_hg6s5"]
-[ext_resource type="PackedScene" uid="uid://bqtwkcqqppnir" path="res://objects/upgrades/engine/engine_1level/engine_upgrade_1_st.tscn" id="7_rgyib"]
 
-[sub_resource type="Resource" id="Resource_rgyib"]
-script = ExtResource("7_boad6")
-CurrUpgradeLevel = 0
-UpgradeLevelsData = Array[PackedScene]([ExtResource("7_hg6s5")])
-metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
-
-[sub_resource type="Resource" id="Resource_hg6s5"]
-script = ExtResource("7_boad6")
-CurrUpgradeLevel = 0
-UpgradeLevelsData = Array[PackedScene]([ExtResource("7_rgyib")])
-metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
-
-[sub_resource type="Resource" id="Resource_8t03j"]
-script = ExtResource("7_boad6")
-CurrUpgradeLevel = 0
-UpgradeLevelsData = null
-metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
-
-[sub_resource type="Resource" id="Resource_2ieo8"]
-script = ExtResource("7_boad6")
-CurrUpgradeLevel = 0
-UpgradeLevelsData = null
-metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
-
-[sub_resource type="Resource" id="Resource_ebec5"]
-script = ExtResource("7_boad6")
-CurrUpgradeLevel = 0
-UpgradeLevelsData = null
-metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
-
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("UpgradeSceneContainer")]
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_oul6g")
-PlayerDataResource = ExtResource("2_qjkh3")
-UpgradeSceneContainer = NodePath("UpgradeSceneContainer")
 
 [node name="States" type="Node" parent="."]
 
@@ -56,13 +22,5 @@ script = ExtResource("4_boad6")
 [node name="FlightState" type="Node" parent="States"]
 script = ExtResource("5_rgyib")
 
-[node name="GeneralUpgrade" type="Node2D" parent="."]
-
 [node name="UpgradeManager" parent="." instance=ExtResource("6_boad6")]
-GeneralUpgradesResource = SubResource("Resource_rgyib")
-EngineUpgradesResource = SubResource("Resource_hg6s5")
-GunUpgradesResource = SubResource("Resource_8t03j")
-GearUpgradesResource = SubResource("Resource_2ieo8")
-ShieldUpgradesResource = SubResource("Resource_ebec5")
-
-[node name="UpgradeSceneContainer" type="Node2D" parent="."]
+GeneralUpgradeScenes = Array[PackedScene]([ExtResource("7_hg6s5")])

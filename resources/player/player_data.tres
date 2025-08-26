@@ -1,13 +1,8 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=3 format=3 uid="uid://ctq1c4x4hw527"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=2 format=3 uid="uid://ctq1c4x4hw527"]
 
 [ext_resource type="Script" uid="uid://y74drsrnpxlv" path="res://resources/player/PlayerData.cs" id="1_lx46u"]
-[ext_resource type="PackedScene" uid="uid://bwllov2fjfhog" path="res://objects/upgrades/general_upgrade/bomzh_first/bomzh_first.tscn" id="1_sxxnk"]
 
 [resource]
 script = ExtResource("1_lx46u")
-GeneralUpgrades = Array[PackedScene]([ExtResource("1_sxxnk")])
-EngineUpgrades = null
-GunUpgrades = null
-GearUpgrades = null
-ShieldUpgrades = null
+Score = 0
 metadata/_custom_type_script = "uid://y74drsrnpxlv"
