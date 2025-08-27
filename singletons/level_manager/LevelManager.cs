@@ -90,7 +90,7 @@ public partial class LevelManager : Node
     private void OnResetLevel()
     {
         _currLevel.QueueFree();
-        _currLevel = _levelContainer.loadedLevel;
+        _currLevel = (Node2D)_levelContainer.loadedLevel.Duplicate();
         _levelContainer.AddChild(_currLevel);
 
         GameManager.Instance.EmitSignal(GameManager.SignalName.TransitPlayerBody, _currLevel, "DefaultSpawn");

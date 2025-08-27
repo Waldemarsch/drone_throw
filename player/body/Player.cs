@@ -15,7 +15,9 @@ public partial class Player : CharacterBody2D
     private UpgradeManager _upgradeManager;
 
 
-    private PlayerData _playerData;
+    public PlayerData PlayerDataResource { get; private set; }
+
+    [Signal] public delegate void InitializeComponentsEventHandler();
 
     public override void _Ready()
     {
@@ -29,9 +31,9 @@ public partial class Player : CharacterBody2D
 
     public void Initialize(PlayerData playerData)
     {
-        _playerData = playerData;
+        PlayerDataResource = playerData;
 
-        _upgradeManager.Initialize(_playerData);
+        EmitSignal(SignalName.InitializeComponents);
     }
 
     public override void _PhysicsProcess(double delta)
