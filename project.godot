@@ -46,6 +46,12 @@ enabled=PackedStringArray()
 
 theme/default_font_multichannel_signed_distance_field=true
 
+[importer_defaults]
+
+texture={
+&"mipmaps/generate": true
+}
+
 [input]
 
 up={
