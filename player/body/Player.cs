@@ -7,10 +7,8 @@ public partial class Player : CharacterBody2D
 
     [Export] public float RotateSpeed = 10.0f;
 
-    private State _currentState;
-    private IdleState _idleState;
-    private BeginState _beginState;
-    private FlightState _flightState;
+    public State CurrentState { get; private set; }
+    
 
     private UpgradeManager _upgradeManager;
 
@@ -21,12 +19,7 @@ public partial class Player : CharacterBody2D
 
     public override void _Ready()
     {
-        _idleState = GetNode<IdleState>("States/IdleState");
-        _beginState = GetNode<BeginState>("States/BeginState");
-        _flightState = GetNode<FlightState>("States/FlightState");
-
         _upgradeManager = GetNode<UpgradeManager>("UpgradeManager");
-
     }
 
     public void Initialize(PlayerData playerData)
@@ -38,21 +31,16 @@ public partial class Player : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        _currentState?.PhysicsUpdate(delta);
+        CurrentState?.PhysicsUpdate(delta);
 
     }
 
     public void ChangeState(State newState)
     {
-        _currentState?.Exit();
+        CurrentState?.Exit();
 
-        _currentState = newState;
+        CurrentState = newState;
 
-        _currentState.Enter();
+        CurrentState.Enter();
     }
-
-    public IdleState GetIdleState() => _idleState;
-    public BeginState GetBeginState() => _beginState;
-    public FlightState GetFlightState() => _flightState;
-
 }

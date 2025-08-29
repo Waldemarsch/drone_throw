@@ -29,3 +29,9 @@ visible = false
 position = Vector2(-17, 5)
 scale = Vector2(24.0623, 13.796)
 shape = SubResource("CapsuleShape2D_c7eek")
+
+[node name="RotateBarSocket" parent="." index="6"]
+position = Vector2(-485, -142)
+
+[node name="SpeedBarSocket" parent="." index="7"]
+position = Vector2(0, -325)

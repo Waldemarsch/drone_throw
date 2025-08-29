@@ -9,16 +9,16 @@ public partial class FlightState : State
     {
         if (Input.IsActionPressed("left"))
         {
-            player.RotationDegrees -= RotateSpeedDeg * (float)delta;
+            _player.RotationDegrees -= RotateSpeedDeg * (float)delta;
         }
         if (Input.IsActionPressed("right"))
         {
-            player.RotationDegrees += RotateSpeedDeg * (float)delta;
+            _player.RotationDegrees += RotateSpeedDeg * (float)delta;
         }
 
-        if (player.Velocity == Vector2.Zero)
+        if (_player.Velocity == Vector2.Zero)
         {
-            player.ChangeState(player.GetIdleState());
+            // player.ChangeState(player.GetIdleState());
         }
     }
 

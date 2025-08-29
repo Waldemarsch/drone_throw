@@ -1,26 +1,23 @@
 [gd_scene load_steps=7 format=3 uid="uid://cahgylft6tc4w"]
 
 [ext_resource type="Script" uid="uid://cxjmhrs5d0htq" path="res://player/body/Player.cs" id="1_oul6g"]
-[ext_resource type="Script" uid="uid://cjplutt3i8g5e" path="res://player/body/states/IdleState.cs" id="3_g6k8r"]
-[ext_resource type="Script" uid="uid://cj2c1sy3oc7x" path="res://player/body/states/BeginState.cs" id="4_boad6"]
-[ext_resource type="Script" uid="uid://diw6lkxcf1pjg" path="res://player/body/states/FlightState.cs" id="5_rgyib"]
+[ext_resource type="PackedScene" uid="uid://boof565rdobjk" path="res://player/state_manager/state_manager.tscn" id="2_mu4ed"]
 [ext_resource type="PackedScene" uid="uid://c6gpxb3gjsip1" path="res://player/upgrade/upgrade_manager/UpgradeManager.tscn" id="6_boad6"]
+[ext_resource type="PackedScene" uid="uid://gyseykhfkoul" path="res://player/speed_bar/speed_bar.tscn" id="7_0duyj"]
 [ext_resource type="PackedScene" uid="uid://bwllov2fjfhog" path="res://objects/upgrades/general_upgrade/bomzh_first/bomzh_first.tscn" id="7_hg6s5"]
+[ext_resource type="PackedScene" uid="uid://b7ybligrkw2kr" path="res://player/rotate_bar/rotate_bar.tscn" id="8_rw0a4"]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_oul6g")
 
-[node name="States" type="Node" parent="."]
-
-[node name="IdleState" type="Node" parent="States"]
-script = ExtResource("3_g6k8r")
-
-[node name="BeginState" type="Node" parent="States"]
-script = ExtResource("4_boad6")
-
-[node name="FlightState" type="Node" parent="States"]
-script = ExtResource("5_rgyib")
+[node name="StateManager" parent="." instance=ExtResource("2_mu4ed")]
 
 [node name="UpgradeManager" parent="." instance=ExtResource("6_boad6")]
 GeneralUpgradeScenes = Array[PackedScene]([ExtResource("7_hg6s5")])
+
+[node name="SpeedBar" parent="." instance=ExtResource("7_0duyj")]
+visible = false
+
+[node name="RotateBar" parent="." instance=ExtResource("8_rw0a4")]
+visible = false

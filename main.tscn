@@ -20,3 +20,4 @@ script = ExtResource("1_ig7tw")
 environment = SubResource("Environment_h2yge")
 
 [node name="Camera" parent="World" instance=ExtResource("4_1bvp3")]
+zoom = Vector2(0.2, 0.2)
