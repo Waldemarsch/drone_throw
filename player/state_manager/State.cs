@@ -10,7 +10,7 @@ public enum EStateType
 
 public abstract partial class State : Node
 {
-    [Export] public EStateType Type { get; private set; }
+    [Export] public EStateType StateType { get; private set; }
 
     private StateManager _stateManager;
 
@@ -25,6 +25,7 @@ public abstract partial class State : Node
     public virtual void Enter()
     {
         _player = _stateManager.PlayerNode;
+        PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.PlayerStateChanged, (int)StateType);
     }
 
     public virtual void Exit() { }

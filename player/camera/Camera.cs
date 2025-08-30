@@ -10,8 +10,8 @@ public partial class Camera : Camera2D
     {
         base._Ready();
 
-        GameManager.Instance.TransitPlayerBodyStarted += OnDisableCamera;
-        GameManager.Instance.TransitPlayerBodyFinished += OnEnableCamera;
+        PlayerManager.Instance.TransitPlayerBodyStarted += OnDisableCamera;
+        PlayerManager.Instance.TransitPlayerBodyFinished += OnEnableCamera;
 
         ProcessMode = ProcessModeEnum.Disabled;
     }

@@ -68,7 +68,7 @@ public partial class LevelManager : Node
             EmitSignal(SignalName.ActivateLevel);
         }
 
-        GameManager.Instance.EmitSignal(GameManager.SignalName.TransitPlayerBody, _currLevel, spawnPointName);
+        PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.TransitPlayerBody, _currLevel, spawnPointName);
     }
 
     private void OnActivateLevel()
@@ -93,6 +93,6 @@ public partial class LevelManager : Node
         _currLevel = (Node2D)_levelContainer.loadedLevel.Duplicate();
         _levelContainer.AddChild(_currLevel);
 
-        GameManager.Instance.EmitSignal(GameManager.SignalName.TransitPlayerBody, _currLevel, "DefaultSpawn");
+        PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.TransitPlayerBody, _currLevel, "DefaultSpawn");
     }
 }

@@ -1,20 +1,22 @@
 using Godot;
 using System;
 
-public partial class GameManager : Node
+public partial class PlayerManager : Node
 {
     [Export] public PackedScene PlayerBodyScene;
 
     private PlayerData _playerData;
     private Player _playerBody;
 
-    public static GameManager Instance { get; private set; }
+    public static PlayerManager Instance { get; private set; }
 
     [Signal] public delegate void CreatePlayerDataEventHandler();
 
     [Signal] public delegate void TransitPlayerBodyEventHandler(Node2D level, string spawnPointName);
     [Signal] public delegate void TransitPlayerBodyStartedEventHandler();
     [Signal] public delegate void TransitPlayerBodyFinishedEventHandler(Player playerBody);
+
+    [Signal] public delegate void PlayerStateChangedEventHandler(EStateType stateType);
 
 
     public override void _Ready()

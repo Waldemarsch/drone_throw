@@ -16,7 +16,7 @@ public partial class StateManager : Node
         {
             if (child is State state)
             {
-                _states[state.Type] = state;
+                _states[state.StateType] = state;
             }
         }
 

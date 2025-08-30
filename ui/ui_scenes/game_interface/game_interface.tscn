@@ -1,26 +1,27 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3egdh0mhfikh"]
+[gd_scene load_steps=28 format=3 uid="uid://d3egdh0mhfikh"]
 
-[ext_resource type="Texture2D" uid="uid://dwl7qh765ydvo" path="res://assets/ui/Bar/Background@2x.png" id="1_5351s"]
+[ext_resource type="Texture2D" uid="uid://d3s2dokibs8l7" path="res://assets/ui/Bar/Background@2x.png" id="1_5351s"]
 [ext_resource type="Script" uid="uid://cjb3c4fhmw7h3" path="res://ui/ui_scenes/game_interface/GameInterface.cs" id="1_smjpw"]
-[ext_resource type="Texture2D" uid="uid://cieaog15kqvvn" path="res://assets/ui/Bar/Line@2x.png" id="2_cvnj7"]
+[ext_resource type="Texture2D" uid="uid://c5e38jjo80j68" path="res://assets/ui/Bar/Line@2x.png" id="2_cvnj7"]
 [ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="3_ig24y"]
-[ext_resource type="Texture2D" uid="uid://dcmlkk80hnu7s" path="res://assets/ui/buttons/Pause/Default@2x.png" id="4_6tvex"]
-[ext_resource type="Texture2D" uid="uid://cc7j88lptnvp6" path="res://assets/ui/buttons/Pause/Hover@2x.png" id="5_5lxx5"]
-[ext_resource type="Texture2D" uid="uid://dp5e5gdf2jclj" path="res://assets/ui/counter/Dummy@2x.png" id="6_ecvns"]
-[ext_resource type="Texture2D" uid="uid://1awvnf80scrk" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@2x/Counter/Icon/Money@2x.png" id="7_kg8kl"]
-[ext_resource type="Texture2D" uid="uid://shdvq11eh78g" path="res://assets/ui/buttons/Repeat/Default@2x.png" id="8_a5io8"]
-[ext_resource type="Texture2D" uid="uid://cvarxphxfljwi" path="res://assets/ui/buttons/Repeat/Hover@2x.png" id="9_2mnyc"]
-[ext_resource type="Texture2D" uid="uid://4pyimks07yyf" path="res://assets/ui/buttons/Default@2x-1.png" id="11_ig7nn"]
-[ext_resource type="Texture2D" uid="uid://cykigqh5ngxik" path="res://assets/ui/buttons/Play/Default.png" id="12_smjpw"]
-[ext_resource type="Texture2D" uid="uid://b4alryktv6e73" path="res://assets/ui/buttons/Play/Hover.png" id="13_ig7nn"]
-[ext_resource type="Texture2D" uid="uid://06xq02bpd6vv" path="res://assets/ui/buttons/SoundOff/Default.png" id="14_4opk4"]
-[ext_resource type="Texture2D" uid="uid://chxhey06jdyj1" path="res://assets/ui/buttons/SoundOff/Hover.png" id="15_ehptq"]
-[ext_resource type="Texture2D" uid="uid://cbpbumdi2evqb" path="res://assets/BlueStyle_gui UPDATE/settings/el_5.png" id="16_f0mf4"]
-[ext_resource type="Texture2D" uid="uid://bdnomsbg5d84g" path="res://assets/BlueStyle_gui UPDATE/settings/el_6.png" id="17_j8c5u"]
-[ext_resource type="Texture2D" uid="uid://bjjqlqkbhqm4y" path="res://assets/BlueStyle_gui UPDATE/settings/el_3.png" id="18_876r6"]
-[ext_resource type="Texture2D" uid="uid://6wt1rde3asuq" path="res://assets/BlueStyle_gui UPDATE/settings/el_4.png" id="19_pc3ux"]
-[ext_resource type="Texture2D" uid="uid://cdsj7y5760tl5" path="res://assets/ui/buttons/SoundOn/Default.png" id="20_kn5bw"]
-[ext_resource type="Texture2D" uid="uid://dtvfyyuaxk733" path="res://assets/ui/buttons/SoundOn/Hover.png" id="21_ea7se"]
+[ext_resource type="Texture2D" uid="uid://doew64rj3j2fq" path="res://assets/ui/buttons/Pause/Default@2x.png" id="4_6tvex"]
+[ext_resource type="Texture2D" uid="uid://dwcnchfn5ot2q" path="res://assets/ui/buttons/Pause/Hover@2x.png" id="5_5lxx5"]
+[ext_resource type="Texture2D" uid="uid://bs50fe66tlvyi" path="res://assets/ui/counter/Dummy@2x.png" id="6_ecvns"]
+[ext_resource type="Texture2D" uid="uid://cke7xr2ht7i38" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@2x/Counter/Icon/Money@2x.png" id="7_kg8kl"]
+[ext_resource type="Texture2D" uid="uid://o6ionpi10g5i" path="res://assets/ui/buttons/Repeat/Default@2x.png" id="8_a5io8"]
+[ext_resource type="Texture2D" uid="uid://q3xy4as3wqfk" path="res://assets/ui/buttons/Repeat/Hover@2x.png" id="9_2mnyc"]
+[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="11_ig7nn"]
+[ext_resource type="Texture2D" uid="uid://dh4onyapgk3kx" path="res://assets/ui/buttons/Play/Default.png" id="12_smjpw"]
+[ext_resource type="Texture2D" uid="uid://c26ee4pla8omd" path="res://assets/ui/buttons/Play/Hover.png" id="13_ig7nn"]
+[ext_resource type="Texture2D" uid="uid://bcbwwhtte2d17" path="res://assets/ui/buttons/SoundOff/Default.png" id="14_4opk4"]
+[ext_resource type="Texture2D" uid="uid://c1flk8p2ui10q" path="res://assets/ui/buttons/SoundOff/Hover.png" id="15_ehptq"]
+[ext_resource type="Texture2D" uid="uid://d3x3sxlui3tg4" path="res://assets/BlueStyle_gui UPDATE/settings/el_5.png" id="16_f0mf4"]
+[ext_resource type="Texture2D" uid="uid://7e5gur436fsp" path="res://assets/BlueStyle_gui UPDATE/settings/el_6.png" id="17_j8c5u"]
+[ext_resource type="Texture2D" uid="uid://d3047jd5f7hw0" path="res://assets/BlueStyle_gui UPDATE/settings/el_3.png" id="18_876r6"]
+[ext_resource type="Texture2D" uid="uid://damxnwykt36vh" path="res://assets/BlueStyle_gui UPDATE/settings/el_4.png" id="19_pc3ux"]
+[ext_resource type="Texture2D" uid="uid://ehnbdqitu7qs" path="res://assets/ui/buttons/SoundOn/Default.png" id="20_kn5bw"]
+[ext_resource type="Texture2D" uid="uid://y76bowv6m3g7" path="res://assets/ui/buttons/SoundOn/Hover.png" id="21_ea7se"]
+[ext_resource type="Texture2D" uid="uid://qpinoroiv7mc" path="res://assets/Keyboard Keys/Outline/PNG/spage_lg.png" id="22_qfb5q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdq54"]
 
@@ -250,3 +251,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="SpageLg" type="Sprite2D" parent="."]
+position = Vector2(992, 894)
+texture = ExtResource("22_qfb5q")

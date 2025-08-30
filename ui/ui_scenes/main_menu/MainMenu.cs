@@ -27,7 +27,7 @@ public partial class MainMenu : Control
 
     private async void OnStartGameButtonPressed()
     {
-        GameManager.Instance.EmitSignal(GameManager.SignalName.CreatePlayerData);
+        PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.CreatePlayerData);
 
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.Change);
 
