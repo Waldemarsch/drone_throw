@@ -4,7 +4,8 @@ using System;
 public enum EStateType
 {
     Idle,
-    Begin,
+    BeginRotate,
+    BeginSpeed,
     Flight,
 } 
 
@@ -12,15 +13,16 @@ public abstract partial class State : Node
 {
     [Export] public EStateType StateType { get; private set; }
 
-    private StateManager _stateManager;
+    protected StateManager _stateManager;
 
-    protected Player _player;
+    protected PlayerBody _player;
 
 
     public override void _Ready()
     {
         _stateManager = GetParent<StateManager>();
     }
+    
 
     public virtual void Enter()
     {
@@ -30,6 +32,6 @@ public abstract partial class State : Node
 
     public virtual void Exit() { }
 
-    public virtual void PhysicsUpdate(double delta) { }
+    public virtual void PhysicsProcess(double delta) { }
 
 }

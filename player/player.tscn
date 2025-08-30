@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cahgylft6tc4w"]
+
+[ext_resource type="PackedScene" uid="uid://gyseykhfkoul" path="res://player/speed_bar/speed_bar.tscn" id="1_g1dw6"]
+[ext_resource type="Script" uid="uid://dyi61uoxefp7r" path="res://player/Player.cs" id="1_yw30f"]
+[ext_resource type="PackedScene" uid="uid://b7ybligrkw2kr" path="res://player/rotate_bar/rotate_bar.tscn" id="2_yw30f"]
+[ext_resource type="PackedScene" uid="uid://c7ig15mq76mi0" path="res://player/body/player_body.tscn" id="3_qjkh3"]
+
+[node name="Player" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_yw30f")
+
+[node name="SpeedBar" parent="." instance=ExtResource("1_g1dw6")]
+visible = false
+MaxSpeed = Vector2(200, 200)
+
+[node name="RotateBar" parent="." instance=ExtResource("2_yw30f")]
+visible = false
+
+[node name="PlayerBody" parent="." instance=ExtResource("3_qjkh3")]

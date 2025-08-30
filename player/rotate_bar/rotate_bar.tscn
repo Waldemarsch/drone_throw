@@ -54,7 +54,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:SpeedScaleValue")
+tracks/0/path = NodePath(".:RotateScaleValue")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -90,13 +90,16 @@ texture = SubResource("GradientTexture2D_4ctu4")
 
 [node name="Marker" type="Panel" parent="Panel/Bar"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = -43.0
+offset_top = -28.0
 offset_right = 43.0
-offset_bottom = 28.0
 grow_horizontal = 2
+grow_vertical = 0
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_awdsq")
 
@@ -104,4 +107,3 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_awdsq")
 libraries = {
 &"": SubResource("AnimationLibrary_8vul5")
 }
-autoplay = "active"

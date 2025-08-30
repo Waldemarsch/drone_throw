@@ -9,7 +9,7 @@ public partial class SpeedBar : Node2D
     private Panel _marker;
     private TextureRect _bar;
 
-    private float maxSpeed = 2000f;
+    [Export] public Vector2 MaxSpeed = new (2000f, 2000f);
 
     public override void _Ready()
     {

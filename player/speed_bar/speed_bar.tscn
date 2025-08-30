@@ -106,4 +106,3 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rw0a4")
 libraries = {
 &"": SubResource("AnimationLibrary_8vul5")
 }
-autoplay = "active"

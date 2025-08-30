@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://boof565rdobjk"]
+[gd_scene load_steps=6 format=3 uid="uid://boof565rdobjk"]
 
 [ext_resource type="Script" uid="uid://cjplutt3i8g5e" path="res://player/state_manager/states/IdleState.cs" id="1_7gxee"]
 [ext_resource type="Script" uid="uid://bvwd8iiqyk5ad" path="res://player/state_manager/StateManager.cs" id="1_lrdx8"]
-[ext_resource type="Script" uid="uid://cj2c1sy3oc7x" path="res://player/state_manager/states/BeginState.cs" id="2_lrdx8"]
+[ext_resource type="Script" uid="uid://cj2c1sy3oc7x" path="res://player/state_manager/states/BeginRotateState.cs" id="2_lrdx8"]
 [ext_resource type="Script" uid="uid://diw6lkxcf1pjg" path="res://player/state_manager/states/FlightState.cs" id="3_twy0n"]
+[ext_resource type="Script" uid="uid://cn4p6gxtbsteq" path="res://player/state_manager/states/BeginSpeedState.cs" id="4_twy0n"]
 
 [node name="StateManager" type="Node"]
 script = ExtResource("1_lrdx8")
@@ -11,10 +12,14 @@ script = ExtResource("1_lrdx8")
 [node name="IdleState" type="Node" parent="."]
 script = ExtResource("1_7gxee")
 
-[node name="BeginState" type="Node" parent="."]
+[node name="BeginRotateState" type="Node" parent="."]
 script = ExtResource("2_lrdx8")
-Type = 1
+StateType = 1
+
+[node name="BeginSpeedState" type="Node" parent="."]
+script = ExtResource("4_twy0n")
+StateType = 2
 
 [node name="FlightState" type="Node" parent="."]
 script = ExtResource("3_twy0n")
-Type = 2
+StateType = 3

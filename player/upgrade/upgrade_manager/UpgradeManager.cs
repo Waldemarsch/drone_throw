@@ -10,7 +10,7 @@ public partial class UpgradeManager : Node
     [Export] public Array<PackedScene> GearUpgradeScenes;
     [Export] public Array<PackedScene> ShieldUpgradeScenes;
 
-    private Player _player;
+    private PlayerBody _playerBody;
 
     private Node2D _generalUpgradeScene;
     private Node2D _engineUpgradeScene;
@@ -20,14 +20,34 @@ public partial class UpgradeManager : Node
 
     public override void _Ready()
     {
-        _player = GetOwner<Player>();
+        _playerBody = GetOwner<PlayerBody>();
 
-        _player.InitializeComponents += Initialize;
+        _playerBody.InitializeBodyComponents += OnInitializeBodyComponents;
     }
 
-    public void Initialize()
+    public void OnInitializeBodyComponents()
     {
         ApplyUpgrade(EUpgradeType.General);
+    }
+
+    public Node2D GetUpgradeScene(EUpgradeType upgradeType)
+    {
+        switch (upgradeType)
+        {
+            case EUpgradeType.General:
+                return _generalUpgradeScene;
+            case EUpgradeType.Engine:
+                return _engineUpgradeScene;
+            case EUpgradeType.Gun:
+                return _gunUpgradeScene;
+            case EUpgradeType.Gear:
+                return _gearUpgradeScene;
+            case EUpgradeType.Shield:
+                return _shieldUpgradeScene;
+
+            default:
+                return null;
+        }
     }
 
     private void ApplyUpgrade(EUpgradeType upgradeType)
@@ -36,45 +56,45 @@ public partial class UpgradeManager : Node
         {
             case EUpgradeType.General:
                 _generalUpgradeScene?.QueueFree();
-                _generalUpgradeScene = GeneralUpgradeScenes[_player.PlayerDataResource.GeneralUpgradeLevel-1].Instantiate<Node2D>();
-                _player.AddChild(_generalUpgradeScene);
+                _generalUpgradeScene = GeneralUpgradeScenes[_playerBody.PlayerDataResource.GeneralUpgradeLevel - 1].Instantiate<Node2D>();
+                _playerBody.AddChild(_generalUpgradeScene);
 
                 if (_engineUpgradeScene != null)
                     _engineUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("EngineSocket").Position;
-                if (_engineUpgradeScene != null)
+                if (_gunUpgradeScene != null)
                     _gunUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("GunSocket").Position;
-                if (_engineUpgradeScene != null)
+                if (_gearUpgradeScene != null)
                     _gearUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("GearSocket").Position;
-                if (_engineUpgradeScene != null)
+                if (_shieldUpgradeScene != null)
                     _shieldUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("ShieldSocket").Position;
                 break;
 
             case EUpgradeType.Engine:
                 _engineUpgradeScene?.QueueFree();
-                _engineUpgradeScene = EngineUpgradeScenes[_player.PlayerDataResource.GeneralUpgradeLevel-1].Instantiate<Node2D>();
-                _engineUpgradeScene.Position =  _generalUpgradeScene.GetNode<Marker2D>("EngineSocket").Position;
-                _player.AddChild(_engineUpgradeScene);
+                _engineUpgradeScene = EngineUpgradeScenes[_playerBody.PlayerDataResource.GeneralUpgradeLevel - 1].Instantiate<Node2D>();
+                _engineUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("EngineSocket").Position;
+                _playerBody.AddChild(_engineUpgradeScene);
                 break;
 
             case EUpgradeType.Gun:
                 _gunUpgradeScene?.QueueFree();
-                _gunUpgradeScene = GunUpgradeScenes[_player.PlayerDataResource.GunUpgradeLevel-1].Instantiate<Node2D>();
-                _gunUpgradeScene.Position =  _generalUpgradeScene.GetNode<Marker2D>("GunSocket").Position;
-                _player.AddChild(_gunUpgradeScene);
+                _gunUpgradeScene = GunUpgradeScenes[_playerBody.PlayerDataResource.GunUpgradeLevel - 1].Instantiate<Node2D>();
+                _gunUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("GunSocket").Position;
+                _playerBody.AddChild(_gunUpgradeScene);
                 break;
 
             case EUpgradeType.Gear:
                 _gearUpgradeScene?.QueueFree();
-                _gearUpgradeScene = GearUpgradeScenes[_player.PlayerDataResource.GearUpgradeLevel-1].Instantiate<Node2D>();
-                _gearUpgradeScene.Position =  _generalUpgradeScene.GetNode<Marker2D>("GearSocket").Position;
-                _player.AddChild(_gearUpgradeScene);
+                _gearUpgradeScene = GearUpgradeScenes[_playerBody.PlayerDataResource.GearUpgradeLevel - 1].Instantiate<Node2D>();
+                _gearUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("GearSocket").Position;
+                _playerBody.AddChild(_gearUpgradeScene);
                 break;
 
             case EUpgradeType.Shield:
                 _shieldUpgradeScene?.QueueFree();
-                _shieldUpgradeScene = ShieldUpgradeScenes[_player.PlayerDataResource.ShieldUpgradeLevel-1].Instantiate<Node2D>();
-                _shieldUpgradeScene.Position =  _generalUpgradeScene.GetNode<Marker2D>("ShieldSocket").Position;
-                _player.AddChild(_shieldUpgradeScene);
+                _shieldUpgradeScene = ShieldUpgradeScenes[_playerBody.PlayerDataResource.ShieldUpgradeLevel - 1].Instantiate<Node2D>();
+                _shieldUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("ShieldSocket").Position;
+                _playerBody.AddChild(_shieldUpgradeScene);
                 break;
         }
     }

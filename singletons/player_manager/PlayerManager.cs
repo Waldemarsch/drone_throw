@@ -3,18 +3,17 @@ using System;
 
 public partial class PlayerManager : Node
 {
-    [Export] public PackedScene PlayerBodyScene;
+    [Export] public PackedScene PlayerScene;
 
     private PlayerData _playerData;
-    private Player _playerBody;
+    private Player _player;
 
     public static PlayerManager Instance { get; private set; }
 
     [Signal] public delegate void CreatePlayerDataEventHandler();
 
     [Signal] public delegate void TransitPlayerBodyEventHandler(Node2D level, string spawnPointName);
-    [Signal] public delegate void TransitPlayerBodyStartedEventHandler();
-    [Signal] public delegate void TransitPlayerBodyFinishedEventHandler(Player playerBody);
+    [Signal] public delegate void PlayerSpawnedEventHandler(Player player);
 
     [Signal] public delegate void PlayerStateChangedEventHandler(EStateType stateType);
 
@@ -39,15 +38,13 @@ public partial class PlayerManager : Node
 
     private void OnTransitPlayerBody(Node2D level, string spawnPointName)
     {
-        EmitSignal(SignalName.TransitPlayerBodyStarted);
+        _player?.QueueFree();
+        _player = (Player)PlayerScene.Instantiate();
+        _player.Position = level.GetNode<Marker2D>(spawnPointName).Position;
+        GetTree().Root.GetNode<Node2D>("Main/World").AddChild(_player);
 
-        _playerBody?.QueueFree();
-        _playerBody = (Player)PlayerBodyScene.Instantiate();
-        _playerBody.Position = level.GetNode<Marker2D>(spawnPointName).Position;
-        GetTree().Root.GetNode<Node2D>("Main/World").AddChild(_playerBody);
+        _player.Initialize(_playerData);
 
-        _playerBody.Initialize(_playerData);
-
-        EmitSignal(SignalName.TransitPlayerBodyFinished, _playerBody);
+        EmitSignal(SignalName.PlayerSpawned, _player);
     }
 }

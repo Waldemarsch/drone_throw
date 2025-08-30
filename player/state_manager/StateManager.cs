@@ -7,7 +7,7 @@ public partial class StateManager : Node
 
     private Godot.Collections.Dictionary<EStateType, State> _states = new(); 
 
-    public Player PlayerNode { get; private set; }
+    public PlayerBody PlayerNode { get; private set; }
 
 
     public override void _Ready()
@@ -20,12 +20,26 @@ public partial class StateManager : Node
             }
         }
 
-        PlayerNode = GetOwner<Player>();
+        PlayerNode = GetOwner<PlayerBody>();
+
+        PlayerNode.InitializeBodyComponents += OnInitializeBodyComponents;
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        CurrentState?.PhysicsProcess(delta);
+    }
+
+
+    private void OnInitializeBodyComponents()
+    {
+        ChangeState(EStateType.Idle);
     }
 
     public void ChangeState(EStateType newState)
     {
-        CurrentState.Exit();
-        _states[newState].Enter();
+        CurrentState?.Exit();
+        CurrentState = _states[newState];
+        CurrentState.Enter();
     }
 }

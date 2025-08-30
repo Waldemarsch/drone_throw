@@ -3,6 +3,8 @@ using System;
 
 public partial class GameInterface : Control
 {
+    private AnimationPlayer _animationPlayer;
+
     private PanelContainer _Toolbar;
     private PanelContainer _PauseMenu;
     private Panel _PausedBackground;
@@ -10,6 +12,10 @@ public partial class GameInterface : Control
     public override void _Ready()
     {
         base._Ready();
+
+        _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+
+        PlayerManager.Instance.PlayerStateChanged += OnPlayerStateChanged;
 
         _Toolbar = GetNode<PanelContainer>("Toolbar");
         _Toolbar.GetNode<TextureButton>("MarginContainer/CenterContainer/HBoxContainer/PauseButton").Pressed += () =>
@@ -38,9 +44,25 @@ public partial class GameInterface : Control
         {
             _PauseMenu.GetNode<Slider>("MarginContainer/VolumeSetting/VolumeSlider").Value = 100;
         };
-        
+
 
         _PausedBackground = GetNode<Panel>("PausedBackground");
+    }
+
+    private void OnPlayerStateChanged(EStateType stateType)
+    {
+        switch (stateType)
+        {
+            case EStateType.Idle:
+                GetNode<TextureRect>("IdleStateUI").Show();
+                _animationPlayer.Play("Idle");
+                break;
+
+            case EStateType.BeginRotate:
+                GetNode<TextureRect>("IdleStateUI").Hide();
+                _animationPlayer.Stop();
+                break;
+        }
     }
 
 }

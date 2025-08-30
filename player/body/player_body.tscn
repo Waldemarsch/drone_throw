@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7ig15mq76mi0"]
+
+[ext_resource type="Script" uid="uid://cxjmhrs5d0htq" path="res://player/body/PlayerBody.cs" id="1_ad3rn"]
+[ext_resource type="PackedScene" uid="uid://boof565rdobjk" path="res://player/state_manager/state_manager.tscn" id="2_32gch"]
+[ext_resource type="PackedScene" uid="uid://c6gpxb3gjsip1" path="res://player/upgrade/upgrade_manager/UpgradeManager.tscn" id="3_wfgwu"]
+[ext_resource type="PackedScene" uid="uid://bwllov2fjfhog" path="res://objects/upgrades/general_upgrade/bomzh_first/bomzh_first.tscn" id="4_l2brm"]
+
+[node name="PlayerBody" type="CharacterBody2D"]
+script = ExtResource("1_ad3rn")
+
+[node name="StateManager" parent="." instance=ExtResource("2_32gch")]
+
+[node name="UpgradeManager" parent="." instance=ExtResource("3_wfgwu")]
+GeneralUpgradeScenes = Array[PackedScene]([ExtResource("4_l2brm")])
