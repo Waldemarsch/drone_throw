@@ -28,12 +28,24 @@ public partial class FlightState : State
 
         if (_playerBody.IsOnFloor() && Mathf.IsZeroApprox(_playerBody.Velocity.X))
         {
-            _stateManager.ChangeState(EStateType.Idle);
+            ToUpgradeMenu();
+
+            _stateManager.ChangeState(EStateType.None);
         }
 
         _playerBody.MoveAndSlide();
 
-        
+    }
+
+    private async void ToUpgradeMenu()
+    {
+        SceneManager.Instance.EmitSignal(SceneManager.SignalName.Change);
+
+        await ToSignal(SceneManager.Instance, SceneManager.SignalName.AllowSceneTransition);
+
+        UIManager.Instance.EmitSignal(UIManager.SignalName.HideUIElement, "GameInterface");
+        UIManager.Instance.EmitSignal(UIManager.SignalName.AddUIElement, "UpgradeMenu");
+        UIManager.Instance.EmitSignal(UIManager.SignalName.ShowUIElement, "UpgradeMenu");
     }
 
 }

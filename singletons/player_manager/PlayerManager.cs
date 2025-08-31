@@ -6,7 +6,8 @@ public partial class PlayerManager : Node
 {
     [Export] public PackedScene PlayerScene;
 
-    private PlayerData _playerData;
+    [Export] public PlayerData _playerData;
+    
     private PlayerBody _playerBody;
 
     public static PlayerManager Instance { get; private set; }

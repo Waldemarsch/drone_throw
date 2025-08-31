@@ -7,7 +7,7 @@ public partial class UIManager : Node
 
     public static UIManager Instance;
 
-    private UIContainer _UIContainer;
+    [Export] private UIContainer _UIContainer;
 
     [Signal] public delegate void LoadUIElementEventHandler(Control uiElement);
     [Signal] public delegate void AddUIElementEventHandler(string uiElementName);
@@ -38,11 +38,12 @@ public partial class UIManager : Node
     private void OnAddUIElement(string uiElementName)
     {
         Control uiElement = null;
+        foreach (Control loadedUIScene in _UIContainer.loadedUIScenes) GD.Print(loadedUIScene.Name);
         foreach (Control loadedUIScene in _UIContainer.loadedUIScenes)
         {
             if (loadedUIScene.Name == uiElementName)
             {
-                uiElement = loadedUIScene;
+                uiElement = (Control)loadedUIScene.Duplicate();
                 break;
             }
         }

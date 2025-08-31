@@ -30,7 +30,15 @@ public partial class OnChangeScene : CanvasLayer
         _animationPlayer.PlayBackwards("Dissolve");
         await ToSignal(_animationPlayer, AnimationPlayer.SignalName.AnimationFinished);
 
-        QueueFree();    
+        QueueFree();
     }
+
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+
+        SceneManager.Instance.ChangeStarted -= OnChangeStarted;
+    }
+
 
 }

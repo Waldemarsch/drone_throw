@@ -31,7 +31,7 @@ public partial class OnLoadScene : CanvasLayer
         _scenesToLoadPaths = scenePaths;
 
         ProcessMode = ProcessModeEnum.Always;
-        
+
         _animationPlayer.Play("Dissolve");
         await ToSignal(_animationPlayer, AnimationPlayer.SignalName.AnimationFinished);
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.AllowSceneTransition);
@@ -40,9 +40,9 @@ public partial class OnLoadScene : CanvasLayer
         {
             ResourceLoader.LoadThreadedRequest(path);
         }
-        
+
         await ToSignal(this, SignalName.LoadingFinished);
-        
+
         var loadedScenes = new Array<PackedScene>();
         foreach (var path in _scenesToLoadPaths)
         {
@@ -53,7 +53,7 @@ public partial class OnLoadScene : CanvasLayer
 
         _animationPlayer.PlayBackwards("Dissolve");
         await ToSignal(_animationPlayer, AnimationPlayer.SignalName.AnimationFinished);
-        
+
         QueueFree();
     }
 
@@ -75,7 +75,7 @@ public partial class OnLoadScene : CanvasLayer
         }
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.LoadingCompleted);
     }
-    
+
     public override void _Process(double delta)
     {
         if (_loadingFinished) return;
@@ -107,4 +107,12 @@ public partial class OnLoadScene : CanvasLayer
             EmitSignal(SignalName.LoadingFinished);
         }
     }
+
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+
+        SceneManager.Instance.LoadingStarted -= OnLoadingStarted;
+    }
+
 }

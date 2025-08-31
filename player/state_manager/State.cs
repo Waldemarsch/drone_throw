@@ -3,6 +3,7 @@ using System;
 
 public enum EStateType
 {
+    None,
     Idle,
     BeginRotate,
     BeginSpeed,

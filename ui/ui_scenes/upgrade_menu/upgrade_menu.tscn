@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://nvk0chf58tth"]
+[gd_scene load_steps=13 format=3 uid="uid://nvk0chf58tth"]
 
-[ext_resource type="Texture2D" uid="uid://diii7lkjhrjgh" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_0n1vf"]
-[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="2_42pmj"]
+[ext_resource type="Texture2D" uid="uid://dp7aag5010f8w" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_0n1vf"]
+[ext_resource type="Script" uid="uid://kt786wpih0bn" path="res://ui/ui_scenes/upgrade_menu/UpgradeMenu.cs" id="1_dasy4"]
+[ext_resource type="Texture2D" uid="uid://4pyimks07yyf" path="res://assets/ui/buttons/Default@2x-1.png" id="2_42pmj"]
 [ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="3_44ofp"]
 [ext_resource type="StyleBox" uid="uid://dl26yqfg3yrea" path="res://ui/indicators/bought.tres" id="4_04bh7"]
 [ext_resource type="StyleBox" uid="uid://us8p0rofx1v6" path="res://ui/indicators/not_bought.tres" id="5_c76jk"]
-[ext_resource type="Texture2D" uid="uid://cyd21fttxnk1k" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Default.png" id="6_venpw"]
-[ext_resource type="Texture2D" uid="uid://da8fwf1a3856c" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Hover.png" id="7_j1t6r"]
-[ext_resource type="Texture2D" uid="uid://bchenmjnc1yn0" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default@2x-1.png" id="8_j4n0e"]
-[ext_resource type="Texture2D" uid="uid://c4rp20oqhi100" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Hover@2x-1.png" id="9_4yvok"]
+[ext_resource type="Texture2D" uid="uid://b73d3pl5g61cp" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Default.png" id="6_venpw"]
+[ext_resource type="Texture2D" uid="uid://ctmycrijw7o0l" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Hover.png" id="7_j1t6r"]
+[ext_resource type="Texture2D" uid="uid://mehlpybqsrd3" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default@2x-1.png" id="8_j4n0e"]
+[ext_resource type="Texture2D" uid="uid://b45rppkwpdjvy" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Hover@2x-1.png" id="9_4yvok"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chbti"]
 content_margin_top = 123.0
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dasy4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -43,7 +45,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_0n1vf")
 metadata/_edit_lock_ = true
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -53,29 +55,29 @@ anchor_bottom = 0.5
 offset_left = -834.0
 offset_top = -515.0
 offset_right = 856.0
-offset_bottom = 526.0
+offset_bottom = 623.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_chbti")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 115
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer2/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("3_44ofp")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6vqdt")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer2/MarginContainer/PanelContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_42pmj")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/MarginContainer/PanelContainer/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/PanelContainer/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -93,51 +95,135 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 32
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer2/MarginContainer/PanelContainer/TextureRect/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/PanelContainer/TextureRect/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="PanelContainer2/MarginContainer/PanelContainer/TextureRect/MarginContainer/CenterContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/PanelContainer/TextureRect/MarginContainer/CenterContainer"]
 layout_mode = 2
 text = "Upgrade"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer2/VBoxContainer"]
+[node name="UpgradeGrid" type="GridContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_44ofp")
 theme_override_constants/v_separation = -19
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer"]
+[node name="GeneralUpgradeBox" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 128
 
-[node name="Label" type="Label" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 123
+text = "General"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 22
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 115
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox/MarginContainer/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_04bh7")
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox/MarginContainer/HBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="Control3" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox/MarginContainer/HBoxContainer/Control3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="Control4" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox/MarginContainer/HBoxContainer/Control4"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="UpgradeEngineButton" type="TextureButton" parent="PanelContainer/VBoxContainer/UpgradeGrid/GeneralUpgradeBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+
+[node name="EngineUpgradeBox" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 128
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 123
 text = "Engine"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox"]
 layout_mode = 2
 theme_override_constants/margin_top = 22
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 115
 
-[node name="Control" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2"]
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2/Control"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox/MarginContainer/HBoxContainer/Control"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -148,10 +234,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("4_04bh7")
 
-[node name="Control2" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2"]
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2/Control2"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox/MarginContainer/HBoxContainer/Control2"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -162,10 +248,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="Control3" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2"]
+[node name="Control3" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2/Control3"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox/MarginContainer/HBoxContainer/Control3"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -176,10 +262,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="Control4" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2"]
+[node name="Control4" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer/MarginContainer/HBoxContainer2/Control4"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox/MarginContainer/HBoxContainer/Control4"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -190,37 +276,37 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer"]
+[node name="UpgradeEngineButton" type="TextureButton" parent="PanelContainer/VBoxContainer/UpgradeGrid/EngineUpgradeBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer"]
+[node name="GunUpgradeBox" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 128
 
-[node name="Label" type="Label" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 123
 text = "Gun"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox"]
 layout_mode = 2
 theme_override_constants/margin_top = 22
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 115
 
-[node name="Control" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2"]
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2/Control"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox/MarginContainer/HBoxContainer/Control"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -231,10 +317,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("4_04bh7")
 
-[node name="Control2" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2"]
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2/Control2"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox/MarginContainer/HBoxContainer/Control2"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -245,10 +331,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="Control3" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2"]
+[node name="Control3" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2/Control3"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox/MarginContainer/HBoxContainer/Control3"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -259,10 +345,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="Control4" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2"]
+[node name="Control4" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2/MarginContainer/HBoxContainer2/Control4"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox/MarginContainer/HBoxContainer/Control4"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -273,37 +359,37 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/VBoxContainer/UpgradeGrid/GunUpgradeBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer"]
+[node name="GearUpgradeBox" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 128
 
-[node name="Label" type="Label" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 123
 text = "Gear"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox"]
 layout_mode = 2
 theme_override_constants/margin_top = 22
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 115
 
-[node name="Control" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2"]
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2/Control"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox/MarginContainer/HBoxContainer/Control"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -314,10 +400,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("4_04bh7")
 
-[node name="Control2" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2"]
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2/Control2"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox/MarginContainer/HBoxContainer/Control2"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -328,10 +414,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="Control3" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2"]
+[node name="Control3" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2/Control3"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox/MarginContainer/HBoxContainer/Control3"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -342,10 +428,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="Control4" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2"]
+[node name="Control4" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3/MarginContainer/HBoxContainer2/Control4"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox/MarginContainer/HBoxContainer/Control4"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -356,37 +442,37 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/VBoxContainer/UpgradeGrid/GearUpgradeBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer"]
+[node name="ShieldUpgradeBox" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 128
 
-[node name="Label" type="Label" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 123
 text = "Shield"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox"]
 layout_mode = 2
 theme_override_constants/margin_top = 22
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 115
 
-[node name="Control" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2"]
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2/Control"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox/MarginContainer/HBoxContainer/Control"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -397,10 +483,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("4_04bh7")
 
-[node name="Control2" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2"]
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2/Control2"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox/MarginContainer/HBoxContainer/Control2"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -411,10 +497,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="Control3" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2"]
+[node name="Control3" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2/Control3"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox/MarginContainer/HBoxContainer/Control3"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -425,10 +511,10 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="Control4" type="Control" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2"]
+[node name="Control4" type="Control" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4/MarginContainer/HBoxContainer2/Control4"]
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox/MarginContainer/HBoxContainer/Control4"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -439,14 +525,14 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/VBoxContainer/UpgradeGrid/ShieldUpgradeBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer2"]
+[node name="PlayButton" type="TextureButton" parent="PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4

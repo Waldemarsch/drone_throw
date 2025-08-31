@@ -4,5 +4,10 @@
 
 [resource]
 script = ExtResource("1_lx46u")
+GeneralUpgradeLevel = 0
+EngineUpgradeLevel = 0
+GunUpgradeLevel = 0
+GearUpgradeLevel = 0
+ShieldUpgradeLevel = 0
 Score = 0
 metadata/_custom_type_script = "uid://y74drsrnpxlv"
