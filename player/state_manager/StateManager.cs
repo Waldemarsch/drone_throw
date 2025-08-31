@@ -5,7 +5,7 @@ public partial class StateManager : Node
 {
     public State CurrentState { get; private set; }
 
-    private Godot.Collections.Dictionary<EStateType, State> _states = new(); 
+    private Godot.Collections.Dictionary<EStateType, State> _states = new();
 
     public PlayerBody PlayerNode { get; private set; }
 
@@ -42,4 +42,5 @@ public partial class StateManager : Node
         CurrentState = _states[newState];
         CurrentState.Enter();
     }
+
 }

@@ -58,16 +58,6 @@ public partial class UpgradeManager : Node
                 _generalUpgradeScene?.QueueFree();
                 _generalUpgradeScene = GeneralUpgradeScenes[_playerBody.PlayerDataResource.GeneralUpgradeLevel - 1].Instantiate<Node2D>();
                 _playerBody.AddChild(_generalUpgradeScene);
-                _generalUpgradeScene.GetNode<CollisionShape2D>("CollisionShape2D").Reparent(_playerBody);
-
-                if (_engineUpgradeScene != null)
-                    _engineUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("EngineSocket").Position;
-                if (_gunUpgradeScene != null)
-                    _gunUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("GunSocket").Position;
-                if (_gearUpgradeScene != null)
-                    _gearUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("GearSocket").Position;
-                if (_shieldUpgradeScene != null)
-                    _shieldUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("ShieldSocket").Position;
                 break;
 
             case EUpgradeType.Engine:

@@ -12,8 +12,6 @@ public partial class LevelManager : Node
     [Signal] public delegate void UnpauseLevelEventHandler();
     [Signal] public delegate void ResetLevelEventHandler();
 
-    [Export] public float GravityForce = 100f;
-
     private LevelContainer _levelContainer;
     private Node2D _currLevel;
 

@@ -5,7 +5,13 @@ public partial class PlayerBody : CharacterBody2D
 {
     [Export] public Node2D UpgradeSceneContainer;
 
-    [Export] public float RotateSpeed = 10.0f;
+    [Export] public float RotateSpeed = 10f;
+    [Export] public Vector2 MaxSpeed = new (2000f, 2000f);
+
+    [Export] public float AirFriction = 30f;
+    [Export] public float GroundFriction = 200f;
+
+    [Export] public float GravityForce = 100f;
 
     private UpgradeManager _upgradeManager;
     private StateManager _stateManager;
@@ -13,8 +19,7 @@ public partial class PlayerBody : CharacterBody2D
     private SpeedBar _speedBar;
     private RotateBar _rotateBar;
 
-    private Player _player;
-
+    private RemoteTransform2D _remoteTransform;
 
     public PlayerData PlayerDataResource { get; private set; }
 
@@ -24,13 +29,11 @@ public partial class PlayerBody : CharacterBody2D
 
     public override void _Ready()
     {
-        _player = GetOwner<Player>();
+        _remoteTransform = GetNode<RemoteTransform2D>("RemoteTransform2D");
 
         _upgradeManager = GetNode<UpgradeManager>("UpgradeManager");
 
         _stateManager = GetNode<StateManager>("StateManager");
-
-        _player.InitializePlayer += OnInitializePlayer;
 
         PlayerManager.Instance.PlayerStateChanged += OnPlayerStateChanged;
 
@@ -53,22 +56,22 @@ public partial class PlayerBody : CharacterBody2D
                 this.RotationDegrees = _rotateBar.RotateScaleValue * _rotateBar.MaxRotate;
                 break;
             case EStateType.BeginSpeed:
-                Vector2 forwardDirection = Vector2.Right.Rotated(this.Rotation); 
-                this.Velocity = forwardDirection * (1 - Math.Abs(0.5f - _speedBar.SpeedScaleValue)) * _speedBar.MaxSpeed;
+                Vector2 forwardDirection = Vector2.Right.Rotated(this.Rotation);
+                this.Velocity = forwardDirection * (1 - Math.Abs(0.5f - _speedBar.SpeedScaleValue)) * MaxSpeed;
                 break;
             case EStateType.Flight:
-                this.MoveAndSlide();
                 break;
         }
     }
 
 
-    public void OnInitializePlayer()
+    public void Initialize(PlayerData playerData)
     {
-        _speedBar = _player.GetNode<SpeedBar>("SpeedBar");
-        _rotateBar = _player.GetNode<RotateBar>("RotateBar");
+        PlayerDataResource = playerData;
 
-        PlayerDataResource = _player.PlayerDataResource;
+        _speedBar = GetNode<SpeedBar>("Node/Node2D/SpeedBar");
+        _rotateBar = GetNode<RotateBar>("Node/Node2D/RotateBar");
+
         EmitSignal(SignalName.InitializeBodyComponents);
 
         ProcessMode = ProcessModeEnum.Always;
@@ -91,6 +94,7 @@ public partial class PlayerBody : CharacterBody2D
 
             case EStateType.BeginSpeed:
                 _rotateBar.QueueFree();
+
                 _speedBar.Show();
                 _speedBar.GetNode<AnimationPlayer>("AnimationPlayer").Play("active");
 
@@ -105,9 +109,8 @@ public partial class PlayerBody : CharacterBody2D
 
     public override void _ExitTree()
     {
-        base._ExitTree();
-
         PlayerManager.Instance.PlayerStateChanged -= OnPlayerStateChanged;
+        base._ExitTree();
     }
 
 }

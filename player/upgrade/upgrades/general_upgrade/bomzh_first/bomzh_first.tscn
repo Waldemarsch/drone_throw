@@ -1,34 +1,35 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwllov2fjfhog"]
 
 [ext_resource type="PackedScene" uid="uid://dpond713qrg3r" path="res://player/upgrade/upgrades/general_upgrade/general_upgrade.tscn" id="1_y6bds"]
-[ext_resource type="Texture2D" uid="uid://cwjyuf4gsmw0g" path="res://assets/upgrades/general_upgrades/bomzh_first/bomzh_trim_resized.png" id="2_j54o7"]
+[ext_resource type="Texture2D" uid="uid://bggoallra8jcw" path="res://assets/upgrades/general_upgrades/bomzh_first/bomzh_trim_resized.png" id="2_j54o7"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sokxg"]
-radius = 239.0
-height = 478.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sokxg"]
 
-[node name="BomzhFirst" instance=ExtResource("1_y6bds")]
+[node name="GeneralUpgrade" instance=ExtResource("1_y6bds")]
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="1"]
+z_index = 1
+position = Vector2(-5, 30)
+scale = Vector2(17.688, 13.8533)
+shape = SubResource("RectangleShape2D_sokxg")
+
+[node name="Sprite2D" parent="." index="2"]
 texture = ExtResource("2_j54o7")
 
-[node name="EngineSocket" parent="." index="1"]
+[node name="EngineSocket" parent="." index="3"]
 position = Vector2(-115, 143)
 
-[node name="GunSocket" parent="." index="2"]
+[node name="GunSocket" parent="." index="4"]
 position = Vector2(-178, -91)
 
-[node name="GearSocket" parent="." index="3"]
+[node name="GearSocket" parent="." index="5"]
 position = Vector2(25, 204)
 
-[node name="ShieldSocket" parent="." index="4"]
+[node name="ShieldSocket" parent="." index="6"]
 position = Vector2(175, 95)
 
-[node name="RotateBarSocket" parent="." index="5"]
+[node name="RotateBarSocket" parent="." index="7"]
 position = Vector2(474, 0)
 
-[node name="SpeedBarSocket" parent="." index="6"]
+[node name="SpeedBarSocket" parent="." index="8"]
 position = Vector2(0, -344)
-
-[node name="CollisionShape2D" parent="." index="7"]
-shape = SubResource("CapsuleShape2D_sokxg")

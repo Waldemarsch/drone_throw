@@ -9,23 +9,31 @@ public partial class FlightState : State
     {
         if (Input.IsActionPressed("left"))
         {
-            _player.RotationDegrees -= RotateSpeedDeg * (float)delta;
+            _playerBody.RotationDegrees -= RotateSpeedDeg * (float)delta;
         }
         if (Input.IsActionPressed("right"))
         {
-            _player.RotationDegrees += RotateSpeedDeg * (float)delta;
+            _playerBody.RotationDegrees += RotateSpeedDeg * (float)delta;
         }
 
-        var velocity = _player.Velocity;
+        var velocity = _playerBody.Velocity;
 
-        velocity.Y += LevelManager.Instance.GravityForce * (float)delta;
+        if (_playerBody.IsOnFloor()) velocity.X = Mathf.MoveToward(velocity.X, 0, _playerBody.GroundFriction * (float)delta);
+        else velocity.X = Mathf.MoveToward(velocity.X, 0, _playerBody.AirFriction * (float)delta);
 
-        _player.Velocity = velocity;
+        if (!_playerBody.IsOnFloor()) velocity.Y += _playerBody.GravityForce * (float)delta;
+        else velocity.Y = 0.01f;
 
-        if (_player.Velocity == Vector2.Zero)
+        _playerBody.Velocity = velocity;
+
+        if (_playerBody.IsOnFloor() && Mathf.IsZeroApprox(_playerBody.Velocity.X))
         {
             _stateManager.ChangeState(EStateType.Idle);
         }
+
+        _playerBody.MoveAndSlide();
+
+        
     }
 
 }

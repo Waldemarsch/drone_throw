@@ -9,8 +9,6 @@ public partial class SpeedBar : Node2D
     private Panel _marker;
     private TextureRect _bar;
 
-    [Export] public Vector2 MaxSpeed = new (2000f, 2000f);
-
     public override void _Ready()
     {
         _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
@@ -23,6 +21,8 @@ public partial class SpeedBar : Node2D
     public override void _Process(double delta)
     {
         base._Process(delta);
+
+        GlobalRotation = 0;
 
         _marker.Position = new Vector2((_bar.Size.X - _marker.Size.X) * SpeedScaleValue, _marker.Position.Y);
     }

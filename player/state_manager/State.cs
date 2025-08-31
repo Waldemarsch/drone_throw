@@ -15,7 +15,7 @@ public abstract partial class State : Node
 
     protected StateManager _stateManager;
 
-    protected PlayerBody _player;
+    protected PlayerBody _playerBody;
 
 
     public override void _Ready()
@@ -26,7 +26,7 @@ public abstract partial class State : Node
 
     public virtual void Enter()
     {
-        _player = _stateManager.PlayerNode;
+        _playerBody = _stateManager.PlayerNode;
         PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.PlayerStateChanged, (int)StateType);
     }
 

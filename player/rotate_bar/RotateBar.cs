@@ -23,6 +23,8 @@ public partial class RotateBar : Node2D
     {
         base._Process(delta);
 
+        GlobalRotation = 0;
+
         _marker.Position = new Vector2(_marker.Position.X, (_bar.Size.Y - _marker.Size.Y) * (1 - RotateScaleValue));
 
         GlobalRotationDegrees = 0;
