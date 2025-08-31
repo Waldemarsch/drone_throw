@@ -4,3 +4,4 @@
 
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_52ieu")
+GravityForce = 200.0

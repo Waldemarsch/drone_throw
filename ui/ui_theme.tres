@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://dfclc3ptgyluw"]
 
-[ext_resource type="FontFile" uid="uid://b2pv6axtxvy0w" path="res://assets/ui/fonts/ChangaOne-Italic.ttf" id="1_4mq11"]
-[ext_resource type="Texture2D" uid="uid://prali6j3rmtf" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Logotype/NameBack.png" id="2_vuqvt"]
+[ext_resource type="FontFile" uid="uid://dvosy3ces42nm" path="res://assets/ui/fonts/ChangaOne-Italic.ttf" id="1_4mq11"]
+[ext_resource type="Texture2D" uid="uid://d2ep7gv5t13ui" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Logotype/NameBack.png" id="2_vuqvt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
 texture = ExtResource("2_vuqvt")

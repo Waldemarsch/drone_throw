@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://dpond713qrg3r"]
+[gd_scene load_steps=2 format=3 uid="uid://dpond713qrg3r"]
+
+[ext_resource type="Script" uid="uid://boheswdyvntdo" path="res://player/upgrade/upgrades/general_upgrade/GeneralUpgrade.cs" id="1_dc8as"]
 
 [node name="GeneralUpgrade" type="Node2D"]
+script = ExtResource("1_dc8as")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -12,10 +15,8 @@
 
 [node name="ShieldSocket" type="Node2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-
 [node name="RotateBarSocket" type="Marker2D" parent="."]
 
 [node name="SpeedBarSocket" type="Marker2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

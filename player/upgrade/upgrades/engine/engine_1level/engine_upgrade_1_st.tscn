@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqtwkcqqppnir"]
 
-[ext_resource type="PackedScene" uid="uid://hwbopdeiwu02" path="res://objects/upgrades/engine/engine_upgrade.tscn" id="1_f88u3"]
+[ext_resource type="PackedScene" uid="uid://hwbopdeiwu02" path="res://player/upgrade/upgrades/engine/engine_upgrade.tscn" id="1_f88u3"]
 [ext_resource type="Resource" uid="uid://dy5enes15ou5l" path="res://resources/upgrades/engine/engine_1level/engine_level_1.tres" id="2_jygi7"]
 [ext_resource type="SpriteFrames" uid="uid://c32w2prh5r8s1" path="res://resources/upgrades/engine/engine_1level/engine_level_1_animFrames.tres" id="2_usgh6"]
 

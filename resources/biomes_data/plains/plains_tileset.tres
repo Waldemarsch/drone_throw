@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c68lhdvj0flkr"]
 
-[ext_resource type="Texture2D" uid="uid://dyvk2j6hem5s" path="res://assets/tiles/plains/grass tiles.png" id="1_hfsra"]
+[ext_resource type="Texture2D" uid="uid://l1ynrv2mctp0" path="res://assets/tiles/plains/grass tiles.png" id="1_hfsra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8s6em"]
 texture = ExtResource("1_hfsra")
@@ -84,7 +84,7 @@ texture_region_size = Vector2i(512, 512)
 
 [resource]
 tile_size = Vector2i(512, 512)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Mud"
 terrain_set_0/terrain_0/color = Color(0.656042, 0.0731789, 0.508781, 1)

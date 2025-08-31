@@ -58,6 +58,7 @@ public partial class UpgradeManager : Node
                 _generalUpgradeScene?.QueueFree();
                 _generalUpgradeScene = GeneralUpgradeScenes[_playerBody.PlayerDataResource.GeneralUpgradeLevel - 1].Instantiate<Node2D>();
                 _playerBody.AddChild(_generalUpgradeScene);
+                _generalUpgradeScene.GetNode<CollisionShape2D>("CollisionShape2D").Reparent(_playerBody);
 
                 if (_engineUpgradeScene != null)
                     _engineUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("EngineSocket").Position;
