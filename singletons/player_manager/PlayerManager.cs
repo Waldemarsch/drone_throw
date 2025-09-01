@@ -7,7 +7,7 @@ public partial class PlayerManager : Node
     [Export] public PackedScene PlayerScene;
 
     [Export] public PlayerData _playerData;
-    
+
     private PlayerBody _playerBody;
 
     public static PlayerManager Instance { get; private set; }
@@ -18,6 +18,9 @@ public partial class PlayerManager : Node
     [Signal] public delegate void PlayerSpawnedEventHandler(PlayerBody player);
 
     [Signal] public delegate void PlayerStateChangedEventHandler(EStateType stateType);
+
+    [Signal] public delegate void ScoreChangeEventHandler(int changeValue);
+    [Signal] public delegate void ScoreChangedEventHandler();
 
 
     public override void _Ready()
@@ -30,21 +33,23 @@ public partial class PlayerManager : Node
 
         TransitPlayerBody += OnTransitPlayerBody;
 
+        ScoreChange += OnScoreChange;
+
     }
 
     private void OnCreatePlayerData()
     {
         _playerData = new PlayerData();
         _playerData.GeneralUpgradeLevel = 1;
-        _playerData.EngineUpgradeLevel = 3;
+        _playerData.Score = 0;
     }
 
     private async void OnTransitPlayerBody(Node2D level, string spawnPointName)
     {
         if (_playerBody != null)
         {
-           _playerBody?.QueueFree();
-            await ToSignal(_playerBody, Node.SignalName.TreeExited); 
+            _playerBody?.QueueFree();
+            await ToSignal(_playerBody, Node.SignalName.TreeExited);
         }
         _playerBody = (PlayerBody)PlayerScene.Instantiate();
         _playerBody.Position = level.GetNode<Marker2D>(spawnPointName).Position;
@@ -53,5 +58,11 @@ public partial class PlayerManager : Node
         _playerBody.Initialize(_playerData);
 
         EmitSignal(SignalName.PlayerSpawned, _playerBody);
+    }
+
+    private void OnScoreChange(int changeValue)
+    {
+        _playerData.Score += changeValue;
+
     }
 }

@@ -9,6 +9,8 @@ public partial class GameInterface : Control
     private PanelContainer _PauseMenu;
     private Panel _PausedBackground;
 
+    private PanelContainer _moneyPanel;
+
     public override void _Ready()
     {
         base._Ready();
@@ -28,6 +30,13 @@ public partial class GameInterface : Control
         {
             LevelManager.Instance.EmitSignal(LevelManager.SignalName.ResetLevel);
         };
+        _moneyPanel = _Toolbar.GetNode<PanelContainer>("MarginContainer/CenterContainer/HBoxContainer/MoneyPanel");
+        _moneyPanel.GetNode<Label>("HBoxContainer/Label").Text = PlayerManager.Instance._playerData.Score.ToString();
+        PlayerManager.Instance.ScoreChanged += () =>
+        {
+            _moneyPanel.GetNode<Label>("HBoxContainer/Label").Text = PlayerManager.Instance._playerData.Score.ToString();
+        };
+
 
         _PauseMenu = GetNode<PanelContainer>("PauseMenu");
         _PauseMenu.GetNode<TextureButton>("MarginContainer/PauseExitButton").Pressed += () =>

@@ -10,6 +10,8 @@ public partial class UpgradeMenu : Control
 
     private VBoxContainer _upgradeLevelContainer;
 
+    private PanelContainer _moneyPanel;
+
     public override void _Ready()
     {
         base._Ready();
@@ -34,22 +36,13 @@ public partial class UpgradeMenu : Control
             }
         }
 
+        _moneyPanel = GetNode<PanelContainer>("PanelContainer/MoneyPanelControl/MoneyPanel");
+        _moneyPanel.GetNode<Label>("HBoxContainer/Label").Text = PlayerManager.Instance._playerData.Score.ToString();
+        PlayerManager.Instance.ScoreChanged += () =>
+        {
+            _moneyPanel.GetNode<Label>("HBoxContainer/Label").Text = PlayerManager.Instance._playerData.Score.ToString();
+        };
 
-
-        // foreach (HBoxContainer upgradeBox in GetNode<GridContainer>("PanelContainer/VBoxContainer/UpgradeGrid").GetChildren())
-        // {
-        //     if (upgradeBox.Name == "GeneralUpgradeBox")
-        //         {
-        //             for (var i = 0; i < PlayerManager.Instance._playerData.GeneralUpgradeLevel; i++)
-        //             {
-        //                 (Panel)upgradeBox.GetNode<HBoxContainer>("MarginContainer/HBoxContainer").GetChildren()[i].T
-        //             }
-        //         }
-        //     foreach (Control upgradeScale in upgradeBox.GetNode<HBoxContainer>("MarginContainer/HBoxContainer").GetChildren())
-        //     {
-
-        //     }
-        // }
     }
 
     private async void OnPlayButtonPressed()
