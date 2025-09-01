@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc3a0hs8abo2q"]
+[gd_scene load_steps=6 format=3 uid="uid://cc3a0hs8abo2q"]
 
 [ext_resource type="PackedScene" uid="uid://bvbryk7puwaso" path="res://levels/plains/plains.tscn" id="1_rsju0"]
 [ext_resource type="PackedScene" uid="uid://cq26l5wytxtfu" path="res://levels/city/city.tscn" id="2_w2sia"]
 [ext_resource type="PackedScene" uid="uid://dgm4tfrmnr6oy" path="res://levels/skies/skies.tscn" id="3_xglc3"]
 [ext_resource type="PackedScene" uid="uid://b5u01rscgws08" path="res://levels/space/space.tscn" id="4_7kqnc"]
-[ext_resource type="Texture2D" uid="uid://bvoasemx567up" path="res://assets/player/katapulta/katapulta.png" id="5_2ccdf"]
-[ext_resource type="PackedScene" uid="uid://dp22w6uvf2ifk" path="res://world/spawner/Spawner.tscn" id="6_w2sia"]
+[ext_resource type="Texture2D" uid="uid://bpmjcswan63s5" path="res://assets/player/katapulta/katapulta.png" id="5_2ccdf"]
 
 [node name="MainWorld" type="Node2D"]
 
@@ -38,5 +37,3 @@ top_level = true
 position = Vector2(15686, 40835)
 scale = Vector2(8, 8)
 texture = ExtResource("5_2ccdf")
-
-[node name="Spawner" parent="." instance=ExtResource("6_w2sia")]

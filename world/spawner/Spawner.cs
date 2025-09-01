@@ -11,10 +11,10 @@ public partial class Spawner : Node
     [Export] private Array<PackedScene> _skyEntities;
     [Export] private Array<PackedScene> _spaceEntities;
 
-    [Export] private float _spawnDistance = 20000;
+    [Export] private float _spawnDistance = 80000f;
     [Export] private int _spawnCount = 2;
-    [Export] private int _maxMobs = 20;
-    [Export] private float _spawnTime = 3;
+    [Export] private int _maxMobs = 10;
+    [Export] private float _spawnTime = 1;
 
     [Export] float floorY = 43220f;
 
@@ -48,16 +48,17 @@ public partial class Spawner : Node
         _playerBody = PlayerManager.Instance._playerBody;
         if (_spawnedEntities.Count != 0)
         {
-            var mobsToDespawn = _spawnedEntities.Where(mob => Mathf.Abs(mob.GlobalPosition.X - _playerBody.GlobalPosition.X) > _spawnDistance * 1.2)?.ToList();
-
-            if (mobsToDespawn != null)
+            var mobsToDespawnResult = _spawnedEntities.Where(mob => mob != null && IsInstanceValid(mob) && Mathf.Abs(mob.GlobalPosition.X - _playerBody.GlobalPosition.X) > _spawnDistance * 1.2);
+            if (mobsToDespawnResult != null)
             {
+                var mobsToDespawn = mobsToDespawnResult.ToList();
+
                 foreach (var mob in mobsToDespawn)
                 {
                     _spawnedEntities.Remove(mob);
                     mob.QueueFree();
                 }
-            }
+            }    
         }
 
         if (_spawnedEntities.Count < _maxMobs) SpawnMobs();
@@ -69,7 +70,7 @@ public partial class Spawner : Node
 
         for (var i = 0; i < _spawnCount; i++)
         {
-            float spawnX = (float)GD.RandRange(_playerBody.GlobalPosition.X + 12000, _spawnDistance);
+            float spawnX = (float)GD.RandRange(_playerBody.GlobalPosition.X + 5000f, _playerBody.GlobalPosition.X + _spawnDistance);
 
             PackedScene mobToSpawn = (PackedScene)spawnList[GD.RandRange(0, spawnList.Count - 1)].Duplicate();
 
@@ -86,9 +87,6 @@ public partial class Spawner : Node
     public override void _ExitTree()
     {
         base._ExitTree();
-
-        GD.Print("SASASSA");
-        GD.Print(_spawnedEntities);
     }
 
 

@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_krthw"]
 [ext_resource type="Resource" uid="uid://bequ870j6kj0o" path="res://resources/entity/inanimate/plains/seno.tres" id="2_mfy53"]
-[ext_resource type="Texture2D" uid="uid://citog208mqk1v" path="res://assets/entities/plains/Seno/seno_trim.png" id="3_2sk3j"]
+[ext_resource type="Texture2D" uid="uid://ldhpiugrhf0i" path="res://assets/entities/plains/Seno/seno_trim.png" id="3_2sk3j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4uhdg"]
 
 [node name="Seno" instance=ExtResource("1_krthw")]
+scale = Vector2(2, 2)
 EntityDataResource = ExtResource("2_mfy53")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]

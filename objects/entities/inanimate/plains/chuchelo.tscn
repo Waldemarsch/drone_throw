@@ -2,14 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_6y66s"]
 [ext_resource type="Resource" uid="uid://o8veeqboift7" path="res://resources/entity/inanimate/plains/chuchelo.tres" id="2_3htct"]
-[ext_resource type="Texture2D" uid="uid://d2h6tie8g0lah" path="res://assets/entities/plains/Chuchelo/chuchelo_trim.png" id="3_1y3e8"]
+[ext_resource type="Texture2D" uid="uid://ka3513usowe8" path="res://assets/entities/plains/Chuchelo/chuchelo_trim.png" id="3_1y3e8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1y3e8"]
 radius = 145.0
 height = 648.0
 
 [node name="Chuchelo" instance=ExtResource("1_6y66s")]
+scale = Vector2(2, 2)
 EntityDataResource = ExtResource("2_3htct")
+
+[node name="Area2D" parent="." index="0"]
+visible = false
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(-5, -25)
@@ -19,9 +23,7 @@ shape = SubResource("CapsuleShape2D_1y3e8")
 [node name="Sprite2D" parent="." index="2"]
 texture = ExtResource("3_1y3e8")
 
-[node name="Camera2D" type="Camera2D" parent="." index="4"]
-
-[node name="CPUParticles2D" parent="." index="5"]
+[node name="CPUParticles2D" parent="." index="4"]
 amount = 1000
 speed_scale = 1.65
 lifetime_randomness = 0.57
