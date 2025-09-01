@@ -37,4 +37,5 @@ animations = [{
 [resource]
 script = ExtResource("1_x72d0")
 SpriteFramesRes = SubResource("SpriteFrames_0yuxb")
+EntityDeathSound = null
 metadata/_custom_type_script = "uid://dbj8qxchljl3q"

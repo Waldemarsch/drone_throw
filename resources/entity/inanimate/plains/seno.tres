@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="EntityData" load_steps=7 format=3 uid="uid://bequ870j6kj0o"]
 
 [ext_resource type="Script" uid="uid://dbj8qxchljl3q" path="res://resources/classes/EntityData.cs" id="1_16wmm"]
-[ext_resource type="AudioStream" uid="uid://3l67i405yda8" path="res://assets/entities/plains/Seno/Sounds/SenoDeath1.mp3" id="1_fc615"]
-[ext_resource type="AudioStream" uid="uid://qc27el7ooqbk" path="res://assets/entities/plains/Seno/Sounds/SenoDeath2.mp3" id="2_sen6i"]
-[ext_resource type="AudioStream" uid="uid://ny413sy0s66u" path="res://assets/entities/plains/Seno/Sounds/SenoDeath3.mp3" id="3_5c2na"]
-[ext_resource type="AudioStream" uid="uid://bet3pqu3n8ech" path="res://assets/entities/plains/Seno/Sounds/SenoDeath4.mp3" id="4_rcist"]
-[ext_resource type="Texture2D" uid="uid://kct7kqdechw7" path="res://assets/entities/plains/Seno/seno_trim.png" id="5_vrkc3"]
+[ext_resource type="AudioStream" uid="uid://b287bmvc2rrug" path="res://assets/entities/plains/Seno/Sounds/SenoDeath1.mp3" id="1_fc615"]
+[ext_resource type="AudioStream" uid="uid://4twrd35ygxpb" path="res://assets/entities/plains/Seno/Sounds/SenoDeath2.mp3" id="2_sen6i"]
+[ext_resource type="AudioStream" uid="uid://btxqvomtxl236" path="res://assets/entities/plains/Seno/Sounds/SenoDeath3.mp3" id="3_5c2na"]
+[ext_resource type="AudioStream" uid="uid://dmgflfi1tn2j1" path="res://assets/entities/plains/Seno/Sounds/SenoDeath4.mp3" id="4_rcist"]
+[ext_resource type="Texture2D" uid="uid://citog208mqk1v" path="res://assets/entities/plains/Seno/seno_trim.png" id="5_vrkc3"]
 
 [resource]
 script = ExtResource("1_16wmm")

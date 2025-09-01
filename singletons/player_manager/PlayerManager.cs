@@ -36,6 +36,7 @@ public partial class PlayerManager : Node
     {
         _playerData = new PlayerData();
         _playerData.GeneralUpgradeLevel = 1;
+        _playerData.EngineUpgradeLevel = 3;
     }
 
     private async void OnTransitPlayerBody(Node2D level, string spawnPointName)

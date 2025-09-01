@@ -52,7 +52,10 @@ visible = false
 visible = false
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_qjkh3")]
-AirFriction = 10.0
+MaxSpeed = Vector2(2000, 2000)
+AirFriction = 30.0
+GroundFriction = 200.0
+GravityForce = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.2, 0.2)

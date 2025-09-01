@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="EntityData" load_steps=7 format=3 uid="uid://o8veeqboift7"]
 
-[ext_resource type="AudioStream" uid="uid://cemjmvi11m0tq" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath1.mp3" id="1_3x0gk"]
+[ext_resource type="AudioStream" uid="uid://pxlno28flhh2" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath1.mp3" id="1_3x0gk"]
 [ext_resource type="Script" uid="uid://dbj8qxchljl3q" path="res://resources/classes/EntityData.cs" id="1_l6iyy"]
-[ext_resource type="AudioStream" uid="uid://bjqmpc1fy4mc1" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath2.mp3" id="2_t68lv"]
-[ext_resource type="AudioStream" uid="uid://cnsn8ma3icvwt" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath3.mp3" id="3_f57wp"]
-[ext_resource type="AudioStream" uid="uid://bfmsxs7frwlhw" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath4.mp3" id="4_ibhno"]
-[ext_resource type="Texture2D" uid="uid://7rw2hek8n2nm" path="res://assets/entities/plains/Chuchelo/chuchelo_trim.png" id="5_8x372"]
+[ext_resource type="AudioStream" uid="uid://4dqndrfpcq20" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath2.mp3" id="2_t68lv"]
+[ext_resource type="AudioStream" uid="uid://cg75hxr1wpltv" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath3.mp3" id="3_f57wp"]
+[ext_resource type="AudioStream" uid="uid://cpdj0dx6yg6pn" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath4.mp3" id="4_ibhno"]
+[ext_resource type="Texture2D" uid="uid://d2h6tie8g0lah" path="res://assets/entities/plains/Chuchelo/chuchelo_trim.png" id="5_8x372"]
 
 [resource]
 script = ExtResource("1_l6iyy")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_6y66s"]
 [ext_resource type="Resource" uid="uid://o8veeqboift7" path="res://resources/entity/inanimate/plains/chuchelo.tres" id="2_3htct"]
-[ext_resource type="Texture2D" uid="uid://7rw2hek8n2nm" path="res://assets/entities/plains/Chuchelo/chuchelo_trim.png" id="3_1y3e8"]
+[ext_resource type="Texture2D" uid="uid://d2h6tie8g0lah" path="res://assets/entities/plains/Chuchelo/chuchelo_trim.png" id="3_1y3e8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1y3e8"]
 radius = 145.0

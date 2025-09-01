@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dc6yh3ixkm84f" path="res://levels/level.tscn" id="1_h32qd"]
 [ext_resource type="TileSet" uid="uid://c68lhdvj0flkr" path="res://resources/biomes_data/plains/plains_tileset.tres" id="2_tbe3i"]
-[ext_resource type="Texture2D" uid="uid://c48ep8xobohmi" path="res://assets/background/skies/sky_lower.png" id="4_8cfpl"]
-[ext_resource type="Texture2D" uid="uid://bukt3ra20utbh" path="res://assets/background/plains/plains_resized.png" id="4_dav0d"]
-[ext_resource type="Texture2D" uid="uid://clleelktqupb6" path="res://assets/background/plains/plains_resized_blur.png" id="5_8cfpl"]
+[ext_resource type="Texture2D" uid="uid://jxr7domgi6hn" path="res://assets/background/skies/sky_lower.png" id="4_8cfpl"]
+[ext_resource type="Texture2D" uid="uid://dwwhbwlk5dyll" path="res://assets/background/plains/plains_resized.png" id="4_dav0d"]
+[ext_resource type="Texture2D" uid="uid://b5c0a8y1xtff0" path="res://assets/background/plains/plains_resized_blur.png" id="5_8cfpl"]
 
 [node name="Plains" instance=ExtResource("1_h32qd")]
 
