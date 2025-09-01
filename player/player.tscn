@@ -59,3 +59,5 @@ GravityForce = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.2, 0.2)
+
+[node name="Area2D" type="Area2D" parent="."]

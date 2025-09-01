@@ -38,7 +38,6 @@ public partial class UIManager : Node
     private void OnAddUIElement(string uiElementName)
     {
         Control uiElement = null;
-        foreach (Control loadedUIScene in _UIContainer.loadedUIScenes) GD.Print(loadedUIScene.Name);
         foreach (Control loadedUIScene in _UIContainer.loadedUIScenes)
         {
             if (loadedUIScene.Name == uiElementName)

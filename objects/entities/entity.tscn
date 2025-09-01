@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://hvex77xds7af" path="res://components/destructible/DestructibleComponent.tscn" id="1_irabn"]
 
 [node name="Entity" type="StaticBody2D"]
+scale = Vector2(3, 3)
 
 [node name="Area2D" type="Area2D" parent="."]
 

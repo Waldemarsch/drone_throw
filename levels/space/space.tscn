@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0em5ajjjtd6" path="res://assets/background/space/space_resized.png" id="2_kipla"]
 
 [node name="Space" instance=ExtResource("1_g0na3")]
+BiomeType = 3
 
 [node name="1" type="Node2D" parent="Background" index="0"]
 

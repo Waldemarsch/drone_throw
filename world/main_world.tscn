@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc3a0hs8abo2q"]
+
+[ext_resource type="PackedScene" uid="uid://bvbryk7puwaso" path="res://levels/plains/plains.tscn" id="1_rsju0"]
+[ext_resource type="PackedScene" uid="uid://cq26l5wytxtfu" path="res://levels/city/city.tscn" id="2_w2sia"]
+[ext_resource type="PackedScene" uid="uid://dgm4tfrmnr6oy" path="res://levels/skies/skies.tscn" id="3_xglc3"]
+[ext_resource type="PackedScene" uid="uid://b5u01rscgws08" path="res://levels/space/space.tscn" id="4_7kqnc"]
+[ext_resource type="Texture2D" uid="uid://bvoasemx567up" path="res://assets/player/katapulta/katapulta.png" id="5_2ccdf"]
+[ext_resource type="PackedScene" uid="uid://dp22w6uvf2ifk" path="res://world/spawner/Spawner.tscn" id="6_w2sia"]
+
+[node name="MainWorld" type="Node2D"]
+
+[node name="Enviroment" type="Node2D" parent="."]
+
+[node name="Plains" parent="Enviroment" instance=ExtResource("1_rsju0")]
+script = null
+
+[node name="City" parent="Enviroment" instance=ExtResource("2_w2sia")]
+position = Vector2(268800, 0)
+script = null
+
+[node name="Skies" parent="Enviroment" instance=ExtResource("3_xglc3")]
+position = Vector2(0, -21600)
+script = null
+
+[node name="Space" parent="Enviroment" instance=ExtResource("4_7kqnc")]
+position = Vector2(0, -43200)
+script = null
+
+[node name="Border" parent="Enviroment" instance=ExtResource("4_7kqnc")]
+position = Vector2(0, -86400)
+script = null
+
+[node name="DefaultSpawn" type="Marker2D" parent="."]
+position = Vector2(20341, 38885)
+
+[node name="Katapulta" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(15686, 40835)
+scale = Vector2(8, 8)
+texture = ExtResource("5_2ccdf")
+
+[node name="Spawner" parent="." instance=ExtResource("6_w2sia")]

@@ -8,9 +8,11 @@ public partial class PlayerManager : Node
 
     [Export] public PlayerData _playerData;
 
-    private PlayerBody _playerBody;
+    public PlayerBody _playerBody { get; private set; }
 
     public static PlayerManager Instance { get; private set; }
+
+    public BiomeTypes CurrentBiome;
 
     [Signal] public delegate void CreatePlayerDataEventHandler();
 
@@ -21,6 +23,8 @@ public partial class PlayerManager : Node
 
     [Signal] public delegate void ScoreChangeEventHandler(int changeValue);
     [Signal] public delegate void ScoreChangedEventHandler();
+
+    [Signal] public delegate void BiomeEnteredEventHandler(BiomeTypes biomeType);
 
 
     public override void _Ready()
@@ -34,6 +38,8 @@ public partial class PlayerManager : Node
         TransitPlayerBody += OnTransitPlayerBody;
 
         ScoreChange += OnScoreChange;
+
+        BiomeEntered += OnBiomeEntered;
 
     }
 
@@ -64,5 +70,10 @@ public partial class PlayerManager : Node
     {
         _playerData.Score += changeValue;
 
+    }
+
+    private void OnBiomeEntered(BiomeTypes biomeType)
+    {
+        CurrentBiome = biomeType;
     }
 }

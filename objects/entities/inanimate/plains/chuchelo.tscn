@@ -12,8 +12,8 @@ height = 648.0
 EntityDataResource = ExtResource("2_3htct")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-5, 10)
-scale = Vector2(0.918138, 1.2726)
+position = Vector2(-5, -25)
+scale = Vector2(0.798431, 0.942757)
 shape = SubResource("CapsuleShape2D_1y3e8")
 
 [node name="Sprite2D" parent="." index="2"]
@@ -27,8 +27,6 @@ speed_scale = 1.65
 lifetime_randomness = 0.57
 initial_velocity_min = 300.0
 initial_velocity_max = 600.0
-damping_min = 100.0
-damping_max = 200.0
 scale_amount_min = 10.0
 scale_amount_max = 20.0
 color = Color(0.688218, 0.513169, 0.348691, 1)

@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_4y6ll")
 Paths = {
-"MainWorld": "res://scenes/main_world.tscn"
+"MainWorld": "res://world/main_world.tscn"
 }
 metadata/_custom_type_script = "uid://babmqr4tl35ll"

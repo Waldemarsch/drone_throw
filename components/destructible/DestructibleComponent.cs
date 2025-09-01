@@ -1,46 +1,55 @@
+using DroneThrow;
 using Godot;
 using System;
 
-public partial class DestructibleComponent : Node, IDestructible
+public partial class DestructibleComponent : Node
 {
-    [ExportGroup("Audio")]
-    [Export] public AudioStream DeathSound { get; set; }
-
-    [ExportGroup("Effects")]
-    [Export] public PackedScene DeathEffectScene { get; set; }
+    private Entity _entityOwner;
 
     private bool _isDead = false;
 
-    public void TriggerDestruction()
+    public override void _Ready()
     {
-        Die();
+        base._Ready();
+
+        _entityOwner = GetParent<Entity>();
+
+        _entityOwner.InitializeComponents += OnInitializeComponents;
     }
 
+    private void OnInitializeComponents()
+    {
+        _entityOwner.GetNode<Area2D>("Area2D").BodyEntered += OnBodyEntered;
+    }
+
+    private void OnBodyEntered(Node2D body)
+    {
+        if (body is PlayerBody playerBody)
+        {
+            Die();
+        }
+    }
 
     private void Die()
     {
-        if (_isDead) return;
+        if (_isDead) { _entityOwner.QueueFree();  return; };
         _isDead = true;
 
-        if (DeathEffectScene != null)
+        if (_entityOwner.CpuParticles2DNode != null)
         {
-            Node2D parent = (Node2D)GetParent();
-            Node2D deathEffectSceneInstance = (Node2D)DeathEffectScene.Instantiate();
-            deathEffectSceneInstance.GlobalPosition = parent.GlobalPosition;
-            GetTree().Root.AddChild(deathEffectSceneInstance);
+            _entityOwner.CpuParticles2DNode.Emitting = true;
+            _entityOwner.CpuParticles2DNode.Finished += _entityOwner.Hide;
 
         }
 
-        if (DeathSound != null)
+        if (_entityOwner.AudioStreamNode != null)
         {
-            var deathAudioPlayer = new AudioStreamPlayer();
-            deathAudioPlayer.Stream = DeathSound;
-            GetTree().Root.AddChild(deathAudioPlayer);
-            deathAudioPlayer.Play();
-            deathAudioPlayer.Finished += deathAudioPlayer.QueueFree;
+
+            _entityOwner.AudioStreamNode.Play();
+            _entityOwner.AudioStreamNode.Finished += _entityOwner.QueueFree;
         }
 
-        GetParent().QueueFree();
+        _entityOwner.QueueFree();
     }
 
 }

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drgkc4a4yyyst" path="res://assets/background/skies/sky_upper.png" id="2_taxvm"]
 
 [node name="Skies" instance=ExtResource("1_0j7q5")]
+BiomeType = 2
 
 [node name="1" type="Node2D" parent="Background" index="0"]
 

@@ -39,6 +39,8 @@ public partial class FlightState : State
 
     private async void ToUpgradeMenu()
     {
+        LevelManager.Instance.EmitSignal(LevelManager.SignalName.PauseLevel);
+
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.Change);
 
         await ToSignal(SceneManager.Instance, SceneManager.SignalName.AllowSceneTransition);

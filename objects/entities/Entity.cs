@@ -7,8 +7,10 @@ namespace DroneThrow
     {
         [Export] public EntityData EntityDataResource;
 
-        private AudioStreamPlayer2D AudioStreamNode;
-        private CpuParticles2D CpuParticles2DNode;
+        [Signal] public delegate void InitializeComponentsEventHandler();
+
+        public AudioStreamPlayer2D AudioStreamNode;
+        public CpuParticles2D CpuParticles2DNode;
 
         public override void _Ready()
         {
@@ -19,6 +21,8 @@ namespace DroneThrow
                 Random rng = new();
                 AudioStreamNode.Stream = EntityDataResource.EntityDeathSound[rng.Next(0, EntityDataResource.EntityDeathSound.Count - 1)];
             }
+
+            EmitSignal(SignalName.InitializeComponents);
         }
 
     }       

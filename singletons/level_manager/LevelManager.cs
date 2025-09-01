@@ -12,6 +12,8 @@ public partial class LevelManager : Node
     [Signal] public delegate void UnpauseLevelEventHandler();
     [Signal] public delegate void ResetLevelEventHandler();
 
+    private Node2D _worldNode;
+
     private LevelContainer _levelContainer;
     private Node2D _currLevel;
 
