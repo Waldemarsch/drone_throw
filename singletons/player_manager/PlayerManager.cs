@@ -69,6 +69,7 @@ public partial class PlayerManager : Node
     private void OnScoreChange(int changeValue)
     {
         _playerData.Score += changeValue;
+        EmitSignal(SignalName.ScoreChanged);
 
     }
 

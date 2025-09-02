@@ -1,6 +1,8 @@
 using Godot;
 using System;
 using Godot.Collections;
+using System.Linq;
+using System.Collections.Generic;
 
 public partial class UIManager : Node
 {
@@ -10,8 +12,7 @@ public partial class UIManager : Node
     [Export] private UIContainer _UIContainer;
 
     [Signal] public delegate void LoadUIElementEventHandler(Control uiElement);
-    [Signal] public delegate void AddUIElementEventHandler(string uiElementName);
-    [Signal] public delegate void ShowUIElementEventHandler(string uiElementName);
+    [Signal] public delegate void EnableUIElementEventHandler(string uiElementName);
     [Signal] public delegate void HideUIElementEventHandler(string uiElementName);
 
     private Dictionary _UiElementsList = [];
@@ -25,8 +26,7 @@ public partial class UIManager : Node
         _UIContainer = GetTree().Root.GetNode<UIContainer>("Main/UIContainer");
 
         LoadUIElement += OnLoadUIElement;
-        AddUIElement += OnAddUIElement;
-        ShowUIElement += OnShowUIElement;
+        EnableUIElement += OnEnableUIElement;
         HideUIElement += OnHideUIElement;
     }
 
@@ -35,36 +35,37 @@ public partial class UIManager : Node
         _UIContainer.loadedUIScenes.Add(uiElement);
     }
 
-    private void OnAddUIElement(string uiElementName)
+    private void OnEnableUIElement(string uiElementName)
     {
-        Control uiElement = null;
-        foreach (Control loadedUIScene in _UIContainer.loadedUIScenes)
-        {
-            if (loadedUIScene.Name == uiElementName)
-            {
-                uiElement = (Control)loadedUIScene.Duplicate();
-                break;
-            }
-        }
-        if (uiElement == null) return;
-        
-        _UiElementsList[uiElementName] = uiElement;
-        uiElement.Hide();
-        uiElement.ProcessMode = ProcessModeEnum.Disabled;
-        _UIContainer.AddChild(uiElement);
-    }
+        var uiElement = (Control)_UiElementsList.GetValueOrDefault(uiElementName);
 
-    private void OnShowUIElement(string uiElementName)
-    {
-        var uiElement = (Control)_UiElementsList[uiElementName];
-        uiElement.Show();
-        uiElement.ProcessMode = ProcessModeEnum.Pausable;
+        if (uiElement != null)
+        {
+            uiElement.Show();
+            uiElement.ProcessMode = ProcessModeEnum.Pausable;
+        }
+
+        else
+        {
+            foreach (Control loadedUIScene in _UIContainer.loadedUIScenes)
+            {
+                if (loadedUIScene.Name == uiElementName)
+                {
+                    uiElement = (Control)loadedUIScene.Duplicate();
+                    break;
+                }
+            }
+            if (uiElement == null) return;
+            
+            _UiElementsList[uiElementName] = uiElement;
+            _UIContainer.AddChild(uiElement);
+        }
+        
     }
 
     private void OnHideUIElement(string uiElementName)
     {
         var uiElement = (Control)_UiElementsList[uiElementName];
         uiElement.Hide();
-        uiElement.ProcessMode = ProcessModeEnum.Disabled;
     }
 }

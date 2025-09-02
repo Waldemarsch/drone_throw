@@ -30,25 +30,27 @@ public partial class DestructibleComponent : Node
         }
     }
 
-    private void Die()
+    private async void Die()
     {
-        if (_isDead) { _entityOwner.QueueFree();  return; };
+        PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.ScoreChange, _entityOwner.ScoreValue);
+        if (_isDead) { _entityOwner.QueueFree(); return; }
+        ;
         _isDead = true;
 
         if (_entityOwner.CpuParticles2DNode != null)
         {
+            _entityOwner.SpriteNode.Hide();
             _entityOwner.CpuParticles2DNode.Emitting = true;
-            _entityOwner.CpuParticles2DNode.Finished += _entityOwner.Hide;
 
         }
 
         if (_entityOwner.AudioStreamNode != null)
         {
-
             _entityOwner.AudioStreamNode.Play();
-            _entityOwner.AudioStreamNode.Finished += _entityOwner.QueueFree;
         }
 
+        await ToSignal(_entityOwner.AudioStreamNode, AudioStreamPlayer2D.SignalName.Finished);
+        await ToSignal(_entityOwner.CpuParticles2DNode, CpuParticles2D.SignalName.Finished);
         _entityOwner.QueueFree();
     }
 

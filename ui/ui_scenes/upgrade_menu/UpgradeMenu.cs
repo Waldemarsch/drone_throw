@@ -52,12 +52,9 @@ public partial class UpgradeMenu : Control
         await ToSignal(SceneManager.Instance, SceneManager.SignalName.AllowSceneTransition);
 
         UIManager.Instance.EmitSignal(UIManager.SignalName.HideUIElement, "UpgradeMenu");
-        UIManager.Instance.EmitSignal(UIManager.SignalName.AddUIElement, "GameInterface");
-        UIManager.Instance.EmitSignal(UIManager.SignalName.ShowUIElement, "GameInterface");
+        UIManager.Instance.EmitSignal(UIManager.SignalName.EnableUIElement, "GameInterface");
 
-        LevelManager.Instance.EmitSignal(LevelManager.SignalName.ChangeLevel, "MainWorld", "DefaultSpawn");
-
-        QueueFree();
+        LevelManager.Instance.EmitSignal(LevelManager.SignalName.ResetLevel);
     }
 
 }

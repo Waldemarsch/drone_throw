@@ -16,8 +16,6 @@ namespace DroneThrow
 
             AnimatedSpriteNode.SpriteFrames = EntityDataResource.SpriteFramesRes;
 
-            GD.Print(EntityDataResource.SpriteFramesRes);
-
             AnimatedSpriteNode.Play("default");
         }
 

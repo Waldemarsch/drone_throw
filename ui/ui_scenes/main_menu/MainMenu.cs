@@ -34,8 +34,7 @@ public partial class MainMenu : Control
         await ToSignal(SceneManager.Instance, SceneManager.SignalName.AllowSceneTransition);
 
         UIManager.Instance.EmitSignal(UIManager.SignalName.HideUIElement, "MainMenu");
-        UIManager.Instance.EmitSignal(UIManager.SignalName.AddUIElement, "GameInterface");
-        UIManager.Instance.EmitSignal(UIManager.SignalName.ShowUIElement, "GameInterface");
+        UIManager.Instance.EmitSignal(UIManager.SignalName.EnableUIElement, "GameInterface");
 
         LevelManager.Instance.EmitSignal(LevelManager.SignalName.ChangeLevel, "MainWorld", "DefaultSpawn");
 

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cq26l5wytxtfu" path="res://levels/city/city.tscn" id="2_w2sia"]
 [ext_resource type="PackedScene" uid="uid://dgm4tfrmnr6oy" path="res://levels/skies/skies.tscn" id="3_xglc3"]
 [ext_resource type="PackedScene" uid="uid://b5u01rscgws08" path="res://levels/space/space.tscn" id="4_7kqnc"]
-[ext_resource type="Texture2D" uid="uid://bpmjcswan63s5" path="res://assets/player/katapulta/katapulta.png" id="5_2ccdf"]
+[ext_resource type="Texture2D" uid="uid://bvoasemx567up" path="res://assets/player/katapulta/katapulta.png" id="5_2ccdf"]
 
 [node name="MainWorld" type="Node2D"]
 

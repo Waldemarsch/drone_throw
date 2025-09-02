@@ -46,8 +46,7 @@ public partial class FlightState : State
         await ToSignal(SceneManager.Instance, SceneManager.SignalName.AllowSceneTransition);
 
         UIManager.Instance.EmitSignal(UIManager.SignalName.HideUIElement, "GameInterface");
-        UIManager.Instance.EmitSignal(UIManager.SignalName.AddUIElement, "UpgradeMenu");
-        UIManager.Instance.EmitSignal(UIManager.SignalName.ShowUIElement, "UpgradeMenu");
+        UIManager.Instance.EmitSignal(UIManager.SignalName.EnableUIElement, "UpgradeMenu");
     }
 
 }

@@ -26,8 +26,7 @@ public partial class Main : Node
 
         SceneManager.Instance.LoadingCompleted += () =>
         {
-            UIManager.Instance.EmitSignal(UIManager.SignalName.AddUIElement, "MainMenu");
-            UIManager.Instance.EmitSignal(UIManager.SignalName.ShowUIElement, "MainMenu");
+            UIManager.Instance.EmitSignal(UIManager.SignalName.EnableUIElement, "MainMenu");
         };
     }
 

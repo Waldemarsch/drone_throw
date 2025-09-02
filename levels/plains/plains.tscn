@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=4 uid="uid://bvbryk7puwaso"]
+[gd_scene load_steps=9 format=4 uid="uid://bvbryk7puwaso"]
 
 [ext_resource type="PackedScene" uid="uid://dc6yh3ixkm84f" path="res://levels/level.tscn" id="1_h32qd"]
 [ext_resource type="TileSet" uid="uid://c68lhdvj0flkr" path="res://resources/biomes_data/plains/plains_tileset.tres" id="2_tbe3i"]
-[ext_resource type="Texture2D" uid="uid://c48ep8xobohmi" path="res://assets/background/skies/sky_lower.png" id="4_8cfpl"]
-[ext_resource type="Texture2D" uid="uid://bukt3ra20utbh" path="res://assets/background/plains/plains_resized.png" id="4_dav0d"]
-[ext_resource type="Texture2D" uid="uid://clleelktqupb6" path="res://assets/background/plains/plains_resized_blur.png" id="5_8cfpl"]
+[ext_resource type="Texture2D" uid="uid://jxr7domgi6hn" path="res://assets/background/skies/sky_lower.png" id="4_8cfpl"]
+[ext_resource type="Texture2D" uid="uid://dwwhbwlk5dyll" path="res://assets/background/plains/plains_resized.png" id="4_dav0d"]
+[ext_resource type="Texture2D" uid="uid://b5c0a8y1xtff0" path="res://assets/background/plains/plains_resized_blur.png" id="5_8cfpl"]
 [ext_resource type="PackedScene" uid="uid://chknl80767g0d" path="res://objects/entities/inanimate/plains/chuchelo.tscn" id="6_t5hn8"]
+[ext_resource type="PackedScene" uid="uid://dkhvn153x1vtc" path="res://objects/entities/inanimate/plains/seno.tscn" id="7_ngqd2"]
+[ext_resource type="PackedScene" uid="uid://bi4sao16k007i" path="res://objects/entities/inanimate/plains/combine.tscn" id="8_5yg5t"]
 
 [node name="Plains" instance=ExtResource("1_h32qd")]
 
@@ -102,3 +104,220 @@ position = Vector2(12801, 42410)
 
 [node name="Chuchelo2" parent="LevelEntities/Chuchelos" index="1" instance=ExtResource("6_t5hn8")]
 position = Vector2(30710, 42410)
+
+[node name="Chuchelo3" parent="LevelEntities/Chuchelos" index="2" instance=ExtResource("6_t5hn8")]
+position = Vector2(45331, 42410)
+
+[node name="Chuchelo4" parent="LevelEntities/Chuchelos" index="3" instance=ExtResource("6_t5hn8")]
+position = Vector2(56639, 42410)
+
+[node name="Chuchelo5" parent="LevelEntities/Chuchelos" index="4" instance=ExtResource("6_t5hn8")]
+position = Vector2(74548, 42410)
+
+[node name="Chuchelo6" parent="LevelEntities/Chuchelos" index="5" instance=ExtResource("6_t5hn8")]
+position = Vector2(89169, 42410)
+
+[node name="Chuchelo7" parent="LevelEntities/Chuchelos" index="6" instance=ExtResource("6_t5hn8")]
+position = Vector2(103659, 42410)
+
+[node name="Chuchelo8" parent="LevelEntities/Chuchelos" index="7" instance=ExtResource("6_t5hn8")]
+position = Vector2(121568, 42410)
+
+[node name="Chuchelo9" parent="LevelEntities/Chuchelos" index="8" instance=ExtResource("6_t5hn8")]
+position = Vector2(136189, 42410)
+
+[node name="Chuchelo10" parent="LevelEntities/Chuchelos" index="9" instance=ExtResource("6_t5hn8")]
+position = Vector2(147497, 42410)
+
+[node name="Chuchelo11" parent="LevelEntities/Chuchelos" index="10" instance=ExtResource("6_t5hn8")]
+position = Vector2(165406, 42410)
+
+[node name="Chuchelo12" parent="LevelEntities/Chuchelos" index="11" instance=ExtResource("6_t5hn8")]
+position = Vector2(180027, 42410)
+
+[node name="Chuchelo13" parent="LevelEntities/Chuchelos" index="12" instance=ExtResource("6_t5hn8")]
+position = Vector2(187411, 42410)
+
+[node name="Chuchelo14" parent="LevelEntities/Chuchelos" index="13" instance=ExtResource("6_t5hn8")]
+position = Vector2(205320, 42410)
+
+[node name="Chuchelo15" parent="LevelEntities/Chuchelos" index="14" instance=ExtResource("6_t5hn8")]
+position = Vector2(219941, 42410)
+
+[node name="Chuchelo16" parent="LevelEntities/Chuchelos" index="15" instance=ExtResource("6_t5hn8")]
+position = Vector2(231249, 42410)
+
+[node name="Chuchelo17" parent="LevelEntities/Chuchelos" index="16" instance=ExtResource("6_t5hn8")]
+position = Vector2(251688, 42410)
+
+[node name="Chuchelo18" parent="LevelEntities/Chuchelos" index="17" instance=ExtResource("6_t5hn8")]
+position = Vector2(263779, 42410)
+
+[node name="Chuchelo19" parent="LevelEntities/Chuchelos" index="18" instance=ExtResource("6_t5hn8")]
+position = Vector2(127483, 42410)
+
+[node name="Chuchelo20" parent="LevelEntities/Chuchelos" index="19" instance=ExtResource("6_t5hn8")]
+position = Vector2(139860, 42410)
+
+[node name="Chuchelo21" parent="LevelEntities/Chuchelos" index="20" instance=ExtResource("6_t5hn8")]
+position = Vector2(150335, 42410)
+
+[node name="Chuchelo22" parent="LevelEntities/Chuchelos" index="21" instance=ExtResource("6_t5hn8")]
+position = Vector2(174452, 42410)
+
+[node name="Chuchelo23" parent="LevelEntities/Chuchelos" index="22" instance=ExtResource("6_t5hn8")]
+position = Vector2(196060, 42410)
+
+[node name="Chuchelo24" parent="LevelEntities/Chuchelos" index="23" instance=ExtResource("6_t5hn8")]
+position = Vector2(212550, 42410)
+
+[node name="Chuchelo25" parent="LevelEntities/Chuchelos" index="24" instance=ExtResource("6_t5hn8")]
+position = Vector2(224606, 42410)
+
+[node name="Senos" type="Node2D" parent="LevelEntities" index="1"]
+
+[node name="Seno" parent="LevelEntities/Senos" index="0" instance=ExtResource("7_ngqd2")]
+position = Vector2(59957, 42592)
+
+[node name="Seno2" parent="LevelEntities/Senos" index="1" instance=ExtResource("7_ngqd2")]
+position = Vector2(33681, 42592)
+
+[node name="Seno3" parent="LevelEntities/Senos" index="2" instance=ExtResource("7_ngqd2")]
+position = Vector2(42630, 42592)
+
+[node name="Seno4" parent="LevelEntities/Senos" index="3" instance=ExtResource("7_ngqd2")]
+position = Vector2(52881, 42592)
+
+[node name="Seno5" parent="LevelEntities/Senos" index="4" instance=ExtResource("7_ngqd2")]
+position = Vector2(63082, 42592)
+
+[node name="Seno6" parent="LevelEntities/Senos" index="5" instance=ExtResource("7_ngqd2")]
+position = Vector2(72031, 42592)
+
+[node name="Seno7" parent="LevelEntities/Senos" index="6" instance=ExtResource("7_ngqd2")]
+position = Vector2(80799, 42592)
+
+[node name="Seno8" parent="LevelEntities/Senos" index="7" instance=ExtResource("7_ngqd2")]
+position = Vector2(91000, 42592)
+
+[node name="Seno9" parent="LevelEntities/Senos" index="8" instance=ExtResource("7_ngqd2")]
+position = Vector2(99949, 42592)
+
+[node name="Seno10" parent="LevelEntities/Senos" index="9" instance=ExtResource("7_ngqd2")]
+position = Vector2(110200, 42592)
+
+[node name="Seno11" parent="LevelEntities/Senos" index="10" instance=ExtResource("7_ngqd2")]
+position = Vector2(120401, 42592)
+
+[node name="Seno12" parent="LevelEntities/Senos" index="11" instance=ExtResource("7_ngqd2")]
+position = Vector2(129350, 42592)
+
+[node name="Seno13" parent="LevelEntities/Senos" index="12" instance=ExtResource("7_ngqd2")]
+position = Vector2(142395, 42592)
+
+[node name="Seno14" parent="LevelEntities/Senos" index="13" instance=ExtResource("7_ngqd2")]
+position = Vector2(152596, 42592)
+
+[node name="Seno15" parent="LevelEntities/Senos" index="14" instance=ExtResource("7_ngqd2")]
+position = Vector2(161545, 42592)
+
+[node name="Seno16" parent="LevelEntities/Senos" index="15" instance=ExtResource("7_ngqd2")]
+position = Vector2(171796, 42592)
+
+[node name="Seno17" parent="LevelEntities/Senos" index="16" instance=ExtResource("7_ngqd2")]
+position = Vector2(181997, 42592)
+
+[node name="Seno18" parent="LevelEntities/Senos" index="17" instance=ExtResource("7_ngqd2")]
+position = Vector2(190946, 42592)
+
+[node name="Seno19" parent="LevelEntities/Senos" index="18" instance=ExtResource("7_ngqd2")]
+position = Vector2(199714, 42592)
+
+[node name="Seno20" parent="LevelEntities/Senos" index="19" instance=ExtResource("7_ngqd2")]
+position = Vector2(209915, 42592)
+
+[node name="Seno21" parent="LevelEntities/Senos" index="20" instance=ExtResource("7_ngqd2")]
+position = Vector2(218864, 42592)
+
+[node name="Seno22" parent="LevelEntities/Senos" index="21" instance=ExtResource("7_ngqd2")]
+position = Vector2(229115, 42592)
+
+[node name="Seno23" parent="LevelEntities/Senos" index="22" instance=ExtResource("7_ngqd2")]
+position = Vector2(239316, 42592)
+
+[node name="Seno24" parent="LevelEntities/Senos" index="23" instance=ExtResource("7_ngqd2")]
+position = Vector2(248265, 42592)
+
+[node name="Seno25" parent="LevelEntities/Senos" index="24" instance=ExtResource("7_ngqd2")]
+position = Vector2(3715, 42592)
+
+[node name="Seno26" parent="LevelEntities/Senos" index="25" instance=ExtResource("7_ngqd2")]
+position = Vector2(8337, 42592)
+
+[node name="Seno27" parent="LevelEntities/Senos" index="26" instance=ExtResource("7_ngqd2")]
+position = Vector2(6218, 42592)
+
+[node name="Seno28" parent="LevelEntities/Senos" index="27" instance=ExtResource("7_ngqd2")]
+position = Vector2(20984, 42592)
+
+[node name="Seno29" parent="LevelEntities/Senos" index="28" instance=ExtResource("7_ngqd2")]
+position = Vector2(28915, 42592)
+
+[node name="Seno30" parent="LevelEntities/Senos" index="29" instance=ExtResource("7_ngqd2")]
+position = Vector2(26419, 42592)
+
+[node name="Seno31" parent="LevelEntities/Senos" index="30" instance=ExtResource("7_ngqd2")]
+position = Vector2(49034, 42592)
+
+[node name="Seno32" parent="LevelEntities/Senos" index="31" instance=ExtResource("7_ngqd2")]
+position = Vector2(77144, 42592)
+
+[node name="Seno33" parent="LevelEntities/Senos" index="32" instance=ExtResource("7_ngqd2")]
+position = Vector2(87072, 42592)
+
+[node name="Seno34" parent="LevelEntities/Senos" index="33" instance=ExtResource("7_ngqd2")]
+position = Vector2(83417, 42592)
+
+[node name="Seno35" parent="LevelEntities/Senos" index="34" instance=ExtResource("7_ngqd2")]
+position = Vector2(107033, 42592)
+
+[node name="Seno36" parent="LevelEntities/Senos" index="35" instance=ExtResource("7_ngqd2")]
+position = Vector2(125241, 42592)
+
+[node name="Combines" type="Node2D" parent="LevelEntities" index="2"]
+
+[node name="Combine" parent="LevelEntities/Combines" index="0" instance=ExtResource("8_5yg5t")]
+position = Vector2(16841, 42430)
+
+[node name="Combine2" parent="LevelEntities/Combines" index="1" instance=ExtResource("8_5yg5t")]
+position = Vector2(38346, 42430)
+
+[node name="Combine3" parent="LevelEntities/Combines" index="2" instance=ExtResource("8_5yg5t")]
+position = Vector2(67370, 42430)
+
+[node name="Combine4" parent="LevelEntities/Combines" index="3" instance=ExtResource("8_5yg5t")]
+position = Vector2(95751, 42430)
+
+[node name="Combine5" parent="LevelEntities/Combines" index="4" instance=ExtResource("8_5yg5t")]
+position = Vector2(117256, 42430)
+
+[node name="Combine6" parent="LevelEntities/Combines" index="5" instance=ExtResource("8_5yg5t")]
+position = Vector2(146280, 42430)
+
+[node name="Combine7" parent="LevelEntities/Combines" index="6" instance=ExtResource("8_5yg5t")]
+position = Vector2(156988, 42430)
+
+[node name="Combine8" parent="LevelEntities/Combines" index="7" instance=ExtResource("8_5yg5t")]
+position = Vector2(178493, 42430)
+
+[node name="Combine9" parent="LevelEntities/Combines" index="8" instance=ExtResource("8_5yg5t")]
+position = Vector2(202824, 42430)
+
+[node name="Combine10" parent="LevelEntities/Combines" index="9" instance=ExtResource("8_5yg5t")]
+position = Vector2(215665, 42430)
+
+[node name="Combine11" parent="LevelEntities/Combines" index="10" instance=ExtResource("8_5yg5t")]
+position = Vector2(236085, 42430)
+
+[node name="Combine12" parent="LevelEntities/Combines" index="11" instance=ExtResource("8_5yg5t")]
+position = Vector2(257274, 42430)
