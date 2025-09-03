@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_00x16"]
 [ext_resource type="Resource" uid="uid://gjrqv0eso5wy" path="res://resources/entity/inanimate/plains/combine.tres" id="2_85xwq"]
-[ext_resource type="Texture2D" uid="uid://cirb6gftrymeh" path="res://assets/entities/plains/Combine/Combine_trim.png" id="3_tqqvn"]
+[ext_resource type="Texture2D" uid="uid://b4nh7y8x6k5id" path="res://assets/entities/plains/Combine/Combine_trim.png" id="3_tqqvn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_37d8q"]
 radius = 337.578
@@ -11,7 +11,6 @@ height = 898.355
 [node name="Combine" instance=ExtResource("1_00x16")]
 scale = Vector2(4, 4)
 EntityDataResource = ExtResource("2_85xwq")
-ScoreValue = 30
 
 [node name="Area2D" parent="." index="0"]
 visible = false

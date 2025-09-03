@@ -22,7 +22,7 @@ public partial class Spawner : Node
 
     private Timer _spawnTimer;
 
-    private Array<Entity> _spawnedEntities;
+    private Array<Node2D> _spawnedEntities;
 
     private PlayerBody _playerBody;
 
@@ -74,7 +74,7 @@ public partial class Spawner : Node
 
             PackedScene mobToSpawn = (PackedScene)spawnList[GD.RandRange(0, spawnList.Count - 1)].Duplicate();
 
-            Entity spawnedMob = (Entity)mobToSpawn.Instantiate();
+            Node2D spawnedMob = (Node2D)mobToSpawn.Instantiate();
 
             spawnedMob.GlobalPosition = new Vector2(spawnX, floorY - spawnedMob.GetNode<Sprite2D>("Sprite2D").Texture.GetSize().Y / 2 * spawnedMob.Scale.Y);
 

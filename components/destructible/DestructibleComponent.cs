@@ -4,7 +4,7 @@ using System;
 
 public partial class DestructibleComponent : Node
 {
-    private Entity _entityOwner;
+    private IEntity _entityOwner;
 
     private bool _isDead = false;
 
@@ -12,14 +12,14 @@ public partial class DestructibleComponent : Node
     {
         base._Ready();
 
-        _entityOwner = GetParent<Entity>();
+        _entityOwner = GetParent<IEntity>();
 
         _entityOwner.InitializeComponents += OnInitializeComponents;
     }
 
     private void OnInitializeComponents()
     {
-        _entityOwner.GetNode<Area2D>("Area2D").BodyEntered += OnBodyEntered;
+        _entityOwner.AreaNode.BodyEntered += OnBodyEntered;
     }
 
     private void OnBodyEntered(Node2D body)
@@ -32,8 +32,8 @@ public partial class DestructibleComponent : Node
 
     private async void Die()
     {
-        PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.ScoreChange, _entityOwner.ScoreValue);
-        if (_isDead) { _entityOwner.QueueFree(); return; }
+        PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.ScoreChange, _entityOwner.EntityDataResource.ScoreValue);
+        if (_isDead) { _entityOwner.Destroy(); return; }
         ;
         _isDead = true;
 
@@ -51,7 +51,7 @@ public partial class DestructibleComponent : Node
 
         await ToSignal(_entityOwner.AudioStreamNode, AudioStreamPlayer2D.SignalName.Finished);
         await ToSignal(_entityOwner.CpuParticles2DNode, CpuParticles2D.SignalName.Finished);
-        _entityOwner.QueueFree();
+        _entityOwner.Destroy();
     }
 
 }
