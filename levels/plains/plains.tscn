@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bvbryk7puwaso"]
+[gd_scene load_steps=10 format=4 uid="uid://bvbryk7puwaso"]
 
 [ext_resource type="PackedScene" uid="uid://dc6yh3ixkm84f" path="res://levels/level.tscn" id="1_h32qd"]
 [ext_resource type="TileSet" uid="uid://c68lhdvj0flkr" path="res://resources/biomes_data/plains/plains_tileset.tres" id="2_tbe3i"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://chknl80767g0d" path="res://objects/entities/inanimate/plains/chuchelo.tscn" id="6_t5hn8"]
 [ext_resource type="PackedScene" uid="uid://dkhvn153x1vtc" path="res://objects/entities/inanimate/plains/seno.tscn" id="7_ngqd2"]
 [ext_resource type="PackedScene" uid="uid://bi4sao16k007i" path="res://objects/entities/inanimate/plains/combine.tscn" id="8_5yg5t"]
+[ext_resource type="PackedScene" uid="uid://856gbfceoh2l" path="res://objects/entities/animate/sky/bird.tscn" id="9_t3g11"]
 
 [node name="Plains" instance=ExtResource("1_h32qd")]
 
@@ -306,3 +307,8 @@ position = Vector2(236085, 42430)
 
 [node name="Combine12" parent="LevelEntities/Combines" index="10" instance=ExtResource("8_5yg5t")]
 position = Vector2(257274, 42430)
+
+[node name="Birds" type="Node2D" parent="LevelEntities" index="3"]
+
+[node name="Bird" parent="LevelEntities/Birds" index="0" instance=ExtResource("9_t3g11")]
+position = Vector2(24207, 36887)

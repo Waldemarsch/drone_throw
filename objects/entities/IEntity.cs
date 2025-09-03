@@ -9,12 +9,13 @@ namespace DroneThrow
 
         public event Action InitializeComponents;
 
-        public Sprite2D SpriteNode { get; }
         public Area2D AreaNode { get; }
         public AudioStreamPlayer2D AudioStreamNode { get; }
         public CpuParticles2D CpuParticles2DNode { get; }
 
         public void _Ready();
+
+        void HideVisuals();
 
         void Destroy();
 

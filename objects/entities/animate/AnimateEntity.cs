@@ -10,7 +10,6 @@ namespace DroneThrow
 
         public event Action InitializeComponents;
 
-        public Sprite2D SpriteNode { get; private set; }
         public Area2D AreaNode { get; private set; }
         public AudioStreamPlayer2D AudioStreamNode { get; private set; }
         public CpuParticles2D CpuParticles2DNode { get; private set; }
@@ -18,11 +17,23 @@ namespace DroneThrow
         // 1 для "вправо", -1 для "влево"
         private int _direction = 1;
 
+        private Timer _timer;
+
+        private VisibleOnScreenNotifier2D _visibleOnScreenNotifier;
+
         private AnimatedSprite2D _animatedSprite;
+        
+        [Export] private bool _allowedToSwitchDirection = true;
 
         public override void _Ready()
         {
-            SpriteNode = GetNode<Sprite2D>("Sprite2D");
+            _timer = GetNode<Timer>("Timer");
+
+            _visibleOnScreenNotifier = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
+
+            AreaNode = GetNode<Area2D>("Area2D");
+
+            _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
             AudioStreamNode = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 
@@ -34,30 +45,35 @@ namespace DroneThrow
 
             CpuParticles2DNode = GetNode<CpuParticles2D>("CPUParticles2D");
 
-            _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-
             InitializeComponents.Invoke();
 
-            // 1. Выбираем случайное направление при спауне
             ChooseRandomDirection();
 
-            // 2. Запускаем анимацию
-            _animatedSprite.Play("walk");
+            _animatedSprite.Play("default");
+
+            _visibleOnScreenNotifier.ScreenEntered += () => _allowedToSwitchDirection = false;
+            _visibleOnScreenNotifier.ScreenExited += () => _allowedToSwitchDirection = true;
+
+            _timer.Start();
+
+            _timer.Timeout += ChooseRandomDirection;
         }
 
         public override void _PhysicsProcess(double delta)
         {
             var velocity = this.Velocity;
 
-            // 3. Постоянно применяем скорость в выбранном направлении
             velocity.X = _direction * _speed;
 
             this.Velocity = velocity;
+
             MoveAndSlide();
         }
 
         private void ChooseRandomDirection()
         {
+            if (_allowedToSwitchDirection != true) return;
+
             // GD.Randf() возвращает случайное число от 0.0 до 1.0
             // Это простой способ выбрать 1 или -1 с шансом 50/50
             _direction = (GD.Randf() > 0.5f) ? 1 : -1;
@@ -69,6 +85,11 @@ namespace DroneThrow
         public void Destroy()
         {
             this.QueueFree();
+        }
+
+        public void HideVisuals()
+        {
+            _animatedSprite.Hide();
         }
     }
 }

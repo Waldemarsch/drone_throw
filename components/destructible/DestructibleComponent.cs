@@ -39,7 +39,7 @@ public partial class DestructibleComponent : Node
 
         if (_entityOwner.CpuParticles2DNode != null)
         {
-            _entityOwner.SpriteNode.Hide();
+            _entityOwner.HideVisuals();
             _entityOwner.CpuParticles2DNode.Emitting = true;
 
         }

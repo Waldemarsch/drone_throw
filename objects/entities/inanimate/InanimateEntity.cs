@@ -9,16 +9,17 @@ namespace DroneThrow
 
         public event Action InitializeComponents;
 
-        public Sprite2D SpriteNode { get; private set; }
         public Area2D AreaNode { get; private set; }
         public AudioStreamPlayer2D AudioStreamNode { get; private set; }
         public CpuParticles2D CpuParticles2DNode { get; private set; }
+
+        private Sprite2D _spriteNode;
 
         public override void _Ready()
         {
             AreaNode = GetNode<Area2D>("Area2D");
 
-            SpriteNode = GetNode<Sprite2D>("Sprite2D");
+            _spriteNode = GetNode<Sprite2D>("Sprite2D");
 
             AudioStreamNode = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 
@@ -38,6 +39,9 @@ namespace DroneThrow
             this.QueueFree();
         }
 
-
+        public void HideVisuals()
+        {
+            _spriteNode.Hide();
+        }
     }       
 }
