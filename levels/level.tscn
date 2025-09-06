@@ -14,7 +14,7 @@ script = ExtResource("1_80vhd")
 z_index = -10
 scale = Vector2(20, 20)
 
-[node name="LevelEntities" type="Node" parent="."]
+[node name="LevelEntities" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -23,3 +23,5 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(134623, 21625.5)
 shape = SubResource("RectangleShape2D_umreq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

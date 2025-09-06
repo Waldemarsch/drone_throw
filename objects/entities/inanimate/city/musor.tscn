@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnve7l3xokrhi"]
+
+[ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_lbs2o"]
+[ext_resource type="Resource" uid="uid://drjv7en47jvk6" path="res://resources/entity/inanimate/city/musor.tres" id="2_ddnwv"]
+[ext_resource type="Texture2D" uid="uid://c1uqr7wxqrpo" path="res://assets/entities/city/musor/musor_trim.png" id="3_ddnwv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuunp"]
+size = Vector2(587.333, 439)
+
+[node name="Musor" instance=ExtResource("1_lbs2o")]
+EntityDataResource = ExtResource("2_ddnwv")
+
+[node name="Area2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.333328, -5.83334)
+shape = SubResource("RectangleShape2D_kuunp")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_ddnwv")

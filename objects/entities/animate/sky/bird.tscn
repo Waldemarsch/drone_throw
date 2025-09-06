@@ -52,9 +52,10 @@ shape = SubResource("CapsuleShape2D_wak66")
 [node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_fyoxm")
 
-[node name="CPUParticles2D" parent="." index="4"]
-position = Vector2(62.6667, 150.333)
-
-[node name="VisibleOnScreenNotifier2D" parent="." index="5"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
+visible = false
 position = Vector2(27.5, -10)
 scale = Vector2(33.0167, 24.8333)
+
+[node name="CPUParticles2D" parent="." index="6"]
+position = Vector2(62.6667, 150.333)

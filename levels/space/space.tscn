@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5u01rscgws08"]
+[gd_scene load_steps=6 format=3 uid="uid://b5u01rscgws08"]
 
 [ext_resource type="PackedScene" uid="uid://dc6yh3ixkm84f" path="res://levels/level.tscn" id="1_g0na3"]
-[ext_resource type="Texture2D" uid="uid://c0em5ajjjtd6" path="res://assets/background/space/space_resized.png" id="2_kipla"]
+[ext_resource type="Texture2D" uid="uid://2jeu6cxxidcc" path="res://assets/background/space/space_resized.png" id="2_kipla"]
+[ext_resource type="PackedScene" uid="uid://br88rlp8fc24h" path="res://objects/entities/animate/space/asteroid.tscn" id="3_0ocgd"]
+[ext_resource type="PackedScene" uid="uid://dgn477wd11si6" path="res://objects/entities/animate/space/sputnik.tscn" id="4_jraqu"]
+[ext_resource type="PackedScene" uid="uid://clvv6cegf5p30" path="res://objects/entities/animate/space/nlo.tscn" id="5_ivyi0"]
 
 [node name="Space" instance=ExtResource("1_g0na3")]
 BiomeType = 3
@@ -186,3 +189,237 @@ centered = false
 offset = Vector2(1920, -1080)
 flip_h = true
 flip_v = true
+
+[node name="Asteroids" type="Node2D" parent="LevelEntities" index="0"]
+
+[node name="Asteroid" parent="LevelEntities/Asteroids" index="0" instance=ExtResource("3_0ocgd")]
+position = Vector2(8338, 12917)
+
+[node name="Asteroid2" parent="LevelEntities/Asteroids" index="1" instance=ExtResource("3_0ocgd")]
+position = Vector2(15217, -8515)
+
+[node name="Asteroid3" parent="LevelEntities/Asteroids" index="2" instance=ExtResource("3_0ocgd")]
+position = Vector2(28711, 4979)
+
+[node name="Asteroid4" parent="LevelEntities/Asteroids" index="3" instance=ExtResource("3_0ocgd")]
+position = Vector2(31799, 15034)
+
+[node name="Asteroid5" parent="LevelEntities/Asteroids" index="4" instance=ExtResource("3_0ocgd")]
+position = Vector2(38678, -6398)
+
+[node name="Asteroid6" parent="LevelEntities/Asteroids" index="5" instance=ExtResource("3_0ocgd")]
+position = Vector2(52172, 7096)
+
+[node name="Asteroid7" parent="LevelEntities/Asteroids" index="6" instance=ExtResource("3_0ocgd")]
+position = Vector2(67342, 10624)
+
+[node name="Asteroid8" parent="LevelEntities/Asteroids" index="7" instance=ExtResource("3_0ocgd")]
+position = Vector2(74221, -10808)
+
+[node name="Asteroid9" parent="LevelEntities/Asteroids" index="8" instance=ExtResource("3_0ocgd")]
+position = Vector2(87715, 2686)
+
+[node name="Asteroid10" parent="LevelEntities/Asteroids" index="9" instance=ExtResource("3_0ocgd")]
+position = Vector2(90803, 12741)
+
+[node name="Asteroid11" parent="LevelEntities/Asteroids" index="10" instance=ExtResource("3_0ocgd")]
+position = Vector2(97682, -8691)
+
+[node name="Asteroid12" parent="LevelEntities/Asteroids" index="11" instance=ExtResource("3_0ocgd")]
+position = Vector2(111176, 4803)
+
+[node name="Asteroid13" parent="LevelEntities/Asteroids" index="12" instance=ExtResource("3_0ocgd")]
+position = Vector2(119379, 14063)
+
+[node name="Asteroid14" parent="LevelEntities/Asteroids" index="13" instance=ExtResource("3_0ocgd")]
+position = Vector2(126258, -7369)
+
+[node name="Asteroid15" parent="LevelEntities/Asteroids" index="14" instance=ExtResource("3_0ocgd")]
+position = Vector2(139752, 6125)
+
+[node name="Asteroid16" parent="LevelEntities/Asteroids" index="15" instance=ExtResource("3_0ocgd")]
+position = Vector2(142840, 16180)
+
+[node name="Asteroid17" parent="LevelEntities/Asteroids" index="16" instance=ExtResource("3_0ocgd")]
+position = Vector2(149719, -5252)
+
+[node name="Asteroid18" parent="LevelEntities/Asteroids" index="17" instance=ExtResource("3_0ocgd")]
+position = Vector2(163213, 8242)
+
+[node name="Asteroid19" parent="LevelEntities/Asteroids" index="18" instance=ExtResource("3_0ocgd")]
+position = Vector2(178383, 11770)
+
+[node name="Asteroid20" parent="LevelEntities/Asteroids" index="19" instance=ExtResource("3_0ocgd")]
+position = Vector2(185262, -9662)
+
+[node name="Asteroid21" parent="LevelEntities/Asteroids" index="20" instance=ExtResource("3_0ocgd")]
+position = Vector2(198756, 3832)
+
+[node name="Asteroid22" parent="LevelEntities/Asteroids" index="21" instance=ExtResource("3_0ocgd")]
+position = Vector2(201844, 13887)
+
+[node name="Asteroid23" parent="LevelEntities/Asteroids" index="22" instance=ExtResource("3_0ocgd")]
+position = Vector2(208723, -7545)
+
+[node name="Asteroid24" parent="LevelEntities/Asteroids" index="23" instance=ExtResource("3_0ocgd")]
+position = Vector2(222217, 5949)
+
+[node name="Asteroid25" parent="LevelEntities/Asteroids" index="24" instance=ExtResource("3_0ocgd")]
+position = Vector2(233746, 11765)
+
+[node name="Asteroid26" parent="LevelEntities/Asteroids" index="25" instance=ExtResource("3_0ocgd")]
+position = Vector2(240625, -9667)
+
+[node name="Asteroid27" parent="LevelEntities/Asteroids" index="26" instance=ExtResource("3_0ocgd")]
+position = Vector2(254119, 3827)
+
+[node name="Asteroid28" parent="LevelEntities/Asteroids" index="27" instance=ExtResource("3_0ocgd")]
+position = Vector2(257207, 13882)
+
+[node name="Asteroid29" parent="LevelEntities/Asteroids" index="28" instance=ExtResource("3_0ocgd")]
+position = Vector2(264086, -7550)
+
+[node name="Asteroid30" parent="LevelEntities/Asteroids" index="29" instance=ExtResource("3_0ocgd")]
+position = Vector2(277580, 5944)
+
+[node name="Asteroid31" parent="LevelEntities/Asteroids" index="30" instance=ExtResource("3_0ocgd")]
+position = Vector2(292750, 9472)
+
+[node name="Asteroid32" parent="LevelEntities/Asteroids" index="31" instance=ExtResource("3_0ocgd")]
+position = Vector2(299629, -11960)
+
+[node name="Asteroid33" parent="LevelEntities/Asteroids" index="32" instance=ExtResource("3_0ocgd")]
+position = Vector2(313123, 1534)
+
+[node name="Asteroid34" parent="LevelEntities/Asteroids" index="33" instance=ExtResource("3_0ocgd")]
+position = Vector2(316211, 11589)
+
+[node name="Asteroid35" parent="LevelEntities/Asteroids" index="34" instance=ExtResource("3_0ocgd")]
+position = Vector2(323090, -9843)
+
+[node name="Asteroid36" parent="LevelEntities/Asteroids" index="35" instance=ExtResource("3_0ocgd")]
+position = Vector2(336584, 3651)
+
+[node name="Asteroid37" parent="LevelEntities/Asteroids" index="36" instance=ExtResource("3_0ocgd")]
+position = Vector2(344787, 12911)
+
+[node name="Asteroid38" parent="LevelEntities/Asteroids" index="37" instance=ExtResource("3_0ocgd")]
+position = Vector2(351666, -8521)
+
+[node name="Asteroid39" parent="LevelEntities/Asteroids" index="38" instance=ExtResource("3_0ocgd")]
+position = Vector2(365160, 4973)
+
+[node name="Asteroid40" parent="LevelEntities/Asteroids" index="39" instance=ExtResource("3_0ocgd")]
+position = Vector2(368248, 15028)
+
+[node name="Asteroid41" parent="LevelEntities/Asteroids" index="40" instance=ExtResource("3_0ocgd")]
+position = Vector2(375127, -6404)
+
+[node name="Asteroid42" parent="LevelEntities/Asteroids" index="41" instance=ExtResource("3_0ocgd")]
+position = Vector2(388621, 7090)
+
+[node name="Asteroid43" parent="LevelEntities/Asteroids" index="42" instance=ExtResource("3_0ocgd")]
+position = Vector2(403791, 10618)
+
+[node name="Asteroid44" parent="LevelEntities/Asteroids" index="43" instance=ExtResource("3_0ocgd")]
+position = Vector2(410670, -10814)
+
+[node name="Asteroid45" parent="LevelEntities/Asteroids" index="44" instance=ExtResource("3_0ocgd")]
+position = Vector2(424164, 2680)
+
+[node name="Asteroid46" parent="LevelEntities/Asteroids" index="45" instance=ExtResource("3_0ocgd")]
+position = Vector2(427252, 12735)
+
+[node name="Asteroid47" parent="LevelEntities/Asteroids" index="46" instance=ExtResource("3_0ocgd")]
+position = Vector2(434131, -8697)
+
+[node name="Asteroid48" parent="LevelEntities/Asteroids" index="47" instance=ExtResource("3_0ocgd")]
+position = Vector2(447625, 4797)
+
+[node name="Asteroid49" parent="LevelEntities/Asteroids" index="48" instance=ExtResource("3_0ocgd")]
+position = Vector2(448376, 16052)
+
+[node name="Asteroid50" parent="LevelEntities/Asteroids" index="49" instance=ExtResource("3_0ocgd")]
+position = Vector2(455255, -5380)
+
+[node name="Asteroid51" parent="LevelEntities/Asteroids" index="50" instance=ExtResource("3_0ocgd")]
+position = Vector2(468749, 8114)
+
+[node name="Asteroid52" parent="LevelEntities/Asteroids" index="51" instance=ExtResource("3_0ocgd")]
+position = Vector2(483919, 11642)
+
+[node name="Asteroid53" parent="LevelEntities/Asteroids" index="52" instance=ExtResource("3_0ocgd")]
+position = Vector2(490798, -9790)
+
+[node name="Asteroid54" parent="LevelEntities/Asteroids" index="53" instance=ExtResource("3_0ocgd")]
+position = Vector2(504292, 3704)
+
+[node name="Asteroid55" parent="LevelEntities/Asteroids" index="54" instance=ExtResource("3_0ocgd")]
+position = Vector2(507380, 13759)
+
+[node name="Asteroid56" parent="LevelEntities/Asteroids" index="55" instance=ExtResource("3_0ocgd")]
+position = Vector2(514259, -7673)
+
+[node name="Asteroid57" parent="LevelEntities/Asteroids" index="56" instance=ExtResource("3_0ocgd")]
+position = Vector2(527753, 5821)
+
+[node name="Sputniks" type="Node2D" parent="LevelEntities" index="1"]
+
+[node name="Sputnik" parent="LevelEntities/Sputniks" index="0" instance=ExtResource("4_jraqu")]
+position = Vector2(9470, 3863)
+
+[node name="Sputnik2" parent="LevelEntities/Sputniks" index="1" instance=ExtResource("4_jraqu")]
+position = Vector2(61028, -2477)
+
+[node name="Sputnik3" parent="LevelEntities/Sputniks" index="2" instance=ExtResource("4_jraqu")]
+position = Vector2(117118, 1687)
+
+[node name="Sputnik4" parent="LevelEntities/Sputniks" index="3" instance=ExtResource("4_jraqu")]
+position = Vector2(168676, -4653)
+
+[node name="Sputnik5" parent="LevelEntities/Sputniks" index="4" instance=ExtResource("4_jraqu")]
+position = Vector2(208038, 3468)
+
+[node name="Sputnik6" parent="LevelEntities/Sputniks" index="5" instance=ExtResource("4_jraqu")]
+position = Vector2(259596, -2872)
+
+[node name="Sputnik7" parent="LevelEntities/Sputniks" index="6" instance=ExtResource("4_jraqu")]
+position = Vector2(315686, 1292)
+
+[node name="Sputnik8" parent="LevelEntities/Sputniks" index="7" instance=ExtResource("4_jraqu")]
+position = Vector2(367244, -5048)
+
+[node name="Sputnik9" parent="LevelEntities/Sputniks" index="8" instance=ExtResource("4_jraqu")]
+position = Vector2(413994, 2243)
+
+[node name="Sputnik10" parent="LevelEntities/Sputniks" index="9" instance=ExtResource("4_jraqu")]
+position = Vector2(465552, -4097)
+
+[node name="Sputnik11" parent="LevelEntities/Sputniks" index="10" instance=ExtResource("4_jraqu")]
+position = Vector2(521642, 67)
+
+[node name="NLOs" type="Node2D" parent="LevelEntities" index="2"]
+
+[node name="NLO" parent="LevelEntities/NLOs" index="0" instance=ExtResource("5_ivyi0")]
+position = Vector2(15876, -15964)
+
+[node name="NLO2" parent="LevelEntities/NLOs" index="1" instance=ExtResource("5_ivyi0")]
+position = Vector2(110078, -7897)
+
+[node name="NLO3" parent="LevelEntities/NLOs" index="2" instance=ExtResource("5_ivyi0")]
+position = Vector2(193284, -14684)
+
+[node name="NLO4" parent="LevelEntities/NLOs" index="3" instance=ExtResource("5_ivyi0")]
+position = Vector2(287486, -6617)
+
+[node name="NLO5" parent="LevelEntities/NLOs" index="4" instance=ExtResource("5_ivyi0")]
+position = Vector2(247816, -13192)
+
+[node name="NLO6" parent="LevelEntities/NLOs" index="5" instance=ExtResource("5_ivyi0")]
+position = Vector2(342018, -5125)
+
+[node name="NLO7" parent="LevelEntities/NLOs" index="6" instance=ExtResource("5_ivyi0")]
+position = Vector2(425224, -11912)
+
+[node name="NLO8" parent="LevelEntities/NLOs" index="7" instance=ExtResource("5_ivyi0")]
+position = Vector2(519426, -3845)

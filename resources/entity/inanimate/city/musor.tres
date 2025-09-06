@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=2 format=3 uid="uid://drjv7en47jvk6"]
+
+[ext_resource type="Script" uid="uid://dbj8qxchljl3q" path="res://resources/classes/EntityData.cs" id="1_fjt44"]
+
+[resource]
+script = ExtResource("1_fjt44")
+EntityDeathSound = null
+ScoreValue = 0
+metadata/_custom_type_script = "uid://dbj8qxchljl3q"

@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dc6yh3ixkm84f" path="res://levels/level.tscn" id="1_1h54x"]
 [ext_resource type="TileSet" uid="uid://jn5f6s07y0bw" path="res://resources/biomes_data/city/city_tileset.tres" id="2_l7bb7"]
-[ext_resource type="Texture2D" uid="uid://cf5l0vwifyywp" path="res://assets/background/city/city_resized.png" id="3_mcn2j"]
-[ext_resource type="Texture2D" uid="uid://jxr7domgi6hn" path="res://assets/background/skies/sky_lower.png" id="4_bl6cj"]
-[ext_resource type="Texture2D" uid="uid://ci2kkdq15wi45" path="res://assets/background/city/city_resized_blur.png" id="5_bl6cj"]
+[ext_resource type="Texture2D" uid="uid://cfh61bib6ol46" path="res://assets/background/city/city_resized.png" id="3_mcn2j"]
+[ext_resource type="Texture2D" uid="uid://c48ep8xobohmi" path="res://assets/background/skies/sky_lower.png" id="4_bl6cj"]
+[ext_resource type="Texture2D" uid="uid://706o4gavgokr" path="res://assets/background/city/city_resized_blur.png" id="5_bl6cj"]
 
 [node name="City" instance=ExtResource("1_1h54x")]
 BiomeType = 1

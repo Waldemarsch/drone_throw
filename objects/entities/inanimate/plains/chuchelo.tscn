@@ -24,11 +24,13 @@ shape = SubResource("CapsuleShape2D_1y3e8")
 texture = ExtResource("3_1y3e8")
 
 [node name="CPUParticles2D" parent="." index="4"]
-amount = 1000
 speed_scale = 1.65
 lifetime_randomness = 0.57
 initial_velocity_min = 300.0
 initial_velocity_max = 600.0
 scale_amount_min = 10.0
-scale_amount_max = 20.0
 color = Color(0.688218, 0.513169, 0.348691, 1)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="5"]
+position = Vector2(-24, -2.5)
+scale = Vector2(16.8, 38.4)

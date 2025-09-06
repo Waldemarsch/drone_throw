@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgm4tfrmnr6oy"]
+[gd_scene load_steps=6 format=3 uid="uid://dgm4tfrmnr6oy"]
 
 [ext_resource type="PackedScene" uid="uid://dc6yh3ixkm84f" path="res://levels/level.tscn" id="1_0j7q5"]
-[ext_resource type="Texture2D" uid="uid://drgkc4a4yyyst" path="res://assets/background/skies/sky_upper.png" id="2_taxvm"]
+[ext_resource type="Texture2D" uid="uid://bklgond736esl" path="res://assets/background/skies/sky_upper.png" id="2_taxvm"]
+[ext_resource type="PackedScene" uid="uid://dcftydspcan86" path="res://objects/entities/animate/sky/plane.tscn" id="3_5mvrw"]
+[ext_resource type="PackedScene" uid="uid://2wg6hvhlny2j" path="res://objects/entities/animate/sky/war_plane.tscn" id="4_8q4sr"]
+[ext_resource type="PackedScene" uid="uid://xun6gsu0j3sk" path="res://objects/entities/animate/sky/aerostat.tscn" id="5_t001a"]
 
 [node name="Skies" instance=ExtResource("1_0j7q5")]
 BiomeType = 2
@@ -95,3 +98,102 @@ texture = ExtResource("2_taxvm")
 centered = false
 offset = Vector2(1920, 0)
 flip_h = true
+
+[node name="Planes" type="Node2D" parent="LevelEntities" index="0"]
+
+[node name="Plane" parent="LevelEntities/Planes" index="0" instance=ExtResource("3_5mvrw")]
+position = Vector2(4991, 18909)
+
+[node name="Plane2" parent="LevelEntities/Planes" index="1" instance=ExtResource("3_5mvrw")]
+position = Vector2(41930, 18628)
+
+[node name="Plane3" parent="LevelEntities/Planes" index="2" instance=ExtResource("3_5mvrw")]
+position = Vector2(136375, 16836)
+
+[node name="Plane4" parent="LevelEntities/Planes" index="3" instance=ExtResource("3_5mvrw")]
+position = Vector2(168201, 17773)
+
+[node name="Plane5" parent="LevelEntities/Planes" index="4" instance=ExtResource("3_5mvrw")]
+position = Vector2(268287, 15709)
+
+[node name="Plane6" parent="LevelEntities/Planes" index="5" instance=ExtResource("3_5mvrw")]
+position = Vector2(299205, 16881)
+
+[node name="Plane7" parent="LevelEntities/Planes" index="6" instance=ExtResource("3_5mvrw")]
+position = Vector2(399671, 13636)
+
+[node name="Plane8" parent="LevelEntities/Planes" index="7" instance=ExtResource("3_5mvrw")]
+position = Vector2(431290, 15948)
+
+[node name="WarPlanes" type="Node2D" parent="LevelEntities" index="1"]
+
+[node name="WarPlane" parent="LevelEntities/WarPlanes" index="0" instance=ExtResource("4_8q4sr")]
+position = Vector2(30220, 14856)
+
+[node name="WarPlane2" parent="LevelEntities/WarPlanes" index="1" instance=ExtResource("4_8q4sr")]
+position = Vector2(83838, 18345)
+
+[node name="WarPlane3" parent="LevelEntities/WarPlanes" index="2" instance=ExtResource("4_8q4sr")]
+position = Vector2(207402, 16409)
+
+[node name="WarPlane4" parent="LevelEntities/WarPlanes" index="3" instance=ExtResource("4_8q4sr")]
+position = Vector2(353450, 15769)
+
+[node name="WarPlane5" parent="LevelEntities/WarPlanes" index="4" instance=ExtResource("4_8q4sr")]
+position = Vector2(480810, 14617)
+
+[node name="Aerostats" type="Node2D" parent="LevelEntities" index="2"]
+
+[node name="Aerostat" parent="LevelEntities/Aerostats" index="0" instance=ExtResource("5_t001a")]
+position = Vector2(5801, 8928)
+
+[node name="Aerostat2" parent="LevelEntities/Aerostats" index="1" instance=ExtResource("5_t001a")]
+position = Vector2(28719, 6706)
+
+[node name="Aerostat3" parent="LevelEntities/Aerostats" index="2" instance=ExtResource("5_t001a")]
+position = Vector2(69726, 8288)
+
+[node name="Aerostat4" parent="LevelEntities/Aerostats" index="3" instance=ExtResource("5_t001a")]
+position = Vector2(92644, 6066)
+
+[node name="Aerostat5" parent="LevelEntities/Aerostats" index="4" instance=ExtResource("5_t001a")]
+position = Vector2(121911, 9355)
+
+[node name="Aerostat6" parent="LevelEntities/Aerostats" index="5" instance=ExtResource("5_t001a")]
+position = Vector2(144829, 7133)
+
+[node name="Aerostat7" parent="LevelEntities/Aerostats" index="6" instance=ExtResource("5_t001a")]
+position = Vector2(185836, 8715)
+
+[node name="Aerostat8" parent="LevelEntities/Aerostats" index="7" instance=ExtResource("5_t001a")]
+position = Vector2(208754, 6493)
+
+[node name="Aerostat9" parent="LevelEntities/Aerostats" index="8" instance=ExtResource("5_t001a")]
+position = Vector2(248160, 8180)
+
+[node name="Aerostat10" parent="LevelEntities/Aerostats" index="9" instance=ExtResource("5_t001a")]
+position = Vector2(271078, 5958)
+
+[node name="Aerostat11" parent="LevelEntities/Aerostats" index="10" instance=ExtResource("5_t001a")]
+position = Vector2(312085, 7540)
+
+[node name="Aerostat12" parent="LevelEntities/Aerostats" index="11" instance=ExtResource("5_t001a")]
+position = Vector2(335003, 5318)
+
+[node name="Aerostat13" parent="LevelEntities/Aerostats" index="12" instance=ExtResource("5_t001a")]
+position = Vector2(380492, 7646)
+
+[node name="Aerostat14" parent="LevelEntities/Aerostats" index="13" instance=ExtResource("5_t001a")]
+position = Vector2(403410, 5424)
+
+[node name="Aerostat15" parent="LevelEntities/Aerostats" index="14" instance=ExtResource("5_t001a")]
+position = Vector2(444417, 7006)
+
+[node name="Aerostat16" parent="LevelEntities/Aerostats" index="15" instance=ExtResource("5_t001a")]
+position = Vector2(467335, 4784)
+
+[node name="Aerostat17" parent="LevelEntities/Aerostats" index="16" instance=ExtResource("5_t001a")]
+position = Vector2(503681, 7390)
+
+[node name="Aerostat18" parent="LevelEntities/Aerostats" index="17" instance=ExtResource("5_t001a")]
+position = Vector2(526599, 5168)

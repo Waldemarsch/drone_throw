@@ -13,13 +13,18 @@ namespace DroneThrow
         public AudioStreamPlayer2D AudioStreamNode { get; private set; }
         public CpuParticles2D CpuParticles2DNode { get; private set; }
 
+        private VisibleOnScreenNotifier2D _notifier;
+
         private Sprite2D _spriteNode;
 
         public override void _Ready()
         {
+
             AreaNode = GetNode<Area2D>("Area2D");
 
             _spriteNode = GetNode<Sprite2D>("Sprite2D");
+
+            _notifier = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
 
             AudioStreamNode = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://clvv6cegf5p30"]
+
+[ext_resource type="PackedScene" uid="uid://c324886hh4t7l" path="res://objects/entities/animate/animate_entity.tscn" id="1_j8255"]
+[ext_resource type="Resource" uid="uid://c84odgd0vkbba" path="res://resources/entity/animate/space/nlo.tres" id="2_m7qbm"]
+[ext_resource type="Texture2D" uid="uid://wdb3vree3k88" path="res://assets/entities/space/nlo/nlo_trim.png" id="3_6g84v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sp7if"]
+radius = 258.46
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oxlsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6g84v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NLO" instance=ExtResource("1_j8255")]
+EntityDataResource = ExtResource("2_m7qbm")
+
+[node name="Area2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-1, 4.66667)
+shape = SubResource("CircleShape2D_sp7if")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_oxlsf")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
+visible = false
+position = Vector2(-2.16666, 1.52588e-05)
+scale = Vector2(57.8833, 25.6333)

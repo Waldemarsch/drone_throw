@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5e68la61pw4n"]
+
+[ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_l6dot"]
+[ext_resource type="Resource" uid="uid://ghder4h5hyrw" path="res://resources/entity/inanimate/city/gidrant.tres" id="2_ihto8"]
+[ext_resource type="Texture2D" uid="uid://b5x7ldfkovipd" path="res://assets/entities/city/gidrant/gidrant_trim.png" id="2_qp2l4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihto8"]
+size = Vector2(323, 681)
+
+[node name="Gidrant" instance=ExtResource("1_l6dot")]
+EntityDataResource = ExtResource("2_ihto8")
+
+[node name="Area2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(3.16667, 28.8333)
+shape = SubResource("RectangleShape2D_ihto8")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_qp2l4")
+
+[node name="CPUParticles2D" parent="." index="4"]
+color = Color(0.75, 0.75, 0.75, 1)

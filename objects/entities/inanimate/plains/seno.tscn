@@ -24,9 +24,10 @@ texture = ExtResource("3_2sk3j")
 
 [node name="CPUParticles2D" parent="." index="4"]
 z_index = 5
-amount = 1000
 initial_velocity_min = 400.0
-initial_velocity_max = 700.0
 scale_amount_min = 20.0
-scale_amount_max = 20.0
 color = Color(0.96709, 0.837234, 1.54018e-06, 1)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="5"]
+position = Vector2(-5.50003, 4.24998)
+scale = Vector2(36.6, 30.625)
