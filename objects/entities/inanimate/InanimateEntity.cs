@@ -20,9 +20,16 @@ namespace DroneThrow
         public override void _Ready()
         {
 
+            _notifier = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
+
+            _notifier.ScreenEntered += () => { _spriteNode.Show(); };
+            _notifier.ScreenExited += () => { _spriteNode.Hide(); };
+
             AreaNode = GetNode<Area2D>("Area2D");
 
             _spriteNode = GetNode<Sprite2D>("Sprite2D");
+
+            _spriteNode.Hide();
 
             _notifier = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
 

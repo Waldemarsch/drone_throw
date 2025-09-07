@@ -31,9 +31,14 @@ namespace DroneThrow
 
             _visibleOnScreenNotifier = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
 
+            _visibleOnScreenNotifier.Show();
+
             AreaNode = GetNode<Area2D>("Area2D");
 
             _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+
+            _animatedSprite.Hide();
+            _animatedSprite.Stop();
 
             AudioStreamNode = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 
@@ -49,14 +54,28 @@ namespace DroneThrow
 
             ChooseRandomDirection();
 
-            _animatedSprite.Play("default");
+            _visibleOnScreenNotifier.ScreenEntered += () =>
+            {
+                _allowedToSwitchDirection = false;
+                _animatedSprite.Play("default");
+                _animatedSprite.Show();
 
-            _visibleOnScreenNotifier.ScreenEntered += () => _allowedToSwitchDirection = false;
-            _visibleOnScreenNotifier.ScreenExited += () => _allowedToSwitchDirection = true;
+                ProcessMode = ProcessModeEnum.Always;
+            };
+            _visibleOnScreenNotifier.ScreenExited += () =>
+            {
+                _allowedToSwitchDirection = true;
+                _animatedSprite.Stop();
+                _animatedSprite.Hide();
+
+                ProcessMode = ProcessModeEnum.Disabled;
+            };
 
             _timer.Start();
 
             _timer.Timeout += ChooseRandomDirection;
+
+            ProcessMode = ProcessModeEnum.Disabled;
         }
 
         public override void _PhysicsProcess(double delta)

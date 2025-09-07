@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci7folotwya00"]
+[gd_scene load_steps=4 format=3 uid="uid://ci7folotwya00"]
 
 [ext_resource type="Script" uid="uid://burr55nqhkiab" path="res://Main.cs" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://m68o0e8slh6j" path="res://containers/UI_container/UI_container.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b7fyf787mj2gc" path="res://containers/level_container/level_container.tscn" id="4_lquwl"]
-
-[sub_resource type="Environment" id="Environment_h2yge"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ig7tw")
@@ -14,6 +12,3 @@ script = ExtResource("1_ig7tw")
 [node name="World" type="Node2D" parent="."]
 
 [node name="LevelContainer" parent="World" instance=ExtResource("4_lquwl")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
-environment = SubResource("Environment_h2yge")

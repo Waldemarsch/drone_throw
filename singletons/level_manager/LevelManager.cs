@@ -43,7 +43,7 @@ public partial class LevelManager : Node
         _levelContainer.loadedLevel = (Node2D)level.Duplicate();
 
         level.Hide();
-        level.ProcessMode = ProcessModeEnum.Disabled;
+        // level.ProcessMode = ProcessModeEnum.Disabled;
         _levelContainer.AddChild(level);
 
         _currLevel = level;

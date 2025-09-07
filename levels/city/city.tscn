@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://cq26l5wytxtfu"]
+[gd_scene load_steps=10 format=4 uid="uid://cq26l5wytxtfu"]
 
 [ext_resource type="PackedScene" uid="uid://dc6yh3ixkm84f" path="res://levels/level.tscn" id="1_1h54x"]
 [ext_resource type="TileSet" uid="uid://jn5f6s07y0bw" path="res://resources/biomes_data/city/city_tileset.tres" id="2_l7bb7"]
 [ext_resource type="Texture2D" uid="uid://cfh61bib6ol46" path="res://assets/background/city/city_resized.png" id="3_mcn2j"]
 [ext_resource type="Texture2D" uid="uid://c48ep8xobohmi" path="res://assets/background/skies/sky_lower.png" id="4_bl6cj"]
 [ext_resource type="Texture2D" uid="uid://706o4gavgokr" path="res://assets/background/city/city_resized_blur.png" id="5_bl6cj"]
+[ext_resource type="PackedScene" uid="uid://dcvg0neycu787" path="res://objects/entities/inanimate/city/car.tscn" id="6_d2056"]
+[ext_resource type="PackedScene" uid="uid://b5e68la61pw4n" path="res://objects/entities/inanimate/city/gidrant.tscn" id="7_p0vc4"]
+[ext_resource type="PackedScene" uid="uid://cnve7l3xokrhi" path="res://objects/entities/inanimate/city/musor.tscn" id="8_p0vc4"]
+[ext_resource type="PackedScene" uid="uid://856gbfceoh2l" path="res://objects/entities/animate/sky/bird.tscn" id="9_77d7d"]
 
 [node name="City" instance=ExtResource("1_1h54x")]
 BiomeType = 1
@@ -110,3 +114,215 @@ metadata/_edit_lock_ = true
 texture = ExtResource("4_bl6cj")
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="Cars" type="Node2D" parent="LevelEntities" index="0"]
+
+[node name="Car" parent="LevelEntities/Cars" index="0" instance=ExtResource("6_d2056")]
+position = Vector2(44447, 42306)
+
+[node name="Car2" parent="LevelEntities/Cars" index="1" instance=ExtResource("6_d2056")]
+position = Vector2(78623, 42044)
+
+[node name="Car3" parent="LevelEntities/Cars" index="2" instance=ExtResource("6_d2056")]
+position = Vector2(118292, 42306)
+
+[node name="Car4" parent="LevelEntities/Cars" index="3" instance=ExtResource("6_d2056")]
+position = Vector2(152468, 42044)
+
+[node name="Car5" parent="LevelEntities/Cars" index="4" instance=ExtResource("6_d2056")]
+position = Vector2(188447, 42306)
+
+[node name="Car6" parent="LevelEntities/Cars" index="5" instance=ExtResource("6_d2056")]
+position = Vector2(222623, 42044)
+
+[node name="Car7" parent="LevelEntities/Cars" index="6" instance=ExtResource("6_d2056")]
+position = Vector2(262292, 42306)
+
+[node name="Gidrants" type="Node2D" parent="LevelEntities" index="1"]
+
+[node name="Gidrant" parent="LevelEntities/Gidrants" index="0" instance=ExtResource("7_p0vc4")]
+position = Vector2(49872, 41041)
+
+[node name="Gidrant2" parent="LevelEntities/Gidrants" index="1" instance=ExtResource("7_p0vc4")]
+position = Vector2(68223, 41041)
+
+[node name="Gidrant3" parent="LevelEntities/Gidrants" index="2" instance=ExtResource("7_p0vc4")]
+position = Vector2(86827, 41041)
+
+[node name="Gidrant4" parent="LevelEntities/Gidrants" index="3" instance=ExtResource("7_p0vc4")]
+position = Vector2(105178, 41041)
+
+[node name="Gidrant5" parent="LevelEntities/Gidrants" index="4" instance=ExtResource("7_p0vc4")]
+position = Vector2(125442, 41041)
+
+[node name="Gidrant6" parent="LevelEntities/Gidrants" index="5" instance=ExtResource("7_p0vc4")]
+position = Vector2(143793, 41041)
+
+[node name="Gidrant7" parent="LevelEntities/Gidrants" index="6" instance=ExtResource("7_p0vc4")]
+position = Vector2(162397, 41041)
+
+[node name="Gidrant8" parent="LevelEntities/Gidrants" index="7" instance=ExtResource("7_p0vc4")]
+position = Vector2(180748, 41041)
+
+[node name="Gidrant9" parent="LevelEntities/Gidrants" index="8" instance=ExtResource("7_p0vc4")]
+position = Vector2(198617, 41041)
+
+[node name="Gidrant10" parent="LevelEntities/Gidrants" index="9" instance=ExtResource("7_p0vc4")]
+position = Vector2(216968, 41041)
+
+[node name="Gidrant11" parent="LevelEntities/Gidrants" index="10" instance=ExtResource("7_p0vc4")]
+position = Vector2(235572, 41041)
+
+[node name="Gidrant12" parent="LevelEntities/Gidrants" index="11" instance=ExtResource("7_p0vc4")]
+position = Vector2(253923, 41041)
+
+[node name="Musors" type="Node2D" parent="LevelEntities" index="2"]
+
+[node name="Musor" parent="LevelEntities/Musors" index="0" instance=ExtResource("8_p0vc4")]
+position = Vector2(42752, 40632)
+
+[node name="Musor2" parent="LevelEntities/Musors" index="1" instance=ExtResource("8_p0vc4")]
+position = Vector2(60199, 40632)
+
+[node name="Musor3" parent="LevelEntities/Musors" index="2" instance=ExtResource("8_p0vc4")]
+position = Vector2(71192, 40632)
+
+[node name="Musor4" parent="LevelEntities/Musors" index="3" instance=ExtResource("8_p0vc4")]
+position = Vector2(88639, 40632)
+
+[node name="Musor5" parent="LevelEntities/Musors" index="4" instance=ExtResource("8_p0vc4")]
+position = Vector2(102225, 40632)
+
+[node name="Musor6" parent="LevelEntities/Musors" index="5" instance=ExtResource("8_p0vc4")]
+position = Vector2(114981, 40632)
+
+[node name="Musor7" parent="LevelEntities/Musors" index="6" instance=ExtResource("8_p0vc4")]
+position = Vector2(137651, 40632)
+
+[node name="Musor8" parent="LevelEntities/Musors" index="7" instance=ExtResource("8_p0vc4")]
+position = Vector2(155567, 40632)
+
+[node name="Musor9" parent="LevelEntities/Musors" index="8" instance=ExtResource("8_p0vc4")]
+position = Vector2(164874, 40632)
+
+[node name="Musor10" parent="LevelEntities/Musors" index="9" instance=ExtResource("8_p0vc4")]
+position = Vector2(187544, 40632)
+
+[node name="Musor11" parent="LevelEntities/Musors" index="10" instance=ExtResource("8_p0vc4")]
+position = Vector2(204668, 40632)
+
+[node name="Musor12" parent="LevelEntities/Musors" index="11" instance=ExtResource("8_p0vc4")]
+position = Vector2(219693, 40632)
+
+[node name="Musor13" parent="LevelEntities/Musors" index="12" instance=ExtResource("8_p0vc4")]
+position = Vector2(242363, 40632)
+
+[node name="Musor14" parent="LevelEntities/Musors" index="13" instance=ExtResource("8_p0vc4")]
+position = Vector2(264698, 40632)
+
+[node name="Birds" type="Node2D" parent="LevelEntities" index="3"]
+
+[node name="Bird" parent="LevelEntities/Birds" index="0" instance=ExtResource("9_77d7d")]
+position = Vector2(43939, 33034)
+
+[node name="Bird2" parent="LevelEntities/Birds" index="1" instance=ExtResource("9_77d7d")]
+position = Vector2(53400, 18361)
+
+[node name="Bird3" parent="LevelEntities/Birds" index="2" instance=ExtResource("9_77d7d")]
+position = Vector2(53576, 8571)
+
+[node name="Bird4" parent="LevelEntities/Birds" index="3" instance=ExtResource("9_77d7d")]
+position = Vector2(63190, 23388)
+
+[node name="Bird5" parent="LevelEntities/Birds" index="4" instance=ExtResource("9_77d7d")]
+position = Vector2(59750, 35030)
+
+[node name="Bird6" parent="LevelEntities/Birds" index="5" instance=ExtResource("9_77d7d")]
+position = Vector2(80982, 33034)
+
+[node name="Bird7" parent="LevelEntities/Birds" index="6" instance=ExtResource("9_77d7d")]
+position = Vector2(90443, 18361)
+
+[node name="Bird8" parent="LevelEntities/Birds" index="7" instance=ExtResource("9_77d7d")]
+position = Vector2(90619, 8571)
+
+[node name="Bird9" parent="LevelEntities/Birds" index="8" instance=ExtResource("9_77d7d")]
+position = Vector2(100233, 23388)
+
+[node name="Bird10" parent="LevelEntities/Birds" index="9" instance=ExtResource("9_77d7d")]
+position = Vector2(96793, 35030)
+
+[node name="Bird11" parent="LevelEntities/Birds" index="10" instance=ExtResource("9_77d7d")]
+position = Vector2(111674, 33034)
+
+[node name="Bird12" parent="LevelEntities/Birds" index="11" instance=ExtResource("9_77d7d")]
+position = Vector2(121135, 18361)
+
+[node name="Bird13" parent="LevelEntities/Birds" index="12" instance=ExtResource("9_77d7d")]
+position = Vector2(121311, 8571)
+
+[node name="Bird14" parent="LevelEntities/Birds" index="13" instance=ExtResource("9_77d7d")]
+position = Vector2(130925, 23388)
+
+[node name="Bird15" parent="LevelEntities/Birds" index="14" instance=ExtResource("9_77d7d")]
+position = Vector2(127485, 35030)
+
+[node name="Bird16" parent="LevelEntities/Birds" index="15" instance=ExtResource("9_77d7d")]
+position = Vector2(148717, 33034)
+
+[node name="Bird17" parent="LevelEntities/Birds" index="16" instance=ExtResource("9_77d7d")]
+position = Vector2(158178, 18361)
+
+[node name="Bird18" parent="LevelEntities/Birds" index="17" instance=ExtResource("9_77d7d")]
+position = Vector2(158354, 8571)
+
+[node name="Bird19" parent="LevelEntities/Birds" index="18" instance=ExtResource("9_77d7d")]
+position = Vector2(167968, 23388)
+
+[node name="Bird20" parent="LevelEntities/Birds" index="19" instance=ExtResource("9_77d7d")]
+position = Vector2(164528, 35030)
+
+[node name="Bird21" parent="LevelEntities/Birds" index="20" instance=ExtResource("9_77d7d")]
+position = Vector2(177278, 33034)
+
+[node name="Bird22" parent="LevelEntities/Birds" index="21" instance=ExtResource("9_77d7d")]
+position = Vector2(186739, 18361)
+
+[node name="Bird23" parent="LevelEntities/Birds" index="22" instance=ExtResource("9_77d7d")]
+position = Vector2(186915, 8571)
+
+[node name="Bird24" parent="LevelEntities/Birds" index="23" instance=ExtResource("9_77d7d")]
+position = Vector2(196529, 23388)
+
+[node name="Bird25" parent="LevelEntities/Birds" index="24" instance=ExtResource("9_77d7d")]
+position = Vector2(193089, 35030)
+
+[node name="Bird26" parent="LevelEntities/Birds" index="25" instance=ExtResource("9_77d7d")]
+position = Vector2(214321, 33034)
+
+[node name="Bird27" parent="LevelEntities/Birds" index="26" instance=ExtResource("9_77d7d")]
+position = Vector2(223782, 18361)
+
+[node name="Bird28" parent="LevelEntities/Birds" index="27" instance=ExtResource("9_77d7d")]
+position = Vector2(223958, 8571)
+
+[node name="Bird29" parent="LevelEntities/Birds" index="28" instance=ExtResource("9_77d7d")]
+position = Vector2(233572, 23388)
+
+[node name="Bird30" parent="LevelEntities/Birds" index="29" instance=ExtResource("9_77d7d")]
+position = Vector2(230132, 35030)
+
+[node name="Bird31" parent="LevelEntities/Birds" index="30" instance=ExtResource("9_77d7d")]
+position = Vector2(239738, 33034)
+
+[node name="Bird32" parent="LevelEntities/Birds" index="31" instance=ExtResource("9_77d7d")]
+position = Vector2(249199, 18361)
+
+[node name="Bird33" parent="LevelEntities/Birds" index="32" instance=ExtResource("9_77d7d")]
+position = Vector2(249375, 8571)
+
+[node name="Bird34" parent="LevelEntities/Birds" index="33" instance=ExtResource("9_77d7d")]
+position = Vector2(258989, 23388)
+
+[node name="Bird35" parent="LevelEntities/Birds" index="34" instance=ExtResource("9_77d7d")]
+position = Vector2(255549, 35030)
