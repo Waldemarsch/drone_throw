@@ -6,11 +6,11 @@ using System;
 public partial class PlayerData : Resource
 {
     [ExportGroup("Upgrades")]
-    [Export] public int GeneralUpgradeLevel;
-    [Export] public int EngineUpgradeLevel;
-    [Export] public int GunUpgradeLevel;
-    [Export] public int GearUpgradeLevel;
-    [Export] public int ShieldUpgradeLevel;
+    [Export] public UpgradeData GeneralUpgrade;
+    [Export] public UpgradeData EngineUpgrade;
+    [Export] public UpgradeData GunUpgrade;
+    [Export] public UpgradeData GearUpgrade;
+    [Export] public UpgradeData ShieldUpgrade;
 
     [ExportGroup("")]
     [Export] public int Score = 0;

@@ -31,10 +31,10 @@ public partial class GameInterface : Control
             LevelManager.Instance.EmitSignal(LevelManager.SignalName.ResetLevel);
         };
         _moneyPanel = _Toolbar.GetNode<PanelContainer>("MarginContainer/CenterContainer/HBoxContainer/MoneyPanel");
-        _moneyPanel.GetNode<Label>("HBoxContainer/Label").Text = PlayerManager.Instance._playerData.Score.ToString();
+        _moneyPanel.GetNode<Label>("HBoxContainer/Label").Text = PlayerManager.Instance.PlayerDataResource.Score.ToString();
         PlayerManager.Instance.ScoreChanged += () =>
         {
-            _moneyPanel.GetNode<Label>("HBoxContainer/Label").Text = PlayerManager.Instance._playerData.Score.ToString();
+            _moneyPanel.GetNode<Label>("HBoxContainer/Label").Text = PlayerManager.Instance.PlayerDataResource.Score.ToString();
         };
 
 

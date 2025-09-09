@@ -6,7 +6,7 @@ public partial class PlayerManager : Node
 {
     [Export] public PackedScene PlayerScene;
 
-    [Export] public PlayerData _playerData;
+    [Export] public PlayerData PlayerDataResource;
 
     public PlayerBody _playerBody { get; private set; }
 
@@ -24,6 +24,9 @@ public partial class PlayerManager : Node
     [Signal] public delegate void ScoreChangeEventHandler(int changeValue);
     [Signal] public delegate void ScoreChangedEventHandler();
 
+    [Signal] public delegate void UpgradeApplyEventHandler(EUpgradeType upgradeType);
+    [Signal] public delegate void UpgradeAppliedEventHandler(EUpgradeType upgradeType);
+
     [Signal] public delegate void BiomeEnteredEventHandler(BiomeTypes biomeType);
 
 
@@ -33,21 +36,14 @@ public partial class PlayerManager : Node
 
         Instance = this;
 
-        CreatePlayerData += OnCreatePlayerData;
-
         TransitPlayerBody += OnTransitPlayerBody;
 
         ScoreChange += OnScoreChange;
 
         BiomeEntered += OnBiomeEntered;
 
-    }
+        UpgradeApply += OnUpgradeApply;
 
-    private void OnCreatePlayerData()
-    {
-        _playerData = new PlayerData();
-        _playerData.GeneralUpgradeLevel = 1;
-        _playerData.Score = 0;
     }
 
     private async void OnTransitPlayerBody(Node2D level, string spawnPointName)
@@ -61,14 +57,41 @@ public partial class PlayerManager : Node
         _playerBody.Position = level.GetNode<Marker2D>(spawnPointName).Position;
         GetTree().Root.GetNode<Node2D>("Main/World").AddChild(_playerBody);
 
-        _playerBody.Initialize(_playerData);
+        _playerBody.Initialize(PlayerDataResource);
 
         EmitSignal(SignalName.PlayerSpawned, _playerBody);
     }
 
+    private void OnUpgradeApply(EUpgradeType upgradeType)
+    {
+        UpgradeData upgrade = null;
+        switch (upgradeType)
+        {
+            case EUpgradeType.General:
+                upgrade = PlayerDataResource.GeneralUpgrade;
+                break;
+            case EUpgradeType.Engine:
+                upgrade = PlayerDataResource.EngineUpgrade;
+                break;
+            case EUpgradeType.Gun:
+                upgrade = PlayerDataResource.GunUpgrade;
+                break;
+            case EUpgradeType.Gear:
+                upgrade = PlayerDataResource.GearUpgrade;
+                break;
+            case EUpgradeType.Shield:
+                upgrade = PlayerDataResource.ShieldUpgrade;
+                break;
+        }
+        PlayerDataResource.Score -= upgrade.GetCurrentUpgradePrice();
+        upgrade.CurrentUpgradeLevel += 1;
+        EmitSignal(SignalName.UpgradeApplied, (int)upgradeType);
+        EmitSignal(SignalName.ScoreChanged);
+    }
+
     private void OnScoreChange(int changeValue)
     {
-        _playerData.Score += changeValue;
+        PlayerDataResource.Score += changeValue;
         EmitSignal(SignalName.ScoreChanged);
 
     }

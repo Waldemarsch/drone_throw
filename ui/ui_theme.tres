@@ -9,6 +9,6 @@ region_rect = Rect2(-0.488022, 5.79939, 418.641, 135.106)
 
 [resource]
 Label/colors/font_color = Color(0.0244141, 0.2395, 0.559672, 1)
-Label/font_sizes/font_size = 62
+Label/font_sizes/font_size = 60
 Label/fonts/font = ExtResource("1_4mq11")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_oa1go")

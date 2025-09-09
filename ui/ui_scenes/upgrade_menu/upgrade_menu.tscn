@@ -22,6 +22,10 @@ texture = ExtResource("2_42pmj")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vqdt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uayfm"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
 texture = ExtResource("11_irr7d")
 
 [node name="UpgradeMenu" type="Control"]
@@ -61,7 +65,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -970.0
 offset_top = -584.0
-offset_right = 970.0
+offset_right = 960.0
 offset_bottom = 651.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -113,44 +117,45 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_44ofp")
-theme_override_constants/separation = 123
+theme_override_constants/separation = 28
 
 [node name="UpgradeLabels" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_44ofp")
 
 [node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 123
+theme_override_font_sizes/font_size = 115
 text = "General"
 
 [node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 123
+theme_override_font_sizes/font_size = 115
 text = "Engine"
 
 [node name="Label3" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 123
+theme_override_font_sizes/font_size = 115
 text = "Gun"
 
 [node name="Label4" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 123
+theme_override_font_sizes/font_size = 115
 text = "Gear"
 
 [node name="Label5" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 123
+theme_override_font_sizes/font_size = 115
 text = "Shield"
 
 [node name="UpgradeLevels" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
@@ -189,14 +194,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="UpgradeEngineButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeLevels/GeneralUpgradeBox"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_mode = 0
-texture_normal = ExtResource("6_venpw")
-texture_hover = ExtResource("7_j1t6r")
-
 [node name="EngineUpgradeBox" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels"]
 layout_mode = 2
 size_flags_vertical = 6
@@ -228,14 +225,6 @@ theme_override_styles/panel = ExtResource("5_c76jk")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("5_c76jk")
-
-[node name="UpgradeEngineButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeLevels/EngineUpgradeBox"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_mode = 0
-texture_normal = ExtResource("6_venpw")
-texture_hover = ExtResource("7_j1t6r")
 
 [node name="GunUpgradeBox" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels"]
 layout_mode = 2
@@ -269,14 +258,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeLevels/GunUpgradeBox"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_mode = 0
-texture_normal = ExtResource("6_venpw")
-texture_hover = ExtResource("7_j1t6r")
-
 [node name="GearUpgradeBox" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels"]
 layout_mode = 2
 size_flags_vertical = 6
@@ -308,14 +289,6 @@ theme_override_styles/panel = ExtResource("5_c76jk")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("5_c76jk")
-
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeLevels/GearUpgradeBox"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_mode = 0
-texture_normal = ExtResource("6_venpw")
-texture_hover = ExtResource("7_j1t6r")
 
 [node name="ShieldUpgradeBox" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels"]
 layout_mode = 2
@@ -349,10 +322,108 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("5_c76jk")
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeLevels/ShieldUpgradeBox"]
+[node name="UpgradePrices" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="General" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/General"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+text = "0"
+
+[node name="Engine" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/Engine"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="Gun" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/Gun"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="Gear" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/Gear"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="Shield" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/Shield"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="UpgradeButtons" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="UpgradeGeneralButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+
+[node name="UpgradeEngineButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+
+[node name="UpgradeGunButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+
+[node name="UpgradeGearButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+
+[node name="UpgradeShieldButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_mode = 0
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")

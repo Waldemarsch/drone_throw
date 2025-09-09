@@ -1,13 +1,44 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=2 format=3 uid="uid://ctq1c4x4hw527"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=8 format=3 uid="uid://y18smhw5e5q5"]
 
 [ext_resource type="Script" uid="uid://y74drsrnpxlv" path="res://resources/player/PlayerData.cs" id="1_lx46u"]
+[ext_resource type="Script" uid="uid://cgdxfymyf4a3o" path="res://resources/upgrades/UpgradeData.cs" id="1_sxxnk"]
+
+[sub_resource type="Resource" id="Resource_6x8yj"]
+script = ExtResource("1_sxxnk")
+CurrentUpgradeLevel = 0
+UpgradePrices = Array[int]([200, 1500, 3000, 5000])
+metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
+
+[sub_resource type="Resource" id="Resource_kmdra"]
+script = ExtResource("1_sxxnk")
+CurrentUpgradeLevel = 0
+UpgradePrices = Array[int]([200, 1500, 3000, 5000])
+metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
+
+[sub_resource type="Resource" id="Resource_mr3fg"]
+script = ExtResource("1_sxxnk")
+CurrentUpgradeLevel = 1
+UpgradePrices = Array[int]([0, 1000, 2500, 9999])
+metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
+
+[sub_resource type="Resource" id="Resource_ltwnf"]
+script = ExtResource("1_sxxnk")
+CurrentUpgradeLevel = 0
+UpgradePrices = Array[int]([200, 1500, 3000, 5000])
+metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
+
+[sub_resource type="Resource" id="Resource_shxuf"]
+script = ExtResource("1_sxxnk")
+CurrentUpgradeLevel = 0
+UpgradePrices = Array[int]([200, 1500, 3000, 5000])
+metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
 
 [resource]
 script = ExtResource("1_lx46u")
-GeneralUpgradeLevel = 0
-EngineUpgradeLevel = 0
-GunUpgradeLevel = 0
-GearUpgradeLevel = 0
-ShieldUpgradeLevel = 0
+GeneralUpgrade = SubResource("Resource_mr3fg")
+EngineUpgrade = SubResource("Resource_6x8yj")
+GunUpgrade = SubResource("Resource_ltwnf")
+GearUpgrade = SubResource("Resource_kmdra")
+ShieldUpgrade = SubResource("Resource_shxuf")
 Score = 0
 metadata/_custom_type_script = "uid://y74drsrnpxlv"
