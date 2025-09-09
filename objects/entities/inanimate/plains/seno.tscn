@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkhvn153x1vtc"]
+[gd_scene load_steps=6 format=3 uid="uid://dkhvn153x1vtc"]
 
 [ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_krthw"]
 [ext_resource type="Resource" uid="uid://bequ870j6kj0o" path="res://resources/entity/inanimate/plains/seno.tres" id="2_mfy53"]
-[ext_resource type="Texture2D" uid="uid://citog208mqk1v" path="res://assets/entities/plains/Seno/seno_trim.png" id="3_2sk3j"]
+[ext_resource type="Texture2D" uid="uid://ldhpiugrhf0i" path="res://assets/entities/plains/Seno/seno_trim.png" id="3_2sk3j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4uhdg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfy53"]
+size = Vector2(691, 568.5)
 
 [node name="Seno" instance=ExtResource("1_krthw")]
 scale = Vector2(2, 2)
@@ -31,3 +34,7 @@ color = Color(0.96709, 0.837234, 1.54018e-06, 1)
 [node name="VisibleOnScreenNotifier2D" parent="." index="5"]
 position = Vector2(-5.50003, 4.24998)
 scale = Vector2(36.6, 30.625)
+
+[node name="CollisionShape2D" parent="." index="6"]
+position = Vector2(-2.5, 27.25)
+shape = SubResource("RectangleShape2D_mfy53")

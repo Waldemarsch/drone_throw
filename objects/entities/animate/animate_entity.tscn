@@ -5,9 +5,11 @@
 
 [node name="AnimateEntity" type="CharacterBody2D"]
 scale = Vector2(3, 3)
+collision_layer = 4
 script = ExtResource("2_6exr0")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwllov2fjfhog"]
 
 [ext_resource type="PackedScene" uid="uid://dpond713qrg3r" path="res://player/upgrade/upgrades/general_upgrade/general_upgrade.tscn" id="1_y6bds"]
-[ext_resource type="Texture2D" uid="uid://cwjyuf4gsmw0g" path="res://assets/upgrades/general_upgrades/bomzh_first/bomzh_trim_resized.png" id="2_j54o7"]
+[ext_resource type="Texture2D" uid="uid://bggoallra8jcw" path="res://assets/upgrades/general_upgrades/bomzh_first/bomzh_trim_resized.png" id="2_j54o7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sokxg"]
 

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://oxqkn1bcx0n7"]
+
+[ext_resource type="PackedScene" uid="uid://cive50b8etkfe" path="res://player/upgrade/upgrades/upgrade.tscn" id="1_d6uu3"]
+[ext_resource type="Script" uid="uid://bde54xk305vrn" path="res://player/upgrade/upgrades/gun/GunUpgrade.cs" id="2_eekjb"]
+[ext_resource type="PackedScene" uid="uid://bpwm0v5msc5jg" path="res://player/upgrade/upgrades/gun/bullet.tscn" id="3_bmmik"]
+
+[node name="GunUpgrade" instance=ExtResource("1_d6uu3")]
+script = ExtResource("2_eekjb")
+_bulletScene = ExtResource("3_bmmik")
+_rotationSpeed = 20.0
+_reloadTime = 1.0
+
+[node name="DetectionRange" type="Area2D" parent="." index="2"]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange" index="0"]
+
+[node name="Muzzle" type="Marker2D" parent="." index="3"]
+
+[node name="ReloadTimer" type="Timer" parent="." index="4"]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="5"]
+
+[node name="Node" type="Node" parent="." index="6"]

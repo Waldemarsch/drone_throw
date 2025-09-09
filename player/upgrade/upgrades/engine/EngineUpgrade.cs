@@ -2,13 +2,11 @@ using DroneThrow;
 using Godot;
 using System;
 
-public partial class EngineUpgrade : Node2D
+public partial class EngineUpgrade : Upgrade
 {
     [Export] public EngineUpgradeLevelData EngineUpgradeLevelResource;
 
     [Export] public bool IsActive = false;
-
-    private PlayerBody _playerBody;
 
     private float _currFuel;
 
@@ -20,6 +18,8 @@ public partial class EngineUpgrade : Node2D
 
     public override void _Ready()
     {
+        base._Ready();
+
         _playerBody = GetParent<PlayerBody>();
 
         _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");

@@ -20,11 +20,13 @@ public partial class DestructibleComponent : Node
     private void OnInitializeComponents()
     {
         _entityOwner.AreaNode.BodyEntered += OnBodyEntered;
+
+        _entityOwner.AreaNode.AreaEntered += OnBodyEntered;
     }
 
     private void OnBodyEntered(Node2D body)
     {
-        if (body is PlayerBody playerBody)
+        if (body is PlayerBody || body is Bullet)
         {
             Die();
         }
@@ -34,7 +36,6 @@ public partial class DestructibleComponent : Node
     {
         PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.ScoreChange, _entityOwner.EntityDataResource.ScoreValue);
         if (_isDead) { _entityOwner.Destroy(); return; }
-        ;
         _isDead = true;
 
         if (_entityOwner.CpuParticles2DNode != null)
