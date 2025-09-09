@@ -8,13 +8,13 @@ script = ExtResource("2_bljy8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="2"]
 
-[node name="EngineSocket" type="Node2D" parent="." index="3"]
+[node name="EngineSocket" type="Marker2D" parent="." index="3"]
 
-[node name="GunSocket" type="Node2D" parent="." index="4"]
+[node name="GunSocket" type="Marker2D" parent="." index="4"]
 
-[node name="GearSocket" type="Node2D" parent="." index="5"]
+[node name="GearSocket" type="Marker2D" parent="." index="5"]
 
-[node name="ShieldSocket" type="Node2D" parent="." index="6"]
+[node name="ShieldSocket" type="Marker2D" parent="." index="6"]
 
 [node name="RotateBarSocket" type="Marker2D" parent="." index="7"]
 
