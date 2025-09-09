@@ -13,10 +13,11 @@
 scale = Vector2(3, 3)
 collision_mask = 2
 script = ExtResource("1_ad3rn")
+RotateSpeed = 15.0
 MaxSpeed = Vector2(7000, 7000)
 AirFriction = 100.0
-GroundFriction = 1200.0
-GravityForce = 1400.0
+GroundFriction = 3500.0
+GravityForce = 1500.0
 
 [node name="StateManager" parent="." instance=ExtResource("2_32gch")]
 

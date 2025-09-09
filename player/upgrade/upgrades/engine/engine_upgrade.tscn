@@ -5,6 +5,8 @@
 
 [node name="EngineUpgrade" instance=ExtResource("1_yp4vf")]
 script = ExtResource("2_nf8dp")
+EngineUpgradeLevelResource = null
+IsActive = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
 

@@ -1,18 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqtwkcqqppnir"]
+[gd_scene load_steps=6 format=3 uid="uid://bqtwkcqqppnir"]
 
 [ext_resource type="PackedScene" uid="uid://hwbopdeiwu02" path="res://player/upgrade/upgrades/engine/engine_upgrade.tscn" id="1_f88u3"]
 [ext_resource type="Resource" uid="uid://dy5enes15ou5l" path="res://resources/upgrades/engine/engine_1level/engine_level_1.tres" id="2_jygi7"]
 [ext_resource type="SpriteFrames" uid="uid://c32w2prh5r8s1" path="res://resources/upgrades/engine/engine_1level/engine_level_1_animFrames.tres" id="2_usgh6"]
+[ext_resource type="AudioStream" uid="uid://c6vyw0ylhifqa" path="res://assets/upgrades/engine/engine_1level/fan_sound.mp3" id="3_tfoif"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxqk5"]
 
 [node name="EngineUpgrade1st" instance=ExtResource("1_f88u3")]
 EngineUpgradeLevelResource = ExtResource("2_jygi7")
 
-[node name="Area2D" parent="." index="0"]
-visible = false
+[node name="AudioStreamPlayer2D" parent="." index="0"]
+stream = ExtResource("3_tfoif")
+parameters/looping = true
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(8, 7)
 rotation = -0.0361617
 scale = Vector2(9.44623, -6.88755)
@@ -22,8 +24,8 @@ shape = SubResource("CapsuleShape2D_rxqk5")
 position = Vector2(-2.00001, -9.53674e-07)
 scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("2_usgh6")
-animation = &"idle"
-autoplay = "idle"
+animation = &"Active"
+autoplay = "Idle"
 flip_h = true
 
 [node name="CPUParticles2D" parent="." index="3"]

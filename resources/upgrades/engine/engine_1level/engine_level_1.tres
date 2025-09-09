@@ -1,14 +1,13 @@
-[gd_resource type="Resource" script_class="EngineUpgradeLevelData" load_steps=4 format=3 uid="uid://dy5enes15ou5l"]
+[gd_resource type="Resource" script_class="EngineUpgradeLevelData" load_steps=3 format=3 uid="uid://dy5enes15ou5l"]
 
 [ext_resource type="SpriteFrames" uid="uid://c32w2prh5r8s1" path="res://resources/upgrades/engine/engine_1level/engine_level_1_animFrames.tres" id="1_ls45r"]
 [ext_resource type="Script" uid="uid://iefisihpnoqh" path="res://resources/upgrades/engine/EngineUpgradeLevelData.cs" id="1_mjblx"]
-[ext_resource type="AudioStream" uid="uid://c6vyw0ylhifqa" path="res://assets/upgrades/engine/engine_1level/fan_sound.mp3" id="2_wf5s5"]
 
 [resource]
 script = ExtResource("1_mjblx")
+SpeedPower = 3500.0
 FuelCapacity = 100.0
-FuelConsumption = 40.0
+FuelConsumption = 20.0
 UpgradeLevel = 1
 AnimatedSpriteFrames = ExtResource("1_ls45r")
-UpgradeLevelAudioStream = ExtResource("2_wf5s5")
 metadata/_custom_type_script = "uid://iefisihpnoqh"

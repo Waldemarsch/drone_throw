@@ -6,31 +6,31 @@
 [sub_resource type="Resource" id="Resource_6x8yj"]
 script = ExtResource("1_sxxnk")
 CurrentUpgradeLevel = 0
-UpgradePrices = Array[int]([200, 1500, 3000, 5000])
+UpgradePrices = Array[int]([100, 1500, 3000, 5000])
 metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
 
 [sub_resource type="Resource" id="Resource_kmdra"]
 script = ExtResource("1_sxxnk")
 CurrentUpgradeLevel = 0
-UpgradePrices = Array[int]([200, 1500, 3000, 5000])
+UpgradePrices = Array[int]([100, 1500, 3000, 5000])
 metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
 
 [sub_resource type="Resource" id="Resource_mr3fg"]
 script = ExtResource("1_sxxnk")
 CurrentUpgradeLevel = 1
-UpgradePrices = Array[int]([0, 1000, 2500, 9999])
+UpgradePrices = Array[int]([0, 1000, 2500, 7000])
 metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
 
 [sub_resource type="Resource" id="Resource_ltwnf"]
 script = ExtResource("1_sxxnk")
 CurrentUpgradeLevel = 0
-UpgradePrices = Array[int]([200, 1500, 3000, 5000])
+UpgradePrices = Array[int]([100, 1500, 3000, 5000])
 metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
 
 [sub_resource type="Resource" id="Resource_shxuf"]
 script = ExtResource("1_sxxnk")
 CurrentUpgradeLevel = 0
-UpgradePrices = Array[int]([200, 1500, 3000, 5000])
+UpgradePrices = Array[int]([100, 1500, 3000, 5000])
 metadata/_custom_type_script = "uid://cgdxfymyf4a3o"
 
 [resource]

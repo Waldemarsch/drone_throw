@@ -16,6 +16,15 @@ public partial class FlightState : State
             _playerBody.RotationDegrees += RotateSpeedDeg * (float)delta;
         }
 
+        if (Input.IsActionJustPressed("engine"))
+        {
+            _playerBody.RequestEngineActivation();
+        }
+        if (Input.IsActionJustReleased("engine"))
+        {
+            _playerBody.RequestEngineDeactivation();
+        }
+
         var velocity = _playerBody.Velocity;
 
         if (_playerBody.IsOnFloor()) velocity.X = Mathf.MoveToward(velocity.X, 0, _playerBody.GroundFriction * (float)delta);

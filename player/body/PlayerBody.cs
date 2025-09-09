@@ -107,6 +107,16 @@ public partial class PlayerBody : CharacterBody2D
         }
     }
 
+    public void RequestEngineActivation()
+    {
+        _upgradeManager.ActivateEngine();
+    }
+
+    public void RequestEngineDeactivation()
+    {
+        _upgradeManager.DeactivateEngine();
+    }
+
     public override void _ExitTree()
     {
         PlayerManager.Instance.PlayerStateChanged -= OnPlayerStateChanged;

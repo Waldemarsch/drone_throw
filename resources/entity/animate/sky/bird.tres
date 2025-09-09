@@ -5,5 +5,4 @@
 [resource]
 script = ExtResource("1_x72d0")
 EntityDeathSound = null
-ScoreValue = 25
 metadata/_custom_type_script = "uid://dbj8qxchljl3q"

@@ -27,8 +27,9 @@ public partial class Camera2d : Camera2D
         {
             var targetZoom = Mathf.Remap(
                 _playerBody.Velocity.Length(),
-                _playerBody.MaxSpeed.Length() / 2, _playerBody.MaxSpeed.Length(),
+                _playerBody.MaxSpeed.Length() / 2, _playerBody.MaxSpeed.Length() * 2,
                 0.2f, 0.05f);
+            targetZoom = Mathf.Clamp(targetZoom, 0.05f, 0.2f);
             this.Zoom = this.Zoom.Lerp(new Vector2(targetZoom, targetZoom), 0.3f * (float)delta);
         }
     }

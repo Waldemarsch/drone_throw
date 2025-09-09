@@ -13,7 +13,7 @@ public partial class UpgradeManager : Node
     private PlayerBody _playerBody;
 
     private Node2D _generalUpgradeScene;
-    private Node2D _engineUpgradeScene;
+    private EngineUpgrade _engineUpgradeScene;
     private Node2D _gunUpgradeScene;
     private Node2D _gearUpgradeScene;
     private Node2D _shieldUpgradeScene;
@@ -71,7 +71,7 @@ public partial class UpgradeManager : Node
             case EUpgradeType.Engine:
                 GD.Print(_generalUpgradeScene);
                 _engineUpgradeScene?.QueueFree();
-                _engineUpgradeScene = EngineUpgradeScenes[_playerBody.PlayerDataResource.GeneralUpgrade.CurrentUpgradeLevel - 1].Instantiate<Node2D>();
+                _engineUpgradeScene = EngineUpgradeScenes[_playerBody.PlayerDataResource.GeneralUpgrade.CurrentUpgradeLevel - 1].Instantiate<EngineUpgrade>();
                 _engineUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("EngineSocket").Position;
                 _playerBody.AddChild(_engineUpgradeScene);
                 break;
@@ -97,5 +97,19 @@ public partial class UpgradeManager : Node
                 _playerBody.AddChild(_shieldUpgradeScene);
                 break;
         }
+    }
+
+    public void ActivateEngine()
+    {
+        if (_engineUpgradeScene == null) return;
+
+        _engineUpgradeScene.ActivateEngine();
+    }
+
+    public void DeactivateEngine()
+    {
+        if (_engineUpgradeScene == null) return;
+
+        _engineUpgradeScene.DeactivateEngine();
     }
 }
