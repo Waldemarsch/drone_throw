@@ -42,7 +42,7 @@ public partial class UIManager : Node
         if (uiElement != null)
         {
             uiElement.Show();
-            uiElement.ProcessMode = ProcessModeEnum.Pausable;
+            uiElement.ProcessMode = ProcessModeEnum.Always;
         }
 
         else

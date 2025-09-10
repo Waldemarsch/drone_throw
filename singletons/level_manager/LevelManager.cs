@@ -81,12 +81,12 @@ public partial class LevelManager : Node
 
     private void OnPauseLevel()
     {
-        _currLevel.ProcessMode = ProcessModeEnum.Disabled;
+        GetTree().Paused = true;
     }
 
     private void OnUnpauseLevel()
     {
-        _currLevel.ProcessMode = ProcessModeEnum.Always;
+        GetTree().Paused = false;
     }
 
     private void OnResetLevel()
@@ -96,5 +96,7 @@ public partial class LevelManager : Node
         _levelContainer.AddChild(_currLevel);
 
         PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.TransitPlayerBody, _currLevel, "DefaultSpawn");
+
+        GetTree().Paused = false;
     }
 }

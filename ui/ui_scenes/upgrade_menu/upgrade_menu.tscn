@@ -1,17 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://nvk0chf58tth"]
+[gd_scene load_steps=17 format=3 uid="uid://nvk0chf58tth"]
 
-[ext_resource type="Texture2D" uid="uid://dp7aag5010f8w" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_0n1vf"]
+[ext_resource type="Texture2D" uid="uid://diii7lkjhrjgh" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_0n1vf"]
 [ext_resource type="Script" uid="uid://kt786wpih0bn" path="res://ui/ui_scenes/upgrade_menu/UpgradeMenu.cs" id="1_dasy4"]
-[ext_resource type="Texture2D" uid="uid://4pyimks07yyf" path="res://assets/ui/buttons/Default@2x-1.png" id="2_42pmj"]
+[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="2_42pmj"]
 [ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="3_44ofp"]
 [ext_resource type="StyleBox" uid="uid://dl26yqfg3yrea" path="res://ui/indicators/bought.tres" id="4_04bh7"]
 [ext_resource type="StyleBox" uid="uid://us8p0rofx1v6" path="res://ui/indicators/not_bought.tres" id="5_c76jk"]
-[ext_resource type="Texture2D" uid="uid://b73d3pl5g61cp" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Default.png" id="6_venpw"]
-[ext_resource type="Texture2D" uid="uid://ctmycrijw7o0l" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Hover.png" id="7_j1t6r"]
-[ext_resource type="Texture2D" uid="uid://mehlpybqsrd3" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default@2x-1.png" id="8_j4n0e"]
-[ext_resource type="Texture2D" uid="uid://b45rppkwpdjvy" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Hover@2x-1.png" id="9_4yvok"]
-[ext_resource type="Texture2D" uid="uid://dp5e5gdf2jclj" path="res://assets/ui/counter/Dummy@2x.png" id="11_irr7d"]
-[ext_resource type="Texture2D" uid="uid://1awvnf80scrk" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@2x/Counter/Icon/Money@2x.png" id="12_omcm8"]
+[ext_resource type="Texture2D" uid="uid://cyd21fttxnk1k" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Default.png" id="6_venpw"]
+[ext_resource type="Texture2D" uid="uid://da8fwf1a3856c" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Hover.png" id="7_j1t6r"]
+[ext_resource type="Texture2D" uid="uid://bchenmjnc1yn0" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default@2x-1.png" id="8_j4n0e"]
+[ext_resource type="Texture2D" uid="uid://c4rp20oqhi100" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Hover@2x-1.png" id="9_4yvok"]
+[ext_resource type="Texture2D" uid="uid://8gwbc7iyygk5" path="res://assets/ui/buttons/Play/Disabled.png" id="10_omcm8"]
+[ext_resource type="Texture2D" uid="uid://bs50fe66tlvyi" path="res://assets/ui/counter/Dummy@2x.png" id="11_irr7d"]
+[ext_resource type="Texture2D" uid="uid://cke7xr2ht7i38" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@2x/Counter/Icon/Money@2x.png" id="12_omcm8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chbti"]
 content_margin_top = 123.0
@@ -29,6 +30,7 @@ content_margin_bottom = 20.0
 texture = ExtResource("11_irr7d")
 
 [node name="UpgradeMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -395,6 +397,7 @@ size_flags_vertical = 6
 focus_mode = 0
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
 
 [node name="UpgradeEngineButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
 layout_mode = 2
@@ -403,6 +406,7 @@ size_flags_vertical = 6
 focus_mode = 0
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
 
 [node name="UpgradeGunButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
 layout_mode = 2
@@ -411,6 +415,7 @@ size_flags_vertical = 6
 focus_mode = 0
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
 
 [node name="UpgradeGearButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
 layout_mode = 2
@@ -419,6 +424,7 @@ size_flags_vertical = 6
 focus_mode = 0
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
 
 [node name="UpgradeShieldButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
 layout_mode = 2
@@ -427,6 +433,7 @@ size_flags_vertical = 6
 focus_mode = 0
 texture_normal = ExtResource("6_venpw")
 texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
 
 [node name="PlayButton" type="TextureButton" parent="PanelContainer"]
 layout_mode = 2

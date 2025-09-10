@@ -29,6 +29,9 @@ public partial class PlayerManager : Node
 
     [Signal] public delegate void BiomeEnteredEventHandler(BiomeTypes biomeType);
 
+    [Signal] public delegate void PausePlayerEventHandler();
+    [Signal] public delegate void UnpausePlayerEventHandler();
+
 
     public override void _Ready()
     {
@@ -43,6 +46,9 @@ public partial class PlayerManager : Node
         BiomeEntered += OnBiomeEntered;
 
         UpgradeApply += OnUpgradeApply;
+
+        PausePlayer += OnPausePlayer;
+        UnpausePlayer += OnUnpausePlayer;
 
     }
 
@@ -99,5 +105,17 @@ public partial class PlayerManager : Node
     private void OnBiomeEntered(BiomeTypes biomeType)
     {
         CurrentBiome = biomeType;
+    }
+
+    private void OnPausePlayer()
+    {
+        _playerBody.SetPhysicsProcess(false);
+        _playerBody.ProcessMode = ProcessModeEnum.Disabled;
+    }
+
+    private void OnUnpausePlayer()
+    {
+        _playerBody.ProcessMode = ProcessModeEnum.Always;
+         _playerBody.SetPhysicsProcess(true);
     }
 }

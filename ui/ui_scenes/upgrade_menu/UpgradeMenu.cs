@@ -100,34 +100,69 @@ public partial class UpgradeMenu : Control
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.GeneralUpgrade.GetCurrentUpgradePrice())
             {
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.General);
+                foreach (TextureButton upgradeButton in _upgradeButtonsContainer.GetChildren())
+                {
+                    upgradeButton.Disabled = false;
+                }
             }
         };
-        _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeEngineButton").Pressed += () =>
+        _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeEngineButton").Pressed += async () =>
         {
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.EngineUpgrade.GetCurrentUpgradePrice())
             {
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.Engine);
             }
         };
-        _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeGunButton").Pressed += () =>
+        _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeGunButton").Pressed += async () =>
         {
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.GunUpgrade.GetCurrentUpgradePrice())
             {
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.Gun);
             }
         };
-        _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeGearButton").Pressed += () =>
+        _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeGearButton").Pressed += async () =>
         {
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.GearUpgrade.GetCurrentUpgradePrice())
             {
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.Gear);
             }
         };
-        _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeShieldButton").Pressed += () =>
+        _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeShieldButton").Pressed += async () =>
         {
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.ShieldUpgrade.GetCurrentUpgradePrice())
             {
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.Shield);
+            }
+        };
+
+        PlayerManager.Instance.UpgradeApplied += (EUpgradeType upgradeType) =>
+        {
+            TextureButton upgradeButton = null;
+            UpgradeData upgradeInfo = null;
+            switch (upgradeType)
+            {
+                case EUpgradeType.General:
+                    return;
+                case EUpgradeType.Engine:
+                    upgradeButton = _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeEngineButton");
+                    upgradeInfo = PlayerManager.Instance.PlayerDataResource.EngineUpgrade;
+                    break;
+                case EUpgradeType.Gun:
+                    upgradeButton = _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeGunButton");
+                    upgradeInfo = PlayerManager.Instance.PlayerDataResource.GunUpgrade;
+                    break;
+                case EUpgradeType.Gear:
+                    upgradeButton = _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeGearButton");
+                    upgradeInfo = PlayerManager.Instance.PlayerDataResource.GearUpgrade;
+                    break;
+                case EUpgradeType.Shield:
+                    upgradeButton = _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeShieldButton");
+                    upgradeInfo = PlayerManager.Instance.PlayerDataResource.ShieldUpgrade;
+                    break;
+            }
+            if (upgradeInfo.CurrentUpgradeLevel >= PlayerManager.Instance.PlayerDataResource.GeneralUpgrade.CurrentUpgradeLevel)
+            {
+                upgradeButton.Disabled = true;
             }
         };
     }

@@ -74,7 +74,7 @@ public partial class PlayerBody : CharacterBody2D
 
         EmitSignal(SignalName.InitializeBodyComponents);
 
-        ProcessMode = ProcessModeEnum.Always;
+        ProcessMode = ProcessModeEnum.Pausable;
 
         EmitSignal(SignalName.PlayerBodyInitialized);
     }
