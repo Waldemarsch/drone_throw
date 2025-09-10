@@ -9,7 +9,7 @@ public partial class GearUpgrade : Upgrade
     {
         base._Ready();
 
-        _playerBody.GroundFriction *= 0.8f;
+        _playerBody.GroundFriction *= GearUpgradeLevelDataResource.GearReduceFactor;
     }
 
 }

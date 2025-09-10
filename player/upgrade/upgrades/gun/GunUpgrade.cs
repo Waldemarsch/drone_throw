@@ -92,7 +92,6 @@ public partial class GunUpgrade : Upgrade
             return;
         }
 
-        GD.Print("ОГОНЬ!");
         var bullet = (Bullet)_bulletScene.Instantiate<Bullet>().Duplicate();
         bullet.GlobalPosition = _muzzle.GlobalPosition;
         bullet.GlobalRotation = this.GlobalRotation;

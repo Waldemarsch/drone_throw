@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://hwbopdeiwu02" path="res://player/upgrade/upgrades/engine/engine_upgrade.tscn" id="1_laxjj"]
 [ext_resource type="Resource" uid="uid://ci0poq1lbclm3" path="res://resources/upgrades/engine/engine_2level/engine_level_2.tres" id="2_73rhe"]
-[ext_resource type="AudioStream" uid="uid://dv4xxvr52byy5" path="res://assets/upgrades/engine/engine_1level/fan_sound.mp3" id="3_ny5hi"]
+[ext_resource type="AudioStream" uid="uid://i35y1tsh32ax" path="res://assets/upgrades/engine/engine_2level/jet_sound.ogg" id="3_73rhe"]
 [ext_resource type="SpriteFrames" uid="uid://bbfgylq2gf21o" path="res://resources/upgrades/engine/engine_2level/engine_level_2_animFrames.tres" id="4_qm32x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxqk5"]
@@ -13,7 +13,7 @@ height = 214.009
 EngineUpgradeLevelResource = ExtResource("2_73rhe")
 
 [node name="AudioStreamPlayer2D" parent="." index="0"]
-stream = ExtResource("3_ny5hi")
+stream = ExtResource("3_73rhe")
 parameters/looping = true
 
 [node name="CollisionShape2D" parent="." index="1"]

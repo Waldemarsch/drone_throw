@@ -4,5 +4,5 @@ using System;
 [GlobalClass]
 public partial class GearUpgradeLevelData : UpgradeLevelData
 {
-    [Export] private float GearReduceFactor;
+    [Export] public float GearReduceFactor;
 }

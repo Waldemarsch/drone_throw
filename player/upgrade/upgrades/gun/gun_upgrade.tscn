@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bpwm0v5msc5jg" path="res://player/upgrade/upgrades/gun/bullet.tscn" id="3_bmmik"]
 
 [node name="GunUpgrade" instance=ExtResource("1_d6uu3")]
+z_index = 1
 script = ExtResource("2_eekjb")
 _bulletScene = ExtResource("3_bmmik")
 _rotationSpeed = 20.0

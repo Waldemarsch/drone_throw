@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c7ig15mq76mi0"]
+[gd_scene load_steps=17 format=3 uid="uid://c7ig15mq76mi0"]
 
 [ext_resource type="Script" uid="uid://cxjmhrs5d0htq" path="res://player/body/PlayerBody.cs" id="1_ad3rn"]
 [ext_resource type="PackedScene" uid="uid://boof565rdobjk" path="res://player/state_manager/state_manager.tscn" id="2_32gch"]
@@ -7,11 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://bqtwkcqqppnir" path="res://player/upgrade/upgrades/engine/engine_1level/engine_upgrade_1_st.tscn" id="5_dlyr8"]
 [ext_resource type="PackedScene" uid="uid://cvceof57vig2e" path="res://player/camera/camera_2d.tscn" id="5_l2brm"]
 [ext_resource type="PackedScene" uid="uid://gyseykhfkoul" path="res://player/speed_bar/speed_bar.tscn" id="5_wfgwu"]
+[ext_resource type="PackedScene" uid="uid://ccqwnc3swxtt" path="res://player/upgrade/upgrades/general_upgrade/lvl2/lvl2.tscn" id="5_yu33j"]
 [ext_resource type="PackedScene" uid="uid://0chg23kkdx7n" path="res://player/upgrade/upgrades/engine/engine_2level/engine_upgrade_2.tscn" id="6_75gf1"]
 [ext_resource type="PackedScene" uid="uid://b7ybligrkw2kr" path="res://player/rotate_bar/rotate_bar.tscn" id="6_l2brm"]
 [ext_resource type="PackedScene" uid="uid://cfkti0dh2ic1q" path="res://player/upgrade/upgrades/gun/lvl1/lvl1.tscn" id="6_ta5cq"]
 [ext_resource type="PackedScene" uid="uid://jv7xu2idcqhp" path="res://player/upgrade/upgrades/gear/lvl1/lvl1.tscn" id="7_482qt"]
 [ext_resource type="PackedScene" uid="uid://co3abvrcsxxv1" path="res://player/upgrade/upgrades/shield/lvl1/lvl1.tscn" id="8_qnqlj"]
+[ext_resource type="PackedScene" uid="uid://dxlwa5lx7xx5s" path="res://player/upgrade/upgrades/gun/lvl2/lvl2.tscn" id="9_hwf5p"]
+[ext_resource type="PackedScene" uid="uid://bipq2sar0y11q" path="res://player/upgrade/upgrades/gear/lvl2/lvl2.tscn" id="11_8qe4v"]
+[ext_resource type="PackedScene" uid="uid://u3n2evuqln7h" path="res://player/upgrade/upgrades/shield/lvl2/lvl2.tscn" id="13_smeps"]
 
 [node name="PlayerBody" type="CharacterBody2D"]
 scale = Vector2(3, 3)
@@ -26,11 +30,11 @@ GravityForce = 1500.0
 [node name="StateManager" parent="." instance=ExtResource("2_32gch")]
 
 [node name="UpgradeManager" parent="." instance=ExtResource("3_wfgwu")]
-GeneralUpgradeScenes = Array[PackedScene]([ExtResource("4_l2brm")])
+GeneralUpgradeScenes = Array[PackedScene]([ExtResource("4_l2brm"), ExtResource("5_yu33j")])
 EngineUpgradeScenes = Array[PackedScene]([ExtResource("5_dlyr8"), ExtResource("6_75gf1")])
-GunUpgradeScenes = Array[PackedScene]([ExtResource("6_ta5cq")])
-GearUpgradeScenes = Array[PackedScene]([ExtResource("7_482qt")])
-ShieldUpgradeScenes = Array[PackedScene]([ExtResource("8_qnqlj")])
+GunUpgradeScenes = Array[PackedScene]([ExtResource("6_ta5cq"), ExtResource("9_hwf5p")])
+GearUpgradeScenes = Array[PackedScene]([ExtResource("7_482qt"), ExtResource("11_8qe4v")])
+ShieldUpgradeScenes = Array[PackedScene]([ExtResource("8_qnqlj"), ExtResource("13_smeps")])
 
 [node name="Camera2D" parent="." instance=ExtResource("5_l2brm")]
 
