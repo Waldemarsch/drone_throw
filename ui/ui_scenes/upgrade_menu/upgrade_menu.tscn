@@ -158,7 +158,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 115
-text = "Shield"
+text = "Weapon"
 
 [node name="UpgradeLevels" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2

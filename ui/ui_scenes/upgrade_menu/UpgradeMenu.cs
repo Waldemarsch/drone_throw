@@ -84,6 +84,8 @@ public partial class UpgradeMenu : Control
         }
         PlayerManager.Instance.UpgradeApplied += (EUpgradeType upgradeType) =>
         {
+            
+            string text = "";
             UpgradeData upgradeInfo = null;
             if (upgradeType == EUpgradeType.General) upgradeInfo = PlayerManager.Instance.PlayerDataResource.GeneralUpgrade;
             else if (upgradeType == EUpgradeType.Engine) upgradeInfo = PlayerManager.Instance.PlayerDataResource.EngineUpgrade;
@@ -91,7 +93,11 @@ public partial class UpgradeMenu : Control
             else if (upgradeType == EUpgradeType.Gear) upgradeInfo = PlayerManager.Instance.PlayerDataResource.GearUpgrade;
             else if (upgradeType == EUpgradeType.Shield) upgradeInfo = PlayerManager.Instance.PlayerDataResource.ShieldUpgrade;
 
-            _upgradePricesContainer.GetChildren()[(int)upgradeType].GetNode<Label>("Label").Text = upgradeInfo.GetCurrentUpgradePrice().ToString();
+            if (upgradeInfo.CurrentUpgradeLevel == 4) text = "MAX";
+
+            else text = upgradeInfo.GetCurrentUpgradePrice().ToString();
+
+            _upgradePricesContainer.GetChildren()[(int)upgradeType].GetNode<Label>("Label").Text = text;
         };
 
         _upgradeButtonsContainer = GetNode<VBoxContainer>("PanelContainer/HBoxContainer/UpgradeButtons");
@@ -102,6 +108,7 @@ public partial class UpgradeMenu : Control
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.General);
                 foreach (TextureButton upgradeButton in _upgradeButtonsContainer.GetChildren())
                 {
+                    if (upgradeButton.GetIndex() == 0) continue;
                     upgradeButton.Disabled = false;
                 }
             }
@@ -142,7 +149,11 @@ public partial class UpgradeMenu : Control
             switch (upgradeType)
             {
                 case EUpgradeType.General:
-                    return;
+                    upgradeButton = _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeGeneralButton");
+                    upgradeInfo = PlayerManager.Instance.PlayerDataResource.GeneralUpgrade;
+                    if (upgradeInfo.CurrentUpgradeLevel == 4) upgradeButton.Disabled = true;
+                    else return;
+                    break;
                 case EUpgradeType.Engine:
                     upgradeButton = _upgradeButtonsContainer.GetNode<TextureButton>("UpgradeEngineButton");
                     upgradeInfo = PlayerManager.Instance.PlayerDataResource.EngineUpgrade;
