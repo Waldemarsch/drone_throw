@@ -1,13 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://856gbfceoh2l"]
+[gd_scene load_steps=12 format=3 uid="uid://856gbfceoh2l"]
 
 [ext_resource type="PackedScene" uid="uid://c324886hh4t7l" path="res://objects/entities/animate/animate_entity.tscn" id="1_hxx3d"]
 [ext_resource type="Resource" uid="uid://bfn5m74kbqgu1" path="res://resources/entity/animate/sky/bird.tres" id="2_x023d"]
-[ext_resource type="Texture2D" uid="uid://bv1ypgt4gvcv5" path="res://assets/entities/sky/bird/00000001.png" id="3_wak66"]
-[ext_resource type="Texture2D" uid="uid://brs10o5kl4yly" path="res://assets/entities/sky/bird/00000002.png" id="4_lycjt"]
-[ext_resource type="Texture2D" uid="uid://ciuffl25b6g87" path="res://assets/entities/sky/bird/00000003.png" id="5_2cteq"]
-[ext_resource type="Texture2D" uid="uid://ggmifldds0nd" path="res://assets/entities/sky/bird/00000004.png" id="6_w42eu"]
-[ext_resource type="Texture2D" uid="uid://vbbump34eixj" path="res://assets/entities/sky/bird/00000005.png" id="7_kguba"]
-[ext_resource type="Texture2D" uid="uid://b8scn8u0ltpp5" path="res://assets/entities/sky/bird/00000006.png" id="8_nl5ga"]
+[ext_resource type="Texture2D" uid="uid://rydxtd34taer" path="res://assets/entities/sky/bird/00000001.png" id="3_wak66"]
+[ext_resource type="Texture2D" uid="uid://i2r3io70575k" path="res://assets/entities/sky/bird/00000002.png" id="4_lycjt"]
+[ext_resource type="Texture2D" uid="uid://c040ix4xh34ym" path="res://assets/entities/sky/bird/00000003.png" id="5_2cteq"]
+[ext_resource type="Texture2D" uid="uid://bisjotgskhpmd" path="res://assets/entities/sky/bird/00000004.png" id="6_w42eu"]
+[ext_resource type="Texture2D" uid="uid://bvnks82hwd53" path="res://assets/entities/sky/bird/00000005.png" id="7_kguba"]
+[ext_resource type="Texture2D" uid="uid://d328tnfd4klcs" path="res://assets/entities/sky/bird/00000006.png" id="8_nl5ga"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wak66"]
 
@@ -37,6 +37,10 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lycjt"]
+radius = 65.6202
+height = 373.163
+
 [node name="Bird" instance=ExtResource("1_hxx3d")]
 EntityDataResource = ExtResource("2_x023d")
 _speed = 900.0
@@ -58,3 +62,9 @@ scale = Vector2(33.0167, 24.8333)
 
 [node name="CPUParticles2D" parent="." index="6"]
 position = Vector2(62.6667, 150.333)
+
+[node name="CollisionShape2D" parent="." index="7"]
+visible = false
+position = Vector2(79.3333, 158.667)
+rotation = 1.3757
+shape = SubResource("CapsuleShape2D_lycjt")

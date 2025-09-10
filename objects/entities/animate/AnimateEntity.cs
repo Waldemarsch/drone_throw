@@ -22,7 +22,7 @@ namespace DroneThrow
         private VisibleOnScreenNotifier2D _visibleOnScreenNotifier;
 
         private AnimatedSprite2D _animatedSprite;
-        
+
         [Export] private bool _allowedToSwitchDirection = true;
 
         public override void _Ready()
@@ -109,6 +109,11 @@ namespace DroneThrow
         public void HideVisuals()
         {
             _animatedSprite.Hide();
+        }
+
+        public void DisableCollision()
+        {
+            this.SetCollisionLayerValue(4, false);
         }
     }
 }

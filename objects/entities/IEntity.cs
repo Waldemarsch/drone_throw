@@ -17,6 +17,8 @@ namespace DroneThrow
 
         void HideVisuals();
 
+        void DisableCollision();
+
         void Destroy();
 
     }       

@@ -5,7 +5,7 @@
 
 [node name="AnimateEntity" type="CharacterBody2D"]
 scale = Vector2(3, 3)
-collision_layer = 4
+collision_layer = 8
 script = ExtResource("2_6exr0")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -41,3 +41,5 @@ damping_max = 200.0
 scale_amount_min = 15.0
 scale_amount_max = 20.0
 color = Color(0.493024, 0.839339, 0.261225, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

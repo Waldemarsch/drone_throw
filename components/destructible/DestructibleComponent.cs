@@ -38,6 +38,8 @@ public partial class DestructibleComponent : Node
         if (_isDead) { _entityOwner.Destroy(); return; }
         _isDead = true;
 
+        _entityOwner.DisableCollision();
+
         if (_entityOwner.CpuParticles2DNode != null)
         {
             _entityOwner.HideVisuals();

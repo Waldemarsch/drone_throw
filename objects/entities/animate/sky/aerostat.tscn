@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://xun6gsu0j3sk"]
+[gd_scene load_steps=7 format=3 uid="uid://xun6gsu0j3sk"]
 
 [ext_resource type="PackedScene" uid="uid://c324886hh4t7l" path="res://objects/entities/animate/animate_entity.tscn" id="1_v1x38"]
 [ext_resource type="Resource" uid="uid://dcd1lbedhx7d1" path="res://resources/entity/animate/sky/aerostat.tres" id="2_j2pby"]
-[ext_resource type="Texture2D" uid="uid://c1cjoh63eek61" path="res://assets/entities/sky/aerostat/aerostat_trim.png" id="3_j2pby"]
+[ext_resource type="Texture2D" uid="uid://cqonhc88gx68g" path="res://assets/entities/sky/aerostat/aerostat_trim.png" id="3_j2pby"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1v320"]
 radius = 146.622
@@ -19,6 +19,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j2pby"]
+radius = 146.325
+height = 1069.98
+
 [node name="Aerostat" instance=ExtResource("1_v1x38")]
 EntityDataResource = ExtResource("2_j2pby")
 _speed = 250.0
@@ -34,7 +38,12 @@ shape = SubResource("CapsuleShape2D_1v320")
 [node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_qsvmx")
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="5"]
-visible = false
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
 position = Vector2(3.99997, -7.50002)
 scale = Vector2(59.4, 24.9833)
+
+[node name="CollisionShape2D" parent="." index="7"]
+visible = false
+position = Vector2(18.3333, -59.6667)
+rotation = 1.56918
+shape = SubResource("CapsuleShape2D_j2pby")

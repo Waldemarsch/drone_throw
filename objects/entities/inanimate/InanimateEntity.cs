@@ -55,5 +55,10 @@ namespace DroneThrow
         {
             _spriteNode.Hide();
         }
+
+        public void DisableCollision()
+        {
+            this.SetCollisionLayerValue(4, false);
+        }
     }       
 }
