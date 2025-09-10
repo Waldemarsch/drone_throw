@@ -65,13 +65,11 @@ public partial class UpgradeManager : Node
                 _generalUpgradeScene?.QueueFree();
                 _generalUpgradeScene = GeneralUpgradeScenes[_playerBody.PlayerDataResource.GeneralUpgrade.CurrentUpgradeLevel - 1].Instantiate<Node2D>();
                 _playerBody.AddChild(_generalUpgradeScene);
-                GD.Print(_generalUpgradeScene);
                 break;
 
             case EUpgradeType.Engine:
-                GD.Print(_generalUpgradeScene);
                 _engineUpgradeScene?.QueueFree();
-                _engineUpgradeScene = EngineUpgradeScenes[_playerBody.PlayerDataResource.GeneralUpgrade.CurrentUpgradeLevel - 1].Instantiate<EngineUpgrade>();
+                _engineUpgradeScene = EngineUpgradeScenes[_playerBody.PlayerDataResource.EngineUpgrade.CurrentUpgradeLevel - 1].Instantiate<EngineUpgrade>();
                 _engineUpgradeScene.Position = _generalUpgradeScene.GetNode<Marker2D>("EngineSocket").Position;
                 _playerBody.AddChild(_engineUpgradeScene);
                 break;

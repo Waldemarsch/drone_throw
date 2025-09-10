@@ -26,6 +26,7 @@ position = Vector2(20341, 38885)
 
 [node name="Katapulta" type="Sprite2D" parent="."]
 top_level = true
+z_index = 2
 position = Vector2(15686, 40835)
 scale = Vector2(8, 8)
 texture = ExtResource("5_2ccdf")

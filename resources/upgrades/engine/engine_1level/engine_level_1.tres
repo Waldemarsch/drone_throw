@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="EngineUpgradeLevelData" load_steps=3 format=3 uid="uid://dy5enes15ou5l"]
+[gd_resource type="Resource" script_class="EngineUpgradeLevelData" load_steps=2 format=3 uid="uid://dy5enes15ou5l"]
 
-[ext_resource type="SpriteFrames" uid="uid://c32w2prh5r8s1" path="res://resources/upgrades/engine/engine_1level/engine_level_1_animFrames.tres" id="1_ls45r"]
 [ext_resource type="Script" uid="uid://iefisihpnoqh" path="res://resources/upgrades/engine/EngineUpgradeLevelData.cs" id="1_mjblx"]
 
 [resource]
 script = ExtResource("1_mjblx")
-SpeedPower = 3500.0
+SpeedPower = 2500.0
 FuelCapacity = 100.0
-FuelConsumption = 20.0
+FuelConsumption = 50.0
 UpgradeLevel = 1
-AnimatedSpriteFrames = ExtResource("1_ls45r")
 metadata/_custom_type_script = "uid://iefisihpnoqh"

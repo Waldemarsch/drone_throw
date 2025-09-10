@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://co3abvrcsxxv1"]
+
+[ext_resource type="PackedScene" uid="uid://5ss5wcflcby2" path="res://player/upgrade/upgrades/shield/shield_upgrade.tscn" id="1_o4vsj"]
+[ext_resource type="Texture2D" uid="uid://ck7p80yargcyp" path="res://assets/upgrades/shield/lvl1/kopjo_trim.png" id="2_ixiyl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixiyl"]
+size = Vector2(1155, 107)
+
+[node name="ShieldUpgrade" instance=ExtResource("1_o4vsj")]
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(567.5, 0.5)
+shape = SubResource("RectangleShape2D_ixiyl")
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(573, 0)
+texture = ExtResource("2_ixiyl")

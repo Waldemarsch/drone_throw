@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://crpwu5lwaw2a5" path="res://player/upgrade/upgrades/general_upgrade/GeneralUpgrade.cs" id="2_bljy8"]
 
 [node name="GeneralUpgrade" instance=ExtResource("1_dc8as")]
+z_index = 1
 script = ExtResource("2_bljy8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="2"]

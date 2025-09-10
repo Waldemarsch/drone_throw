@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7ig15mq76mi0"]
+[gd_scene load_steps=13 format=3 uid="uid://c7ig15mq76mi0"]
 
 [ext_resource type="Script" uid="uid://cxjmhrs5d0htq" path="res://player/body/PlayerBody.cs" id="1_ad3rn"]
 [ext_resource type="PackedScene" uid="uid://boof565rdobjk" path="res://player/state_manager/state_manager.tscn" id="2_32gch"]
@@ -7,16 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://bqtwkcqqppnir" path="res://player/upgrade/upgrades/engine/engine_1level/engine_upgrade_1_st.tscn" id="5_dlyr8"]
 [ext_resource type="PackedScene" uid="uid://cvceof57vig2e" path="res://player/camera/camera_2d.tscn" id="5_l2brm"]
 [ext_resource type="PackedScene" uid="uid://gyseykhfkoul" path="res://player/speed_bar/speed_bar.tscn" id="5_wfgwu"]
+[ext_resource type="PackedScene" uid="uid://0chg23kkdx7n" path="res://player/upgrade/upgrades/engine/engine_2level/engine_upgrade_2.tscn" id="6_75gf1"]
 [ext_resource type="PackedScene" uid="uid://b7ybligrkw2kr" path="res://player/rotate_bar/rotate_bar.tscn" id="6_l2brm"]
 [ext_resource type="PackedScene" uid="uid://cfkti0dh2ic1q" path="res://player/upgrade/upgrades/gun/lvl1/lvl1.tscn" id="6_ta5cq"]
+[ext_resource type="PackedScene" uid="uid://jv7xu2idcqhp" path="res://player/upgrade/upgrades/gear/lvl1/lvl1.tscn" id="7_482qt"]
+[ext_resource type="PackedScene" uid="uid://co3abvrcsxxv1" path="res://player/upgrade/upgrades/shield/lvl1/lvl1.tscn" id="8_qnqlj"]
 
 [node name="PlayerBody" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 collision_mask = 2
 script = ExtResource("1_ad3rn")
 RotateSpeed = 15.0
-MaxSpeed = Vector2(7000, 7000)
-AirFriction = 100.0
+MaxSpeed = Vector2(6000, 6000)
+AirFriction = 300.0
 GroundFriction = 3500.0
 GravityForce = 1500.0
 
@@ -24,8 +27,10 @@ GravityForce = 1500.0
 
 [node name="UpgradeManager" parent="." instance=ExtResource("3_wfgwu")]
 GeneralUpgradeScenes = Array[PackedScene]([ExtResource("4_l2brm")])
-EngineUpgradeScenes = Array[PackedScene]([ExtResource("5_dlyr8")])
+EngineUpgradeScenes = Array[PackedScene]([ExtResource("5_dlyr8"), ExtResource("6_75gf1")])
 GunUpgradeScenes = Array[PackedScene]([ExtResource("6_ta5cq")])
+GearUpgradeScenes = Array[PackedScene]([ExtResource("7_482qt")])
+ShieldUpgradeScenes = Array[PackedScene]([ExtResource("8_qnqlj")])
 
 [node name="Camera2D" parent="." instance=ExtResource("5_l2brm")]
 

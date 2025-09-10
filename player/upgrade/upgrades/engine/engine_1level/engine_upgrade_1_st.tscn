@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://hwbopdeiwu02" path="res://player/upgrade/upgrades/engine/engine_upgrade.tscn" id="1_f88u3"]
 [ext_resource type="Resource" uid="uid://dy5enes15ou5l" path="res://resources/upgrades/engine/engine_1level/engine_level_1.tres" id="2_jygi7"]
 [ext_resource type="SpriteFrames" uid="uid://c32w2prh5r8s1" path="res://resources/upgrades/engine/engine_1level/engine_level_1_animFrames.tres" id="2_usgh6"]
-[ext_resource type="AudioStream" uid="uid://c6vyw0ylhifqa" path="res://assets/upgrades/engine/engine_1level/fan_sound.mp3" id="3_tfoif"]
+[ext_resource type="AudioStream" uid="uid://dv4xxvr52byy5" path="res://assets/upgrades/engine/engine_1level/fan_sound.mp3" id="3_tfoif"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxqk5"]
 
@@ -26,6 +26,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = ExtResource("2_usgh6")
 animation = &"Active"
 autoplay = "Idle"
+frame_progress = 1.0
 flip_h = true
 
 [node name="CPUParticles2D" parent="." index="3"]

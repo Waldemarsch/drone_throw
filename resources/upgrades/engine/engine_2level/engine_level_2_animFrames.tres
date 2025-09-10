@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bbfgylq2gf21o"]
+
+[ext_resource type="Texture2D" uid="uid://c8vrle743pv4j" path="res://assets/upgrades/engine/engine_2level/reaktivnyj_trim.png" id="1_2jmr4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2jmr4")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2jmr4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
