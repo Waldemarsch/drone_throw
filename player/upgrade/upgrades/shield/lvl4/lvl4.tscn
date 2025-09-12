@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp26uc1ovo28r"]
+
+[ext_resource type="PackedScene" uid="uid://5ss5wcflcby2" path="res://player/upgrade/upgrades/shield/shield_upgrade.tscn" id="1_j6d8o"]
+[ext_resource type="Texture2D" uid="uid://ce8dr25f7vdhy" path="res://assets/upgrades/shield/lvl4/lvl4_trim.png" id="2_un2nj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un2nj"]
+size = Vector2(254.131, 567.902)
+
+[node name="ShieldUpgrade" instance=ExtResource("1_j6d8o")]
+rotation = -0.349066
+scale = Vector2(1.75, 1.75)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(597.562, 2.22662)
+shape = SubResource("RectangleShape2D_un2nj")
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(404, 0)
+texture = ExtResource("2_un2nj")

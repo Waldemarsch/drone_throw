@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://iv3xjkgugwkm"]
+
+[ext_resource type="PackedScene" uid="uid://hwbopdeiwu02" path="res://player/upgrade/upgrades/engine/engine_upgrade.tscn" id="1_hc7bj"]
+[ext_resource type="Resource" uid="uid://dilke57odqqj7" path="res://resources/upgrades/engine/engine_4level/lvl4.tres" id="2_t073j"]
+[ext_resource type="Texture2D" uid="uid://6vcoug4b7foq" path="res://assets/upgrades/engine/engine_4level/lvl4_trim.png" id="2_w2hvk"]
+[ext_resource type="AudioStream" uid="uid://i35y1tsh32ax" path="res://assets/upgrades/engine/engine_2level/jet_sound.ogg" id="3_ek5fy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2hvk"]
+size = Vector2(878, 252)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hc7bj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w2hvk")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w2hvk")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="EngineUpgrade" instance=ExtResource("1_hc7bj")]
+scale = Vector2(0.8, 0.8)
+EngineUpgradeLevelResource = ExtResource("2_t073j")
+
+[node name="AudioStreamPlayer2D" parent="." index="0"]
+stream = ExtResource("3_ek5fy")
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+position = Vector2(-428, 5)
+shape = SubResource("RectangleShape2D_w2hvk")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(-442, 0)
+sprite_frames = SubResource("SpriteFrames_hc7bj")
+animation = &"Active"
+
+[node name="CPUParticles2D" parent="." index="3"]
+z_index = 2
+position = Vector2(-855, 0)
+emitting = false
+amount = 600
+lifetime = 6.0
+direction = Vector2(-1, 0)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 50.0
+scale_amount_max = 50.0
+color = Color(0.266667, 0.854902, 0.945098, 1)
