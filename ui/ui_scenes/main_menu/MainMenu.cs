@@ -18,6 +18,9 @@ public partial class MainMenu : Control
         };
 
         _SettingsMenu = GetNode<PanelContainer>("MainPanel/SettingsMenu");
+        _SettingsMenu.GetNode<Slider>("MarginContainer/VolumeSetting/VolumeSlider").ValueChanged += (double value) => {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.SetMasterVolume, (float)value);
+        };
         _SettingsMenu.GetNode<TextureButton>("MarginContainer/SettingsExitButton").Pressed += () =>
         {
             SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
@@ -38,6 +41,7 @@ public partial class MainMenu : Control
     private async void OnStartGameButtonPressed()
     {
         SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
+        SoundManager.Instance.EmitSignal(SoundManager.SignalName.StopMusic);
 
         PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.CreatePlayerData);
 
@@ -49,6 +53,8 @@ public partial class MainMenu : Control
         UIManager.Instance.EmitSignal(UIManager.SignalName.EnableUIElement, "GameInterface");
 
         LevelManager.Instance.EmitSignal(LevelManager.SignalName.ChangeLevel, "MainWorld", "DefaultSpawn");
+
+        SoundManager.Instance.EmitSignal(SoundManager.SignalName.StartMusic, (int)EMusicType.Main);
 
         QueueFree();
     }

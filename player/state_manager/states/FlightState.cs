@@ -56,6 +56,8 @@ public partial class FlightState : State
 
         UIManager.Instance.EmitSignal(UIManager.SignalName.HideUIElement, "GameInterface");
         UIManager.Instance.EmitSignal(UIManager.SignalName.EnableUIElement, "UpgradeMenu");
+
+        SoundManager.Instance.EmitSignal(SoundManager.SignalName.StartMusic, (int)EMusicType.Upgrade);
     }
 
 }

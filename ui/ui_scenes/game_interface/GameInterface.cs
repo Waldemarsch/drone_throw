@@ -23,6 +23,7 @@ public partial class GameInterface : Control
         _Toolbar.GetNode<TextureButton>("MarginContainer/CenterContainer/HBoxContainer/PauseButton").Pressed += () =>
         {
             SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.StopMusic);
             LevelManager.Instance.EmitSignal(LevelManager.SignalName.PauseLevel);
             _PausedBackground.Show();
             _PauseMenu.Show();
@@ -44,9 +45,14 @@ public partial class GameInterface : Control
         _PauseMenu.GetNode<TextureButton>("MarginContainer/PauseExitButton").Pressed += () =>
         {
             SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.UnpauseMusic);
             LevelManager.Instance.EmitSignal(LevelManager.SignalName.UnpauseLevel);
             _PausedBackground.Hide();
             _PauseMenu.Hide();
+        };
+
+        _PauseMenu.GetNode<Slider>("MarginContainer/VolumeSetting/VolumeSlider").ValueChanged += (double value) => {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.SetMasterVolume, (float)value);
         };
         _PauseMenu.GetNode<TextureButton>("MarginContainer/VolumeSetting/MinVolume").Pressed += () =>
         {

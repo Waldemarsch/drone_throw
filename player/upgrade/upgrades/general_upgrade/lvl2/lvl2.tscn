@@ -20,7 +20,7 @@ texture = ExtResource("2_06y0m")
 position = Vector2(-188, 174)
 
 [node name="GunSocket" parent="." index="4"]
-position = Vector2(-245, -134)
+position = Vector2(-194, -81)
 
 [node name="GearSocket" parent="." index="5"]
 position = Vector2(-6, 290)

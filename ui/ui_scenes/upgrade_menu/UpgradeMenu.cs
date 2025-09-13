@@ -185,6 +185,7 @@ public partial class UpgradeMenu : Control
 
     private async void OnPlayButtonPressed()
     {
+        SoundManager.Instance.EmitSignal(SoundManager.SignalName.StopMusic);
         SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.Change);
 
@@ -194,6 +195,8 @@ public partial class UpgradeMenu : Control
         UIManager.Instance.EmitSignal(UIManager.SignalName.EnableUIElement, "GameInterface");
 
         LevelManager.Instance.EmitSignal(LevelManager.SignalName.ResetLevel);
+
+        SoundManager.Instance.EmitSignal(SoundManager.SignalName.StartMusic, (int)EMusicType.Main);
     }
 
 }
