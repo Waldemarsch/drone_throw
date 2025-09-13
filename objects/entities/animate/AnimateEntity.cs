@@ -42,6 +42,8 @@ namespace DroneThrow
 
             AudioStreamNode = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 
+            AudioStreamNode.Bus = "SoundSFX";
+
             if (EntityDataResource.EntityDeathSound != null && EntityDataResource.EntityDeathSound.Count != 0)
             {
                 Random rng = new();

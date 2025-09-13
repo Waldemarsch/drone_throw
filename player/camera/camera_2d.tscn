@@ -4,5 +4,8 @@
 
 [node name="Camera2D" type="Camera2D"]
 zoom = Vector2(0.1, 0.1)
+limit_left = 50
+limit_top = -64700
+limit_right = 537550
 limit_bottom = 44400
 script = ExtResource("1_xkrec")

@@ -423,3 +423,7 @@ position = Vector2(425224, -11912)
 
 [node name="NLO8" parent="LevelEntities/NLOs" index="7" instance=ExtResource("5_ivyi0")]
 position = Vector2(519426, -3845)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
+position = Vector2(268769, -9.00073)
+scale = Vector2(26876.8, 2159.4)

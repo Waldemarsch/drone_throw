@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="EntityData" load_steps=2 format=3 uid="uid://o5d76a5f7b88"]
+[gd_resource type="Resource" script_class="EntityData" load_steps=3 format=3 uid="uid://o5d76a5f7b88"]
 
 [ext_resource type="Script" uid="uid://dbj8qxchljl3q" path="res://resources/classes/EntityData.cs" id="1_fa0u7"]
+[ext_resource type="AudioStream" uid="uid://du7wurh35iii6" path="res://assets/entities/plains/Combine/Sounds/CombineDeath2.mp3" id="1_ykig0"]
 
 [resource]
 script = ExtResource("1_fa0u7")
-EntityDeathSound = Array[AudioStream]([])
+EntityDeathSound = Array[AudioStream]([ExtResource("1_ykig0")])
 ScoreValue = 40
 metadata/_custom_type_script = "uid://dbj8qxchljl3q"

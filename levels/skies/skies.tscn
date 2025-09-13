@@ -197,3 +197,7 @@ position = Vector2(503681, 7390)
 
 [node name="Aerostat18" parent="LevelEntities/Aerostats" index="17" instance=ExtResource("5_t001a")]
 position = Vector2(526599, 5168)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
+position = Vector2(268791, 10793.5)
+scale = Vector2(26880.1, 1080.35)

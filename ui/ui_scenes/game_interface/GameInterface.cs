@@ -22,12 +22,14 @@ public partial class GameInterface : Control
         _Toolbar = GetNode<PanelContainer>("Toolbar");
         _Toolbar.GetNode<TextureButton>("MarginContainer/CenterContainer/HBoxContainer/PauseButton").Pressed += () =>
         {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
             LevelManager.Instance.EmitSignal(LevelManager.SignalName.PauseLevel);
             _PausedBackground.Show();
             _PauseMenu.Show();
         };
         _Toolbar.GetNode<TextureButton>("MarginContainer/CenterContainer/HBoxContainer/ReplayButton").Pressed += () =>
         {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
             LevelManager.Instance.EmitSignal(LevelManager.SignalName.ResetLevel);
         };
         _moneyPanel = _Toolbar.GetNode<PanelContainer>("MarginContainer/CenterContainer/HBoxContainer/MoneyPanel");
@@ -41,16 +43,19 @@ public partial class GameInterface : Control
         _PauseMenu = GetNode<PanelContainer>("PauseMenu");
         _PauseMenu.GetNode<TextureButton>("MarginContainer/PauseExitButton").Pressed += () =>
         {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
             LevelManager.Instance.EmitSignal(LevelManager.SignalName.UnpauseLevel);
             _PausedBackground.Hide();
             _PauseMenu.Hide();
         };
         _PauseMenu.GetNode<TextureButton>("MarginContainer/VolumeSetting/MinVolume").Pressed += () =>
         {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
             _PauseMenu.GetNode<Slider>("MarginContainer/VolumeSetting/VolumeSlider").Value = 0;
         };
         _PauseMenu.GetNode<TextureButton>("MarginContainer/VolumeSetting/MaxVolume").Pressed += () =>
         {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
             _PauseMenu.GetNode<Slider>("MarginContainer/VolumeSetting/VolumeSlider").Value = 100;
         };
 

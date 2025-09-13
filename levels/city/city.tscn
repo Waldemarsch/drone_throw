@@ -326,3 +326,7 @@ position = Vector2(258989, 23388)
 
 [node name="Bird35" parent="LevelEntities/Birds" index="34" instance=ExtResource("9_77d7d")]
 position = Vector2(255549, 35030)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
+position = Vector2(134387, 22437)
+scale = Vector2(13439.7, 2244.7)

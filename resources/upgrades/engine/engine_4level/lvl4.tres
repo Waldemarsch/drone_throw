@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_j5o7f")
-SpeedPower = 10000.0
+SpeedPower = 8500.0
 FuelCapacity = 100.0
 FuelConsumption = 10.0
 UpgradeLevel = 4

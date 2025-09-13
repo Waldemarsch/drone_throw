@@ -105,6 +105,7 @@ public partial class UpgradeMenu : Control
         {
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.GeneralUpgrade.GetCurrentUpgradePrice())
             {
+                SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Buy);
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.General);
                 foreach (TextureButton upgradeButton in _upgradeButtonsContainer.GetChildren())
                 {
@@ -117,6 +118,7 @@ public partial class UpgradeMenu : Control
         {
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.EngineUpgrade.GetCurrentUpgradePrice())
             {
+                SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Buy);
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.Engine);
             }
         };
@@ -124,6 +126,7 @@ public partial class UpgradeMenu : Control
         {
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.GunUpgrade.GetCurrentUpgradePrice())
             {
+                SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Buy);
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.Gun);
             }
         };
@@ -131,6 +134,7 @@ public partial class UpgradeMenu : Control
         {
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.GearUpgrade.GetCurrentUpgradePrice())
             {
+                SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Buy);
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.Gear);
             }
         };
@@ -138,6 +142,7 @@ public partial class UpgradeMenu : Control
         {
             if (PlayerManager.Instance.PlayerDataResource.Score >= PlayerManager.Instance.PlayerDataResource.ShieldUpgrade.GetCurrentUpgradePrice())
             {
+                SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Buy);
                 PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.UpgradeApply, (int)EUpgradeType.Shield);
             }
         };
@@ -180,6 +185,7 @@ public partial class UpgradeMenu : Control
 
     private async void OnPlayButtonPressed()
     {
+        SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.Change);
 
         await ToSignal(SceneManager.Instance, SceneManager.SignalName.AllowSceneTransition);

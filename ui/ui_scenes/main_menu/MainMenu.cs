@@ -11,22 +11,34 @@ public partial class MainMenu : Control
     {
         _MainMenu = GetNode<VBoxContainer>("MainPanel/MainMenu");
         _MainMenu.GetNode<TextureButton>("StartGameButton").Pressed += OnStartGameButtonPressed;
-        _MainMenu.GetNode<TextureButton>("SettingsButton").Pressed += () => { _SettingsMenu.Show(); };
+        _MainMenu.GetNode<TextureButton>("SettingsButton").Pressed += () =>
+        {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
+            _SettingsMenu.Show();
+        };
 
         _SettingsMenu = GetNode<PanelContainer>("MainPanel/SettingsMenu");
-        _SettingsMenu.GetNode<TextureButton>("MarginContainer/SettingsExitButton").Pressed += () => { _SettingsMenu.Hide(); };
+        _SettingsMenu.GetNode<TextureButton>("MarginContainer/SettingsExitButton").Pressed += () =>
+        {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
+            _SettingsMenu.Hide();
+        };
         _SettingsMenu.GetNode<TextureButton>("MarginContainer/VolumeSetting/MinVolume").Pressed += () =>
         {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
             _SettingsMenu.GetNode<Slider>("MarginContainer/VolumeSetting/VolumeSlider").Value = 0;
         };
         _SettingsMenu.GetNode<TextureButton>("MarginContainer/VolumeSetting/MaxVolume").Pressed += () =>
         {
+            SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
             _SettingsMenu.GetNode<Slider>("MarginContainer/VolumeSetting/VolumeSlider").Value = 100;
         };
     }
 
     private async void OnStartGameButtonPressed()
     {
+        SoundManager.Instance.EmitSignal(SoundManager.SignalName.PlaySound, (int)ESoundType.Click);
+
         PlayerManager.Instance.EmitSignal(PlayerManager.SignalName.CreatePlayerData);
 
         SceneManager.Instance.EmitSignal(SceneManager.SignalName.Change);

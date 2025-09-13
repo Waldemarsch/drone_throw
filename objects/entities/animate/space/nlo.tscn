@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c324886hh4t7l" path="res://objects/entities/animate/animate_entity.tscn" id="1_j8255"]
 [ext_resource type="Resource" uid="uid://c84odgd0vkbba" path="res://resources/entity/animate/space/nlo.tres" id="2_m7qbm"]
-[ext_resource type="Texture2D" uid="uid://c5neecyi4s1u1" path="res://assets/entities/space/nlo/nlo_trim.png" id="3_6g84v"]
+[ext_resource type="Texture2D" uid="uid://wdb3vree3k88" path="res://assets/entities/space/nlo/nlo_trim.png" id="3_6g84v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sp7if"]
 radius = 258.46
@@ -37,6 +37,9 @@ sprite_frames = SubResource("SpriteFrames_oxlsf")
 [node name="VisibleOnScreenNotifier2D" parent="." index="4"]
 position = Vector2(-2.16666, 1.52588e-05)
 scale = Vector2(57.8833, 25.6333)
+
+[node name="CPUParticles2D" parent="." index="6"]
+color = Color(0.447059, 0.968627, 0.992157, 1)
 
 [node name="CollisionShape2D" parent="." index="7"]
 visible = false

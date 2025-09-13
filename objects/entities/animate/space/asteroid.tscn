@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://br88rlp8fc24h"]
 
 [ext_resource type="PackedScene" uid="uid://c324886hh4t7l" path="res://objects/entities/animate/animate_entity.tscn" id="1_dow3h"]
-[ext_resource type="Texture2D" uid="uid://b2y6ppo0vfqya" path="res://assets/entities/space/asteroid/asteroid_trim.png" id="2_6gwer"]
+[ext_resource type="Texture2D" uid="uid://dvgfend5udmbo" path="res://assets/entities/space/asteroid/asteroid_trim.png" id="2_6gwer"]
 [ext_resource type="Resource" uid="uid://bb7xm8shmjuc7" path="res://resources/entity/animate/space/asteroid.tres" id="2_876oc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_876oc"]
@@ -36,6 +36,9 @@ sprite_frames = SubResource("SpriteFrames_8gwhy")
 [node name="VisibleOnScreenNotifier2D" parent="." index="4"]
 position = Vector2(2.50001, -9.33333)
 scale = Vector2(26.1833, 25)
+
+[node name="CPUParticles2D" parent="." index="6"]
+color = Color(0.635294, 0.603922, 0.572549, 1)
 
 [node name="CollisionShape2D" parent="." index="7"]
 visible = false

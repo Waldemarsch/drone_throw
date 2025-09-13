@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://2wg6hvhlny2j"]
 
 [ext_resource type="PackedScene" uid="uid://c324886hh4t7l" path="res://objects/entities/animate/animate_entity.tscn" id="1_18cwl"]
-[ext_resource type="Texture2D" uid="uid://bn2uwlgiiqy1e" path="res://assets/entities/sky/war plane/war_plane_trim.png" id="2_6navq"]
+[ext_resource type="Texture2D" uid="uid://ddllsokau0c6b" path="res://assets/entities/sky/war plane/war_plane_trim.png" id="2_6navq"]
 [ext_resource type="Resource" uid="uid://l1dft83gpswb" path="res://resources/entity/animate/sky/war_plane.tres" id="2_l2afq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6navq"]
@@ -41,6 +41,9 @@ sprite_frames = SubResource("SpriteFrames_l2afq")
 [node name="VisibleOnScreenNotifier2D" parent="." index="4"]
 position = Vector2(3.16663, 14.6667)
 scale = Vector2(84.3167, 26)
+
+[node name="CPUParticles2D" parent="." index="6"]
+color = Color(0.545098, 0.635294, 0.682353, 1)
 
 [node name="CollisionShape2D" parent="." index="7"]
 visible = false

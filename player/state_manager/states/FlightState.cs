@@ -35,7 +35,7 @@ public partial class FlightState : State
 
         _playerBody.Velocity = velocity;
 
-        if (_playerBody.IsOnFloor() && Mathf.IsZeroApprox(_playerBody.Velocity.X))
+        if ((_playerBody.IsOnFloor() && Mathf.IsZeroApprox(_playerBody.Velocity.X)) || (_playerBody.Position.X < 0 || _playerBody.Position.X > 537550))
         {
             ToUpgradeMenu();
 
