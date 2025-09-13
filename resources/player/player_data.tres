@@ -40,5 +40,5 @@ EngineUpgrade = SubResource("Resource_6x8yj")
 GunUpgrade = SubResource("Resource_ltwnf")
 GearUpgrade = SubResource("Resource_kmdra")
 ShieldUpgrade = SubResource("Resource_shxuf")
-Score = 50000
+Score = 0
 metadata/_custom_type_script = "uid://y74drsrnpxlv"

@@ -28,7 +28,7 @@ animations = [{
 }]
 
 [node name="EngineUpgrade" instance=ExtResource("1_hc7bj")]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.7, 0.7)
 EngineUpgradeLevelResource = ExtResource("2_t073j")
 
 [node name="AudioStreamPlayer2D" parent="." index="0"]

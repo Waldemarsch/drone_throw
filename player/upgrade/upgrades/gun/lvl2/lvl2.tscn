@@ -11,6 +11,7 @@ height = 289.063
 radius = 4000.0
 
 [node name="GunUpgrade" instance=ExtResource("1_ltwtl")]
+scale = Vector2(0.7, 0.7)
 _reloadTime = 0.7
 
 [node name="CollisionShape2D" parent="." index="1"]
