@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="flash_drone_throw"
+config/name="Exiting Poverty"
 run/main_scene="uid://ci7folotwya00"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
+config/icon="uid://cpx4saa61v8vd"
 
 [autoload]
 
