@@ -18,3 +18,8 @@
 - Паттерн Observer в виде сигналов Godot (для связи синглтонов и объектов NPC).
 
 Скриншоты из игры:
+
+![First Screenshot](screenshots/1.jpg)
+![Second Screenshot](screenshots/2.jpg)
+![Third Screenshot](screenshots/3.jpg)
+![Forth Screenshot](screenshots/4.jpg)
