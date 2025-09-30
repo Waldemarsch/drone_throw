@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfm3paeb8n8km"]
+
+[ext_resource type="PackedScene" uid="uid://clo1howtiffrs" path="res://player/upgrade/upgrades/gear/gear_upgrade.tscn" id="1_efcnt"]
+[ext_resource type="Texture2D" uid="uid://bp4neui71pxg1" path="res://assets/upgrades/gear/lvl4/lvl4_trim.png" id="2_j3mls"]
+[ext_resource type="Resource" uid="uid://chrjk0xqsivl2" path="res://resources/upgrades/gear/lvl4.tres" id="2_vdtsq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3mls"]
+size = Vector2(863, 346)
+
+[node name="GearUpgrade" instance=ExtResource("1_efcnt")]
+GearUpgradeLevelDataResource = ExtResource("2_vdtsq")
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+position = Vector2(-6.5, 92)
+shape = SubResource("RectangleShape2D_j3mls")
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(0, 94)
+texture = ExtResource("2_j3mls")

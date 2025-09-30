@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://gyseykhfkoul"]
+
+[ext_resource type="Script" uid="uid://cabpw2pax4bca" path="res://player/speed_bar/SpeedBar.cs" id="1_shxn3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu4ed"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.344076, 0.344076, 0.344076, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Gradient" id="Gradient_mu4ed"]
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.577922, 1)
+colors = PackedColorArray(0.351189, 0.839409, 0.319861, 1, 0.743003, 0.332493, 0.126698, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0duyj"]
+gradient = SubResource("Gradient_mu4ed")
+fill_from = Vector2(0.5, 0)
+repeat = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw0a4"]
+bg_color = Color(0.874979, 0.832628, 0.030151, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.345098, 0.345098, 0.345098, 1)
+
+[sub_resource type="Animation" id="Animation_shxn3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:SpeedScaleValue")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_x45fy"]
+resource_name = "active"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:SpeedScaleValue")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(3, 0.3, 3, 0.3, 3),
+"update": 0,
+"values": [0.0, 0.5, 1.0, 0.5, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8vul5"]
+_data = {
+&"RESET": SubResource("Animation_shxn3"),
+&"active": SubResource("Animation_x45fy")
+}
+
+[node name="SpeedBar" type="Node2D"]
+script = ExtResource("1_shxn3")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -88.0
+offset_right = 256.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mu4ed")
+
+[node name="Bar" type="TextureRect" parent="Panel"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("GradientTexture2D_0duyj")
+
+[node name="Marker" type="Panel" parent="Panel/Bar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -43.0
+offset_right = 28.0
+offset_bottom = 43.0
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rw0a4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8vul5")
+}

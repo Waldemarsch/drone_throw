@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxsyrci3laajo"]
+
+[ext_resource type="Script" uid="uid://bynvmrddq8j23" path="res://singletons/scene_manager/OnLoadScene/OnLoadScene.cs" id="1_ue0cp"]
+[ext_resource type="FontFile" uid="uid://dho1w062gjen0" path="res://assets/ui/fonts/Bungee-Regular.ttf" id="2_wmh8v"]
+[ext_resource type="Texture2D" uid="uid://d3s2dokibs8l7" path="res://assets/ui/Bar/Background@2x.png" id="3_5fowg"]
+[ext_resource type="Texture2D" uid="uid://c5e38jjo80j68" path="res://assets/ui/Bar/Line@2x.png" id="4_20w2l"]
+
+[sub_resource type="Animation" id="Animation_tan62"]
+resource_name = "Dissolve"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ipsfe"]
+resource_name = "RESET"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oggrk"]
+_data = {
+&"Dissolve": SubResource("Animation_tan62"),
+&"RESET": SubResource("Animation_ipsfe")
+}
+
+[node name="OnLoadScene" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_ue0cp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37, 0.265043, 0.2331, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_wmh8v")
+theme_override_font_sizes/font_size = 136
+text = "LOADING"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_under = ExtResource("3_5fowg")
+texture_progress = ExtResource("4_20w2l")
+texture_progress_offset = Vector2(16, 15)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oggrk")
+}

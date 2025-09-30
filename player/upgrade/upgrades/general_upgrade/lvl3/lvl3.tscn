@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bip2dfvu02w5g"]
+
+[ext_resource type="PackedScene" uid="uid://dpond713qrg3r" path="res://player/upgrade/upgrades/general_upgrade/general_upgrade.tscn" id="1_wk1us"]
+[ext_resource type="Texture2D" uid="uid://cw3dn0wouvos4" path="res://assets/upgrades/general_upgrades/lvl3/lvl3_trim.png" id="2_ckpvs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxml2"]
+radius = 157.619
+height = 529.397
+
+[node name="GeneralUpgrade" instance=ExtResource("1_wk1us")]
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+position = Vector2(16, 99)
+rotation = -1.57517
+shape = SubResource("CapsuleShape2D_pxml2")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_ckpvs")
+
+[node name="EngineSocket" parent="." index="3"]
+position = Vector2(-169, 115)
+
+[node name="GunSocket" parent="." index="4"]
+position = Vector2(108, 48)
+
+[node name="GearSocket" parent="." index="5"]
+position = Vector2(24, 194)
+
+[node name="ShieldSocket" parent="." index="6"]
+position = Vector2(225, 95)
+
+[node name="RotateBarSocket" parent="." index="7"]
+position = Vector2(455, 0)
+
+[node name="SpeedBarSocket" parent="." index="8"]
+position = Vector2(0, -359)

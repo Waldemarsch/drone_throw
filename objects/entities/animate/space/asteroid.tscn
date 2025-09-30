@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://br88rlp8fc24h"]
+
+[ext_resource type="PackedScene" uid="uid://c324886hh4t7l" path="res://objects/entities/animate/animate_entity.tscn" id="1_dow3h"]
+[ext_resource type="Texture2D" uid="uid://dvgfend5udmbo" path="res://assets/entities/space/asteroid/asteroid_trim.png" id="2_6gwer"]
+[ext_resource type="Resource" uid="uid://bb7xm8shmjuc7" path="res://resources/entity/animate/space/asteroid.tres" id="2_876oc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_876oc"]
+radius = 244.584
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8gwhy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6gwer")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8gwhy"]
+radius = 240.242
+
+[node name="Asteroid" instance=ExtResource("1_dow3h")]
+EntityDataResource = ExtResource("2_876oc")
+
+[node name="Area2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_876oc")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_8gwhy")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
+position = Vector2(2.50001, -9.33333)
+scale = Vector2(26.1833, 25)
+
+[node name="CPUParticles2D" parent="." index="6"]
+color = Color(0.635294, 0.603922, 0.572549, 1)
+
+[node name="CollisionShape2D" parent="." index="7"]
+visible = false
+shape = SubResource("CircleShape2D_8gwhy")

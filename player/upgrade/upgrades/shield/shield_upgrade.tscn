@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://5ss5wcflcby2"]
+
+[ext_resource type="PackedScene" uid="uid://cive50b8etkfe" path="res://player/upgrade/upgrades/upgrade.tscn" id="1_kdkot"]
+
+[node name="ShieldUpgrade" instance=ExtResource("1_kdkot")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]

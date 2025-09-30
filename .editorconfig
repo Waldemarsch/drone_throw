@@ -2,3 +2,12 @@ root = true
 
 [*]
 charset = utf-8
+
+# Указываем, что эти правила применяются к C# файлам
+[*.cs]
+
+# Отвечает за отступ для меток case и default
+csharp_indent_switch_labels = true
+
+# Отвечает за отступ для содержимого внутри каждого case
+csharp_indent_case_contents = true

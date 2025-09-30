@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{"id":"e48c753d38a77891","type":"text","text":"Игра","x":-230,"y":0,"width":100,"height":60},
+		{"id":"30427550d6d2b1ac","type":"text","text":"Мир","x":260,"y":280,"width":100,"height":50},
+		{"id":"706bd9064fa9f14f","type":"text","text":"Интерфейс","x":-255,"y":280,"width":150,"height":50},
+		{"id":"f5e25703ca50409a","type":"text","text":"Фон","x":80,"y":595,"width":100,"height":50},
+		{"id":"702567ca465f8670","type":"text","text":"Сущности","x":240,"y":595,"width":140,"height":50},
+		{"id":"32c1a5a03c81d111","type":"text","text":"Биомы","x":250,"y":415,"width":120,"height":50},
+		{"id":"85b476e85dbdae4d","type":"text","text":"Блоки","x":440,"y":595,"width":120,"height":50},
+		{"id":"6d291be2b3220cc1","type":"file","file":"ObsidianStruct/Мир.canvas","x":380,"y":250,"width":550,"height":240},
+		{"id":"43064e099f5e8a0a","type":"file","file":"ObsidianStruct/Сущность.canvas","x":220,"y":645,"width":180,"height":220},
+		{"id":"06e7bfa88b41fb2a","type":"text","text":"Игрок","x":-780,"y":280,"width":120,"height":50},
+		{"id":"94118bd960c3f6bc","type":"file","file":"ObsidianStruct/Апгрейды.canvas","x":-1160,"y":540,"width":340,"height":230},
+		{"id":"622873cc538d2772","type":"text","text":"Апгрейды","x":-1060,"y":490,"width":140,"height":50},
+		{"id":"14c717f54fc8052a","x":-1100,"y":770,"width":220,"height":170,"type":"file","file":"ObsidianStruct/Апгрейд.canvas"},
+		{"id":"84e9b5b6cd57a197","type":"text","text":"Статы","x":-660,"y":490,"width":120,"height":50}
+	],
+	"edges":[
+		{"id":"3dd8d6acf6530868","fromNode":"e48c753d38a77891","fromSide":"bottom","toNode":"30427550d6d2b1ac","toSide":"top"},
+		{"id":"9ce8ce2c88e47d83","fromNode":"32c1a5a03c81d111","fromSide":"bottom","toNode":"f5e25703ca50409a","toSide":"top"},
+		{"id":"f73408620d68e026","fromNode":"32c1a5a03c81d111","fromSide":"bottom","toNode":"702567ca465f8670","toSide":"top"},
+		{"id":"59c7812d73597a7c","fromNode":"32c1a5a03c81d111","fromSide":"bottom","toNode":"85b476e85dbdae4d","toSide":"top"},
+		{"id":"7bb68cb5e2b21ee5","fromNode":"e48c753d38a77891","fromSide":"bottom","toNode":"706bd9064fa9f14f","toSide":"top"},
+		{"id":"47569527bbde3d8b","fromNode":"e48c753d38a77891","fromSide":"bottom","toNode":"06e7bfa88b41fb2a","toSide":"top"},
+		{"id":"ce4f24d7cadc6492","fromNode":"06e7bfa88b41fb2a","fromSide":"bottom","toNode":"622873cc538d2772","toSide":"top"},
+		{"id":"9f78f23e75dc2570","fromNode":"06e7bfa88b41fb2a","fromSide":"bottom","toNode":"84e9b5b6cd57a197","toSide":"top"},
+		{"id":"9bfba5861dc51f70","fromNode":"30427550d6d2b1ac","fromSide":"bottom","toNode":"32c1a5a03c81d111","toSide":"top"}
+	]
+}

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ContainerResource" load_steps=2 format=3 uid="uid://er7nxoru1scg"]
+
+[ext_resource type="Script" uid="uid://babmqr4tl35ll" path="res://resources/containers/ContainerResource.cs" id="1_2c6hw"]
+
+[resource]
+script = ExtResource("1_2c6hw")
+Paths = {
+"GameInterface": "res://ui/ui_scenes/game_interface/game_interface.tscn",
+"MainMenu": "res://ui/ui_scenes/main_menu/main_menu.tscn",
+"UpgradeMenu": "res://ui/ui_scenes/upgrade_menu/upgrade_menu.tscn"
+}
+metadata/_custom_type_script = "uid://babmqr4tl35ll"

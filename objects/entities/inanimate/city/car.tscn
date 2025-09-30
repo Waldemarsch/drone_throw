@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcvg0neycu787"]
+
+[ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_aicub"]
+[ext_resource type="Resource" uid="uid://cbdisulmm38ri" path="res://resources/entity/inanimate/city/car.tres" id="2_ew8yl"]
+[ext_resource type="Texture2D" uid="uid://yh7nvefrt3q" path="res://assets/entities/city/avtomobil/avtomobil_trim.png" id="2_unv3e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ew8yl"]
+radius = 176.927
+height = 1605.45
+
+[node name="Car" instance=ExtResource("1_aicub")]
+EntityDataResource = ExtResource("2_ew8yl")
+
+[node name="Area2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-6.66667, 27)
+rotation = 1.48318
+shape = SubResource("CapsuleShape2D_ew8yl")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_unv3e")
+
+[node name="CPUParticles2D" parent="." index="4"]
+color = Color(0.580392, 0.866667, 0.815686, 1)

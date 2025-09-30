@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EngineUpgradeLevelData" load_steps=2 format=3 uid="uid://c2y5ve3w4guyn"]
+
+[ext_resource type="Script" uid="uid://iefisihpnoqh" path="res://resources/upgrades/engine/EngineUpgradeLevelData.cs" id="1_bkf5g"]
+
+[resource]
+script = ExtResource("1_bkf5g")
+SpeedPower = 7500.0
+FuelCapacity = 100.0
+FuelConsumption = 30.0
+UpgradeLevel = 3
+metadata/_custom_type_script = "uid://iefisihpnoqh"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ContainerResource" load_steps=2 format=3 uid="uid://du63t738a3cql"]
+
+[ext_resource type="Script" uid="uid://babmqr4tl35ll" path="res://resources/containers/ContainerResource.cs" id="1_4y6ll"]
+
+[resource]
+script = ExtResource("1_4y6ll")
+Paths = {
+"MainWorld": "res://world/main_world.tscn"
+}
+metadata/_custom_type_script = "uid://babmqr4tl35ll"

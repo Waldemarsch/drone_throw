@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StartGameResource" load_steps=2 format=3 uid="uid://wulk1a0rh7dk"]
+
+[ext_resource type="Script" uid="uid://kt7ca7t2tjfy" path="res://resources/game/StartGameResource.cs" id="1_avrng"]
+
+[resource]
+script = ExtResource("1_avrng")
+StartScenesArray = Array[String](["res://ui/ui_scenes/main_menu_ui/main_menu.tscn", "res://ui/ui_scenes/main_world_ui/game_interface.tscn", "res://ui/ui_scenes/upgrade_menu_ui/upgrade_menu.tscn", "res://scenes/main_world.tscn"])
+metadata/_custom_type_script = "uid://kt7ca7t2tjfy"

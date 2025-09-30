@@ -1,20 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://brtujsi2wd3se"]
+[gd_scene load_steps=4 format=3 uid="uid://ci7folotwya00"]
 
-[ext_resource type="PackedScene" uid="uid://xh8oet0a302e" path="res://levels/level_1/level_1.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://dh0tu2jjbk5po" path="res://entities/player/player.tscn" id="3_lquwl"]
-[ext_resource type="Script" uid="uid://dxk288dq4ljf5" path="res://singletons/game_manager.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://burr55nqhkiab" path="res://Main.cs" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://m68o0e8slh6j" path="res://containers/UI_container/UI_container.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b7fyf787mj2gc" path="res://containers/level_container/level_container.tscn" id="4_lquwl"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_ig7tw")
 
-[node name="Background" type="CanvasLayer" parent="."]
-layer = -1
+[node name="UIContainer" parent="." instance=ExtResource("3_1bvp3")]
 
-[node name="Gameplay" type="CanvasLayer" parent="."]
-layer = 0
+[node name="World" type="Node2D" parent="."]
 
-[node name="Player" parent="Gameplay" instance=ExtResource("3_lquwl")]
-
-[node name="GameManager" type="Node" parent="."]
-script = ExtResource("4_1bvp3")
-
-[node name="Level1" parent="." instance=ExtResource("3_h2yge")]
+[node name="LevelContainer" parent="World" instance=ExtResource("4_lquwl")]

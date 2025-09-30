@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcftydspcan86"]
+
+[ext_resource type="PackedScene" uid="uid://c324886hh4t7l" path="res://objects/entities/animate/animate_entity.tscn" id="1_k0xnf"]
+[ext_resource type="Texture2D" uid="uid://bidxkhbksk3s3" path="res://assets/entities/sky/plane/plane_trim.png" id="2_2xnrb"]
+[ext_resource type="Resource" uid="uid://o5d76a5f7b88" path="res://resources/entity/animate/sky/plane.tres" id="2_aodfd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2xnrb"]
+height = 82.8926
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aodfd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2xnrb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aodfd"]
+radius = 100.345
+height = 1167.2
+
+[node name="Plane" instance=ExtResource("1_k0xnf")]
+EntityDataResource = ExtResource("2_aodfd")
+_speed = 1800.0
+
+[node name="Area2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(27.3333, 87.6667)
+rotation = 0.030028
+scale = Vector2(66.6982, 1.83737)
+shape = SubResource("CapsuleShape2D_2xnrb")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_aodfd")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
+position = Vector2(-3.3334, -3.66666)
+scale = Vector2(75.1667, 25.4667)
+
+[node name="CPUParticles2D" parent="." index="6"]
+color = Color(0.74902, 0.890196, 0.94902, 1)
+
+[node name="CollisionShape2D" parent="." index="7"]
+visible = false
+position = Vector2(119.667, 91)
+rotation = 1.57391
+shape = SubResource("CapsuleShape2D_aodfd")

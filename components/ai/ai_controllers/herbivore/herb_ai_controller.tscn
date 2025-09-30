@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://lwx24wk5ka45"]
-
-[ext_resource type="Script" uid="uid://bjsgtqq447btt" path="res://components/ai/ai_controllers/herbivore/herb_ai_controller.gd" id="1_qf434"]
-
-[node name="HerbAiController" type="Node"]
-script = ExtResource("1_qf434")

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://0chg23kkdx7n"]
+
+[ext_resource type="PackedScene" uid="uid://hwbopdeiwu02" path="res://player/upgrade/upgrades/engine/engine_upgrade.tscn" id="1_laxjj"]
+[ext_resource type="Resource" uid="uid://ci0poq1lbclm3" path="res://resources/upgrades/engine/engine_2level/engine_level_2.tres" id="2_73rhe"]
+[ext_resource type="AudioStream" uid="uid://i35y1tsh32ax" path="res://assets/upgrades/engine/engine_2level/jet_sound.ogg" id="3_73rhe"]
+[ext_resource type="SpriteFrames" uid="uid://bbfgylq2gf21o" path="res://resources/upgrades/engine/engine_2level/engine_level_2_animFrames.tres" id="4_qm32x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxqk5"]
+radius = 48.9984
+height = 214.009
+
+[node name="EngineUpgrade2" instance=ExtResource("1_laxjj")]
+EngineUpgradeLevelResource = ExtResource("2_73rhe")
+
+[node name="AudioStreamPlayer2D" parent="." index="0"]
+stream = ExtResource("3_73rhe")
+parameters/looping = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+position = Vector2(-1, -1)
+rotation = 1.56267
+shape = SubResource("CapsuleShape2D_rxqk5")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(-2.00001, -9.53674e-07)
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("4_qm32x")
+animation = &"Active"
+autoplay = "Idle"
+
+[node name="CPUParticles2D" parent="." index="3"]
+position = Vector2(-109, 0)
+emitting = false
+amount = 600
+lifetime = 6.0
+speed_scale = 3.73
+direction = Vector2(-1, 0)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 134.15
+initial_velocity_max = 134.15
+scale_amount_min = 50.0
+scale_amount_max = 50.0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://clo1howtiffrs"]
+
+[ext_resource type="PackedScene" uid="uid://cive50b8etkfe" path="res://player/upgrade/upgrades/upgrade.tscn" id="1_tli64"]
+[ext_resource type="Script" uid="uid://coo0brjtais05" path="res://player/upgrade/upgrades/gear/GearUpgrade.cs" id="2_i7xan"]
+
+[node name="GearUpgrade" instance=ExtResource("1_tli64")]
+script = ExtResource("2_i7xan")
+GearUpgradeLevelDataResource = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxlwa5lx7xx5s"]
+
+[ext_resource type="PackedScene" uid="uid://oxqkn1bcx0n7" path="res://player/upgrade/upgrades/gun/gun_upgrade.tscn" id="1_ltwtl"]
+[ext_resource type="Texture2D" uid="uid://uodt7l873wka" path="res://assets/upgrades/gun/lvl2/lvl2_trim.png" id="2_lrhog"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_na68m"]
+radius = 86.4684
+height = 289.063
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lrhog"]
+radius = 4000.0
+
+[node name="GunUpgrade" instance=ExtResource("1_ltwtl")]
+scale = Vector2(0.7, 0.7)
+_reloadTime = 0.7
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+position = Vector2(-88, 1)
+rotation = 0.699181
+shape = SubResource("CapsuleShape2D_na68m")
+
+[node name="CollisionShape2D" parent="DetectionRange" index="0"]
+visible = false
+position = Vector2(-87, -9)
+rotation = 0.880068
+shape = SubResource("CircleShape2D_lrhog")
+
+[node name="Muzzle" parent="." index="3"]
+position = Vector2(206, -92)
+
+[node name="ReloadTimer" parent="." index="4"]
+wait_time = 0.7
+
+[node name="Sprite2D" parent="." index="5"]
+texture = ExtResource("2_lrhog")

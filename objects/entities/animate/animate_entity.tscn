@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://c324886hh4t7l"]
+
+[ext_resource type="Script" uid="uid://byqwnuy1ctcd0" path="res://objects/entities/animate/AnimateEntity.cs" id="2_6exr0"]
+[ext_resource type="PackedScene" uid="uid://hvex77xds7af" path="res://components/destructible/DestructibleComponent.tscn" id="2_c32at"]
+
+[node name="AnimateEntity" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+collision_layer = 8
+script = ExtResource("2_6exr0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="DestructibleComponent" parent="." instance=ExtResource("2_c32at")]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1000
+one_shot = true
+speed_scale = 1.3
+explosiveness = 0.81
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 700.0
+damping_min = 100.0
+damping_max = 200.0
+scale_amount_min = 15.0
+scale_amount_max = 20.0
+color = Color(0.493024, 0.839339, 0.261225, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

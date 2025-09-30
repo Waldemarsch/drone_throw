@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=6 format=3 uid="uid://o8veeqboift7"]
+
+[ext_resource type="AudioStream" uid="uid://ygu0tswidptw" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath1.mp3" id="1_3x0gk"]
+[ext_resource type="Script" uid="uid://dbj8qxchljl3q" path="res://resources/classes/EntityData.cs" id="1_l6iyy"]
+[ext_resource type="AudioStream" uid="uid://cbrpstqlrj4e8" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath2.mp3" id="2_t68lv"]
+[ext_resource type="AudioStream" uid="uid://2fmiva3b05e7" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath3.mp3" id="3_f57wp"]
+[ext_resource type="AudioStream" uid="uid://c6e604m23tlcx" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath4.mp3" id="4_ibhno"]
+
+[resource]
+script = ExtResource("1_l6iyy")
+EntityDeathSound = Array[AudioStream]([ExtResource("1_3x0gk"), ExtResource("2_t68lv"), ExtResource("3_f57wp"), ExtResource("4_ibhno")])
+ScoreValue = 20
+metadata/_custom_type_script = "uid://dbj8qxchljl3q"

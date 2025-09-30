@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgnivij7aeahe"]
+
+[ext_resource type="Script" uid="uid://c1qtu5m2vkcs1" path="res://singletons/scene_manager/OnChangeScene/OnChangeScene.cs" id="1_xveai"]
+
+[sub_resource type="Animation" id="Animation_tan62"]
+resource_name = "Dissolve"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ipsfe"]
+resource_name = "RESET"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oggrk"]
+_data = {
+&"Dissolve": SubResource("Animation_tan62"),
+&"RESET": SubResource("Animation_ipsfe")
+}
+
+[node name="OnChangeScene" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_xveai")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37, 0.265043, 0.2331, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oggrk")
+}

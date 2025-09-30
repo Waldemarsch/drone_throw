@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://hwbopdeiwu02"]
+
+[ext_resource type="PackedScene" uid="uid://cive50b8etkfe" path="res://player/upgrade/upgrades/upgrade.tscn" id="1_yp4vf"]
+[ext_resource type="Script" uid="uid://cuo1a46uvv6mt" path="res://player/upgrade/upgrades/engine/EngineUpgrade.cs" id="2_nf8dp"]
+
+[node name="EngineUpgrade" instance=ExtResource("1_yp4vf")]
+z_index = 2
+script = ExtResource("2_nf8dp")
+EngineUpgradeLevelResource = null
+IsActive = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="3"]

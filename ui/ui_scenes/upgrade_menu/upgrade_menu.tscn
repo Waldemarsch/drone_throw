@@ -1,0 +1,481 @@
+[gd_scene load_steps=17 format=3 uid="uid://nvk0chf58tth"]
+
+[ext_resource type="Texture2D" uid="uid://diii7lkjhrjgh" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@4x/Logotype/NameBack@4x.png" id="1_0n1vf"]
+[ext_resource type="Script" uid="uid://kt786wpih0bn" path="res://ui/ui_scenes/upgrade_menu/UpgradeMenu.cs" id="1_dasy4"]
+[ext_resource type="Texture2D" uid="uid://dveok0oq2o7um" path="res://assets/ui/buttons/Default@2x-1.png" id="2_42pmj"]
+[ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="3_44ofp"]
+[ext_resource type="StyleBox" uid="uid://dl26yqfg3yrea" path="res://ui/indicators/bought.tres" id="4_04bh7"]
+[ext_resource type="StyleBox" uid="uid://us8p0rofx1v6" path="res://ui/indicators/not_bought.tres" id="5_c76jk"]
+[ext_resource type="Texture2D" uid="uid://cyd21fttxnk1k" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Default.png" id="6_venpw"]
+[ext_resource type="Texture2D" uid="uid://da8fwf1a3856c" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/ArrowRight-Thin/Hover.png" id="7_j1t6r"]
+[ext_resource type="Texture2D" uid="uid://bchenmjnc1yn0" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default@2x-1.png" id="8_j4n0e"]
+[ext_resource type="Texture2D" uid="uid://c4rp20oqhi100" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Hover@2x-1.png" id="9_4yvok"]
+[ext_resource type="Texture2D" uid="uid://8gwbc7iyygk5" path="res://assets/ui/buttons/Play/Disabled.png" id="10_omcm8"]
+[ext_resource type="Texture2D" uid="uid://bs50fe66tlvyi" path="res://assets/ui/counter/Dummy@2x.png" id="11_irr7d"]
+[ext_resource type="Texture2D" uid="uid://cke7xr2ht7i38" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@2x/Counter/Icon/Money@2x.png" id="12_omcm8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chbti"]
+content_margin_top = 123.0
+content_margin_right = 123.0
+content_margin_bottom = 98.0
+texture = ExtResource("2_42pmj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vqdt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uayfm"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("11_irr7d")
+
+[node name="UpgradeMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dasy4")
+BoughtUpgradeStyleBox = ExtResource("4_04bh7")
+UnboughtUpgradeStyleBox = ExtResource("5_c76jk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -379.0
+offset_top = -177.0
+offset_right = -379.0
+offset_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.35, 1.35)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_0n1vf")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -970.0
+offset_top = -584.0
+offset_right = 960.0
+offset_bottom = 651.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(845, 569)
+theme_override_styles/panel = SubResource("StyleBoxTexture_chbti")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 115
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_44ofp")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6vqdt")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_42pmj")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/PanelContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -84.0
+offset_right = 185.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/PanelContainer/TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Upgrade"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_44ofp")
+theme_override_constants/separation = 28
+
+[node name="UpgradeLabels" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_44ofp")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 115
+text = "General"
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 115
+text = "Engine"
+
+[node name="Label3" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 115
+text = "Gun"
+
+[node name="Label4" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 115
+text = "Gear"
+
+[node name="Label5" type="Label" parent="PanelContainer/HBoxContainer/UpgradeLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 115
+text = "Weapon"
+
+[node name="UpgradeLevels" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GeneralUpgradeBox" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GeneralUpgradeBox"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GeneralUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GeneralUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GeneralUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GeneralUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="EngineUpgradeBox" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/EngineUpgradeBox"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/EngineUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/EngineUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/EngineUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/EngineUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="GunUpgradeBox" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GunUpgradeBox"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GunUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GunUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GunUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GunUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="GearUpgradeBox" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GearUpgradeBox"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GearUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GearUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GearUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/GearUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="ShieldUpgradeBox" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/ShieldUpgradeBox"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/ShieldUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/ShieldUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/ShieldUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradeLevels/ShieldUpgradeBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_c76jk")
+
+[node name="UpgradePrices" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="General" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/General"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="Engine" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/Engine"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="Gun" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/Gun"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="Gear" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/Gear"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="Shield" type="PanelContainer" parent="PanelContainer/HBoxContainer/UpgradePrices"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/UpgradePrices/Shield"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="UpgradeButtons" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="UpgradeGeneralButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
+
+[node name="UpgradeEngineButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
+
+[node name="UpgradeGunButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
+
+[node name="UpgradeGearButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
+
+[node name="UpgradeShieldButton" type="TextureButton" parent="PanelContainer/HBoxContainer/UpgradeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+texture_normal = ExtResource("6_venpw")
+texture_hover = ExtResource("7_j1t6r")
+texture_disabled = ExtResource("10_omcm8")
+
+[node name="PlayButton" type="TextureButton" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("8_j4n0e")
+texture_hover = ExtResource("9_4yvok")
+
+[node name="MoneyPanelControl" type="Control" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_44ofp")
+
+[node name="MoneyPanel" type="PanelContainer" parent="PanelContainer/MoneyPanelControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 306.0
+offset_top = 16.0
+offset_right = 704.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_uayfm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MoneyPanelControl/MoneyPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MoneyPanelControl/MoneyPanel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("12_omcm8")
+
+[node name="Label" type="Label" parent="PanelContainer/MoneyPanelControl/MoneyPanel/HBoxContainer"]
+layout_mode = 2
+text = "0"

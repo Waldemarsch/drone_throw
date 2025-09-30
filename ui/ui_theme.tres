@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dfclc3ptgyluw"]
+
+[ext_resource type="FontFile" uid="uid://b2pv6axtxvy0w" path="res://assets/ui/fonts/ChangaOne-Italic.ttf" id="1_4mq11"]
+[ext_resource type="Texture2D" uid="uid://prali6j3rmtf" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Logotype/NameBack.png" id="2_vuqvt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
+texture = ExtResource("2_vuqvt")
+region_rect = Rect2(-0.488022, 5.79939, 418.641, 135.106)
+
+[resource]
+Label/colors/font_color = Color(0.0244141, 0.2395, 0.559672, 1)
+Label/font_sizes/font_size = 60
+Label/fonts/font = ExtResource("1_4mq11")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_oa1go")

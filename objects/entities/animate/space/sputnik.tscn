@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgn477wd11si6"]
+
+[ext_resource type="PackedScene" uid="uid://c324886hh4t7l" path="res://objects/entities/animate/animate_entity.tscn" id="1_2p3mt"]
+[ext_resource type="Resource" uid="uid://d234bykjyyeqn" path="res://resources/entity/animate/space/sputnik.tres" id="2_wmes4"]
+[ext_resource type="Texture2D" uid="uid://dxtaneek72x2x" path="res://assets/entities/space/sputnik/sputnik_trim.png" id="3_wmes4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmes4"]
+size = Vector2(878.158, 241.445)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eu4rc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wmes4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu4rc"]
+size = Vector2(867.159, 230.419)
+
+[node name="Sputnik" instance=ExtResource("1_2p3mt")]
+EntityDataResource = ExtResource("2_wmes4")
+
+[node name="Area2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0.419886, 40.6936)
+rotation = -0.209057
+shape = SubResource("RectangleShape2D_wmes4")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_eu4rc")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="4"]
+position = Vector2(-2, -2.16663)
+scale = Vector2(47.1667, 25.45)
+
+[node name="CPUParticles2D" parent="." index="6"]
+color = Color(0.815686, 0.815686, 0.815686, 1)
+
+[node name="CollisionShape2D" parent="." index="7"]
+visible = false
+position = Vector2(2.42895, 35.7197)
+rotation = -0.19109
+shape = SubResource("RectangleShape2D_eu4rc")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp22w6uvf2ifk"]
+
+[ext_resource type="Script" uid="uid://cxq20oktawqfy" path="res://world/spawner/Spawner.cs" id="1_1q3hp"]
+[ext_resource type="PackedScene" uid="uid://chknl80767g0d" path="res://objects/entities/inanimate/plains/chuchelo.tscn" id="2_acq3f"]
+[ext_resource type="PackedScene" uid="uid://bi4sao16k007i" path="res://objects/entities/inanimate/plains/combine.tscn" id="3_hq6ag"]
+[ext_resource type="PackedScene" uid="uid://dkhvn153x1vtc" path="res://objects/entities/inanimate/plains/seno.tscn" id="4_nvldd"]
+
+[node name="Spawner" type="Node"]
+script = ExtResource("1_1q3hp")
+PlainsEntities = Array[PackedScene]([ExtResource("2_acq3f"), ExtResource("3_hq6ag"), ExtResource("4_nvldd")])
+_cityEntities = Array[PackedScene]([])
+_skyEntities = Array[PackedScene]([])
+_spaceEntities = Array[PackedScene]([])
+
+[node name="Timer" type="Timer" parent="."]

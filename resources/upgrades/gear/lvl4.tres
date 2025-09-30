@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GearUpgradeLevelData" load_steps=2 format=3 uid="uid://chrjk0xqsivl2"]
+
+[ext_resource type="Script" uid="uid://dueo5yvmc3rql" path="res://resources/upgrades/gear/GearUpgradeLevelData.cs" id="1_scypn"]
+
+[resource]
+script = ExtResource("1_scypn")
+GearReduceFactor = 0.15
+UpgradeLevel = 4
+metadata/_custom_type_script = "uid://dueo5yvmc3rql"

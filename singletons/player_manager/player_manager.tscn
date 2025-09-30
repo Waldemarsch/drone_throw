@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://csvi7ve4em1it"]
+
+[ext_resource type="Script" uid="uid://51hvsuqqijuw" path="res://singletons/player_manager/PlayerManager.cs" id="1_wxs2x"]
+[ext_resource type="PackedScene" uid="uid://c7ig15mq76mi0" path="res://player/body/player_body.tscn" id="2_e2h2n"]
+[ext_resource type="Resource" uid="uid://y18smhw5e5q5" path="res://resources/player/player_data.tres" id="3_8hj7c"]
+
+[node name="PlayerManager" type="Node"]
+script = ExtResource("1_wxs2x")
+PlayerScene = ExtResource("2_e2h2n")
+PlayerDataResource = ExtResource("3_8hj7c")

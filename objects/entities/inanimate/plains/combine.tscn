@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi4sao16k007i"]
+
+[ext_resource type="PackedScene" uid="uid://ccgrmdky1rym1" path="res://objects/entities/inanimate/inanimate_entity.tscn" id="1_00x16"]
+[ext_resource type="Resource" uid="uid://gjrqv0eso5wy" path="res://resources/entity/inanimate/plains/combine.tres" id="2_85xwq"]
+[ext_resource type="Texture2D" uid="uid://b4nh7y8x6k5id" path="res://assets/entities/plains/Combine/Combine_trim.png" id="3_tqqvn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_37d8q"]
+radius = 337.578
+height = 898.355
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqqvn"]
+size = Vector2(708.75, 364.25)
+
+[node name="Combine" instance=ExtResource("1_00x16")]
+scale = Vector2(4, 4)
+EntityDataResource = ExtResource("2_85xwq")
+
+[node name="Area2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(14, 21)
+rotation = 1.41077
+scale = Vector2(-0.449253, 1.1217)
+shape = SubResource("CapsuleShape2D_37d8q")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_tqqvn")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="5"]
+position = Vector2(-0.624985, -1.87499)
+scale = Vector2(50.0875, 19.5125)
+
+[node name="CollisionShape2D" parent="." index="6"]
+position = Vector2(84.375, 13.625)
+shape = SubResource("RectangleShape2D_tqqvn")

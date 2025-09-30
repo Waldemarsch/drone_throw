@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvpgmx3ekfmdo"]
+
+[ext_resource type="Script" uid="uid://dutnsb4uy333a" path="res://singletons/sound_manager/SoundManager.cs" id="1_3rubk"]
+[ext_resource type="AudioStream" uid="uid://2s5km72wpne3" path="res://singletons/sound_manager/sounds/click.ogg" id="2_u5eqt"]
+[ext_resource type="AudioStream" uid="uid://bjwdpag8mvfvn" path="res://singletons/sound_manager/sounds/buy.wav" id="3_trtdq"]
+[ext_resource type="AudioStream" uid="uid://loiwx4je3ymk" path="res://singletons/sound_manager/music/game_start.mp3" id="4_k6u1k"]
+[ext_resource type="AudioStream" uid="uid://cqfrikdsqkexo" path="res://singletons/sound_manager/music/main.wav" id="5_l3xuv"]
+[ext_resource type="AudioStream" uid="uid://bw6jxlra65bk5" path="res://singletons/sound_manager/music/upgrade.wav" id="6_wwc4m"]
+
+[node name="SoundManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_3rubk")
+_soundDictionary = Dictionary[int, AudioStream]({
+0: ExtResource("2_u5eqt"),
+1: ExtResource("3_trtdq")
+})
+_musicArray = Dictionary[int, AudioStream]({
+0: ExtResource("4_k6u1k"),
+1: ExtResource("5_l3xuv"),
+2: ExtResource("6_wwc4m")
+})
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"MusicSFX"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_k6u1k")
+bus = &"MusicSFX"

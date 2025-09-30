@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc6yh3ixkm84f"]
+
+[ext_resource type="Script" uid="uid://b3xq4wp1tttnq" path="res://levels/Level.cs" id="1_80vhd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umreq"]
+size = Vector2(269245, 43251)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_80vhd")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -10
+scale = Vector2(20, 20)
+
+[node name="LevelEntities" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(134623, 21625.5)
+shape = SubResource("RectangleShape2D_umreq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

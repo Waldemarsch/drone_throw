@@ -1,0 +1,333 @@
+[gd_scene load_steps=32 format=3 uid="uid://d3egdh0mhfikh"]
+
+[ext_resource type="Texture2D" uid="uid://dwl7qh765ydvo" path="res://assets/ui/Bar/Background@2x.png" id="1_5351s"]
+[ext_resource type="Script" uid="uid://cjb3c4fhmw7h3" path="res://ui/ui_scenes/game_interface/GameInterface.cs" id="1_smjpw"]
+[ext_resource type="Texture2D" uid="uid://cieaog15kqvvn" path="res://assets/ui/Bar/Line@2x.png" id="2_cvnj7"]
+[ext_resource type="Theme" uid="uid://dfclc3ptgyluw" path="res://ui/ui_theme.tres" id="3_ig24y"]
+[ext_resource type="Texture2D" uid="uid://dcmlkk80hnu7s" path="res://assets/ui/buttons/Pause/Default@2x.png" id="4_6tvex"]
+[ext_resource type="Texture2D" uid="uid://cc7j88lptnvp6" path="res://assets/ui/buttons/Pause/Hover@2x.png" id="5_5lxx5"]
+[ext_resource type="Texture2D" uid="uid://dp5e5gdf2jclj" path="res://assets/ui/counter/Dummy@2x.png" id="6_ecvns"]
+[ext_resource type="Texture2D" uid="uid://1awvnf80scrk" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png@2x/Counter/Icon/Money@2x.png" id="7_kg8kl"]
+[ext_resource type="Texture2D" uid="uid://shdvq11eh78g" path="res://assets/ui/buttons/Repeat/Default@2x.png" id="8_a5io8"]
+[ext_resource type="Texture2D" uid="uid://cvarxphxfljwi" path="res://assets/ui/buttons/Repeat/Hover@2x.png" id="9_2mnyc"]
+[ext_resource type="Texture2D" uid="uid://4pyimks07yyf" path="res://assets/ui/buttons/Default@2x-1.png" id="11_ig7nn"]
+[ext_resource type="Texture2D" uid="uid://cykigqh5ngxik" path="res://assets/ui/buttons/Play/Default.png" id="12_smjpw"]
+[ext_resource type="Texture2D" uid="uid://b4alryktv6e73" path="res://assets/ui/buttons/Play/Hover.png" id="13_ig7nn"]
+[ext_resource type="Texture2D" uid="uid://06xq02bpd6vv" path="res://assets/ui/buttons/SoundOff/Default.png" id="14_4opk4"]
+[ext_resource type="Texture2D" uid="uid://chxhey06jdyj1" path="res://assets/ui/buttons/SoundOff/Hover.png" id="15_ehptq"]
+[ext_resource type="Texture2D" uid="uid://cbpbumdi2evqb" path="res://assets/BlueStyle_gui UPDATE/settings/el_5.png" id="16_f0mf4"]
+[ext_resource type="Texture2D" uid="uid://bdnomsbg5d84g" path="res://assets/BlueStyle_gui UPDATE/settings/el_6.png" id="17_j8c5u"]
+[ext_resource type="Texture2D" uid="uid://bjjqlqkbhqm4y" path="res://assets/BlueStyle_gui UPDATE/settings/el_3.png" id="18_876r6"]
+[ext_resource type="Texture2D" uid="uid://6wt1rde3asuq" path="res://assets/BlueStyle_gui UPDATE/settings/el_4.png" id="19_pc3ux"]
+[ext_resource type="Texture2D" uid="uid://cdsj7y5760tl5" path="res://assets/ui/buttons/SoundOn/Default.png" id="20_kn5bw"]
+[ext_resource type="Texture2D" uid="uid://dtvfyyuaxk733" path="res://assets/ui/buttons/SoundOn/Hover.png" id="21_ea7se"]
+[ext_resource type="Texture2D" uid="uid://dplqaqgb62hqo" path="res://assets/Keyboard Keys/Outline/PNG/spage_lg.png" id="22_qfb5q"]
+[ext_resource type="Texture2D" uid="uid://dxt35kgsgk4d6" path="res://assets/Keyboard Keys/Outline/PNG/space_md.png" id="23_a3gsx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfb5q"]
+content_margin_left = 15.0
+texture = ExtResource("6_ecvns")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_si3yr"]
+texture = ExtResource("11_ig7nn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r466m"]
+content_margin_top = 10.0
+content_margin_right = 0.0
+content_margin_bottom = 10.0
+texture = ExtResource("18_876r6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgr4o"]
+texture = ExtResource("19_pc3ux")
+texture_margin_left = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgdic"]
+texture = ExtResource("19_pc3ux")
+texture_margin_left = 20.0
+
+[sub_resource type="Animation" id="Animation_qfb5q"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IdleStateUI:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a3gsx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IdleStateUI:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0l8ry"]
+_data = {
+&"Idle": SubResource("Animation_qfb5q"),
+&"RESET": SubResource("Animation_a3gsx")
+}
+
+[node name="GameInterface" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_smjpw")
+
+[node name="EngineFuelBar" type="TextureProgressBar" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -496.0
+offset_top = -247.0
+offset_right = 496.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+texture_under = ExtResource("1_5351s")
+texture_progress = ExtResource("2_cvnj7")
+texture_progress_offset = Vector2(16.7, 16.445)
+
+[node name="Toolbar" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -470.5
+offset_right = 470.5
+offset_bottom = 206.0
+grow_horizontal = 2
+theme = ExtResource("3_ig24y")
+
+[node name="MarginContainer" type="MarginContainer" parent="Toolbar"]
+layout_mode = 2
+theme_override_constants/margin_top = 14
+
+[node name="CenterContainer" type="CenterContainer" parent="Toolbar/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Toolbar/MarginContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ig24y")
+theme_override_constants/separation = 70
+
+[node name="PauseButton" type="TextureButton" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("4_6tvex")
+texture_hover = ExtResource("5_5lxx5")
+
+[node name="MoneyPanel" type="PanelContainer" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 120)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_qfb5q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer/MoneyPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer/MoneyPanel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_kg8kl")
+
+[node name="Label" type="Label" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer/MoneyPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ReplayButton" type="TextureButton" parent="Toolbar/MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("8_a5io8")
+texture_hover = ExtResource("9_2mnyc")
+
+[node name="PauseMenu" type="PanelContainer" parent="."]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -293.5
+offset_top = -221.5
+offset_right = 293.5
+offset_bottom = 221.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ig24y")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 60
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_ig24y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_si3yr")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PauseMenu/MarginContainer/PanelContainer/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Pause"
+
+[node name="PauseExitButton" type="TextureButton" parent="PauseMenu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("12_smjpw")
+texture_hover = ExtResource("13_ig7nn")
+
+[node name="VolumeSetting" type="HBoxContainer" parent="PauseMenu/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="MinVolume" type="TextureButton" parent="PauseMenu/MarginContainer/VolumeSetting"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("14_4opk4")
+texture_hover = ExtResource("15_ehptq")
+
+[node name="VolumeSlider" type="HSlider" parent="PauseMenu/MarginContainer/VolumeSetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("16_f0mf4")
+theme_override_icons/grabber_highlight = ExtResource("17_j8c5u")
+theme_override_icons/grabber_disabled = ExtResource("16_f0mf4")
+theme_override_styles/slider = SubResource("StyleBoxTexture_r466m")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_pgr4o")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_dgdic")
+scrollable = false
+
+[node name="MaxVolume" type="TextureButton" parent="PauseMenu/MarginContainer/VolumeSetting"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("20_kn5bw")
+texture_hover = ExtResource("21_ea7se")
+
+[node name="PausedBackground" type="Panel" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IdleStateUI" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = -372.0
+offset_right = 137.0
+offset_bottom = -308.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(137, 32)
+texture = ExtResource("22_qfb5q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0l8ry")
+}
+
+[node name="ControlButtonsPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -435.0
+offset_bottom = 202.0
+grow_horizontal = 0
+theme = ExtResource("3_ig24y")
+
+[node name="ControlButtons" type="HBoxContainer" parent="ControlButtonsPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_ig24y")
+theme_override_constants/separation = 50
+
+[node name="Labels" type="VBoxContainer" parent="ControlButtonsPanel/ControlButtons"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="ControlButtonsPanel/ControlButtons/Labels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.886275, 0.580392, 1)
+text = "Start"
+
+[node name="Engine" type="Label" parent="ControlButtonsPanel/ControlButtons/Labels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.886275, 0.580392, 1)
+text = "Engine"
+
+[node name="Buttons" type="VBoxContainer" parent="ControlButtonsPanel/ControlButtons"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ControlButtonsPanel/ControlButtons/Buttons"]
+layout_mode = 2
+texture = ExtResource("23_a3gsx")
+
+[node name="TextureRect" type="TextureRect" parent="ControlButtonsPanel/ControlButtons/Buttons"]
+layout_mode = 2
+texture = ExtResource("23_a3gsx")

@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"fba531a3ae3b0086","type":"text","text":"Объекты","x":120,"y":-520,"width":140,"height":60},
+		{"id":"44880fe1feaa6a10","type":"text","text":"Компоненты","x":440,"y":-180,"width":157,"height":60},
+		{"id":"c4b12fdebdc061a7","type":"file","file":"ObsidianStruct/Компоненты/DestructibleComponent.md","x":597,"y":140,"width":379,"height":329},
+		{"id":"c9435b35fa51de07","type":"text","text":"Синглтоны","x":-200,"y":-180,"width":157,"height":60},
+		{"id":"20dca32370e030c7","x":-321,"y":140,"width":400,"height":329,"type":"file","file":"ObsidianStruct/Синглтоны/GameManager.cs.md"}
+	],
+	"edges":[
+		{"id":"89633c5793f35206","fromNode":"fba531a3ae3b0086","fromSide":"bottom","toNode":"44880fe1feaa6a10","toSide":"top"},
+		{"id":"fc9a5b860ebe55a4","fromNode":"44880fe1feaa6a10","fromSide":"bottom","toNode":"c4b12fdebdc061a7","toSide":"top"},
+		{"id":"68e1abf16c5b6513","fromNode":"fba531a3ae3b0086","fromSide":"bottom","toNode":"c9435b35fa51de07","toSide":"top"},
+		{"id":"1176e5b9b5830554","fromNode":"c9435b35fa51de07","fromSide":"bottom","toNode":"20dca32370e030c7","toSide":"top"}
+	]
+}

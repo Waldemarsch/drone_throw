@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxc3k10k4fjq6"]
+
+[ext_resource type="PackedScene" uid="uid://oxqkn1bcx0n7" path="res://player/upgrade/upgrades/gun/gun_upgrade.tscn" id="1_73w6w"]
+[ext_resource type="Texture2D" uid="uid://bhox5tosvrrm6" path="res://assets/upgrades/gun/lvl4/lvl4_trim.png" id="2_faig4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_faig4"]
+size = Vector2(782, 135)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_73w6w"]
+radius = 6000.0
+
+[node name="GunUpgrade" instance=ExtResource("1_73w6w")]
+scale = Vector2(0.5, 0.5)
+_reloadTime = 0.2
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+position = Vector2(-72, -9.5)
+shape = SubResource("RectangleShape2D_faig4")
+
+[node name="CollisionShape2D" parent="DetectionRange" index="0"]
+visible = false
+shape = SubResource("CircleShape2D_73w6w")
+
+[node name="Muzzle" parent="." index="3"]
+position = Vector2(451, -34)
+
+[node name="ReloadTimer" parent="." index="4"]
+wait_time = 0.2
+
+[node name="Sprite2D" parent="." index="5"]
+texture = ExtResource("2_faig4")

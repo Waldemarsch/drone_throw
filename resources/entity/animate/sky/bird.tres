@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=3 format=3 uid="uid://bfn5m74kbqgu1"]
+
+[ext_resource type="AudioStream" uid="uid://ygu0tswidptw" path="res://assets/entities/plains/Chuchelo/Sounds/ChucheloDeath1.mp3" id="1_ahckw"]
+[ext_resource type="Script" uid="uid://dbj8qxchljl3q" path="res://resources/classes/EntityData.cs" id="1_x72d0"]
+
+[resource]
+script = ExtResource("1_x72d0")
+EntityDeathSound = Array[AudioStream]([ExtResource("1_ahckw")])
+ScoreValue = 25
+metadata/_custom_type_script = "uid://dbj8qxchljl3q"
