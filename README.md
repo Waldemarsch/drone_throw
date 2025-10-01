@@ -1,23 +1,23 @@
-# Описание игры Exiting Poverty
+# Exiting Poverty game description
 
-В данном репозитории в ветке main представлена моя первая игра.
+This repository, in the main branch, presents my first game.
 
-Это казуальная 2d-игра с акцентом на механику апгрейда. Есть 5 типов апгрейда:
-- Главный
-- Двигатель
-- Пушка
-- Шасси
-- Холодное оружие
+This is a casual 2D game with a focus on upgrade mechanics. There are 5 types of upgrades:
+- General
+- Engine
+- Gun
+- Gear
+- Melee weapon
 
-У каждого апгрейда есть 4 уровня. Во время раунда игрок летает, уничтожает существ и объекты, получает за это очки и за эти очки покупает апгрейды.
+Each upgrade has 4 levels. During a round, the player flies, destroys creatures and objects, receives score for this, and buys upgrades with these score.
 
-Реализованы:
-- Прототип паттерна состояния (State) для управления игроком;
-- Паттерн EventBus для связи NPC и счета игрока;
-- Паттерн Singleton для глобальных менеджеров (UIManager, PlayerManager и т.д.)
-- Паттерн Observer в виде сигналов Godot (для связи синглтонов и объектов NPC).
+Implemented:
+- A prototype of the State pattern for player control;
+- The EventBus pattern for communication between NPCs and the player's score;
+- The Singleton pattern for global managers (UIManager, PlayerManager, etc.);
+- The Observer pattern in the form of Godot signals (for communication between singletons and NPC objects).
 
-Скриншоты из игры:
+Screenshots from the game:
 
 ![First Screenshot](screenshots/1.jpg)
 ![Second Screenshot](screenshots/2.jpg)
